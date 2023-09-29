@@ -16,6 +16,8 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -23,6 +25,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-slick": "^0.23.10",
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",

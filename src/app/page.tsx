@@ -1,10 +1,192 @@
-import Image from 'next/image'
-import { Button } from "@/components/ui/button";
-
-export default function Home() {
+"use client";
+import Slider from "react-slick";
+import Image from "next/image";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+const dumyData = [
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+  {
+    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
+  },
+];
+const Home = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    // innerHeight: 500,
+    // outerHeight: 500,
+    // outerWidth: 1920,
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Button>Click me</Button>
-    </main>
-  )
-}
+    // <main className="h-500px">
+    <Slider {...settings}>
+      {/* slider1 */}
+      <div className="bg-center bg-fixed bg-no-repeat bg-auto h-500 bg-banner-bg-1">
+        <div className="flex h-full">
+          <div className=" w-1/2 flex flex-col items-end text-left justify-center">
+            <div>
+              <h1 className="text-5xl text-70px">Holiday Hour</h1>
+              <text className="text-28px">
+                <span className="block">
+                  All stores will be closed on October 9<sup>th</sup> for the
+                </span>
+                Thanksgiving Holiday
+              </text>
+              <div>
+                <a className="px-2.5 py-1 rounded-s-full rounded-e-full  bg-white">
+                  Learn More.
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* slider2 */}
+      <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-2">
+        <div className="h-full flex  items-center justify-center">
+          <div className="w-1/2 flex flex-col justify-center text-center">
+            <text className="text-112px leading-102px max-h-235px">
+              <span className="block"> ULTRA</span>
+              GREAT DEALS
+            </text>
+            <div>
+              <a className="px-2.5 py-1  rounded-e-full rounded-s-full bg-white">
+                BROWSE TODAY
+              </a>
+            </div>
+          </div>
+
+          <div className="w-1/2 h-full bg-banner-fe-2 bg-center bg-fixed bg-no-repeat bg-cover z-10"></div>
+        </div>
+      </div>
+      {/* slider 3 */}
+      <div className="bg-center h-500 bg-fixed bg-no-repeat bg-cover bg-banner-bg-3">
+        <div className="flex flex-col justify-center items-center h-full">
+          <div className="text-70px">
+            <text>DISCOVERY CENTER</text>
+          </div>
+          <div className="flex flex-wrap justify-center max-w-82.5	">
+            {dumyData.map((itm, idx) => (
+              <div key={`images${idx}`} className="mx-2.5 my-2.5">
+                <div>
+                  <Image src={itm.url} width={160} height={145} alt="image" />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div>
+            <div>
+              <a className="px-2.5 py-1  rounded-e-full rounded-s-full bg-white">
+                SHOP.
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* sllider 4 */}
+      <div className="bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-4">
+        <div className="h-full flex  items-center justify-center">
+          <div className="w-1/2 flex flex-col justify-center text-center">
+            <text className="text-82px leading-82px">
+              <span className="block"> More value</span>
+              <span className="block"> More</span>
+              Convenience
+            </text>
+            <div>
+              <a className="px-2.5 py-1  rounded-e-full rounded-s-full bg-white">
+                BROWSE TODAY
+              </a>
+            </div>
+          </div>
+
+          <div className="w-1/2 h-full bg-banner-fe-4 bg-bottom bg-fixed bg-no-repeat  z-10"></div>
+        </div>
+      </div>
+      {/* bNNER 5 */}
+      <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
+        <div className=" flex flex-col  h-full items-center text-center ">
+          <div className="max-w-4xl">
+            <Image
+              src={
+                "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/stay-text.png"
+              }
+              width={950}
+              height={500}
+              alt="image"
+              className="bg-cover"
+            />
+            <div className="text-end me-12">
+              <a className="px-2.5 py-1  rounded-e-full rounded-s-full bg-white">
+                SHOP NOW
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* banner 6 */}
+      <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
+        <div className="h-full flex  items-center justify-center">
+          <div className="w-1/2 flex flex-col justify-center text-start ps-20rem">
+            <text className="text-73px  text-white">
+              <span className="block text-white"> WE LOVE BEER</span>
+              DO YOU?
+            </text>
+            <text className="text-28px text-white">
+              If you share our passion for all things beer and align with our
+              core values of being a socially and environmentally responsible
+              organization, Apply Today!
+            </text>
+            <div>
+              <a className="px-2.5 py-1  rounded-e-full rounded-s-full bg-white">
+                BROWSE TODAY
+              </a>
+            </div>
+          </div>
+
+          <div className="w-1/2 h-full bg-banner-fe-6 bg-center bg-fixed bg-no-repeat bg-cover z-10"></div>
+        </div>
+      </div>
+    </Slider>
+  );
+};
+
+export default Home;

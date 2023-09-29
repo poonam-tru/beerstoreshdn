@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './src/pages/**/*.{ts,tsx}',
-    './src/components/**/*.{ts,tsx}',
-    './src/app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./src/pages/**/*.{ts,tsx}",
+    "./src/components/**/*.{ts,tsx}",
+    "./src/app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -16,7 +16,43 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        "70px": "70px",
+        "73px": "73px",
+        "82px": "82px",
+        "28px": "28px",
+        "112px": "112px",
+        "95px": "95px",
+      },
+      lineHeight: {
+        "extra-loose": "2.5",
+        "102px": "6.375rem",
+        "82px": "5.125rem",
+      },
+      spacing: {
+        "500": "500px",
+      },
+
+      backgroundImage: {
+        "banner-bg-1":
+          "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/JulyHiringCampaign-DesktopBG.jpg')",
+        "banner-bg-2":
+          "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner1-mob.jpg')",
+        "banner-bg-3":
+          "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner2-mob.jpg')",
+        "banner-bg-4":
+          "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/discovery-cylce-8-desktop.png')",
+        "banner-bg-5":
+          "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/stay-bg.png')",
+        "banner-fe-2":
+          "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png')",
+        "banner-fe-4":
+          "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/brand-banner-more-value.png')",
+        "banner-fe-6":
+          "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/Hiring.png')",
+      },
       colors: {
+        "banner-color-6": "#f3f0e1",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -73,4 +109,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
