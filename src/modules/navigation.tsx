@@ -113,16 +113,16 @@ const dummy = [
   },
   {
     mainHead: "CONTACT",
-    // content: [],
+    content: [],
   },
 ];
 
 export function Navigation() {
   return (
     <NavigationMenu className="py-3">
-      {dummy?.map(({ mainHead, content }, IDX) => (
-        <NavigationMenuList key={`ul${mainHead}`}>
-          <NavigationMenuItem>
+      <NavigationMenuList>
+        {dummy?.map(({ mainHead, content }, IDX) => (
+          <NavigationMenuItem key={`ul${mainHead}`}>
             {[1, 4].includes(IDX) ? (
               <NavigationMenu>
                 <NavigationMenu className="text-white hover:text-white focus:text-white p-0 h-auto uppercase text-base mr-10">
@@ -170,8 +170,8 @@ export function Navigation() {
                 <ListItem href="/docs">On</ListItem> */}
             </NavigationMenuContent>
           </NavigationMenuItem>
-        </NavigationMenuList>
-      ))}
+        ))}
+      </NavigationMenuList>
     </NavigationMenu>
 
     /* <NavigationMenuItem className="text-white ">
