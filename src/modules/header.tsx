@@ -32,7 +32,7 @@ export const Header = () => {
           <div className="flex justify-end items-center">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="text-white w-auto h-auto" size={"icon"}>
+                <Button className="text-white w-auto h-auto bg-transparent" size={"icon"}>
                   <Image
                     className="mr-2.5"
                     src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/user_login.svg"
@@ -59,7 +59,7 @@ export const Header = () => {
             <Separator orientation="vertical" className="mx-7 bg-white h-6" />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="text-white w-auto h-auto" size={"icon"}>
+                <Button className="text-white w-auto h-auto  bg-transparent" size={"icon"}>
                   <Image
                     className="mr-2.5"
                     src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/pin.svg"
