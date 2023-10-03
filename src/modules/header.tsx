@@ -14,9 +14,9 @@ import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Navigation } from "./navigation";
 
-export const Header = () => {
+const Header = () => {
   return (
-    <header className="flex bg-black flex-1 flex-col">
+    <header className="flex bg-black flex-1 flex-col px-6">
       <nav className="flex justify-between py-5  px-5 flex-row  flex-1 items-center">
         <div className="basis-1/4">
           <a href="">
@@ -49,10 +49,14 @@ export const Header = () => {
                 <DropdownMenuSeparator />
                 <Input />
                 <Input />
-                <Button variant={"link"} className="p-0">Forgot Password?</Button>
+                <Button variant={"link"} className="p-0">
+                  Forgot Password?
+                </Button>
                 <div className="flex flex-col">
-                <Button className="p-0">Login</Button>
-                <Button variant={"secondary"}  className="p-0">Create Account</Button>
+                  <Button className="p-0">Login</Button>
+                  <Button variant={"secondary"} className="p-0">
+                    Create Account
+                  </Button>
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -87,3 +91,4 @@ export const Header = () => {
     </header>
   );
 };
+export default Header;

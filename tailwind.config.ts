@@ -17,12 +17,13 @@ module.exports = {
     },
     extend: {
       fontSize: {
+        "28px": "28px",
+        "48px": "48px",
         "70px": "70px",
         "73px": "73px",
         "82px": "82px",
-        "28px": "28px",
-        "112px": "112px",
         "95px": "95px",
+        "112px": "112px",
       },
       lineHeight: {
         "extra-loose": "2.5",
@@ -53,6 +54,7 @@ module.exports = {
       },
       colors: {
         "banner-color-6": "#f3f0e1",
+        "#f4f4f4": "#f4f4f4",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
