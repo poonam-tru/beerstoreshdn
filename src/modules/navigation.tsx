@@ -49,71 +49,112 @@ const components: { title: string; href: string; description: string }[] = [
 const dummy = [
   {
     mainHead: "SHOP OUR BEER",
+    href: "",
     content: [
       {
         subhead: "DISCOVER",
-        list: ["On Sale Now", "Whats New", "Seasonal", "Mixed Pack"],
+        list: [
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
+        ],
       },
       {
         subhead: "Beer Category",
-        list: ["On Sale Now", "Whats New", "Seasonal", "Mixed Pack"],
+        list: [
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
+        ],
       },
       {
         subhead: "Beer Category",
-        list: ["On Sale Now", "Whats New", "Seasonal", "Mixed Pack"],
+        list: [
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
+        ],
       },
       {
         subhead: "Beer Style",
-        list: ["On Sale Now", "Whats New", "Seasonal", "Mixed Pack"],
+        list: [
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
+        ],
       },
       {
         subhead: "Beer Format",
-        list: ["On Sale Now", "Whats New", "Seasonal", "Mixed Pack"],
+        list: [
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
+        ],
       },
       {
         subhead: "Beer Flavour",
-        list: ["On Sale Now", "Whats New", "Seasonal", "Mixed Pack"],
+        list: [
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
+        ],
       },
       {
         subhead: "Health Category",
-        list: ["On Sale Now", "Whats New", "Seasonal", "Mixed Pack"],
+        list: [
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
+        ],
       },
     ],
   },
   {
     mainHead: "STORE LOCATOR",
+    href: "",
     // content: [],
   },
   {
     mainHead: "SHOP OUR BEER",
+    href: "",
     content: [
       {
         subhead: "",
-        list: ["On Sale Now", "Whats New", "Seasonal", "Mixed Pack"],
+        list: [
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
+        ],
       },
     ],
   },
   {
     mainHead: "ABOUT US",
+    href: "",
     content: [
       {
         subhead: "",
         list: [
-          "On Sale Now",
-          "Whats New",
-          "Seasonal",
-          "Mixed Pack",
-          "On Sale Now",
-          "Whats New",
-          "Seasonal",
-          "Mixed Pack",
+          { link: "On Sale Now", href: "" },
+          { link: "Whats New", href: "" },
+          { link: "Seasonal", href: "" },
+          { link: "Mixed Pack", href: "" },
         ],
       },
     ],
   },
   {
     mainHead: "CONTACT",
-    content: [],
+    href: "",
+    // content: [],
   },
 ];
 
@@ -121,16 +162,14 @@ export function Navigation() {
   return (
     <NavigationMenu className="py-3">
       <NavigationMenuList>
-        {dummy?.map(({ mainHead, content }, IDX) => (
-          <NavigationMenuItem key={`ul${mainHead}`}>
+        {dummy?.map(({ mainHead, href, content }, IDX) => (
+          <NavigationMenuItem key={mainHead}>
             {[1, 4].includes(IDX) ? (
-              <NavigationMenu>
-                <NavigationMenu className="text-white hover:text-white focus:text-white p-0 h-auto uppercase text-base mr-10">
-                  {mainHead}
-                </NavigationMenu>
-              </NavigationMenu>
+              <NavigationMenuLink className="text-white focus:bg-white hover:text-white focus:text-white p-0 h-auto uppercase text-base mr-10">
+                {mainHead}
+              </NavigationMenuLink>
             ) : (
-              <NavigationMenuTrigger className="text-white hover:text-white focus:text-white p-0 h-auto uppercase text-base mr-10">
+              <NavigationMenuTrigger className=" text-white focus:bg-white hover:text-white focus:text-white p-0 h-auto uppercase text-base mr-10">
                 {mainHead}
               </NavigationMenuTrigger>
             )}
@@ -138,28 +177,22 @@ export function Navigation() {
             <NavigationMenuContent className="flex flex-row">
               {content?.map(({ subhead, list }) => (
                 <ul
+                  key={`di${subhead}`}
                   className="flex flex-col gap-3 p-3 md:w-[200px] lg:w-[250px] lg:grid-cols-[.75fr_1fr] bg-#f4f4f4"
-                  key={`list${subhead}`}
                 >
                   <li>
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted  no-underline outline-none focus:shadow-md"
-                        href="/"
-                      >
-                        {subhead && subhead}
-                      </a>
-                    </NavigationMenuLink>
+                    <h2 className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted  no-underline outline-none focus:shadow-md">
+                      {subhead && subhead}
+                    </h2>
                   </li>
-                  {list?.map((listItm) => (
-                    <ListItem
-                      className="p-0"
-                      href="/docs"
-                      // title="Introduction"
-                      key={`list${listItm}`}
-                    >
-                      {listItm}
-                    </ListItem>
+                  {list?.map(({ link, href }) => (
+                    <li key={`list${link}`}>
+                      <NavigationMenuLink href="" asChild>
+                        <a className="p-0" href={href}>
+                          {link}
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
                   ))}
                 </ul>
               ))}
@@ -248,28 +281,31 @@ export function Navigation() {
   );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none ">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
+// const ListItem = React.forwardRef<
+//   React.ElementRef<"a">,
+//   React.ComponentPropsWithoutRef<"a">
+// >(({ className, title, children, href, ...props }, ref) => {
+//   return (
+//     <li>
+//       <NavigationMenuLink asChild>
+//         <a
+//           ref={ref}
+//           href={href}
+//           className={cn(
+//             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+//             className
+//           )}
+//           {...props}
+//         >
+//           <div className="text-sm font-medium leading-none ">{title}</div>
+//           {children && (
+//             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+//               {children}
+//             </p>
+//           )}
+//         </a>
+//       </NavigationMenuLink>
+//     </li>
+//   );
+// });
+// ListItem.displayName = "ListItem";
