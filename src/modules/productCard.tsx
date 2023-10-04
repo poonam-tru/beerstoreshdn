@@ -49,6 +49,10 @@ const ProductCard = ({
             alt={image.alt}
             width={image.width}
             height={image.height}
+            style={{
+              width:"100%",
+              height:"auto"
+            }}
           />
         )}
       </CardHeader>

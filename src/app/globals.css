@@ -15,110 +15,11 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-.slider {
-  position: relative;
-  max-width: 850px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.slider-image {
-  position: relative;
-}
-.slider-image .slider-caption-wrap {
-  position: absolute;
-  top: auto;
-  bottom: 0;
-  left: 0;
-  display: inline-block;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  vertical-align: top;
-}
-.slider-image .slider-caption-wrap .caption-details {
-  display: block;
-  height: 100px;
-  width: -webkit-calc(100% - 430px);
-  width: -moz-calc(100% - 430px);
-  width: -ms-calc(100% - 430px);
-  width: calc(100% - 430px);
-  margin: 0 auto;
-  padding: 10px 0;
-  overflow: auto;
-  font-size: 16px;
-  line-height: 1.4;
-}
-.slick-thumb-nav img {
-  width: 200px;
-}
-.slick-arrow {
-  top: auto;
-  bottom: 0;
-  z-index: 9999;
-  display: inline-block;
-  height: auto;
-  width: auto;
-  margin-bottom: 0;
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-.slick-arrow.slick-prev {
-  left: 65px;
-  background-position: center;
-  background-size: auto;
-  background-image: url("https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/prev-light.svg");
-  height: 60px;
-  z-index: 9999;
-
-  width: 60px;
-}
-.slick-arrow.slick-next {
-  background-position: center;
-  background-size: cover;
-  background-image: url("https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/next-light.svg");
-  right: 65px;
-  height: 60px;
-  width: 60px;
-  z-index: 9999;
-}
-.slick-arrow:before {
+.slick-slider .slick-prev:before, .slick-next:before{
   display: none;
 }
-.slick-arrow .arrow-icon {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-size: 55px;
-  opacity: 0;
-  -webkit-transition: 0.5s all ease 0s;
-  -moz-transition: 0.5s all ease 0s;
-  -ms-transition: 0.5s all ease 0s;
-  transition: 0.5s all ease 0s;
-}
-.slick-next:hover,
-.slick-next:focus {
-  background: url("https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/next-light.svg");
-}
-.slick-next:hover,
-.slick-next:focus {
-  background: url("https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/prev-light.svg");
-}
-.slideshow__slides:hover .slick-arrow .arrow-icon {
-  opacity: 1;
-}
-.slick-arrow .arrow-icon span {
-  display: inline-block;
-  padding: 50px 0;
-  font-size: 55px;
-}
-.slick-arrow .arrow-icon.prev-slick-arrow {
-  left: 0;
-}
-.slick-arrow .arrow-icon.next-slick-arrow {
-  right: 0;
+
+.on-sale-section .slick-prev, .on-sale-section  .slick-next{
+  width: 48px;
+  height: 48px;
 }
