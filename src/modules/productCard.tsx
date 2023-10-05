@@ -42,23 +42,28 @@ const ProductCard = ({
         className
       )}
     >
-      <CardHeader>
+      <CardHeader className="rounded-[5px] overflow-hidden max-h-[250px]">
         {image && (
           <Image
+            className="bg-center bg-fixed bg-no-repeat bg-cover"
             src={image.url}
             alt={image.alt}
             width={image.width}
             height={image.height}
             style={{
-              width:"100%",
-              height:"auto"
+              width: "100%",
+              height: "100%",
             }}
           />
         )}
       </CardHeader>
 
-      <CardContent>
-        {title && <CardTitle className="mb-4 uppercase">{title}</CardTitle>}
+      <CardContent className="ps-[20px] pe-[20px] text-[14px]">
+        {title && (
+          <CardTitle className="mb-4 mt-4 uppercase text-[14px]">
+            {title}
+          </CardTitle>
+        )}
         {badgeText && (
           <Badge
             variant={"default"}
@@ -70,7 +75,7 @@ const ProductCard = ({
 
         {description}
       </CardContent>
-      <CardFooter className="flex">
+      <CardFooter className="flex mt-[10px] ps-[20px] pe-[20px] pb-[20px]">
         {buttonText && (
           <Button className="w-full rounded-[100px]" onClick={onClickButton}>
             {buttonText}

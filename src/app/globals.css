@@ -15,11 +15,22 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-.slick-slider .slick-prev:before, .slick-next:before{
+.slick-slider .slick-prev:before,
+:before {
   display: none;
 }
-
-.on-sale-section .slick-prev, .on-sale-section  .slick-next{
+.slick-next {
+  left: -85px;
+}
+.slick-next {
+  right: 85px;
+}
+.on-sale-section .slick-prev,
+.on-sale-section .slick-next {
   width: 48px;
   height: 48px;
+}
+.slick-arrow .slick-next,
+.slick-arrow .slick-next {
+  display: unset !important;
 }

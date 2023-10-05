@@ -1,15 +1,20 @@
 "use client";
-import InfoCard from "@/modules/infoCard";
 import BannerSlider from "../modules/slider";
 import ProductCard from "@/modules/productCard";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import Image from "next/image";
 import Slider from "react-slick";
+import InfoCard from "@/modules/infoCard";
+import { Button } from "@/components/ui/button";
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
-    <div className={className} style={{ ...style }} onClick={onClick}>
+    <div
+      className={"absolute right-[-200px] top-[50%]"}
+      style={{ ...style }}
+      onClick={onClick}
+    >
       <Image
         src={
           "https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/abtest-Arrow-next.svg"
@@ -24,7 +29,11 @@ function SampleNextArrow(props: any) {
 function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
-    <div className={className} style={{ ...style }} onClick={onClick}>
+    <div
+      className={"absolute left-[-200px] top-[50%]"}
+      style={{ ...style }}
+      onClick={onClick}
+    >
       <Image
         src={
           "https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/abtest-Arrow-prev.svg"
@@ -40,7 +49,7 @@ const settings = {
   dots: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 5,
   slidesToScroll: 1,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
@@ -63,7 +72,7 @@ const BeerRecpieSlidersettings = {
   dots: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 1,
   slidesToScroll: 1,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
@@ -114,14 +123,42 @@ const productCardInfo = [
     },
   },
   {
-    title: "BANGARANG PINK LEMONADE HARD SELTZER",
+    title: "ARIZONA HARD VARIETY PACK",
     price: "24.00",
     discountedPrice: "10:00",
     onSale: "true",
     image: {
-      url: "https://cdn.brandfolder.io/DRTYD0A2/as/45cx657kw4c27qvxrkn89s/1298.png?position=2",
-      alt: "bangrang",
+      url: "https://cdn.brandfolder.io/DRTYD0A2/as/wbq789kkkpcv38vchr68mt8b/1722.png?position=2",
+      alt: "arizona",
     },
+  },
+  {
+    title: "ARIZONA HARD VARIETY PACK",
+    price: "24.00",
+    discountedPrice: "10:00",
+    onSale: "true",
+    image: {
+      url: "https://cdn.brandfolder.io/DRTYD0A2/as/wbq789kkkpcv38vchr68mt8b/1722.png?position=2",
+      alt: "arizona",
+    },
+  },
+  {
+    title: "ARIZONA HARD VARIETY PACK",
+    price: "24.00",
+    discountedPrice: "10:00",
+    onSale: "true",
+    image: {
+      url: "https://cdn.brandfolder.io/DRTYD0A2/as/wbq789kkkpcv38vchr68mt8b/1722.png?position=2",
+      alt: "arizona",
+    },
+  },
+];
+const InfoCardDetail = [
+  {
+    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/08/beerstore.jpg",
+  },
+  {
+    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/08/beerstore.jpg",
   },
 ];
 const Home = () => {
@@ -130,57 +167,49 @@ const Home = () => {
       <BannerSlider></BannerSlider>
 
       <section className="bg-white py-[70px]">
-        <div className="container">
+        <div className="container ">
           <div className="grid grid-cols-2 gap-6">
-            <InfoCard
-              className="flex-row-reverse"
-              title={"some day pickup or delivery"}
-              image={{
-                url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                alt: "test",
-                width: 200,
-                height: 298,
-              }}
-              buttonText={"Read More"}
-            />
-            <InfoCard
-              className="flex-row-reverse"
-              title={"ultra great deal"}
-              image={{
-                url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                alt: "test",
-                width: 200,
-                height: 298,
-              }}
-              buttonText={"Read More"}
-            />
+            {InfoCardDetail.map(({ url }) => (
+              <InfoCard
+                key={`Infocard${url}`}
+                className="flex-row-reverse"
+                title={"some day pickup or delivery"}
+                image={{
+                  url: url,
+                  alt: "test",
+                  width: 200,
+                  height: 298,
+                }}
+                buttonText={"Read More"}
+              />
+            ))}
           </div>
         </div>
       </section>
       <section className="bg-[#F4F4F4]  py-[70px]  on-sale-section">
         <div className="flex flex-col text-center">
-          <h2 className=" text-[30px]">
-            Shop Sale Prices and Limited Time Offers
-          </h2>
+          <h2 className="text-[16px]">{`SEE WHAT'S`}</h2>
+          <h1 className="text-[30px]">On Sale</h1>
         </div>
-        <div className="container">
+        <div className="container p-0">
           <Slider {...settings}>
             {productCardInfo.map((product) => {
               return (
                 <ProductCard
+                  className="max-w-[250px]"
                   key={`${product.title}`}
                   title={product.title}
                   image={{
                     url: product.image.url,
                     alt: product.image.alt,
-                    width: 200,
-                    height: 298,
+                    width: 250,
+                    height: 250,
                   }}
                   buttonText={"Buy Now"}
                   badgeText={product.onSale && "Sale"}
                   description={
                     <>
-                      <div className="flex items-center">
+                      <div className="flex items-center h-62">
                         <Image
                           src=" https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/bottles-01.svg"
                           alt="bottle"
@@ -188,7 +217,7 @@ const Home = () => {
                           height={26}
                           className={"mr-2"}
                         />
-                        <p className="text-[#4a4f55]">{product.title}</p>
+                        <p className="text-[#4a4f55]">{`6 X Bottle 341 ml`}</p>
                       </div>
                       <Separator className="bg-gray-500 opacity-50 h-px my-2" />
                       <div className="flex">
@@ -207,6 +236,11 @@ const Home = () => {
             })}
           </Slider>
         </div>
+        <div className="w-full text-center  mt-[40px]">
+          <Button className="rounded-full bg-black text-#f4f4f4">
+            EXPLORE ALL SAVNGS
+          </Button>
+        </div>
       </section>
       <section className="bg-white  py-[70px]">
         <div className="flex flex-col text-center">
@@ -215,20 +249,81 @@ const Home = () => {
         </div>
         <div className="container">
           <Slider {...BeerRecpieSlidersettings}>
-            <InfoCard
-              title={"test"}
-              image={{
-                url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                alt: "test",
-                width: 200,
-                height: 298,
-              }}
-              buttonText={"Read More"}
-              badgeText="Sale"
-              description={
-                "Whether you’re seeing a show at a small club or a big ... "
-              }
-            />
+            <div>
+              <div className="grid grid-cols-3 gap-5">
+                <InfoCard
+                  className="col-span-2"
+                  title={"test"}
+                  image={{
+                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
+                    alt: "test",
+                    width: 200,
+                    height: 298,
+                  }}
+                  buttonText={"Read More"}
+                  badgeText="Sale"
+                  description={
+                    "Whether you’re seeing a show at a small club or a big ... "
+                  }
+                />
+                <InfoCard
+                  title={"test"}
+                  image={{
+                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
+                    alt: "test",
+                    width: 200,
+                    height: 298,
+                  }}
+                  buttonText={"Read More"}
+                  badgeText="Sale"
+                  description={
+                    "Whether you’re seeing a show at a small club or a big ... "
+                  }
+                />
+                <InfoCard
+                  title={"test"}
+                  image={{
+                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
+                    alt: "test",
+                    width: 200,
+                    height: 298,
+                  }}
+                  buttonText={"Read More"}
+                  badgeText="Sale"
+                  description={
+                    "Whether you’re seeing a show at a small club or a big ... "
+                  }
+                />
+                <InfoCard
+                  title={"test"}
+                  image={{
+                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
+                    alt: "test",
+                    width: 200,
+                    height: 298,
+                  }}
+                  buttonText={"Read More"}
+                  badgeText="Sale"
+                  description={
+                    "Whether you’re seeing a show at a small club or a big ... "
+                  }
+                />
+                <InfoCard
+                  title={"test"}
+                  image={{
+                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
+                    alt: "test",
+                    width: 200,
+                    height: 298,
+                  }}
+                  buttonText={"Read More"}
+                  badgeText="Sale"
+                  description={
+                    "Whether you’re seeing a show at a small club or a big ... "
+                  }
+                />
+              </div>
+            </div>
           </Slider>
         </div>
       </section>
@@ -238,22 +333,54 @@ const Home = () => {
           <h2 className=" text-[30px]">New Beers</h2>
         </div>
         <div className="container">
-          <Slider {...BeerRecpieSlidersettings}>
-            <InfoCard
-              title={"test"}
-              image={{
-                url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                alt: "test",
-                width: 200,
-                height: 298,
-              }}
-              buttonText={"Read More"}
-              badgeText="Sale"
-              description={
-                "Whether you’re seeing a show at a small club or a big ... "
-              }
-            />
+          <Slider {...settings}>
+            {productCardInfo.map((product) => {
+              return (
+                <ProductCard
+                  className="max-w-[250px]"
+                  key={`${product.title}`}
+                  title={product.title}
+                  image={{
+                    url: product.image.url,
+                    alt: product.image.alt,
+                    width: 250,
+                    height: 250,
+                  }}
+                  buttonText={"Buy Now"}
+                  badgeText={product.onSale && "New"}
+                  description={
+                    <>
+                      <div className="flex items-center h-62">
+                        <Image
+                          src=" https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/bottles-01.svg"
+                          alt="bottle"
+                          width={10}
+                          height={26}
+                          className={"mr-2"}
+                        />
+                        <p className="text-[#4a4f55]">{`6 X Bottle 341 ml`}</p>
+                      </div>
+                      <Separator className="bg-gray-500 opacity-50 h-px my-2" />
+                      <div className="flex">
+                        <span className="text-[##4a4f57]">Price:</span>
+                        <span className="text-[#c00] font-medium mr-2">
+                          {product.price}
+                        </span>
+                        <span className="line-through text-[##4a4f57]">
+                          {product.discountedPrice}
+                        </span>
+                      </div>
+                    </>
+                  }
+                />
+              );
+            })}
           </Slider>
+          <div className="w-full text-center  mt-[40px]">
+            <Button className="rounded-full bg-black text-#f4f4f4">
+              EXPLORE NEW BEERS
+            </Button>
+          </div>
         </div>
       </section>
       <section className="bg-[#F4F4F4]  py-[70px]">
