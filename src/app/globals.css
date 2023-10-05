@@ -8,6 +8,8 @@
     --background-end-rgb: 255, 255, 255;
     --primary: 39.5, 89.8%, 57.8%;
     --primary-foreground: 0, 0%, 0%;
+    --secondary: 0, 0%, 0%, 1;
+    --secondary-foreground: 0, 100%, 100%, 1;
   }
 }
 
