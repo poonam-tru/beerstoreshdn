@@ -34,3 +34,41 @@ body {
 .slick-arrow .slick-next {
   display: unset !important;
 }
+.recipe .slick-track > div:first-child {
+  width: 66% !important;
+}
+.recipe .slick-track > div:not(:first-child) {
+  width: 33% !important;
+}
+.recipe .slick-track .slick-slide {
+  margin-top: 30px;
+}
+.recipe .info-content h3 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+.recipe .info-content p {
+  margin: 0;
+}
+.recipe .info-footer {
+  padding: 0;
+  margin-top: 15px;
+}
+.recipe .info-footer button {
+  width: 125px;
+  height: 36px;
+  font-size: 11px;
+  padding: 10px 15px;
+}
+.info-header img {
+  height: 100%;
+  object-fit: cover;
+}
+.recipe .info-badge {
+  font-size: 11px;
+  padding: 5px 8px;
+  line-height: 18px;
+  height: 20px;
+  top: 10px;
+  left: 14px;
+}

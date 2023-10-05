@@ -67,7 +67,7 @@ const InfoCard = ({
       </CardHeader>
 
       <CardContent className="py-4 px-2 info-content">
-        {title && <CardTitle className="mb-4 info-title">{title}</CardTitle>}
+        {title && <CardTitle className="mb-4 info-title ">{title}</CardTitle>}
         {description && (
           <CardDescription className="mb-4 info-description">
             {description}
@@ -76,7 +76,7 @@ const InfoCard = ({
         {badgeText && (
           <Badge
             variant={"default"}
-            className="info-badge bg-white text-[11px]  rounded-[3px] uppercase text-black hover:bg-White px-2 py-1 leading-4 justify-center absolute left-4 top-4"
+            className="info-badge bg-white  rounded-[3px] uppercase text-black hover:bg-White px-2 py-1 leading-4 justify-center absolute left-4 top-4"
           >
             {badgeText}
           </Badge>
