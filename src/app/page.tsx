@@ -45,6 +45,53 @@ function SamplePrevArrow(props: any) {
     </div>
   );
 }
+const beerStoreCardDetail = [
+  {
+    title: "2022 Stewardship Report, Circularity in Action for 95 Years",
+    description:
+      "At The Beer Store, we are serious about our commitment to the environment. We work hard every day to protect the environment...",
+    image: {
+      url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbgbe1-3vkh68-7k9fes/0512_0.png",
+      alt: "keith",
+    },
+  },
+  {
+    title: "Careers at The Beer Store",
+    description: "Are you a beer enthusiast? Come work with us!",
+    image: {
+      url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbgbe1-3vkh68-7k9fes/0512_0.png",
+      alt: "keith",
+    },
+  },
+  {
+    title:
+      "The Beer Store and Goodwill Industries announces partnership to recycle used uniforms",
+    description:
+      "The Beer Store and Goodwill Industries are pleased to announce their partnership during Waste  Reduction Week",
+    image: {
+      url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbgbe1-3vkh68-7k9fes/0512_0.png",
+      alt: "keith",
+    },
+  },
+  {
+    title:
+      "Important Notice To Members, Former Members And Other Beneficiaries Of The Brewers Retail Inc. Pension Plan For Salaried Employees",
+    description: "Are you a beer enthusiast? Come work with us!",
+    image: {
+      url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbgbe1-3vkh68-7k9fes/0512_0.png",
+      alt: "keith",
+    },
+  },
+  {
+    title: "Celebrating Waste Reduction Week and the Circular Economy",
+    description:
+      "Waste Reduction Week in Canada is a year-round program that supports principles and practices of the circular economy...",
+    image: {
+      url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbgbe1-3vkh68-7k9fes/0512_0.png",
+      alt: "keith",
+    },
+  },
+];
 const settings = {
   dots: false,
   infinite: true,
@@ -73,6 +120,29 @@ const BeerRecpieSlidersettings = {
   infinite: true,
   speed: 500,
   slidesToShow: 1,
+  slidesToScroll: 1,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+};
+const beerStoreSliderSettings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
   slidesToScroll: 1,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
@@ -249,85 +319,33 @@ const Home = () => {
         </div>
         <div className="container">
           <Slider {...BeerRecpieSlidersettings}>
-            <div>
-              <div className="grid grid-cols-3 gap-5">
-                <InfoCard
-                  className="col-span-2"
-                  title={"test"}
-                  image={{
-                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                    alt: "test",
-                    width: 200,
-                    height: 298,
-                  }}
-                  buttonText={"Read More"}
-                  badgeText="Sale"
-                  description={
-                    "Whether you’re seeing a show at a small club or a big ... "
-                  }
-                />
-                <InfoCard
-                  title={"test"}
-                  image={{
-                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                    alt: "test",
-                    width: 200,
-                    height: 298,
-                  }}
-                  buttonText={"Read More"}
-                  badgeText="Sale"
-                  description={
-                    "Whether you’re seeing a show at a small club or a big ... "
-                  }
-                />
-                <InfoCard
-                  title={"test"}
-                  image={{
-                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                    alt: "test",
-                    width: 200,
-                    height: 298,
-                  }}
-                  buttonText={"Read More"}
-                  badgeText="Sale"
-                  description={
-                    "Whether you’re seeing a show at a small club or a big ... "
-                  }
-                />
-                <InfoCard
-                  title={"test"}
-                  image={{
-                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                    alt: "test",
-                    width: 200,
-                    height: 298,
-                  }}
-                  buttonText={"Read More"}
-                  badgeText="Sale"
-                  description={
-                    "Whether you’re seeing a show at a small club or a big ... "
-                  }
-                />
-                <InfoCard
-                  title={"test"}
-                  image={{
-                    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
-                    alt: "test",
-                    width: 200,
-                    height: 298,
-                  }}
-                  buttonText={"Read More"}
-                  badgeText="Sale"
-                  description={
-                    "Whether you’re seeing a show at a small club or a big ... "
-                  }
-                />
-              </div>
-            </div>
+            
+                {beerStoreCardDetail.map((item, idx) => {
+                  return (
+                    <div className="grid grid-cols-3"  key={`${item.title}`}>
+                    <InfoCard
+                      title={item.title}
+                      image={{
+                        url: item.image.url,
+                        alt: item.image.alt,
+                        width: 200,
+                        height: 298,
+                      }}
+                      className={`${
+                        idx === 0 && "col-span-2"
+                      } rounded-[5px] overflow-hidden`}
+                      buttonText={"Learn More"}
+                      badgeText={"ARTICLE"}
+                      description={"testing"}
+                    />
+                    </div>
+                  );
+                })}
+              
           </Slider>
         </div>
       </section>
-      <section className="bg-white  py-[70px]">
+      <section className="bg-[#f4f4f4]  py-[70px]">
         <div className="flex flex-col text-center">
           <p className="uppercase  text-[16px]"> Discover </p>
           <h2 className=" text-[30px]">New Beers</h2>
@@ -383,20 +401,33 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="bg-[#F4F4F4]  py-[70px]">
-        <div className="flex flex-col text-center">
-          <h2 className=" text-[30px]">
-            Shop Sale Prices and Limited Time Offers
-          </h2>
-        </div>
-        <div className="container">Content here</div>
-      </section>
+
       <section className="bg-white  py-[70px]">
         <div className="flex flex-col text-center">
           <p className="uppercase  text-[16px]"> More From </p>
           <h2 className=" text-[30px]">The Beer Store</h2>
         </div>
-        <div className="container">Content here</div>
+        <div className="container">
+          <Slider {...beerStoreSliderSettings}>
+            {beerStoreCardDetail.map((item) => {
+              return (
+                <InfoCard
+                  key={`${item.title}`}
+                  title={item.title}
+                  image={{
+                    url: item.image.url,
+                    alt: item.image.alt,
+                    width: 200,
+                    height: 298,
+                  }}
+                  buttonText={"Learn More"}
+                  badgeText={"ARTICLE"}
+                  description={"testing"}
+                />
+              );
+            })}
+          </Slider>
+        </div>
       </section>
     </>
   );
