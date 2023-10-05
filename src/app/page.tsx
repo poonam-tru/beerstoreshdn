@@ -6,6 +6,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import InfoCard from "@/modules/infoCard";
 import { Button } from "@/components/ui/button";
+import ReadMoreCard from "@/modules/readMoreCard";
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -222,12 +223,16 @@ const productCardInfo = [
     },
   },
 ];
-const InfoCardDetail = [
+const readMoreDetail = [
   {
+    title: "some day pickup or delivery",
     url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/08/beerstore.jpg",
+    buttonText: "Order Now",
   },
   {
-    url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/08/beerstore.jpg",
+    title: "fall into savings",
+    url: "https://tbsecomd.wpengine.com/wp-content/uploads/2023/09/fall-into-savings.jpg",
+    buttonText: "Visit the beerstore hub",
   },
 ];
 const Home = () => {
@@ -238,18 +243,18 @@ const Home = () => {
       <section className="bg-white py-[70px]">
         <div className="container ">
           <div className="grid grid-cols-2 gap-6">
-            {InfoCardDetail.map(({ url }) => (
-              <InfoCard
-                key={`Infocard${url}`}
-                className="flex-row-reverse"
+            {readMoreDetail.map((item) => (
+              <ReadMoreCard
+                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')]`}
+                key={`Infocard${item.url}`}
                 title={"some day pickup or delivery"}
                 image={{
-                  url: url,
-                  alt: "test",
+                  url: item.url,
+                  alt: item.title,
                   width: 200,
                   height: 298,
                 }}
-                buttonText={"Read More"}
+                buttonText={item.buttonText}
               />
             ))}
           </div>
