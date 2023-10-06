@@ -125,11 +125,11 @@ export default function slider() {
     ],
   };
   return (
-    <div className="container ps-0 pr-0">
+   
       <Slider className="h-500" {...settings}>
         {/* slider1 */}
         <div
-          className={`bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-[${bgImage.banner1}]`}
+          className={`bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-1`}
         >
           <div className="flex h-full">
             <div className=" w-1/2 flex flex-col items-end text-left justify-center">
@@ -254,6 +254,6 @@ export default function slider() {
           </div>
         </div>
       </Slider>
-    </div>
+  
   );
 }
