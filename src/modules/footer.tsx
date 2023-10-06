@@ -7,65 +7,102 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FooterMenu from "./footerMenu";
 
 const Footer = () => {
   const dummyData = [
     {
       title: "Information",
       data: [
-        " About Us",
-        "Business Services",
-        "Ownership Governance",
-        " Contact Us",
-        "Media center",
+        {
+          title: "About Us",
+          url: "/",
+        },
+        {
+          title: "Business Services",
+          url: "/",
+        },
+        {
+          title: "Ownership Governance",
+          url: "/",
+        },
+        {
+          title: "Contact Us",
+          url: "/",
+        },
+        {
+          title: "Media center",
+          url: "/",
+        },
       ],
     },
     {
       title: "Information",
       data: [
-        " About Us",
-        "Business Services",
-        "Ownership Governance",
-        " Contact Us",
-        "Media center",
+        {
+          title: "About Us",
+          url: "/",
+        },
+        {
+          title: "Business Services",
+          url: "/",
+        },
+        {
+          title: "Ownership Governance",
+          url: "/",
+        },
+        {
+          title: "Contact Us",
+          url: "/",
+        },
+        {
+          title: "Media center",
+          url: "/",
+        },
       ],
     },
     {
       title: "Information",
       data: [
-        " About Us",
-        "Business Services",
-        "Ownership Governance",
-        " Contact Us",
-        "Media center",
+        {
+          title: "About Us",
+          url: "/",
+        },
+        {
+          title: "Business Services",
+          url: "/",
+        },
+        {
+          title: "Ownership Governance",
+          url: "/",
+        },
+        {
+          title: "Contact Us",
+          url: "/",
+        },
+        {
+          title: "Media center",
+          url: "/",
+        },
       ],
     },
   ];
   return (
     <footer className="px-5 pb-5 bg-black">
-      <div className="grid grid-cols-5 pt-10">
+      <div className="grid grid-cols-1 md:grid-cols-5 pt-10">
         <div>
           <a href="">
             <Image
-              src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
+              src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/TBS_Logo.svg"
               alt=""
-              width={200}
-              height={30}
+              width={85}
+              height={65}
             />
           </a>
         </div>
         {dummyData.map(({ title, data }) => (
           <div className="flex flex-col" key={`key${title}`}>
-            <h2 className="text-white uppercase font-semibold">{title}</h2>
-            <ul>
-              {data.map((item) => (
-                <li key={`key${item}`}>
-                  <a className="text-white font-light" href="">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <FooterMenu title={title} menuList={data as any} />
           </div>
         ))}
         <div className="flex flex-col">
@@ -104,14 +141,14 @@ const Footer = () => {
               <Image
                 alt="alive"
                 src="https://tbsecoms.wpengine.com/wp-content/uploads/2022/08/app-store-small.svg"
-                width="120"
-                height="35"
+                width="100"
+                height="30"
               />
               <Image
                 alt="alive"
-                src="https://tbsecoms.wpengine.com/wp-content/uploads/2022/08/app-store-small.svg"
-                width="120"
-                height="35"
+                src="https://tbsecomd.wpengine.com/wp-content/uploads/2022/08/google-store-small.svg"
+                width="100"
+                height="30"
               />
             </div>
           </div>
@@ -127,13 +164,13 @@ const Footer = () => {
         />
         <Image
           alt="alive"
-          src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/logo-arrive-alive-logo.png"
+          src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/logo-best-bar-none.20140514.png"
           width="85"
           height="44"
         />
         <Image
           alt="alive"
-          src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/logo-arrive-alive-logo.png"
+          src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/logo-essential-accessibility.png"
           width="85"
           height="44"
         />
