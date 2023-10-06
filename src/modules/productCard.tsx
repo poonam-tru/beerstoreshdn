@@ -75,7 +75,7 @@ const ProductCard = ({
 
         {description}
       </CardContent>
-      <CardFooter className="flex mt-[10px] ps-[20px] pe-[20px] pb-[20px]">
+      <CardFooter className="flex mt-[10px] ps-[20px] pe-[20px] pb-[20px] product-footer">
         {buttonText && (
           <Button className="w-full rounded-[100px]" onClick={onClickButton}>
             {buttonText}

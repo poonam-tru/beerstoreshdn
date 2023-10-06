@@ -12,7 +12,7 @@ function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute right-[-200px] top-[50%]"}
+      className={"absolute right-[-4%] top-[50%]"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -31,7 +31,7 @@ function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[-200px] top-[50%]"}
+      className={"absolute left-[-4%] top-[50%]"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -46,6 +46,53 @@ function SamplePrevArrow(props: any) {
     </div>
   );
 }
+const moreFrombeerStore = [
+  {
+    title: "2022 Stewardship Report, Circularity in Action for 95 Years",
+    description:
+      "At The Beer Store, we are serious about our commitment to the environment. We work hard every day to protect the environment...",
+    image: {
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2021/04/StewardshipReport2020_Web-2.jpeg",
+      alt: "keith",
+    },
+  },
+  {
+    title: "Careers at The Beer Store",
+    description: "Are you a beer enthusiast? Come work with us!",
+    image: {
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
+      alt: "keith",
+    },
+  },
+  {
+    title:
+      "The Beer Store and Goodwill Industries announces partnership to recycle used uniforms",
+    description:
+      "The Beer Store and Goodwill Industries are pleased to announce their partnership during Waste  Reduction Week",
+    image: {
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/what-is-amber-ale-archive.jpg",
+      alt: "keith",
+    },
+  },
+  {
+    title:
+      "Important Notice To Members, Former Members And Other Beneficiaries Of The Brewers Retail Inc. Pension Plan For Salaried Employees",
+    description: "Are you a beer enthusiast? Come work with us!",
+    image: {
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer-myths-busted-archive.jpg",
+      alt: "keith",
+    },
+  },
+  {
+    title: "Celebrating Waste Reduction Week and the Circular Economy",
+    description:
+      "Waste Reduction Week in Canada is a year-round program that supports principles and practices of the circular economy...",
+    image: {
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/sour-beer-archive.jpg",
+      alt: "keith",
+    },
+  },
+];
 const beerStoreCardDetail = [
   {
     title: "2022 Stewardship Report, Circularity in Action for 95 Years",
@@ -105,7 +152,7 @@ const settings = {
     {
       breakpoint: 1300,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 4,
       },
     },
     {
@@ -125,15 +172,17 @@ const BeerRecpieSlidersettings = {
 
   responsive: [
     {
-      breakpoint: 1300,
+      breakpoint: 1280,
       settings: {
         slidesToShow: 2,
+        dots: true,
       },
     },
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 1,
+        dots: true,
       },
     },
   ],
@@ -265,12 +314,12 @@ const Home = () => {
           <h2 className="text-[16px]">{`SEE WHAT'S`}</h2>
           <h1 className="text-[30px]">On Sale</h1>
         </div>
-        <div className="container p-0">
+        <div className="container newbeers ps-[80px]  pe-[80px]">
           <Slider {...settings}>
             {productCardInfo.map((product) => {
               return (
                 <ProductCard
-                  className="max-w-[250px]"
+                  className="ms-[20px] me-[20px] bg-white"
                   key={`${product.title}`}
                   title={product.title}
                   image={{
@@ -321,7 +370,7 @@ const Home = () => {
           <p className="uppercase  text-[16px]"> Inspiration for </p>
           <h2 className=" text-[30px]">Beer Recipes &amp; Food Pairings</h2>
         </div>
-        <div className="container recipe">
+        <div className="container recipe ps-[80px]  pe-[80px]">
           <Slider {...BeerRecpieSlidersettings} className="gap-5">
             {beerStoreCardDetail.map((item, idx) => (
               <div key={`${item.title}`} className="ps-[15px] pe-[15px]">
@@ -338,8 +387,8 @@ const Home = () => {
                   // } rounded-[5px] overflow-hidden`
                   className={`${
                     idx === 0
-                      ? "flex-row [&>*]:w-1/2"
-                      : "flex-col [&>*:first-child]:h-[148px] [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
+                      ? "xl:flex-row xl:[&>*]:w-1/2 xl:[&>*:first-child]:h-full [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden object-cover "
+                      : "flex-col [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
                   } flex rounded-[5px] overflow-hidden`}
                   buttonText={"Learn More"}
                   badgeText={"ARTICLE"}
@@ -355,12 +404,12 @@ const Home = () => {
           <p className="uppercase  text-[16px]"> Discover </p>
           <h2 className=" text-[30px]">New Beers</h2>
         </div>
-        <div className="container">
+        <div className="container newbeers ps-[80px]  pe-[80px]">
           <Slider {...settings}>
             {productCardInfo.map((product) => {
               return (
                 <ProductCard
-                  className="max-w-[250px]"
+                  className="ms-[20px] me-[20px] bg-white"
                   key={`${product.title}`}
                   title={product.title}
                   image={{
@@ -412,11 +461,12 @@ const Home = () => {
           <p className="uppercase  text-[16px]"> More From </p>
           <h2 className=" text-[30px]">The Beer Store</h2>
         </div>
-        <div className="container">
+        <div className="container moreFrom ps-[80px]  pe-[80px]">
           <Slider {...beerStoreSliderSettings}>
-            {beerStoreCardDetail.map((item) => {
+            {moreFrombeerStore.map((item) => {
               return (
                 <InfoCard
+                  asLink
                   key={`${item.title}`}
                   title={item.title}
                   image={{
@@ -425,9 +475,12 @@ const Home = () => {
                     width: 200,
                     height: 298,
                   }}
+                  className="rounded-[5px] overflow-hidden border-0 shadow-none ms-[20px] me-[20px]"
                   buttonText={"Learn More"}
-                  badgeText={"ARTICLE"}
-                  description={"testing"}
+                  // badgeText={"ARTICLE"}
+                  description={
+                    "At The Beer Store, we are serious about our commitment to the environment. We work hard every day to protect the environment..."
+                  }
                 />
               );
             })}

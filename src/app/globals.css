@@ -10,37 +10,44 @@
     --primary-foreground: 0, 0%, 0%;
     --secondary: 0, 0%, 0%, 1;
     --secondary-foreground: 0, 100%, 100%, 1;
+    --link-primary: 28, 77.8%, 45.9%;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
 }
+.tbs-link-text {
+  color: hsl(var(--link-primary));
+}
 
-.slick-slider .slick-prev:before,
+/* .slick-slider .slick-prev:before,
 :before {
   display: none;
-}
-.slick-next {
+} */
+/* .slick-next {
   left: -85px;
 }
 .slick-next {
   right: 85px;
-}
-.on-sale-section .slick-prev,
+} */
+/* .on-sale-section .slick-prev,
 .on-sale-section .slick-next {
   width: 48px;
   height: 48px;
-}
-.slick-arrow .slick-next,
+} */
+/* .slick-arrow .slick-next,
 .slick-arrow .slick-next {
   display: unset !important;
-}
-.recipe .slick-track > div:first-child {
-  width: 66% !important;
-}
-.recipe .slick-track > div:not(:first-child) {
-  width: 33% !important;
+} */
+
+@media screen and (min-width: 1280px) {
+  .recipe .slick-track > div:first-child {
+    width: 66% !important;
+  }
+  .recipe .slick-track > div:not(:first-child) {
+    width: 33% !important;
+  }
 }
 .recipe .slick-track .slick-slide {
   margin-top: 30px;
@@ -62,7 +69,7 @@ body {
   font-size: 11px;
   padding: 10px 15px;
 }
-.info-header img {
+.recipe .info-header img {
   height: 100%;
   object-fit: cover;
 }
@@ -73,4 +80,32 @@ body {
   height: 20px;
   top: 10px;
   left: 14px;
+}
+.moreFrom .info-header {
+  height: 100px;
+}
+.moreFrom .info-header img {
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.moreFrom .info-content {
+  padding: 0;
+  border: none;
+  padding-top: 30px;
+}
+.moreFrom .info-content h3 {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+.moreFrom .info-content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.moreFrom .info-footer {
+  padding: 0;
+}
+.newbeers .product-footer button {
+  height: 40px;
+  font-size: 14px;
 }
