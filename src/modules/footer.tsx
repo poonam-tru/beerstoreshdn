@@ -88,7 +88,7 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="px-5 pb-5 bg-black">
+    <footer className="container px-5 pb-5 bg-black">
       <div className="grid grid-cols-1 md:grid-cols-5 pt-10">
         <div>
           <a href="">

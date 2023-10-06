@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Button } from "@/components/ui/button";
 const dumyData = [
   {
     url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
@@ -66,7 +67,7 @@ function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute right-[4%] top-[50%]"}
+      className={"absolute right-[130px] top-[calc(50%-30px)]"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -85,7 +86,7 @@ function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[4%] top-[50%] z-10"}
+      className={"absolute left-[130px] top-[calc(50%-30px)] z-10"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -135,16 +136,16 @@ export default function slider() {
             <div className=" w-1/2 flex flex-col items-end text-left justify-center">
               <div>
                 <h1 className="text-5xl text-70px">Holiday Hour</h1>
-                <text className="text-28px">
+                <text className="text-28px leading-[38px] p-[10px]">
                   <span className="block">
                     All stores will be closed on October 9<sup>th</sup> for the
                   </span>
                   Thanksgiving Holiday
                 </text>
-                <div>
-                  <a className="px-2.5 py-1 rounded-s-full rounded-e-full  bg-white">
-                    Learn More.
-                  </a>
+                <div className="mt-[20px]">
+                  <Button  className="px-2.5 py-1 rounded-s-full rounded-e-full  bg-white">
+                    Learn More
+                  </Button>
                 </div>
               </div>
             </div>
@@ -153,12 +154,12 @@ export default function slider() {
         {/* slider2 */}
         <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-2">
           <div className="h-full flex  items-center justify-center">
-            <div className="w-1/2 flex flex-col justify-center text-center">
-              <text className="text-112px leading-102px max-h-235px">
+            <div className="w-1/2 flex flex-col justify-center text-center relative left-[100px]">
+              <text className="text-112px leading-[122px] ">
                 <span className="block"> ULTRA</span>
                 GREAT DEALS
               </text>
-              <div>
+              <div className="mt-[37px]">
                 <a className="px-2.5 py-1  rounded-e-full rounded-s-full bg-white">
                   BROWSE TODAY
                 </a>
@@ -170,7 +171,7 @@ export default function slider() {
         </div>
         {/* slider 3 */}
         <div className="bg-center h-500 bg-fixed bg-no-repeat bg-cover bg-banner-bg-3">
-          <div className="flex flex-col justify-center items-center h-full">
+          <div className="container flex flex-col justify-center items-center h-full">
             <div>
               <text className="text-48px">DISCOVERY CENTER</text>
             </div>
@@ -184,7 +185,7 @@ export default function slider() {
             <div>
               <div>
                 <a className="px-2.5 py-1  rounded-e-full rounded-s-full bg-white">
-                  SHOP.
+                  SHOP
                 </a>
               </div>
             </div>
@@ -193,14 +194,14 @@ export default function slider() {
         {/* sllider 4 */}
         <div className="bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-4">
           <div className="h-full flex  items-center justify-center">
-            <div className="w-1/2 flex flex-col justify-center text-center">
-              <text className="text-82px leading-82px">
+            <div className="w-1/2 flex flex-col justify-center text-center relative left-[60px]">
+              <text className="text-82px leading-[82px]">
                 <span className="block"> More value</span>
-                <span className="block"> More</span>
-                Convenience
+                <span className="block"> More Convenience</span>
+                
               </text>
-              <div>
-                <a className="px-2.5 py-1  rounded-e-full rounded-s-full bg-white">
+              <div className="mt-[35px] ">
+                <a className="px-2.5  py-1  rounded-e-full rounded-s-full bg-white">
                   BROWSE TODAY
                 </a>
               </div>
@@ -210,7 +211,7 @@ export default function slider() {
           </div>
         </div>
         {/* bNNER 5 */}
-        <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
+        <div className="bg-revert bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
           <div className=" flex flex-col  h-full items-center text-center ">
             <div className="max-w-4xl">
               <Image
@@ -232,9 +233,9 @@ export default function slider() {
         </div>
         {/* banner 6 */}
         <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
-          <div className="h-full flex  items-center justify-center pe-36 ps-36">
+          <div className="h-full flex  items-center justify-center  ps-36">
             <div className="w-1/2 flex flex-col justify-center text-start  ">
-              <text className="text-73px  text-white">
+              <text className="text-73px leading-[84px] text-white">
                 <span className="block text-white"> WE LOVE BEER</span>
                 DO YOU?
               </text>
