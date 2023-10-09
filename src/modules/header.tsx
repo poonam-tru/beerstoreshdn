@@ -14,11 +14,15 @@ import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Navigation } from "./navigation";
 import Link from "next/link";
+import Hamburger from "../image/hamburger.png";
 
 const Header = () => {
   return (
     <header className="flex bg-black flex-1 flex-col">
       <nav className="flex justify-between py-5  px-5 flex-row  flex-1 items-center">
+        <div className="sm:block md:hidden">
+          <Image src={Hamburger} alt="" width={40} height={40} />
+        </div>
         <div className="basis-1/4">
           <a href="" className="inline-flex">
             <Image
@@ -148,7 +152,7 @@ const Header = () => {
         </div>
       </nav>
       <Separator className=" h-px bg-white opacity-50" />
-      <div className="px-5">
+      <div className="px-5 hidden md:block">
         <Navigation />
       </div>
     </header>
