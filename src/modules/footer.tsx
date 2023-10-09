@@ -12,7 +12,7 @@ import FooterMenu from "./footerMenu";
 const Footer = () => {
   const dummyData = [
     {
-      title: "Information",
+      title: "INFORMATION",
       data: [
         {
           title: "About Us",
@@ -37,51 +37,39 @@ const Footer = () => {
       ],
     },
     {
-      title: "Information",
+      title: "LEGAL & POLICIES",
       data: [
         {
-          title: "About Us",
+          title: "Accessibility",
           url: "/",
         },
         {
-          title: "Business Services",
+          title: "Contests & Promotions",
           url: "/",
         },
         {
-          title: "Ownership Governance",
+          title: "Privacy Policy",
           url: "/",
         },
         {
-          title: "Contact Us",
-          url: "/",
-        },
-        {
-          title: "Media center",
+          title: "Terms & Conditions",
           url: "/",
         },
       ],
     },
     {
-      title: "Information",
+      title: "EMPLOYMENT",
       data: [
         {
-          title: "About Us",
+          title: "Careers at The Beer Store",
           url: "/",
         },
         {
-          title: "Business Services",
+          title: "Core Values",
           url: "/",
         },
         {
-          title: "Ownership Governance",
-          url: "/",
-        },
-        {
-          title: "Contact Us",
-          url: "/",
-        },
-        {
-          title: "Media center",
+          title: "Divisions",
           url: "/",
         },
       ],
@@ -106,49 +94,76 @@ const Footer = () => {
           </div>
         ))}
         <div className="flex flex-col">
-          <h2 className="text-white uppercase font-semibold mb-6">FOLLOW US</h2>
-          <div className="flex gap-5">
-            <Image
-              alt="alive"
-              src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/instagram.svg"
-              width="30"
-              height="30"
-            />
-            <Image
-              alt="alive"
-              src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/instagram.svg"
-              width="30"
-              height="30"
-            />
-            <Image
-              alt="alive"
-              src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/instagram.svg"
-              width="30"
-              height="30"
-            />
-            <Image
-              alt="alive"
-              src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/instagram.svg"
-              width="30"
-              height="30"
-            />
+          <h2 className="text-white uppercase font-semibold mb-6 text-[18px] font-[Gotham-Bold]">
+            FOLLOW US
+          </h2>
+          <div>
+            <ul className="flex gap-5">
+              <li>
+                <a>
+                  <Image
+                    alt="alive"
+                    src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/facebook.svg"
+                    width={30}
+                    height={30}
+                    style={{ height: "30px", width: "30px" }}
+                  />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <Image
+                    alt="alive"
+                    src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/twitter.svg"
+                    width={30}
+                    height={30}
+                    style={{ height: "30px", width: "30px" }}
+                  />
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a>
+                  <Image
+                    alt="alive"
+                    src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/pinterest.svg"
+                    width={30}
+                    height={30}
+                    style={{ height: "30px", width: "30px" }}
+                  />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <Image
+                    alt="alive"
+                    src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/instagram.svg"
+                    width={30}
+                    height={30}
+                    style={{ height: "30px", width: "30px" }}
+                  />
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="mt-6">
-            <h2 className="text-white uppercase font-semibold mb-3">
+            <h2 className="text-white uppercase font-semibold mb-3 text-[18px] font-[Gotham-Bold]">
               DOWNLOAD OUR APP
             </h2>
-            <div className="flex">
+            <div className="flex flex-col lg:flex-row gap-[15px]">
               <Image
                 alt="alive"
                 src="https://tbsecoms.wpengine.com/wp-content/uploads/2022/08/app-store-small.svg"
-                width="100"
-                height="30"
+                width={105}
+                height={35}
+                style={{ height: "35px", width: "105px" }}
               />
               <Image
                 alt="alive"
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2022/08/google-store-small.svg"
-                width="100"
-                height="30"
+                width={105}
+                height={35}
+                style={{ height: "35px", width: "105px" }}
               />
             </div>
           </div>

@@ -13,6 +13,26 @@
     --link-primary: 28, 77.8%, 45.9%;
   }
 }
+@font-face {
+  font-family: "Leviathan-HTF-Black-Italic";
+  src: url("../fonts/Leviathan-HTF-Black-Italic.otf");
+}
+@font-face {
+  font-family: "Leviathan-HTF-Black";
+  src: url("../fonts/Leviathan-HTF-Black.otf");
+}
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("../fonts/Gotham-Bold.otf");
+}
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("../fonts/Gotham-Medium.otf");
+}
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("../fonts/Gotham-Book.otf");
+}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -82,28 +102,43 @@ body {
   left: 14px;
 }
 .moreFrom .info-header {
-  height: 100px;
+  height: 267px;
 }
 .moreFrom .info-header img {
   object-fit: cover;
   overflow: hidden;
   border-radius: 10px;
+  height: 100% !important;
 }
 .moreFrom .info-content {
   padding: 0;
   border: none;
   padding-top: 30px;
+  
 }
 .moreFrom .info-content h3 {
   font-size: 18px;
+  line-height: 22px;
   margin-bottom: 25px;
+  height: 88px;
+  font-family: "Gotham-Bold";
+
 }
 .moreFrom .info-content p {
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 22px;
   margin-bottom: 10px;
+  font-family: "Gotham-Book";
 }
 .moreFrom .info-footer {
   padding: 0;
+}
+.moreFrom .info-footer a{
+  padding: 0;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Gotham-Medium" !important;
+  text-decoration: underline;
 }
 .newbeers .product-footer button {
   height: 40px;

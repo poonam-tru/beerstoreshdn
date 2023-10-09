@@ -158,12 +158,12 @@ export function Navigation() {
             {[1, 4].includes(IDX) ? (
               <NavigationMenuLink
                 href="/"
-                className="text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base mr-10"
+                className= "font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px] md:text-[14px] text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5"
               >
                 {mainHead}
               </NavigationMenuLink>
             ) : (
-              <NavigationMenuTrigger className=" text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base mr-10">
+              <NavigationMenuTrigger  className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px]  md:text-[14px] text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5">
                 {mainHead}
               </NavigationMenuTrigger>
             )}
@@ -172,18 +172,18 @@ export function Navigation() {
               {content?.map(({ subhead, list }) => (
                 <div className="flex flex-col bg-white" key={`di${subhead}`}>
                   {subhead && (
-                    <div className="flex flex-col gap-3 p-3 w-[180px] border-b-[1px]">
-                      <h2 className="text-[#d06f1a] text-sm flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                    <div className="flex flex-col gap-3 p-3 md:w-[120px] lg:w-[150px] 2xl:w-[180px] border-b-[1px]">
+                      <h2 className="font-[Gotham-Medium] text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
                         {subhead}
                       </h2>
                     </div>
                   )}
-                  <ul className="flex flex-col gap-3 p-3 w-[180px]">
+                  <ul className="flex flex-col 2xl:gap-3 md:gap-1 p-3 md:w-[120px] lg:w-[150px] 2xl:w-[180px]">
                     {list?.map(({ link, href }) => (
                       <li key={`list${link}`}>
                         <NavigationMenuLink href="" asChild>
                           <a
-                            className="p-0 text-sm text-[#4a4f55] hover:text-[#d06f1a]"
+                            className="font-[Gotham-Book] p-0  2xl:text-[14px] xl:text-[12px]  md:text-[10px] text-[#4a4f55] hover:text-[#d06f1a]"
                             href={href}
                           >
                             {link}

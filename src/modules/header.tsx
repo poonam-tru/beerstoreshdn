@@ -34,7 +34,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
-                  className="text-white w-auto h-auto bg-transparent"
+                  className="text-white w-auto h-auto bg-transparent text-[14px] font-Gotham-Book"
                   size={"icon"}
                 >
                   <Image
@@ -49,13 +49,13 @@ const Header = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white py-[25px] px-[30px] relative rounded-[5px] mt-[25px] w-[300px] left-[38px]">
-                <DropdownMenuLabel className="text-base">
+                <DropdownMenuLabel className="text-base text-[16px] font-Gotham-Medium">
                   Login to Your Account.
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <Input
                   placeholder="Enter Email Address"
-                  className="border-[#ccc] py-[8px] px-[12px] rounded-[5px] text-[#555]"
+                  className="border-[#ccc] py-[8px] px-[12px] rounded-[5px] text-[#555] text-[14px]"
                   endIcon={
                     <Image
                       src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/icon_mail.svg"
@@ -67,7 +67,7 @@ const Header = () => {
                 />
                 <Input
                   placeholder="Enter Password"
-                  className="border-[#ccc] py-[8px] px-[12px] rounded-[5px] mt-[10px] text-[#555]"
+                  className="border-[#ccc] py-[8px] px-[12px] rounded-[5px] mt-[10px] text-[#555] text-[14px]"
                   endIcon={
                     <Image
                       src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/icon_password.svg"
@@ -80,14 +80,19 @@ const Header = () => {
                 <div className="flex justify-end my-2">
                   <Button
                     variant={"link"}
-                    className="p-0 text-right h-auto text-[#555]"
+                    className="p-0 text-right h-auto text-[#555] text-[12px] font-Gotham-Medium"
                   >
                     Forgot Password?
                   </Button>
                 </div>
                 <div className="flex flex-col">
-                  <Button className="p-0">Login</Button>
-                  <Button variant={"secondary"} className="p-0 mt-3">
+                  <Button className="p-0 text-[14px] font-Gothm-Bold">
+                    Login
+                  </Button>
+                  <Button
+                    variant={"secondary"}
+                    className="p-0 mt-3 text-[12px] font-Gothm-Medium"
+                  >
                     Create Account
                   </Button>
                 </div>
@@ -98,7 +103,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
-                  className="text-white w-auto h-auto  bg-transparent"
+                  className="text-white w-auto h-auto  bg-transparent text-[14px] font-Gothm-Book"
                   size={"icon"}
                 >
                   <Image
@@ -113,19 +118,26 @@ const Header = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white relative rounded-[5px] mt-[25px] w-[300px] right-[22px] p-0">
-                <DropdownMenuLabel className="text-base p-[15px] border-b-[2px] border-[#ddd]">
+                <DropdownMenuLabel className="text-base text-[18px] font-Gotham-Medium p-[15px] border-b-[2px] border-[#ddd]">
                   Current Store
                 </DropdownMenuLabel>
                 <div className="flex p-[15px]">
-                  <Link href="">
+                  <Link href="" className="text-[14px] font-Gotham-Book ">
                     <span className="flex">HEARST-11862km</span>
                     <span className="flex">1106 Front St., P0L 1N0</span>
                     <span className="flex">Click here for Holiday Hours</span>
                   </Link>
                 </div>
                 <div className="flex p-[15px] border-t-[2px] border-[#ddd] gap-2">
-                  <Button>Direction</Button>
-                  <Button variant={"outline"}>Create store</Button>
+                  <Button className="text-[12px] font-Gotham-Bold h-[36px] rounded-[5px]">
+                    Direction
+                  </Button>
+                  <Button
+                    className="text-[12px] font-Gotham-Bold h-[36px] rounded-[5px]"
+                    variant={"outline"}
+                  >
+                    Create store
+                  </Button>
                 </div>
                 <DropdownMenuSeparator />
 

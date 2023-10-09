@@ -58,16 +58,16 @@ const ProductCard = ({
         )}
       </CardHeader>
 
-      <CardContent className="ps-[20px] pe-[20px] text-[14px]">
+      <CardContent className="ps-[20px] pe-[20px]  font-[Gotham-Medium] text-[14px]">
         {title && (
-          <CardTitle className="mb-4 mt-4 uppercase text-[14px]">
+          <CardTitle className="mb-[15px] mt-[20px] uppercase font-[Gotham-Bold] text-[14px] h-[60px]">
             {title}
           </CardTitle>
         )}
         {badgeText && (
           <Badge
             variant={"default"}
-            className="bg-[#b02e2f] uppercase text-white hover:bg-[#b02e2f] w-[50px] h-[50px] justify-center absolute right-4 top-4"
+            className="bg-[#b02e2f] uppercase text-[12px] font-[Gotham-Medium] text-white hover:bg-[#b02e2f] w-[50px] h-[50px] justify-center absolute right-4 top-4"
           >
             {badgeText}
           </Badge>
@@ -77,7 +77,7 @@ const ProductCard = ({
       </CardContent>
       <CardFooter className="flex mt-[10px] ps-[20px] pe-[20px] pb-[20px] product-footer">
         {buttonText && (
-          <Button className="w-full rounded-[100px]" onClick={onClickButton}>
+          <Button className="w-full text-[14px] font-[Gotham-Medium] rounded-[100px]" onClick={onClickButton}>
             {buttonText}
           </Button>
         )}

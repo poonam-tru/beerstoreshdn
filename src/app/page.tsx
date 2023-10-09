@@ -12,7 +12,7 @@ function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute right-[-4%] top-[50%]"}
+      className={"absolute right-[-4%] top-[calc(50%-24px)]"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -31,7 +31,7 @@ function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[-4%] top-[50%]"}
+      className={"absolute left-[-4%] top-[calc(50%-24px)] z-10"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -60,7 +60,7 @@ const moreFrombeerStore = [
     title: "Careers at The Beer Store",
     description: "Are you a beer enthusiast? Come work with us!",
     image: {
-      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer_concert_style_pairings-archive.jpg",
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2019/05/career_homepage.png",
       alt: "keith",
     },
   },
@@ -70,7 +70,7 @@ const moreFrombeerStore = [
     description:
       "The Beer Store and Goodwill Industries are pleased to announce their partnership during Waste  Reduction Week",
     image: {
-      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/what-is-amber-ale-archive.jpg",
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2020/11/Covidposting_ArticleArchive.jpg",
       alt: "keith",
     },
   },
@@ -79,7 +79,7 @@ const moreFrombeerStore = [
       "Important Notice To Members, Former Members And Other Beneficiaries Of The Brewers Retail Inc. Pension Plan For Salaried Employees",
     description: "Are you a beer enthusiast? Come work with us!",
     image: {
-      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/beer-myths-busted-archive.jpg",
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2020/11/Covidposting_ArticleArchive.jpg",
       alt: "keith",
     },
   },
@@ -88,7 +88,7 @@ const moreFrombeerStore = [
     description:
       "Waste Reduction Week in Canada is a year-round program that supports principles and practices of the circular economy...",
     image: {
-      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2023/09/sour-beer-archive.jpg",
+      url: "https://tbsecoms.wpengine.com/wp-content/uploads/2020/11/Covidposting_ArticleArchive.jpg",
       alt: "keith",
     },
   },
@@ -140,7 +140,7 @@ const beerStoreCardDetail = [
     },
   },
 ];
-const settings = {
+const settingsNewBeer = {
   dots: false,
   infinite: true,
   speed: 500,
@@ -152,13 +152,42 @@ const settings = {
     {
       breakpoint: 1300,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 3,
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 769,
       settings: {
         slidesToShow: 1,
+      },
+    },
+  ],
+};
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 1008,
+      settings: {
+        slidesToShow: 2,
       },
     },
   ],
@@ -173,13 +202,22 @@ const BeerRecpieSlidersettings = {
   responsive: [
     {
       breakpoint: 1280,
+      dots: true,
       settings: {
         slidesToShow: 2,
         dots: true,
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 1008,
+      settings: {
+        slidesToShow: 2,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 650,
+      dots: true,
       settings: {
         slidesToShow: 1,
         dots: true,
@@ -203,9 +241,9 @@ const beerStoreSliderSettings = {
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 1008,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
       },
     },
   ],
@@ -285,13 +323,40 @@ const readMoreDetail = [
   },
 ];
 const Home = () => {
+  function equalheight(selector) {
+    const elements = document.querySelectorAll(selector);
+    let maxHeight = 0;
+
+    elements.forEach((element) => {
+      const elementHeight = element.offsetHeight;
+      if (elementHeight > maxHeight) {
+        maxHeight = elementHeight;
+      }
+    });
+
+    elements.forEach((element) => {
+      element.style.height = maxHeight + "px";
+    });
+  }
+
+  window.addEventListener("load", function () {
+    equalheight(".equal-h");
+  });
+
+  window.addEventListener("resize", function () {
+    // Delay the execution of equalheight('.blog-title') by 200 milliseconds
+    setTimeout(function () {
+      equalheight(".equal-h");
+    }, 200);
+  });
+
   return (
     <>
       <BannerSlider></BannerSlider>
 
       <section className="bg-white py-[70px]">
         <div className="container ">
-          <div className="grid grid-cols-2 gap-6">
+          <div className="flex flex-col lg:flex-row md:mx-[75px] gap-6">
             {readMoreDetail.map((item) => (
               <ReadMoreCard
                 className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')]`}
@@ -310,9 +375,9 @@ const Home = () => {
         </div>
       </section>
       <section className="bg-[#F4F4F4]  py-[70px]  on-sale-section">
-        <div className="flex flex-col text-center">
-          <h2 className="text-[16px]">{`SEE WHAT'S`}</h2>
-          <h1 className="text-[30px]">On Sale</h1>
+        <div className="flex flex-col text-center mb-[35px]">
+          <h2 className="text-[16px] font-[Gotham-Book]">{`SEE WHAT'S`}</h2>
+          <h1 className="text-[30px] font-[Leviathan-HTF-Black]">On Sale</h1>
         </div>
         <div className="container newbeers ps-[80px]  pe-[80px]">
           <Slider {...settings}>
@@ -328,7 +393,7 @@ const Home = () => {
                     width: 250,
                     height: 250,
                   }}
-                  buttonText={"Buy Now"}
+                  buttonText={"Save Now"}
                   badgeText={product.onSale && "Sale"}
                   description={
                     <>
@@ -360,15 +425,20 @@ const Home = () => {
           </Slider>
         </div>
         <div className="w-full text-center  mt-[40px]">
-          <Button className="rounded-full bg-black text-#f4f4f4">
+          <Button className="rounded-full text-[16px] font-[Gotham-Bold] max-h-[50px] bg-black text-#f4f4f4">
             EXPLORE ALL SAVNGS
           </Button>
         </div>
       </section>
       <section className="bg-white  py-[70px]">
-        <div className="flex flex-col text-center">
-          <p className="uppercase  text-[16px]"> Inspiration for </p>
-          <h2 className=" text-[30px]">Beer Recipes &amp; Food Pairings</h2>
+        <div className="flex flex-col text-center mb-[35px]">
+          <p className="uppercase text-[16px] font-[Gotham-Book]">
+            {" "}
+            Inspiration for{" "}
+          </p>
+          <h2 className=" text-[30px] font-[Leviathan-HTF-Black]">
+            Beer Recipes &amp; Food Pairings
+          </h2>
         </div>
         <div className="container recipe ps-[80px]  pe-[80px]">
           <Slider {...BeerRecpieSlidersettings} className="gap-5">
@@ -385,7 +455,7 @@ const Home = () => {
                   // className={`${
                   //   idx === 0 && "col-span-2"
                   // } rounded-[5px] overflow-hidden`
-                  className={`${
+                  className={`equal-h ${
                     idx === 0
                       ? "xl:flex-row xl:[&>*]:w-1/2 xl:[&>*:first-child]:h-full [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden object-cover "
                       : "flex-col [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
@@ -400,12 +470,15 @@ const Home = () => {
         </div>
       </section>
       <section className="bg-[#f4f4f4]  py-[70px]">
-        <div className="flex flex-col text-center">
-          <p className="uppercase  text-[16px]"> Discover </p>
-          <h2 className=" text-[30px]">New Beers</h2>
+        <div className="flex flex-col text-center mb-[35px]">
+          <p className="uppercase  text-[16px]  font-[Gotham-Book]">
+            {" "}
+            Discover{" "}
+          </p>
+          <h2 className=" text-[30px] font-[Leviathan-HTF-Black]">New Beers</h2>
         </div>
         <div className="container newbeers ps-[80px]  pe-[80px]">
-          <Slider {...settings}>
+          <Slider {...settingsNewBeer}>
             {productCardInfo.map((product) => {
               return (
                 <ProductCard
@@ -457,9 +530,14 @@ const Home = () => {
       </section>
 
       <section className="bg-white  py-[70px]">
-        <div className="flex flex-col text-center">
-          <p className="uppercase  text-[16px]"> More From </p>
-          <h2 className=" text-[30px]">The Beer Store</h2>
+        <div className="flex flex-col text-center mb-[35px]">
+          <p className="uppercase  text-[16px] font-[Gotham-Bold]">
+            {" "}
+            More From{" "}
+          </p>
+          <h2 className=" text-[30px] font-[Leviathan-HTF-Black]">
+            The Beer Store
+          </h2>
         </div>
         <div className="container moreFrom ps-[80px]  pe-[80px]">
           <Slider {...beerStoreSliderSettings}>
