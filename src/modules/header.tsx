@@ -34,6 +34,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
+                  variant={"link"}
                   className="text-white w-auto h-auto bg-transparent"
                   size={"icon"}
                 >
@@ -100,6 +101,7 @@ const Header = () => {
                 <Button
                   className="text-white w-auto h-auto  bg-transparent"
                   size={"icon"}
+                  variant={"link"}
                 >
                   <Image
                     className="mr-2.5"

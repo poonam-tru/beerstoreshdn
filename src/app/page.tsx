@@ -360,7 +360,7 @@ const Home = () => {
           </Slider>
         </div>
         <div className="w-full text-center  mt-[40px]">
-          <Button className="rounded-full bg-black text-#f4f4f4">
+          <Button className="rounded-full" variant={"secondary"}>
             EXPLORE ALL SAVNGS
           </Button>
         </div>
