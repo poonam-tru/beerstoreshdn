@@ -109,6 +109,7 @@ const Header = () => {
                 <Button
                   className="text-white w-auto h-auto  bg-transparent text-[14px] font-Gothm-Book"
                   size={"icon"}
+                  variant={"link"}
                 >
                   <Image
                     className="mr-2.5"

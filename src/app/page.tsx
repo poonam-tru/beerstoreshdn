@@ -323,7 +323,7 @@ const readMoreDetail = [
   },
 ];
 const Home = () => {
-  function equalheight(selector) {
+  function equalheight(selector:any) {
     const elements = document.querySelectorAll(selector);
     let maxHeight = 0;
 
@@ -425,7 +425,7 @@ const Home = () => {
           </Slider>
         </div>
         <div className="w-full text-center  mt-[40px]">
-          <Button className="rounded-full text-[16px] font-[Gotham-Bold] max-h-[50px] bg-black text-#f4f4f4">
+          <Button className="rounded-full text-[16px] font-[Gotham-Bold] max-h-[50px]">
             EXPLORE ALL SAVNGS
           </Button>
         </div>

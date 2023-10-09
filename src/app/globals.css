@@ -40,6 +40,27 @@ body {
 .tbs-link-text {
   color: hsl(var(--link-primary));
 }
+.btn-slide,
+.btn-slide::before {
+  transition: transform 1s cubic-bezier(0.07, 0.51, 0.12, 1);
+}
+.btn-slide::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%) skew(-45deg);
+  transform-origin: 0 0;
+  width: 150%;
+  display: flex;
+  height: 100%;
+  z-index: -1; 
+  transform-origin: 0 0;
+}
+.btn-slide:hover::before {
+  transform: translateX(0) skew(-45deg);
+}
 
 /* .slick-slider .slick-prev:before,
 :before {
