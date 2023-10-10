@@ -323,7 +323,7 @@ const readMoreDetail = [
   },
 ];
 const Home = () => {
-  function equalheight(selector:any) {
+  function equalheight(selector: any) {
     const elements = document.querySelectorAll(selector);
     let maxHeight = 0;
 
@@ -356,7 +356,7 @@ const Home = () => {
 
       <section className="bg-white py-[70px]">
         <div className="container ">
-          <div className="flex flex-col lg:flex-row md:mx-[75px] gap-6">
+          <div className="flex justify-center flex-col lg:flex-row md:mx-[75px] gap-6">
             {readMoreDetail.map((item) => (
               <ReadMoreCard
                 className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')]`}
@@ -457,7 +457,7 @@ const Home = () => {
                   // } rounded-[5px] overflow-hidden`
                   className={`equal-h ${
                     idx === 0
-                      ? "xl:flex-row xl:[&>*]:w-1/2 xl:[&>*:first-child]:h-full [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden object-cover "
+                      ? "xl:flex-row xl:[&>*]:w-1/2  xl:[&>*:first-child]:h-full [&>*:first-child]:h-[50%] [&>*:first-child]:overflow-hidden object-cover "
                       : "flex-col [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
                   } flex rounded-[5px] overflow-hidden`}
                   buttonText={"Learn More"}
@@ -522,7 +522,7 @@ const Home = () => {
             })}
           </Slider>
           <div className="w-full text-center  mt-[40px]">
-            <Button className="rounded-full bg-black text-#f4f4f4">
+            <Button className="rounded-full bg-black text-#f4f4f4 h-[50px]">
               EXPLORE NEW BEERS
             </Button>
           </div>

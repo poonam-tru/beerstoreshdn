@@ -67,9 +67,10 @@ function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute right-[4%] top-[calc(50%-30px)] sm:h-[30px] sm:w-[30px]"}
+      className={
+        "absolute right-[4%] top-[calc(50%-30px)] sm:h-[30px] sm:w-[30px]"
+      }
       style={{ ...style }}
-      
       onClick={onClick}
     >
       <Image
@@ -141,14 +142,14 @@ export default function slider() {
               <h1 className=" xl:text-70px md:text-[40px] font-[Leviathan-HTF-Black-Italic]">
                 Holiday Hour
               </h1>
-              <text className="xl:text-28px leading-[38px] lg:text-[24px] p-[10px] font-[Gotham-Bold]">
+              <text className="xl:text-24px leading-[38px] lg:text-[24px] p-[10px] font-[Gotham-Bold]">
                 All stores will be closed on October 9<sup>th</sup> for the
                 Thanksgiving Holiday
               </text>
               <div className="mt-[20px]">
-                <a className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold] rounded-s-full rounded-e-full text-black bg-[#f4b233]">
+                <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold] rounded-s-full rounded-e-full text-black bg-[#f4b233] h-[50px]">
                   Learn More
-                </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -158,14 +159,14 @@ export default function slider() {
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-2">
         <div className="h-full flex container mx-auto my-0 px-[15px]  items-center justify-center">
           <div className="w-1/2 flex flex-col justify-center text-center relative left-[100px]">
-            <text className="xl:text-112px sm:text-[45px] sm:leading-[45px] xl:leading-[122px] font-[Leviathan-HTF-Black]">
+            <text className="xl:text-82px sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
               <span className="block"> ULTRA</span>
               GREAT DEALS
             </text>
             <div className="mt-[20px]">
-              <a className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full bg-white font-[Gotham-Bold]">
+              <Button className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full bg-black text-white font-[Gotham-Bold] h-[50px]">
                 BROWSE TODAY
-              </a>
+              </Button>
             </div>
           </div>
 
@@ -189,9 +190,9 @@ export default function slider() {
           </div>
           <div>
             <div className="mt-[20px]">
-              <a className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-white">
+              <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-black text-white h-[50px]">
                 SHOP
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -205,9 +206,9 @@ export default function slider() {
               <span className="block"> More Convenience</span>
             </text>
             <div className="mt-[35px] ">
-              <a className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-white">
+              <Button className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-black text-white h-[50px]">
                 SHOP NOW
-              </a>
+              </Button>
             </div>
           </div>
 
@@ -228,9 +229,9 @@ export default function slider() {
               className="bg-cover"
             />
             <div className="text-end me-12">
-              <a className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-white">
+              <Button className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold] rounded-e-full rounded-s-full  bg-black text-white h-[50px]">
                 SHOP NOW
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -239,7 +240,7 @@ export default function slider() {
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
         <div className="h-full flex  mx-auto my-0   items-center justify-center  ps-[10%]">
           <div className="w-1/2 flex flex-col justify-center text-start  ">
-            <text className="xl:text-73px xl:leading-[84px] sm:text-[45px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
+            <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] sm:text-[45px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
               <span className="block text-white"> WE LOVE BEER</span>
               DO YOU?
             </text>
@@ -249,9 +250,9 @@ export default function slider() {
               organization, Apply Today!
             </text>
             <div className="py-[20px]">
-              <a className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-white">
+              <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]  rounded-e-full rounded-s-full text-black bg-[#f4b233] h-[50px]">
                 BROWSE TODAY
-              </a>
+              </Button>
             </div>
           </div>
 
