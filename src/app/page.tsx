@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import InfoCard from "@/modules/infoCard";
 import { Button } from "@/components/ui/button";
 import ReadMoreCard from "@/modules/readMoreCard";
+import React from "react";
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -323,7 +324,7 @@ const readMoreDetail = [
   },
 ];
 const Home = () => {
-  function equalheight(selector:any) {
+  function equalheight(selector: any) {
     const elements = document.querySelectorAll(selector);
     let maxHeight = 0;
 
@@ -339,15 +340,17 @@ const Home = () => {
     });
   }
 
-  window.addEventListener("load", function () {
-    equalheight(".equal-h");
-  });
-
-  window.addEventListener("resize", function () {
-    // Delay the execution of equalheight('.blog-title') by 200 milliseconds
-    setTimeout(function () {
+  React.useEffect(() => {
+    window.addEventListener("load", function () {
       equalheight(".equal-h");
-    }, 200);
+    });
+
+    window.addEventListener("resize", function () {
+      // Delay the execution of equalheight('.blog-title') by 200 milliseconds
+      setTimeout(function () {
+        equalheight(".equal-h");
+      }, 200);
+    });
   });
 
   return (
