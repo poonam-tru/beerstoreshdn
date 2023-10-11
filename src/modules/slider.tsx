@@ -67,9 +67,7 @@ function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={
-        "absolute right-[4%] top-[calc(50%-30px)] sm:h-[30px] sm:w-[30px]"
-      }
+      className={"absolute right-[4%] top-[calc(50%-30px)] "}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -79,7 +77,7 @@ function SampleNextArrow(props: any) {
         }
         height={60}
         width={60}
-        className="sm:h-[30px] sm:w-[30px]"
+        className="h-[30px] w-[30px] md:h-[60px] md:w-[60px]"
         alt="kkk"
       />
     </div>
@@ -100,13 +98,36 @@ function SamplePrevArrow(props: any) {
         height={60}
         width={60}
         alt="kk"
-        className="sm:h-[30px] sm:w-[30px]"
+        className="h-[30px] w-[30px] md:h-[60px] md:w-[60px]"
       />
     </div>
   );
 }
 export default function slider() {
   const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+  const insideSettings = {
     dots: false,
     infinite: true,
     speed: 500,
@@ -157,8 +178,8 @@ export default function slider() {
       </div>
       {/* slider2 */}
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-2">
-        <div className="h-full flex container mx-auto my-0 px-[15px]  items-center justify-center">
-          <div className="w-1/2 flex flex-col justify-center text-center relative left-[100px]">
+        <div className="h-full flex container mx-auto my-0 px-[15px] md:flex-row flex-col md:items-center justify-center">
+          <div className="md:w-1/2 flex flex-col justify-center text-center relative left-[100px]">
             <text className="xl:text-82px sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
               <span className="block"> ULTRA</span>
               GREAT DEALS
@@ -170,7 +191,7 @@ export default function slider() {
             </div>
           </div>
 
-          <div className="w-1/2 h-full bg-banner-fe-2 bg-center bg-fixed bg-no-repeat bg-cover z-10"></div>
+          <div className="sm:w-1/2 w-1/2 h-1/2 sm:h-full bg-banner-fe-2 bg-center bg-fixed bg-no-repeat bg-cover z-10"></div>
         </div>
       </div>
       {/* slider 3 */}
@@ -199,8 +220,8 @@ export default function slider() {
       </div>
       {/* sllider 4 */}
       <div className="bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-4">
-        <div className="h-full flex container mx-auto my-0 px-[15px]  items-center justify-center">
-          <div className="w-1/2 flex flex-col justify-center text-center relative left-[60px]">
+        <div className="h-full flex justify-center container mx-auto my-0 md:flex-row flex-col md:items-center md:justify-center">
+          <div className="md:w-1/2  flex flex-col justify-center text-center relative left-[60px]">
             <text className="xl:text-82px xl:leading-[82px] sm:text-[40px] sm:leading-[40px]   font-[Leviathan-HTF-Black]">
               <span className="block"> More value</span>
               <span className="block"> More Convenience</span>
@@ -212,12 +233,12 @@ export default function slider() {
             </div>
           </div>
 
-          <div className="w-1/2 h-full bg-banner-fe-4 bg-bottom bg-fixed bg-no-repeat  z-10"></div>
+          <div className="sm:w-1/2 justify-center h-1/2 sm:h-full bg-contain bg-banner-fe-4 sm:bg-bottom bg-fixed bg-no-repeat  z-10"></div>
         </div>
       </div>
       {/* bNNER 5 */}
       <div className="bg-revert bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
-        <div className=" flex flex-col  h-full items-center container mx-auto my-0 px-[15px] text-center ">
+        <div className=" flex flex-col justify-center  h-full items-center container mx-auto my-0 px-[15px] text-center ">
           <div className="max-w-4xl">
             <Image
               src={
@@ -238,13 +259,13 @@ export default function slider() {
       </div>
       {/* banner 6 */}
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
-        <div className="h-full flex  mx-auto my-0   items-center justify-center  ps-[10%]">
-          <div className="w-1/2 flex flex-col justify-center text-start  ">
-            <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] sm:text-[45px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
+        <div className="h-full flex  mx-auto my-0   md:items-center justify-center flex-col md:flex-row ps-[10%]">
+          <div className="md:w-1/2 sm:w-full flex flex-col justify-center text-start  ">
+            <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] sm:text-[25px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
               <span className="block text-white"> WE LOVE BEER</span>
               DO YOU?
             </text>
-            <text className="xl:text-28px sm:text-[20px] text-white font-[Gotham-Bold]">
+            <text className="md:text-28px text-[14px] text-white font-[Gotham-Bold]">
               If you share our passion for all things beer and align with our
               core values of being a socially and environmentally responsible
               organization, Apply Today!
@@ -256,7 +277,7 @@ export default function slider() {
             </div>
           </div>
 
-          <div className="w-1/2 h-full bg-banner-fe-6 bg-center bg-no-repeat bg-cover z-10"></div>
+          <div className="md:w-1/2 sm:w-full h-full bg-banner-fe-6 bg-center bg-no-repeat bg-cover z-10"></div>
         </div>
       </div>
     </Slider>

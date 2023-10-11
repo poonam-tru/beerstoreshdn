@@ -78,7 +78,7 @@ const Footer = () => {
   return (
     <footer className="px-5 pb-5 bg-black">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-5 pt-10">
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-5 pt-10">
           <div>
             <a href="">
               <Image
@@ -95,13 +95,13 @@ const Footer = () => {
             </div>
           ))}
           <div className="flex flex-col">
-            <h2 className="text-white uppercase font-semibold mb-6 text-[18px] font-[Gotham-Bold]">
+            <h2 className="text-white uppercase font-semibold mb-6  md:text-[14px]  text-[18px] font-[Gotham-Bold]">
               FOLLOW US
             </h2>
             <div>
               <ul className="flex gap-5">
                 <li>
-                  <a>
+                  <a href="#">
                     <Image
                       alt="alive"
                       src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/facebook.svg"
@@ -112,7 +112,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="#">
                     <Image
                       alt="alive"
                       src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/twitter.svg"
@@ -124,7 +124,7 @@ const Footer = () => {
                 </li>
                 <li>
                   {" "}
-                  <a>
+                  <a href="#">
                     <Image
                       alt="alive"
                       src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/pinterest.svg"
@@ -135,7 +135,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="#">
                     <Image
                       alt="alive"
                       src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/instagram.svg"
@@ -148,24 +148,28 @@ const Footer = () => {
               </ul>
             </div>
             <div className="mt-6">
-              <h2 className="text-white uppercase font-semibold mb-3 text-[18px] font-[Gotham-Bold]">
+              <h2 className="text-white uppercase font-semibold  md:text-[14px]  mb-3 text-[18px] font-[Gotham-Bold]">
                 DOWNLOAD OUR APP
               </h2>
               <div className="flex flex-col lg:flex-row gap-[15px]">
-                <Image
-                  alt="alive"
-                  src="https://tbsecoms.wpengine.com/wp-content/uploads/2022/08/app-store-small.svg"
-                  width={105}
-                  height={33}
-                  style={{ height: "32px", width: "105px" }}
-                />
-                <Image
-                  alt="alive"
-                  src="https://tbsecomd.wpengine.com/wp-content/uploads/2022/08/google-store-small.svg"
-                  width={105}
-                  height={35}
-                  style={{ height: "35px", width: "105px" }}
-                />
+                <a href="#">
+                  <Image
+                    alt="alive"
+                    src="https://tbsecoms.wpengine.com/wp-content/uploads/2022/08/app-store-small.svg"
+                    width={90}
+                    height={35}
+                    // style={{ height: "35px", width: "105px" }}
+                  />
+                </a>
+                <a href="#">
+                  <Image
+                    alt="alive"
+                    src="https://tbsecomd.wpengine.com/wp-content/uploads/2022/08/google-store-small.svg"
+                    width={105}
+                    height={35}
+                    // style={{ height: "35px", width: "105px" }}
+                  />
+                </a>
               </div>
             </div>
           </div>

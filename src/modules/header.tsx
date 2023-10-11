@@ -50,8 +50,8 @@ const Header = () => {
                       width={20}
                       height={20}
                     />
-                    Login
-                    <ChevronDown className="h-4 w-4 ml-2" />
+                    <p className="hidden sm:block">Login</p>
+                    <ChevronDown className="h-4 w-4 ml-2"/>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-white py-[25px] px-[30px] relative rounded-[5px] mt-[25px] w-[300px] left-[38px]">
@@ -105,7 +105,10 @@ const Header = () => {
                   <div className="indicator w-[20px] h-[20px] absolute bg-white top-[-9px] z-[1024] rotate-45 left-[50%] translate-x-[-50%] "></div>
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Separator orientation="vertical" className="mx-7 bg-white h-6" />
+              <Separator
+                orientation="vertical"
+                className="mx-3 sm:mx-7 bg-white h-6"
+              />
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -114,13 +117,13 @@ const Header = () => {
                     variant={"link"}
                   >
                     <Image
-                      className="mr-2.5"
+                      className="sm:mr-2.5"
                       src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/pin.svg"
                       alt=""
                       width={16}
                       height={24}
                     />
-                    HEARST-11862km
+                    <p className="hidden sm:block">HEARST-11862km</p>
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>

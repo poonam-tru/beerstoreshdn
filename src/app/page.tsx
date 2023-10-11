@@ -12,7 +12,7 @@ function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute right-[-4%] top-[calc(50%-24px)]"}
+      className={"absolute right-[-10%] sm:right-[-4%] top-[calc(50%-24px)]"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -31,7 +31,7 @@ function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[-4%] top-[calc(50%-24px)] z-10"}
+      className={"absolute left-[-10%]   sm:left-[-4%] top-[calc(50%-24px)] z-10"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -190,6 +190,12 @@ const settings = {
         slidesToShow: 2,
       },
     },
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
   ],
 };
 const BeerRecpieSlidersettings = {
@@ -235,15 +241,15 @@ const beerStoreSliderSettings = {
   prevArrow: <SamplePrevArrow />,
   responsive: [
     {
-      breakpoint: 1300,
+      breakpoint: 1008,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 1008,
+      breakpoint: 500,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
       },
     },
   ],
@@ -457,7 +463,7 @@ const Home = () => {
                   // } rounded-[5px] overflow-hidden`
                   className={`equal-h ${
                     idx === 0
-                      ? "xl:flex-row xl:[&>*]:w-1/2  xl:[&>*:first-child]:h-full [&>*:first-child]:h-[50%] [&>*:first-child]:overflow-hidden object-cover "
+                      ? "xl:flex-row xl:[&>*]:w-1/2  xl:[&>*:first-child]:h-full [&>*:first-child]:h-[50%] [&>*:first-child]:overflow-hidden object-cover"
                       : "flex-col [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
                   } flex rounded-[5px] overflow-hidden`}
                   buttonText={"Learn More"}
