@@ -12,7 +12,7 @@ function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute right-[-10%] sm:right-[-4%] top-[calc(50%-24px)]"}
+      className={"absolute right-[-10%] md:right-[-4%] top-[calc(50%-24px)]"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -23,6 +23,7 @@ function SampleNextArrow(props: any) {
         alt="next"
         width={48}
         height={48}
+        className="h-[30px] w-[30px] md:h-[48px] md:w-[48px]"
       />
     </div>
   );
@@ -31,7 +32,7 @@ function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[-10%]   sm:left-[-4%] top-[calc(50%-24px)] z-10"}
+      className={"absolute left-[-10%]   md:left-[-4%] top-[calc(50%-24px)] z-10"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -42,6 +43,7 @@ function SamplePrevArrow(props: any) {
         alt="prev"
         width={48}
         height={48}
+        className="h-[30px] w-[30px] md:h-[48px] md:w-[48px]"
       />
     </div>
   );
@@ -362,10 +364,10 @@ const Home = () => {
 
       <section className="bg-white py-[70px]">
         <div className="container ">
-          <div className="flex justify-center flex-col lg:flex-row md:mx-[75px] gap-6">
+          <div className="flex justify-center flex-col lg:flex-row mx-[75px] gap-6">
             {readMoreDetail.map((item) => (
               <ReadMoreCard
-                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')]`}
+                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')] bg-no-repeat bg-cover `}
                 key={`Infocard${item.url}`}
                 title={"some day pickup or delivery"}
                 image={{

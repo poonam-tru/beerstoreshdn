@@ -77,7 +77,7 @@ function SampleNextArrow(props: any) {
         }
         height={60}
         width={60}
-        className="h-[30px] w-[30px] md:h-[60px] md:w-[60px]"
+        className="h-[40px] w-[40px] md:h-[60px] md:w-[60px]"
         alt="kkk"
       />
     </div>
@@ -98,7 +98,7 @@ function SamplePrevArrow(props: any) {
         height={60}
         width={60}
         alt="kk"
-        className="h-[30px] w-[30px] md:h-[60px] md:w-[60px]"
+        className="h-[40px] w-[40px] md:h-[60px] md:w-[60px]"
       />
     </div>
   );
@@ -178,8 +178,8 @@ export default function slider() {
       </div>
       {/* slider2 */}
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-2">
-        <div className="h-full flex container mx-auto my-0 px-[15px] md:flex-row flex-col md:items-center justify-center">
-          <div className="md:w-1/2 flex flex-col justify-center text-center relative left-[100px]">
+        <div className="h-full flex container items-center mx-auto my-0 px-[15px] lg`:flex-row flex-col md:items-center justify-center">
+          <div className="md:w-1/2 flex flex-col justify-center text-center relative md:left-[100px]">
             <text className="xl:text-82px sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
               <span className="block"> ULTRA</span>
               GREAT DEALS
@@ -191,7 +191,7 @@ export default function slider() {
             </div>
           </div>
 
-          <div className="sm:w-1/2 w-1/2 h-1/2 sm:h-full bg-banner-fe-2 bg-center bg-fixed bg-no-repeat bg-cover z-10"></div>
+          <div className="sm:w-1/2 w-1/2 h-1/2 md:h-full bg-banner-fe-2 bg-center bg-fixed bg-no-repeat bg-cover z-10"></div>
         </div>
       </div>
       {/* slider 3 */}
@@ -220,8 +220,8 @@ export default function slider() {
       </div>
       {/* sllider 4 */}
       <div className="bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-4">
-        <div className="h-full flex justify-center container mx-auto my-0 md:flex-row flex-col md:items-center md:justify-center">
-          <div className="md:w-1/2  flex flex-col justify-center text-center relative left-[60px]">
+        <div className="h-full flex items-center justify-center container mx-auto my-0 md:flex-row flex-col md:items-center md:justify-center">
+          <div className="md:w-1/2  flex flex-col  justify-center text-center relative md:left-[60px]">
             <text className="xl:text-82px xl:leading-[82px] sm:text-[40px] sm:leading-[40px]   font-[Leviathan-HTF-Black]">
               <span className="block"> More value</span>
               <span className="block"> More Convenience</span>
@@ -233,7 +233,7 @@ export default function slider() {
             </div>
           </div>
 
-          <div className="sm:w-1/2 justify-center h-1/2 sm:h-full bg-contain bg-banner-fe-4 sm:bg-bottom bg-fixed bg-no-repeat  z-10"></div>
+          <div className="sm:w-1/2 justify-center h-1/2 sm:h-full bg-contain bg-banner-fe-4 bg-center md:bg-bottom bg-fixed bg-no-repeat  z-10"></div>
         </div>
       </div>
       {/* bNNER 5 */}

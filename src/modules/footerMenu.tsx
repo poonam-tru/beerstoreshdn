@@ -21,7 +21,7 @@ export interface FooterMenuProps {
 }
 
 const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
-  const mediaScreen = useMediaQuery("(max-width:767px)");
+  const mediaScreen = useMediaQuery("(max-width:767.98px)");
   const [isOpen, setIsOpen] = React.useState(true);
   console.log(mediaScreen, "test");
   React.useEffect(() => {
