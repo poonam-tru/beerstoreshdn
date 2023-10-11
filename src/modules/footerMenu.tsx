@@ -21,7 +21,7 @@ export interface FooterMenuProps {
 }
 
 const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
-  const mediaScreen = useMediaQuery("(max-width:767px)");
+  const mediaScreen = useMediaQuery("(max-width:767.98px)");
   const [isOpen, setIsOpen] = React.useState(true);
   console.log(mediaScreen, "test");
   React.useEffect(() => {
@@ -36,7 +36,7 @@ const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="">
       <div className="flex items-center justify-between p-0">
         {!mediaScreen && (
-          <h4 className="text-sm text-white font-semibold uppercase mb-[15px] ">{title}</h4>
+          <h4 className="text-sm text-white font-semibold uppercase  md:text-[14px] mb-[15px] ">{title}</h4>
         )}
         {mediaScreen && (
           <CollapsibleTrigger asChild>
@@ -54,8 +54,8 @@ const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
       <CollapsibleContent className="">
         <ul>
           {menuList?.map((item) => (
-            <li key={`key${item.title}`} className="mb-[10px]">
-              <a className=" font-[Gotham-Book] text-white font-light md:text-[12px] sm:text-[12px] xl:text-[14px]" href={item.url}>
+            <li key={`key${item.title}`} className="mb-[10px] flex">
+              <a className=" font-[Gotham-Book] text-white font-light py-[10px] md:text-[12px] sm:text-[12px] xl:text-[14px]" href={item.url}>
                 {item.title}
               </a>
             </li>

@@ -61,7 +61,7 @@ const ReadMoreCard = ({
         {buttonText && (
           <Button
             asChild={asLink}
-            className="w-auto text-[16px] rounded-full  md:max-h-[30px] leading-[20px] font-[Gotham-Bold]"
+            className="w-auto text-[16px] rounded-full  h-[30px] leading-[20px] font-[Gotham-Bold]"
             onClick={onClickButton}
             variant="secondary"
           >
