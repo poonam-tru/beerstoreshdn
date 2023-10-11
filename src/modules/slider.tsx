@@ -178,7 +178,7 @@ export default function slider() {
       </div>
       {/* slider2 */}
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-2">
-        <div className="h-full flex container items-center mx-auto my-0 px-[15px] lg`:flex-row flex-col md:items-center justify-center">
+        <div className="h-full flex container items-center mx-auto my-0 px-[15px] lg:flex-row flex-col md:items-center justify-center">
           <div className="md:w-1/2 flex flex-col justify-center text-center relative md:left-[100px]">
             <text className="xl:text-82px sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
               <span className="block"> ULTRA</span>

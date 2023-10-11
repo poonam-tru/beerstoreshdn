@@ -88,16 +88,13 @@ const InfoCard = ({
             <Button
               asChild={asLink}
               className={
-                asLink ? "tbs-link-text p-0" : "w-full rounded-[100px]"
+                asLink ? "tbs-link-text p-0 h-auto" : "w-full rounded-[100px]"
               }
               onClick={onClickButton}
               variant={asLink ? "link" : "default"}
             >
               {asLink ? (
-                <Link
-                  href={`${buttonLink}`}
-                  className={"p-0"}
-                >
+                <Link href={`${buttonLink}`} className={"p-0"}>
                   {buttonText}
                 </Link>
               ) : (

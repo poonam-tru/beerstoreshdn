@@ -14,17 +14,13 @@ import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Navigation } from "./navigation";
 import Link from "next/link";
-import Hamburger from "../image/hamburger.png";
 
 const Header = () => {
   return (
-    <div className=" bg-black mx-auto">
+    <div className="bg-black mx-auto">
       <header className="flex flex-1 flex-col max-w-[1920px] mx-auto w-full">
-        <nav className="flex justify-between py-5  px-5 flex-row  flex-1 items-center">
-          <div className="sm:block md:hidden">
-            <Image src={Hamburger} alt="" width={40} height={40} />
-          </div>
-          <div className="basis-1/4">
+        <nav className="flex justify-between py-[20px]  px-5 flex-row  flex-1 items-center">
+          <div className="basis-1/4 hidden md:block">
             <a href="" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
@@ -35,11 +31,11 @@ const Header = () => {
             </a>
           </div>
           <div className="basis-3/4">
-            <div className="flex justify-end items-center relative">
+            <div className="flex md:justify-end items-center relative">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    className="text-white w-auto h-auto bg-transparent text-[14px] font-Gotham-Book "
+                    className="text-white w-auto h-auto bg-transparent text-[14px] font-Gotham-Book hidden md:block md:flex"
                     size={"icon"}
                     variant="link"
                   >
@@ -50,8 +46,8 @@ const Header = () => {
                       width={20}
                       height={20}
                     />
-                    <p className="hidden sm:block">Login</p>
-                    <ChevronDown className="h-4 w-4 ml-2"/>
+                    <p>Login</p>
+                    <ChevronDown className="h-4 w-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-white py-[25px] px-[30px] relative rounded-[5px] mt-[25px] w-[300px] left-[38px]">
@@ -107,7 +103,7 @@ const Header = () => {
               </DropdownMenu>
               <Separator
                 orientation="vertical"
-                className="mx-3 sm:mx-7 bg-white h-6"
+                className="mx-3 sm:mx-7 bg-white h-6 hidden md:block"
               />
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -123,7 +119,7 @@ const Header = () => {
                       width={16}
                       height={24}
                     />
-                    <p className="hidden sm:block">HEARST-11862km</p>
+                    <p>HEARST-11862km</p>
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -158,7 +154,7 @@ const Header = () => {
           </div>
         </nav>
         <Separator className=" h-px bg-white opacity-50" />
-        <div className="px-5 hidden md:block">
+        <div className="px-5 ">
           <Navigation />
         </div>
       </header>

@@ -43,7 +43,7 @@ const ReadMoreCard = ({
   return (
     <Card
       className={cn(
-        " flex flex-row  border border-solid rounded-[10px] relative overflow-hidden",
+        " flex  flex-row  border border-solid rounded-[10px] relative overflow-hidden",
         className
       )}
     >
@@ -61,7 +61,7 @@ const ReadMoreCard = ({
         {buttonText && (
           <Button
             asChild={asLink}
-            className="w-auto text-[16px] rounded-full  h-[30px] leading-[20px] font-[Gotham-Bold]"
+            className="w-auto text-[16px] rounded-full  h-auto leading-[20px] font-[Gotham-Bold]"
             onClick={onClickButton}
             variant="secondary"
           >

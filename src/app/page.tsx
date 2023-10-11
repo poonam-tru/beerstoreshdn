@@ -28,6 +28,7 @@ function SampleNextArrow(props: any) {
     </div>
   );
 }
+
 function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
@@ -367,7 +368,7 @@ const Home = () => {
           <div className="flex justify-center flex-col lg:flex-row mx-[75px] gap-6">
             {readMoreDetail.map((item) => (
               <ReadMoreCard
-                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')] bg-no-repeat bg-cover `}
+                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')] bg-no-repeat bg-cover md:flex-row flex-col-reverse `}
                 key={`Infocard${item.url}`}
                 title={"some day pickup or delivery"}
                 image={{
