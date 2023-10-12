@@ -154,7 +154,7 @@ export default function slider() {
   return (
     <Slider className="h-500" {...settings}>
       {/* slider1 */}
-      <div
+      {/* <div
         className={`bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-1`}
       >
         <div className="flex h-full container mx-auto my-0 ">
@@ -175,27 +175,43 @@ export default function slider() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* slider2 */}
-      <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-2">
-        <div className="h-full flex container items-center mx-auto my-0 px-[15px] lg:flex-row flex-col md:items-center justify-center">
-          <div className="md:w-1/2 flex flex-col justify-center text-center relative md:left-[100px]">
-            <text className="xl:text-82px sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
-              <span className="block"> ULTRA</span>
-              GREAT DEALS
-            </text>
-            <div className="mt-[20px]">
-              <Button className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full bg-black text-white font-[Gotham-Bold] h-[50px]">
-                BROWSE TODAY
-              </Button>
+      <div className="bg-center relative bg-fixed h-500">
+        <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
+          <div className="flex flex-row gap-2 absolute top-0 bottom-0">
+            <div className="md:w-1/2 flex flex-col justify-center text-center  md:left-[100px]">
+              <text className="xl:text-82px sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
+                <span className="block"> ULTRA</span>
+                GREAT DEALS
+              </text>
+              <div className="mt-[20px]">
+                <Button className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full bg-black text-white font-[Gotham-Bold] h-[50px]">
+                  BROWSE TODAY
+                </Button>
+              </div>
+            </div>
+            <div className="flex relative items-end">
+              <Image
+                src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png"
+                alt=""
+                width={600}
+                height={300}
+                style={{ width: "100%", height: "auto"  }}
+              />
             </div>
           </div>
-
-          <div className="sm:w-1/2 w-1/2 h-1/2 md:h-full bg-banner-fe-2 bg-center bg-fixed bg-no-repeat bg-cover z-10"></div>
+          <Image
+            src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/bg-11.jpg"
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px"  }}
+          />
         </div>
       </div>
       {/* slider 3 */}
-      <div className="bg-center h-500 bg-fixed bg-no-repeat bg-cover bg-banner-bg-3">
+      {/* <div className="bg-center h-500 bg-fixed bg-no-repeat bg-cover bg-banner-bg-3">
         <div className="container flex flex-col justify-center items-center  mx-auto my-0 px-[15px] h-full">
           <div>
             <text className="xl:text-48px sm:text-[28px]  font-[Leviathan-HTF-Black]">
@@ -217,9 +233,9 @@ export default function slider() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* sllider 4 */}
-      <div className="bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-4">
+      {/* <div className="bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-4">
         <div className="h-full flex items-center justify-center container mx-auto my-0 md:flex-row flex-col md:items-center md:justify-center">
           <div className="md:w-1/2  flex flex-col  justify-center text-center relative md:left-[60px]">
             <text className="xl:text-82px xl:leading-[82px] sm:text-[40px] sm:leading-[40px]   font-[Leviathan-HTF-Black]">
@@ -235,9 +251,9 @@ export default function slider() {
 
           <div className="sm:w-1/2 justify-center h-1/2 sm:h-full bg-contain bg-banner-fe-4 bg-center md:bg-bottom bg-fixed bg-no-repeat  z-10"></div>
         </div>
-      </div>
+      </div> */}
       {/* bNNER 5 */}
-      <div className="bg-revert bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
+      {/* <div className="bg-revert bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
         <div className=" flex flex-col justify-center  h-full items-center container mx-auto my-0 px-[15px] text-center ">
           <div className="max-w-4xl">
             <Image
@@ -256,9 +272,9 @@ export default function slider() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* banner 6 */}
-      <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
+      {/* <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
         <div className="h-full flex  mx-auto my-0   md:items-center justify-center flex-col md:flex-row ps-[10%]">
           <div className="md:w-1/2 sm:w-full flex flex-col justify-center text-start  ">
             <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] sm:text-[25px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
@@ -279,7 +295,7 @@ export default function slider() {
 
           <div className="md:w-1/2 sm:w-full h-full bg-banner-fe-6 bg-center bg-no-repeat bg-cover z-10"></div>
         </div>
-      </div>
+      </div> */}
     </Slider>
   );
 }

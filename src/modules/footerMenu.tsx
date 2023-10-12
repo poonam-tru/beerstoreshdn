@@ -23,7 +23,6 @@ export interface FooterMenuProps {
 const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
   const mediaScreen = useMediaQuery("(max-width:767.98px)");
   const [isOpen, setIsOpen] = React.useState(true);
-  console.log(mediaScreen, "test");
   React.useEffect(() => {
     if (mediaScreen) {
       setIsOpen(false);
@@ -31,7 +30,6 @@ const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
         setIsOpen(true)
     }
   }, [mediaScreen]);
-  console.log(isOpen, "test--op")
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="">
       <div className="flex items-center justify-between p-0">
