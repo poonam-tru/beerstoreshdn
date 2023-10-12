@@ -29,11 +29,14 @@ function SampleNextArrow(props: any) {
     </div>
   );
 }
+
 function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[-10%]   md:left-[-4%] top-[calc(50%-24px)] z-10"}
+      className={
+        "absolute left-[-10%]   md:left-[-4%] top-[calc(50%-24px)] z-10"
+      }
       style={{ ...style }}
       onClick={onClick}
     >
@@ -367,10 +370,10 @@ const Home = () => {
 
       <section className="bg-white py-[70px]">
         <div className="container ">
-          <div className="flex justify-center flex-col lg:flex-row mx-[75px] gap-6">
+          <div className="flex justify-center flex-col lg:flex-row mx-[75px] gap-6 overflow-hidden">
             {readMoreDetail.map((item) => (
               <ReadMoreCard
-                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')] bg-no-repeat bg-cover `}
+                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')] bg-no-repeat bg-cover md:flex-row flex-col-reverse `}
                 key={`Infocard${item.url}`}
                 title={"some day pickup or delivery"}
                 image={{
@@ -395,7 +398,7 @@ const Home = () => {
             {productCardInfo.map((product) => {
               return (
                 <ProductCard
-                  className="ms-[20px] me-[20px] bg-white"
+                  className="ms-[20px] me-[20px] bg-white "
                   key={`${product.title}`}
                   title={product.title}
                   image={{
@@ -436,7 +439,10 @@ const Home = () => {
           </Slider>
         </div>
         <div className="w-full text-center  mt-[40px]">
-          <Button className="rounded-full text-[16px] font-[Gotham-Bold] max-h-[50px]">
+          <Button
+            variant={"secondary"}
+            className="rounded-full  text-[16px] font-[Gotham-Bold] max-h-[50px]"
+          >
             EXPLORE ALL SAVNGS
           </Button>
         </div>
@@ -473,7 +479,9 @@ const Home = () => {
                   } flex rounded-[5px] overflow-hidden`}
                   buttonText={"Learn More"}
                   badgeText={"ARTICLE"}
-                  description={"testing"}
+                  description={
+                    "Ever wondered whether beer really tastes better from a bottle, or if ... "
+                  }
                 />
               </div>
             ))}
@@ -533,7 +541,7 @@ const Home = () => {
             })}
           </Slider>
           <div className="w-full text-center  mt-[40px]">
-            <Button className="rounded-full bg-black text-#f4f4f4 h-[50px]">
+            <Button variant={"secondary"} className="rounded-full  h-[50px]">
               EXPLORE NEW BEERS
             </Button>
           </div>

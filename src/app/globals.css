@@ -13,6 +13,12 @@
     --link-primary: 28, 77.8%, 45.9%;
   }
 }
+body {
+  color: rgb(var(--foreground-rgb));
+}
+.tbs-link-text {
+  color: hsl(var(--link-primary));
+}
 @font-face {
   font-family: "Leviathan-HTF-Black-Italic";
   src: url("../fonts/Leviathan-HTF-Black-Italic.otf");
@@ -48,6 +54,10 @@
 .recipe .info-content h3 {
   font-size: 20px;
   margin-top: 20px;
+}
+.recipe .info-description {
+  font-size: 13px;
+  font-family: "Gotham-Book";
 }
 .recipe .info-content p {
   margin: 0;
@@ -87,7 +97,6 @@
   padding: 0;
   border: none;
   padding-top: 30px;
-  
 }
 .moreFrom .info-content h3 {
   font-size: 18px;
@@ -96,7 +105,6 @@
   height: 88px;
   overflow: hidden;
   font-family: "Gotham-Bold";
-
 }
 .moreFrom .info-content p {
   font-size: 14px;
@@ -107,14 +115,21 @@
 .moreFrom .info-footer {
   padding: 0;
 }
-.moreFrom .info-footer a{
+.moreFrom .info-footer a {
   padding: 0;
-  height: 40px;
   font-size: 14px;
+  height: auto;
   font-family: "Gotham-Medium" !important;
   text-decoration: underline;
 }
 .newbeers .product-footer button {
   height: 40px;
   font-size: 14px;
+}
+.search input {
+  border-radius: 50px;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  padding: 0 38px 0 28px;
 }
