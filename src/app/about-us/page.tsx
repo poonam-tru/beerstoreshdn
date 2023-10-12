@@ -188,6 +188,7 @@ const AboutUs = () => {
         backgroundImage="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
       />
       <ContainerLayout
+         bordered
         sidebarContent={
           <div className="py-[40px] pr-[35px] ">
             <Accordion type="single" collapsible className="w-full">
