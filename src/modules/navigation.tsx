@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import Link from "next/link";
 
@@ -67,55 +66,73 @@ const dummy = [
       {
         subhead: "Beer Category",
         list: [
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
+          { link: "Import", href: "" },
+          { link: "International", href: "" },
+          { link: "Ontario", href: "" },
+          { link: "Craft", href: "" },
+          { link: "Premium", href: "" },
+          { link: "Value", href: "" },
+          { link: "Domestic", href: "" },
+          { link: "Specialty", href: "" },
+          { link: "Non Beer", href: "" },
+          { link: "Flavoured", href: "" },
         ],
       },
       {
-        subhead: "Beer Style",
+        subhead: "Beer Types",
         list: [
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
-          { link: "On Sale Now", href: "" },
+          { link: "Ale", href: "" },
+          { link: "Lager", href: "" },
+          { link: "Malt", href: "" },
+          { link: "Stout", href: "" },
+        ],
+      },
+      {
+        subhead: "Beer Styles",
+        list: [
+          { link: "Amber", href: "" },
+          { link: "Blonde", href: "" },
+          { link: "Brown", href: "" },
+          { link: "Cream", href: "" },
+          { link: "Dark", href: "" },
+          { link: "Golden", href: "" },
+          { link: "India Pale Ale", href: "" },
+          { link: "Pale", href: "" },
+          { link: "Pilsner", href: "" },
+          { link: "Porter", href: "" },
+          { link: "Red", href: "" },
+          { link: "Strong", href: "" },
+          { link: "Wheat", href: "" },
         ],
       },
       {
         subhead: "Beer Format",
         list: [
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
+          { link: "Single", href: "" },
+          { link: "Can", href: "" },
+          { link: "Bottles", href: "" },
+          { link: "6 Packs", href: "" },
+          { link: "12 Pack", href: "" },
+          { link: "12 Pack", href: "" },
+          { link: "30 Pack", href: "" },
+          { link: "Kegs", href: "" },
         ],
       },
       {
         subhead: "Beer Flavour",
         list: [
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
+          { link: "Fruit", href: "" },
+          { link: "Honey", href: "" },
+          { link: "Lime", href: "" },
         ],
       },
       {
         subhead: "Health Category",
         list: [
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
+          { link: "Gluten Free", href: "" },
+          { link: "Light Low", href: "" },
+          { link: "Calorie", href: "" },
+          { link: "Low Carb", href: "" },
         ],
       },
     ],
@@ -132,32 +149,41 @@ const dummy = [
       {
         subhead: "",
         list: [
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
+          { link: "For Beer Lovers ", href: "" },
+          { link: "Articles", href: "" },
+          { link: "Beer 101", href: "" },
+          { link: "Recipes", href: "" },
+          { link: "Beer & Food Pairings", href: "" },
+          { link: "Party Planning", href: "" },
         ],
       },
     ],
   },
   {
     mainHead: "ABOUT US",
-    href: "",
+    href: "/about-us",
     content: [
       {
         subhead: "",
         list: [
-          { link: "On Sale Now", href: "" },
-          { link: "Whats New", href: "" },
-          { link: "Seasonal", href: "" },
-          { link: "Mixed Pack", href: "" },
+          { link: "Online Ordering Information", href: "" },
+          { link: "Business Services", href: "" },
+          { link: " Ownership & Governance", href: "" },
+          { link: "Environmental Leadership", href: "" },
+          { link: "Social Responsibility", href: "" },
+          { link: "Community Involvement", href: "" },
+          { link: "Careers", href: "" },
+          { link: "Gift Cards", href: "" },
+          { link: "TBS Dispute Resolution", href: "" },
+          { link: "Contact Us", href: "/about-us/contact-us" },
+          { link: "Manuals and Forms", href: "" },
         ],
       },
     ],
   },
   {
     mainHead: "CONTACT",
-    href: "",
+    href: "/about-us/contact-us",
     // content: [],
   },
 ];
@@ -176,11 +202,11 @@ export function Navigation() {
                       href="/"
                       className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px] md:text-[14px] text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5"
                     >
-                      {mainHead}
+                      <Link href={href && href}>{mainHead}</Link>
                     </NavigationMenuLink>
                   ) : (
                     <NavigationMenuTrigger className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px]  md:text-[14px] text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5">
-                      {mainHead}
+                      <Link href={href && href}>{mainHead}</Link>
                     </NavigationMenuTrigger>
                   )}
 
@@ -191,19 +217,23 @@ export function Navigation() {
                         key={`di${subhead}`}
                       >
                         {subhead && (
-                          <div className="flex flex-col gap-3 p-3 md:w-[120px] lg:w-[150px] 2xl:w-[180px] border-b-[1px]">
+                          <div className="flex flex-col gap-3 p-3 md:w-[100px] lg:w-[120px] xl:w-[150px] 2xl:w-[180px] border-b-[1px]">
                             <h2 className="font-[Gotham-Medium] text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
                               {subhead}
                             </h2>
                           </div>
                         )}
-                        <ul className="flex flex-col h-full py-[10px] md:w-[120px] lg:w-[150px] 2xl:w-[180px] border-e-[1px] border-[#ddd]">
+                        <ul
+                          className={`flex flex-col h-full md:w-[100px] lg:w-[120px] xl:w-[150px] 2xl:w-[180px] border-e-[1px] border-[#ddd] ${
+                            [2, 3].includes(IDX) ? "" : "py-[10px]"
+                          }`}
+                        >
                           {list?.map(({ link, href }) => (
                             <li
                               key={`list${link}`}
                               className={`flex px-3${
                                 [2, 3].includes(IDX)
-                                  ? " border-b-[1px] border-solid border-[#ddd]"
+                                  ? " border-b-[1px] border-solid border-[#ddd] py-[10px] px-[15px]"
                                   : ""
                               }`}
                             >
@@ -212,7 +242,7 @@ export function Navigation() {
                                   className="font-[Gotham-Book] p-0  2xl:text-[14px] xl:text-[14px] py-[3px]  md:text-[10px] text-[#4a4f55] hover:text-[#d06f1a]"
                                   href={href}
                                 >
-                                  {link}
+                                  <Link href={href && href}>{link}</Link>
                                 </a>
                               </NavigationMenuLink>
                             </li>
