@@ -18,7 +18,7 @@ body {
 }
 .tbs-link-text {
   color: hsl(var(--link-primary));
-} 
+}
 @font-face {
   font-family: "Leviathan-HTF-Black-Italic";
   src: url("../fonts/Leviathan-HTF-Black-Italic.otf");
@@ -54,6 +54,10 @@ body {
 .recipe .info-content h3 {
   font-size: 20px;
   margin-top: 20px;
+}
+.recipe .info-description {
+  font-size: 13px;
+  font-family: "Gotham-Book";
 }
 .recipe .info-content p {
   margin: 0;

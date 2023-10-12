@@ -47,21 +47,21 @@ const dumyData = [
 ];
 const bgImage = {
   banner1:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/JulyHiringCampaign-DesktopBG.jpg')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/JulyHiringCampaign-DesktopBG.jpg",
   banner2:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner1-mob.jpg')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner1-mob.jpg",
   banner3:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner2-mob.jpg')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner2-mob.jpg",
   banner4:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/discovery-cylce-8-desktop.png')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/discovery-cylce-8-desktop.png",
   banner5:
-    "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/stay-bg.png')",
+    "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/stay-bg.png",
   bannerfe2:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png",
   bannerfe4:
-    "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/brand-banner-more-value.png')",
+    "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/brand-banner-more-value.png",
   bannerfe6:
-    "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/Hiring.png')",
+    "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/Hiring.png",
 };
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -154,51 +154,63 @@ export default function slider() {
   return (
     <Slider className="h-500" {...settings}>
       {/* slider1 */}
-      {/* <div
-        className={`bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-1`}
-      >
-        <div className="flex h-full container mx-auto my-0 ">
-          <div className="flex flex-col items-end text-left justify-center ps-[10%] pe-[5%]">
-            <div className="text-white ">
-              <h1 className=" xl:text-70px md:text-[40px] font-[Leviathan-HTF-Black-Italic]">
-                Holiday Hour
-              </h1>
-              <text className="xl:text-24px leading-[38px] lg:text-[24px] p-[10px] font-[Gotham-Bold]">
-                All stores will be closed on October 9<sup>th</sup> for the
-                Thanksgiving Holiday
-              </text>
-              <div className="mt-[20px]">
-                <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold] rounded-s-full rounded-e-full text-black bg-[#f4b233] h-[50px]">
-                  Learn More
-                </Button>
+      <div className="bg-center relative bg-fixed h-500">
+        <div className="h-full relative  flex items-center lg:flex-row flex-col md:items-center">
+          <div className="flex h-full mx-auto my-0  absolute  ps-[10%]">
+            <div className="flex flex-col items-end text-left justify-center ps-[10%] pe-[5%]">
+              <div className="text-white ">
+                <h1 className=" xl:text-70px md:text-[40px] font-[Leviathan-HTF-Black-Italic]">
+                  Holiday Hour
+                </h1>
+                <text className="xl:text-24px leading-[38px] lg:text-[24px] p-[10px] font-[Gotham-Bold]">
+                  All stores will be closed on October 9<sup>th</sup> for the
+                  Thanksgiving Holiday
+                </text>
+                <div className="mt-[20px]">
+                  <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold] rounded-s-full rounded-e-full h-[50px]">
+                    Learn More
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
+          <Image
+            src={bgImage.banner1}
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px" }}
+          />
         </div>
-      </div> */}
+      </div>
       {/* slider2 */}
       <div className="bg-center relative bg-fixed h-500">
         <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
-          <div className="flex flex-row gap-2 absolute top-0 bottom-0">
-            <div className="md:w-1/2 flex flex-col justify-center text-center  md:left-[100px]">
-              <text className="xl:text-82px sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
-                <span className="block"> ULTRA</span>
-                GREAT DEALS
+          <div className="h-full flex  mx-auto my-0   md:items-center justify-end md:justify-center flex-col md:flex-row  absolute top-0 bottom-0 right-0 left-0 container">
+            <div className="md:w-1/2 h-ful flex flex-col justify-center text-center  md:left-[100px]">
+              <text className="xl:text-82px text-white sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
+                <span className="block"> FALL INTO</span>
+                SAVINGS
               </text>
               <div className="mt-[20px]">
-                <Button className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full bg-black text-white font-[Gotham-Bold] h-[50px]">
+                <Button
+                  variant={"secondary"}
+                  className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full font-[Gotham-Bold] h-[50px]"
+                >
                   BROWSE TODAY
                 </Button>
               </div>
             </div>
-            <div className="flex relative items-end">
-              <Image
-                src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png"
-                alt=""
-                width={600}
-                height={300}
-                style={{ width: "100%", height: "auto"  }}
-              />
+            <div className="md:w-1/2 w-full h-full flex items-end overflow-hidden ">
+              <div className="w-full">
+                <Image
+                  src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png"
+                  alt=""
+                  width={600}
+                  height={300}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
             </div>
           </div>
           <Image
@@ -206,56 +218,121 @@ export default function slider() {
             alt=""
             width={600}
             height={300}
-            style={{ width: "100%", height: "500px"  }}
+            style={{ width: "100%", height: "500px" }}
           />
         </div>
       </div>
       {/* slider 3 */}
-      {/* <div className="bg-center h-500 bg-fixed bg-no-repeat bg-cover bg-banner-bg-3">
-        <div className="container flex flex-col justify-center items-center  mx-auto my-0 px-[15px] h-full">
-          <div>
+      <div className="bg-center relative bg-fixed h-500">
+        <div className="absloute top-0 mx-auto">
+          <div className="flex justify-center items-center flex-col mx-auto  px-[15px] h-full w-full absolute top-0">
             <text className="xl:text-48px sm:text-[28px]  font-[Leviathan-HTF-Black]">
               DISCOVERY CENTER
             </text>
-          </div>
-          <div className="flex flex-wrap justify-center max-w-4xl	">
-            {dumyData.map((itm, idx) => (
-              <div key={`images${idx}`} className="mx-2.5 my-2.5">
-                <Image src={itm.url} width="160" height="145" alt="image" />
-              </div>
-            ))}
-          </div>
-          <div>
+
+            <div className="flex flex-wrap justify-center  max-w-4xl	">
+              {dumyData.map((itm, idx) => (
+                <div key={`images${idx}`} className="m-[10px]">
+                  <Image src={itm.url} width="160" height="145" alt="image" />
+                </div>
+              ))}
+            </div>
+
             <div className="mt-[20px]">
-              <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-black text-white h-[50px]">
+              <Button
+                variant={"secondary"}
+                className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full h-[50px]"
+              >
                 SHOP
               </Button>
             </div>
           </div>
+          <Image
+            src={bgImage.banner3}
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px" }}
+          />
         </div>
-      </div> */}
+      </div>
       {/* sllider 4 */}
-      {/* <div className="bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-4">
-        <div className="h-full flex items-center justify-center container mx-auto my-0 md:flex-row flex-col md:items-center md:justify-center">
-          <div className="md:w-1/2  flex flex-col  justify-center text-center relative md:left-[60px]">
-            <text className="xl:text-82px xl:leading-[82px] sm:text-[40px] sm:leading-[40px]   font-[Leviathan-HTF-Black]">
-              <span className="block"> More value</span>
-              <span className="block"> More Convenience</span>
-            </text>
-            <div className="mt-[35px] ">
-              <Button className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-black text-white h-[50px]">
-                SHOP NOW
-              </Button>
+      {/* <div className="bg-cente h-500 relative ">
+        <div className="h-full flex items-center justify-center  mx-auto my-0 md:flex-row flex-col md:items-center md:justify-center">
+          <div className="md:w-full  flex flex-col md:flex-row  justify-center text-center  md:left-[60px] absolute top-0 bottom-0 container">
+            <div className="md:w-1/2 mx-auto">
+              <text className="xl:text-82px xl:leading-[82px] sm:text-[40px] sm:leading-[40px]   font-[Leviathan-HTF-Black]">
+                <span className="block"> More value</span>
+                <span className="block"> More Convenience</span>
+              </text>
+              <div className="mt-[35px] ">
+                <Button className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-black text-white h-[50px]">
+                  SHOP NOW
+                </Button>
+              </div>
+            </div>
+            <div className="md:w-1/2 flex ">
+              <Image
+                src={bgImage.bannerfe4}
+                alt=""
+                width={600}
+                height={300}
+                style={{ width: "100%", height: "auto" }}
+              />
             </div>
           </div>
 
-          <div className="sm:w-1/2 justify-center h-1/2 sm:h-full bg-contain bg-banner-fe-4 bg-center md:bg-bottom bg-fixed bg-no-repeat  z-10"></div>
+          <Image
+            src={bgImage.banner4}
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px" }}
+          />
         </div>
       </div> */}
+      <div className="bg-center relative bg-fixed h-500">
+        <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
+          <div className="flex flex-col md:flex-row justify-end gap-2  absolute top-0  bottom-0 w-full container">
+            <div className="md:w-1/2 flex flex-col justify-center text-center  md:left-[100px]">
+              <text className="xl:text-72px  sm:text-[45px] sm:leading-[45px] xl:leading-[72px] font-[Leviathan-HTF-Black]">
+                <span className="block"> MORE VALUE</span>
+                MORE CONVENIENCE
+              </text>
+              <div className="mt-[20px]">
+                <Button
+                  variant={"secondary"}
+                  className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full font-[Gotham-Bold] h-[50px]"
+                >
+                  SHOP NOW
+                </Button>
+              </div>
+            </div>
+            <div className="md:w-1/2 flex relative md:items-end justify-center ">
+              <div className="w-[50%] md:w-full">
+                <Image
+                  src={bgImage.bannerfe4}
+                  alt=""
+                  width={600}
+                  height={300}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
+          </div>
+          <Image
+            src={bgImage.banner4}
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px" }}
+          />
+        </div>
+      </div>
       {/* bNNER 5 */}
-      {/* <div className="bg-revert bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
+      <div className="bg-revert bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
         <div className=" flex flex-col justify-center  h-full items-center container mx-auto my-0 px-[15px] text-center ">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl relative">
             <Image
               src={
                 "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/stay-text.png"
@@ -263,39 +340,51 @@ export default function slider() {
               width={950}
               height={500}
               alt="image"
+              style={{ width: "100%", height: "auto" }}
               className="bg-cover"
             />
-            <div className="text-end me-12">
-              <Button className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold] rounded-e-full rounded-s-full  bg-black text-white h-[50px]">
+            <div className="text-end me-12 absolute bottom-0 right-0">
+              <Button
+                variant={"secondary"}
+                className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold] rounded-e-full rounded-s-full  h-[50px]"
+              >
                 SHOP NOW
               </Button>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* banner 6 */}
-      {/* <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
+      <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
         <div className="h-full flex  mx-auto my-0   md:items-center justify-center flex-col md:flex-row ps-[10%]">
           <div className="md:w-1/2 sm:w-full flex flex-col justify-center text-start  ">
-            <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] sm:text-[25px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
+            <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] lg:text-[34px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
               <span className="block text-white"> WE LOVE BEER</span>
               DO YOU?
             </text>
-            <text className="md:text-28px text-[14px] text-white font-[Gotham-Bold]">
+            <text className="md:text-24px lg:text-[28px] text-[18px] text-white font-[Gotham-Bold]">
               If you share our passion for all things beer and align with our
               core values of being a socially and environmentally responsible
               organization, Apply Today!
             </text>
             <div className="py-[20px]">
-              <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]  rounded-e-full rounded-s-full text-black bg-[#f4b233] h-[50px]">
+              <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]  rounded-e-full rounded-s-full h-[50px]">
                 BROWSE TODAY
               </Button>
             </div>
           </div>
 
-          <div className="md:w-1/2 sm:w-full h-full bg-banner-fe-6 bg-center bg-no-repeat bg-cover z-10"></div>
+          <div className="md:w-1/2 overflow-hidden">
+            <Image
+              src={bgImage.bannerfe6}
+              alt=""
+              width={600}
+              height={300}
+              style={{ width: "100%", height: "500px" }}
+            />
+          </div>
         </div>
-      </div> */}
+      </div>
     </Slider>
   );
 }
