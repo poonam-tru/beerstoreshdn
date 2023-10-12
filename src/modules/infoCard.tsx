@@ -67,7 +67,7 @@ const InfoCard = ({
       </CardHeader>
 
       <CardContent className="py-4 px-2 info-content">
-        {title && <CardTitle className="mb-4 info-title ">{title}</CardTitle>}
+        {title && <CardTitle className="mb-4 info-title">{title}</CardTitle>}
         {description && (
           <CardDescription className="mb-4 info-description">
             {description}
