@@ -116,12 +116,14 @@ const AboutUs = () => {
             <h2 className="text-[24px]">Sort by</h2>
             {sidebarList.map((item) => (
               <div className="flex flex-col" key={`${item.title}`}>
-                <h3 className="text-[16px] py-[25px]">{item.title}</h3>
+                <h3 className="text-[16px] py-[25px]   font-[Gotham-Bold]">
+                  {item.title}
+                </h3>
                 <ul>
                   {item?.list.map((item, idx) => (
                     <li
                       key={`${idx}`}
-                      className="cursor-pointer py-[15px] text-[#4A4F55] text-[14px] border-b border-solid border-[#d6d6d6] hover:text-[#B95804]"
+                      className="cursor-pointer  font-[Gotham-Book] py-[15px] text-[#4A4F55] text-[14px] border-b border-solid border-[#d6d6d6] hover:text-[#B95804]"
                     >
                       {item}
                     </li>
@@ -157,22 +159,24 @@ const AboutUs = () => {
 
                   <CardContent className="flex flex-col p-[20px] h-full">
                     {article.title && (
-                      <CardTitle className="mb-4 text-[15px] md:text-[18px]">{article.title}</CardTitle>
+                      <CardTitle className="mb-4 text-[15px]  font-[Gotham-Bold] md:text-[18px]">
+                        {article.title}
+                      </CardTitle>
                     )}
                     {article.description && (
-                      <CardDescription className="mb-4 text-[14px]">
+                      <CardDescription className="mb-4   text-[14px] font-[Gotham-Book]">
                         {article.description}
                       </CardDescription>
                     )}
                     {article.category && (
-                      <Badge className=" bg-white rounded-[3px] uppercase text-black hover:bg-White px-2 py-1 leading-4 justify-center absolute left-4 top-4">
+                      <Badge className=" bg-white rounded-[3px] text-[11px]   font-[Gotham-Bold] uppercase text-black hover:bg-White px-2 py-1 leading-4 justify-center absolute left-4 top-4">
                         {article.category}
                       </Badge>
                     )}
                     <CardFooter className="flex self-start mt-auto">
                       <Button
                         asChild
-                        className="h-[35px] text-[14px] py-[3px] px-[7px] pr-0 rounded-[5px]"
+                        className="h-[35px] text-[14px]    font-[Gotham-Bold] py-[3px] px-[7px] pr-0 rounded-[5px]"
                       >
                         <Link href="/">
                           Learn More
