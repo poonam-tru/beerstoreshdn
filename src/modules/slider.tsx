@@ -162,10 +162,10 @@ export default function slider() {
                 <h1 className=" xl:text-70px md:text-[40px] font-[Leviathan-HTF-Black-Italic]">
                   Holiday Hour
                 </h1>
-                <text className="xl:text-24px leading-[38px] lg:text-[24px] p-[10px] font-[Gotham-Bold]">
+                <p className="xl:text-24px leading-[38px] lg:text-[24px] p-[10px] font-[Gotham-Bold]">
                   All stores will be closed on October 9<sup>th</sup> for the
                   Thanksgiving Holiday
-                </text>
+                </p>
                 <div className="mt-[20px]">
                   <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold] rounded-s-full rounded-e-full h-[50px]">
                     Learn More
@@ -188,10 +188,10 @@ export default function slider() {
         <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
           <div className="h-full flex  mx-auto my-0   md:items-center justify-end md:justify-center flex-col md:flex-row  absolute top-0 bottom-0 right-0 left-0 container">
             <div className="md:w-1/2 h-ful flex flex-col justify-center text-center  md:left-[100px]">
-              <text className="xl:text-82px text-white sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
+              <p className="xl:text-82px text-white sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
                 <span className="block"> FALL INTO</span>
                 SAVINGS
-              </text>
+              </p>
               <div className="mt-[20px]">
                 <Button
                   variant={"secondary"}
@@ -226,9 +226,9 @@ export default function slider() {
       <div className="bg-center relative bg-fixed h-500">
         <div className="absloute top-0 mx-auto">
           <div className="flex justify-center items-center flex-col mx-auto  px-[15px] h-full w-full absolute top-0">
-            <text className="xl:text-48px sm:text-[28px]  font-[Leviathan-HTF-Black]">
+            <p className="xl:text-48px sm:text-[28px]  font-[Leviathan-HTF-Black]">
               DISCOVERY CENTER
-            </text>
+            </p>
 
             <div className="flex flex-wrap justify-center  max-w-4xl	">
               {dumyData.map((itm, idx) => (
@@ -256,49 +256,15 @@ export default function slider() {
           />
         </div>
       </div>
-      {/* sllider 4 */}
-      {/* <div className="bg-cente h-500 relative ">
-        <div className="h-full flex items-center justify-center  mx-auto my-0 md:flex-row flex-col md:items-center md:justify-center">
-          <div className="md:w-full  flex flex-col md:flex-row  justify-center text-center  md:left-[60px] absolute top-0 bottom-0 container">
-            <div className="md:w-1/2 mx-auto">
-              <text className="xl:text-82px xl:leading-[82px] sm:text-[40px] sm:leading-[40px]   font-[Leviathan-HTF-Black]">
-                <span className="block"> More value</span>
-                <span className="block"> More Convenience</span>
-              </text>
-              <div className="mt-[35px] ">
-                <Button className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-black text-white h-[50px]">
-                  SHOP NOW
-                </Button>
-              </div>
-            </div>
-            <div className="md:w-1/2 flex ">
-              <Image
-                src={bgImage.bannerfe4}
-                alt=""
-                width={600}
-                height={300}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </div>
-          </div>
 
-          <Image
-            src={bgImage.banner4}
-            alt=""
-            width={600}
-            height={300}
-            style={{ width: "100%", height: "500px" }}
-          />
-        </div>
-      </div> */}
       <div className="bg-center relative bg-fixed h-500">
         <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
           <div className="flex flex-col md:flex-row justify-end gap-2  absolute top-0  bottom-0 w-full container">
             <div className="md:w-1/2 flex flex-col justify-center text-center  md:left-[100px]">
-              <text className="xl:text-72px  sm:text-[45px] sm:leading-[45px] xl:leading-[72px] font-[Leviathan-HTF-Black]">
+              <p className="xl:text-72px  sm:text-[45px] sm:leading-[45px] xl:leading-[72px] font-[Leviathan-HTF-Black]">
                 <span className="block"> MORE VALUE</span>
                 MORE CONVENIENCE
-              </text>
+              </p>
               <div className="mt-[20px]">
                 <Button
                   variant={"secondary"}
@@ -358,15 +324,15 @@ export default function slider() {
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
         <div className="h-full flex  mx-auto my-0   md:items-center justify-center flex-col md:flex-row ps-[10%]">
           <div className="md:w-1/2 sm:w-full flex flex-col justify-center text-start  ">
-            <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] lg:text-[34px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
+            <p className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] lg:text-[34px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
               <span className="block text-white"> WE LOVE BEER</span>
               DO YOU?
-            </text>
-            <text className="md:text-24px lg:text-[28px] text-[18px] text-white font-[Gotham-Bold]">
+            </p>
+            <p className="md:text-24px lg:text-[28px] text-[18px] text-white font-[Gotham-Bold]">
               If you share our passion for all things beer and align with our
               core values of being a socially and environmentally responsible
               organization, Apply Today!
-            </text>
+            </p>
             <div className="py-[20px]">
               <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]  rounded-e-full rounded-s-full h-[50px]">
                 BROWSE TODAY

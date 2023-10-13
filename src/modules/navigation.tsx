@@ -199,10 +199,10 @@ export function Navigation() {
                 <NavigationMenuItem key={mainHead} className="relative">
                   {[1, 4].includes(IDX) ? (
                     <NavigationMenuLink
-                      href="/"
+                      href={href ? href : ""}
                       className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px] md:text-[14px] text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5"
                     >
-                      <Link href={href && href}>{mainHead}</Link>
+                      {mainHead}
                     </NavigationMenuLink>
                   ) : (
                     <NavigationMenuTrigger className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px]  md:text-[14px] text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5">
@@ -237,13 +237,13 @@ export function Navigation() {
                                   : ""
                               }`}
                             >
-                              <NavigationMenuLink href="" asChild>
-                                <a
+                              <NavigationMenuLink asChild>
+                                <Link
                                   className="font-[Gotham-Book] p-0  2xl:text-[14px] xl:text-[14px] py-[3px]  md:text-[10px] text-[#4a4f55] hover:text-[#d06f1a]"
-                                  href={href}
+                                  href={href && href}
                                 >
-                                  <Link href={href && href}>{link}</Link>
-                                </a>
+                                  {link}
+                                </Link>
                               </NavigationMenuLink>
                             </li>
                           ))}
@@ -288,9 +288,11 @@ export function Navigation() {
             <a href="" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
-                alt=""
-                width={200}
-                height={30}
+                alt="test"
+                width="0"
+                height="0"
+                sizes="100vw"
+                style={{ width: "100%", height: "auto" }}
               />
             </a>
           </div>

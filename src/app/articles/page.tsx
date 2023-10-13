@@ -10,10 +10,11 @@ import {
 import { cn } from "@/lib/utils";
 import BannerHeader from "@/modules/bannerHeader";
 import ContainerLayout from "@/modules/containerLayout";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 
 const sidebarList = [
   {
@@ -95,7 +96,19 @@ const AboutUs = () => {
       <BannerHeader
         title="Beer &amp; Occasions"
         backgroundImage="https://tbsecoms.wpengine.com/wp-content/uploads/2019/10/archive-article-banner.jpg"
-      />
+      >
+        <div className="relative max-w-4xl w-full mt-[20px] sm:mt-[48px]">
+          <Search className="absolute top-[50%] translate-y-[-50%] left-3 text-[#4A4F55]" />
+          <Input
+            type="text"
+            placeholder="Search articles..."
+            className="border-none pl-[50px] py-[10px] h-[45px] md:h-[55px] pr-4 bg-white rounded-[100px] placeholder:text-[#4A4F55] "
+          />
+          <Button className="px-3 py-2 uppercase text-[14px] h-[45px]  sm:text-[18px] absolute right-0 top-0 md:h-[55px] rounded-r-[100px] w-[100px] sm:w-[170px]">
+            Search
+          </Button>
+        </div>
+      </BannerHeader>
       <ContainerLayout
         bordered={false}
         sidebarContent={
@@ -119,9 +132,12 @@ const AboutUs = () => {
           </div>
         }
         content={
-          <div className="grid grid-cols-3 gap-[30px] py-[40px] pl-[40px]">
+          <div className="grid grid-cols-1  sm:grid-cols-2  xl:grid-cols-3  gap-[30px] py-[40px] pl-0  sm:pl-[40px]">
             {articleList.map((article) => (
-              <div className="basis-1/3" key={`${article.title}`}>
+              <div
+                className="basis-full sm:basis-2/4 xl:basis-1/3"
+                key={`${article.title}`}
+              >
                 <Card
                   className={
                     " flex h-full flex-col border border-solid rounded-[10px] relative overflow-hidden"
@@ -141,10 +157,10 @@ const AboutUs = () => {
 
                   <CardContent className="flex flex-col p-[20px] h-full">
                     {article.title && (
-                      <CardTitle className="mb-4">{article.title}</CardTitle>
+                      <CardTitle className="mb-4 text-[15px] md:text-[18px]">{article.title}</CardTitle>
                     )}
                     {article.description && (
-                      <CardDescription className="mb-4">
+                      <CardDescription className="mb-4 text-[14px]">
                         {article.description}
                       </CardDescription>
                     )}
@@ -156,7 +172,7 @@ const AboutUs = () => {
                     <CardFooter className="flex self-start mt-auto">
                       <Button
                         asChild
-                        className="h-[30px] text-[10px] py-[3px] px-[7px] rounded-[5px] uppercase"
+                        className="h-[35px] text-[14px] py-[3px] px-[7px] pr-0 rounded-[5px]"
                       >
                         <Link href="/">
                           Learn More
