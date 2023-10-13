@@ -188,20 +188,24 @@ const AboutUs = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesToScroll: 3,
 
     responsive: [
       {
-        breakpoint: 1008,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 2,
+          dots: true,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 1,
+          dots: true,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -223,7 +227,7 @@ const AboutUs = () => {
                     value={item.title}
                     key={`aboutus_item${item.title}`}
                   >
-                    <AccordionTrigger className=" py-[25px] hover:no-underline text-[14px] font-[Gotham-Bold]">
+                    <AccordionTrigger className="text-left py-[25px] hover:no-underline text-[14px] font-[Gotham-Bold]">
                       {item.title}
                       <Plus className="h-4 w-4 shrink-0 transition-transform duration-500 group-data-[state=open]:hidden" />
                       <Minus className="h-4 w-4 shrink-0 transition-transform duration-500 group-data-[state=closed]:hidden" />
@@ -379,35 +383,38 @@ const AboutUs = () => {
               ))}
             </div>
             <Separator className="bg-[#e2e2e2] opacity-50 h-px" />
-            <div className="flex flex-col md:flex-row gap-[30px]">
-              {newsList.map((news) => (
-                <Card
-                  key={`${news.title}`}
-                  className="rounded-[6px] min-h-[170px] basis-1/2"
-                >
-                  <div className="flex h-full">
-                    <div className="basis-1/2 h-full">
-                      <Image
-                        src={news.image}
-                        width={200}
-                        height={200}
-                        alt={news.image}
-                        className="w-full rounded-[5px] h-full object-cover"
-                      />
+            <div className="block md:flex-row gap-[30px] slider-news-list">
+              <Slider {...beerStoreSliderSettings}>
+                {newsList.map((news) => (
+                  <div   key={`${news.title}`} className="px-[15px]">
+                  <Card
+                  
+                    className="rounded-[6px] min-h-[170px] basis-1/2 flex"
+                  >
+                    <div className="flex h-[inherit]">
+                      <div className="basis-1/2 h-full">
+                        <Image
+                          src={news.image}
+                          width={200}
+                          height={200}
+                          alt={news.image}
+                          className="w-full rounded-[5px] h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col justify-between items-stretch basis-1/2 p-[10px]">
+                        <h3 className="text-[13px] font-[Gotham-Bold]">
+                          {" "}
+                          {news.title}
+                        </h3>
+                        <p className="text-[14px] font-[Gotham-Book] text-[#4A4F55]">
+                          {news.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex flex-col justify-between items-stretch basis-1/2 p-[10px]">
-                      <h3 className="text-[13px] font-[Gotham-Bold]">
-                        {" "}
-                        {news.title}
-                      </h3>
-                      <p className="text-[14px] font-[Gotham-Book] text-[#4A4F55]">
-                        {news.description}
-                      </p>
-                    </div>
+                  </Card>
                   </div>
-                </Card>
-              ))}
-              {/* <Slider {...beerStoreSliderSettings}></Slider> */}
+                ))}
+              </Slider>
             </div>
           </div>
         }
