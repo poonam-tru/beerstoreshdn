@@ -112,7 +112,7 @@ const AboutUs = () => {
       <ContainerLayout
         bordered={false}
         sidebarContent={
-          <div className="flex flex-col pt-[40px] pr-[15px]">
+          <div className="flex flex-col py-[40px] pr-[15px]">
             <h2 className="text-[24px]">Sort by</h2>
             {sidebarList.map((item) => (
               <div className="flex flex-col" key={`${item.title}`}>
