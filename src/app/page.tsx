@@ -422,10 +422,10 @@ const Home = () => {
                         <p className="text-[#4a4f55]">{`6 X Bottle 341 ml`}</p>
                       </div>
                       <Separator className="bg-gray-500 opacity-50 h-px my-2" />
-                      <div className="flex">
+                      <div className="flex font-Gotham-Medium">
                         <span className="text-[##4a4f57]">Price:</span>
-                        <span className="text-[#c00] font-medium mr-2">
-                          {product.price}
+                        <span className="text-[#c00] font-14px lg:12px xl:font-14px leading-[18px] font-medium mx-1">
+                          {`$${product.price}`}
                         </span>
                         <span className="line-through text-[##4a4f57]">
                           {product.discountedPrice}

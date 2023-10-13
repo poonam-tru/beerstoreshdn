@@ -150,7 +150,7 @@ const dummy = [
         subhead: "",
         list: [
           { link: "For Beer Lovers ", href: "" },
-          { link: "Articles", href: "" },
+          { link: "Articles", href: "/articles" },
           { link: "Beer 101", href: "" },
           { link: "Recipes", href: "" },
           { link: "Beer & Food Pairings", href: "" },
