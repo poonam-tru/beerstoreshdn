@@ -127,36 +127,13 @@ export default function slider() {
       },
     ],
   };
-  const insideSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1300,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <Slider className="h-500" {...settings}>
       {/* slider1 */}
       <div className="bg-center relative bg-fixed h-500">
         <div className="h-full relative  flex items-center lg:flex-row flex-col md:items-center">
-          <div className="flex h-full mx-auto my-0  absolute  ps-[10%]">
+          <div className="flex h-full mx-auto my-0  absolute ps-[5%] lg:ps-[10%]">
             <div className="flex flex-col items-end text-left justify-center ps-[10%] pe-[5%]">
               <div className="text-white ">
                 <h1 className=" xl:text-70px md:text-[40px] font-[Leviathan-HTF-Black-Italic]">
@@ -186,9 +163,9 @@ export default function slider() {
       {/* slider2 */}
       <div className="bg-center relative bg-fixed h-500">
         <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
-          <div className="h-full flex  mx-auto my-0   md:items-center justify-end md:justify-center flex-col md:flex-row  absolute top-0 bottom-0 right-0 left-0 container">
-            <div className="md:w-1/2 h-ful flex flex-col justify-center text-center  md:left-[100px]">
-              <text className="xl:text-82px text-white sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
+          <div className="h-full flex  mx-auto my-0   md:items-center justify-end md:justify-center  absolute top-0 bottom-0 right-0 left-0 container">
+            <div className="h-ful flex flex-col mb-[30px] md:mb-0 justify-center text-center  md:left-[100px]">
+              <text className="xl:text-82px text-white text-[35px] md:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
                 <span className="block"> FALL INTO</span>
                 SAVINGS
               </text>
@@ -201,16 +178,14 @@ export default function slider() {
                 </Button>
               </div>
             </div>
-            <div className="md:w-1/2 w-full h-full flex items-end overflow-hidden ">
-              <div className="w-full">
-                <Image
-                  src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png"
-                  alt=""
-                  width={600}
-                  height={300}
-                  style={{ width: "100%", height: "auto" }}
-                />
-              </div>
+            <div className="h-full flex items-end overflow-hidden ">
+              <Image
+                src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png"
+                alt=""
+                width={600}
+                height={300}
+                style={{ width: "100%", height: "auto" }}
+              />
             </div>
           </div>
           <Image
@@ -356,7 +331,7 @@ export default function slider() {
       </div>
       {/* banner 6 */}
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
-        <div className="h-full flex  mx-auto my-0   md:items-center justify-center flex-col md:flex-row ps-[10%]">
+        <div className="h-full flex  mx-auto my-0   md:items-center justify-center flex-col md:flex-row ps-[5%] md:ps-[10%]">
           <div className="md:w-1/2 sm:w-full flex flex-col justify-center text-start  ">
             <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] lg:text-[34px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
               <span className="block text-white"> WE LOVE BEER</span>

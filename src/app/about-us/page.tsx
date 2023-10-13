@@ -20,6 +20,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@radix-ui/react-dropdown-menu";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const aboutUsList = [
   {
     title: "About Us",
@@ -181,6 +184,28 @@ const newsList = [
   },
 ];
 const AboutUs = () => {
+  const beerStoreSliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1008,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
   return (
     <>
       <BannerHeader
@@ -188,9 +213,9 @@ const AboutUs = () => {
         backgroundImage="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
       />
       <ContainerLayout
-         bordered
+        bordered
         sidebarContent={
-          <div className="py-[40px] pr-[35px] ">
+          <div className="py-[40px] px-[15px] lg:pr-[35px] ">
             <Accordion type="single" collapsible className="w-full">
               <>
                 {aboutUsList.map((item) => (
@@ -223,8 +248,8 @@ const AboutUs = () => {
           </div>
         }
         content={
-          <div className="flex flex-col py-[60px] pl-[100px] gap-[30px]">
-            <div className="flex gap-[30px]">
+          <div className="flex flex-col py-[60px] px-[15px]  md:pl-[60px] lg:pl-[100px] gap-[30px]">
+            <div className="flex flex-col md:flex-row gap-[30px]">
               {cardList.map((card) => (
                 <div className="basis-2/4" key={`${card.title}`}>
                   <Card className="h-full rounded-[5px] overflow-hidden flex flex-col shadow-none">
@@ -307,7 +332,7 @@ const AboutUs = () => {
                 </Button>
               </div>
             </div>
-            <div className="flex gap-[30px]">
+            <div className="flex flex-col md:flex-row gap-[30px]">
               {cardListdeatil.map((card) => (
                 <div className="basis-2/4" key={`${card.title}`}>
                   <Card className="h-full rounded-[5px] overflow-hidden flex flex-col border-none shadow-none">
@@ -350,11 +375,11 @@ const AboutUs = () => {
               ))}
             </div>
             <Separator className="bg-[#e2e2e2] opacity-50 h-px" />
-            <div className="flex gap-[30px]">
+            <div className=" flex gap-[30px]">
               {newsList.map((news) => (
                 <Card
                   key={`${news.title}`}
-                  className="basis-1/3 rounded-[6px] min-h-[170px]"
+                  className="rounded-[6px] min-h-[170px] basis-1/2"
                 >
                   <div className="flex h-full">
                     <div className="basis-1/2 h-full">
@@ -375,6 +400,7 @@ const AboutUs = () => {
                   </div>
                 </Card>
               ))}
+              {/* <Slider {...beerStoreSliderSettings}></Slider> */}
             </div>
           </div>
         }

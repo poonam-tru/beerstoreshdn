@@ -99,7 +99,7 @@ const AboutUs = () => {
       <ContainerLayout
         bordered={false}
         sidebarContent={
-          <div className="flex flex-col pt-[40px] pr-[15px]">
+          <div className="flex flex-col pt-[40px] px-[15px] lg:pr-[15px]">
             <h2 className="text-[24px]">Sort by</h2>
             {sidebarList.map((item) => (
               <div className="flex flex-col" key={`${item.title}`}>
@@ -119,7 +119,7 @@ const AboutUs = () => {
           </div>
         }
         content={
-          <div className="grid grid-cols-3 gap-[30px] py-[40px] pl-[40px]">
+          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[40px] px-[15px] md:pl-[40px]">
             {articleList.map((article) => (
               <div className="basis-1/3" key={`${article.title}`}>
                 <Card
