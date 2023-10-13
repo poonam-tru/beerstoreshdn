@@ -35,7 +35,11 @@ const BannerHeader = ({
         </div>
       )}
       <div className="flex flex-col absolute left-0 h-full right-0 justify-center items-center p-[15px]">
-        {title && <h1 className="text-[28px] sm:text-[38px] md:text-[48px]  text-white">{title}</h1>}
+        {title && (
+          <h1 className="text-[28px] font-[Leviathan-HTF-Black] sm:text-[38px] md:text-[48px]  text-white">
+            {title}
+          </h1>
+        )}
         {children}
       </div>
     </div>

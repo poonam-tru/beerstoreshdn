@@ -20,6 +20,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@radix-ui/react-dropdown-menu";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const aboutUsList = [
   {
     title: "About Us",
@@ -181,6 +184,28 @@ const newsList = [
   },
 ];
 const AboutUs = () => {
+  const beerStoreSliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1008,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
   return (
     <>
       <BannerHeader
@@ -188,9 +213,9 @@ const AboutUs = () => {
         backgroundImage="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
       />
       <ContainerLayout
-         bordered
+        bordered
         sidebarContent={
-          <div className="py-[40px] pr-[35px] ">
+          <div className="py-[40px] px-[15px] lg:pr-[35px] ">
             <Accordion type="single" collapsible className="w-full">
               <>
                 {aboutUsList.map((item) => (
@@ -198,7 +223,7 @@ const AboutUs = () => {
                     value={item.title}
                     key={`aboutus_item${item.title}`}
                   >
-                    <AccordionTrigger className="text-[16px] py-[25px] hover:no-underline">
+                    <AccordionTrigger className=" py-[25px] hover:no-underline text-[14px] font-[Gotham-Bold]">
                       {item.title}
                       <Plus className="h-4 w-4 shrink-0 transition-transform duration-500 group-data-[state=open]:hidden" />
                       <Minus className="h-4 w-4 shrink-0 transition-transform duration-500 group-data-[state=closed]:hidden" />
@@ -208,7 +233,7 @@ const AboutUs = () => {
                         {item.listItems.map((item) => (
                           <a
                             href="#"
-                            className="flex text-[#4A4F55] hover:text-[#D06F1A] hover:bg-[#f4f4f4]  text-[14px] px-[5px] py-[3px]"
+                            className="flex text-[#4A4F55] hover:text-[#D06F1A] hover:bg-[#f4f4f4]   px-[5px] py-[3px]  text-[12px] font-[Gotham-Bold]"
                             key={`key_${item}`}
                           >
                             {item}
@@ -223,8 +248,8 @@ const AboutUs = () => {
           </div>
         }
         content={
-          <div className="flex flex-col py-[60px] pl-[100px] gap-[30px]">
-            <div className="flex gap-[30px]">
+          <div className="flex flex-col py-[60px] px-[15px]  md:pl-[60px] lg:pl-[100px] gap-[30px]">
+            <div className="flex flex-col md:flex-row gap-[30px]">
               {cardList.map((card) => (
                 <div className="basis-2/4" key={`${card.title}`}>
                   <Card className="h-full rounded-[5px] overflow-hidden flex flex-col shadow-none">
@@ -239,12 +264,12 @@ const AboutUs = () => {
                     </CardHeader>
                     <CardContent className="flex flex-col p-[30px] flex-grow ">
                       {card.title && (
-                        <CardTitle className="text-[24px]  mb-[15px]">
+                        <CardTitle className="text-[20px] font-[Gotham-Bold] mb-[15px]">
                           {card.title}
                         </CardTitle>
                       )}
                       {card.description && (
-                        <CardDescription className="text-[#4a4f55] text-[14px]  mb-[30px]">
+                        <CardDescription className="text-[#4a4f55] text-[14px] font-[Gotham-Book] mb-[30px]">
                           {card.description}
                         </CardDescription>
                       )}
@@ -252,7 +277,7 @@ const AboutUs = () => {
                         <div className="flex self-end mt-auto">
                           <Button
                             asChild
-                            className="h-[30px] text-[10px] py-[3px] px-[7px] rounded-[5px] uppercase"
+                            className="h-[30px] text-[10px]font-[Gotham-Bold] py-[3px] px-[7px] rounded-[5px] uppercase"
                           >
                             <Link href="/">
                               {card.buttonText}{" "}
@@ -267,14 +292,16 @@ const AboutUs = () => {
               ))}
             </div>
             <div className="flex flex-col bg-[#f4f4f4] border-[#e2e2e2] border-solid border rounded-[2px] p-[40px]">
-              <h2 className="text-[28px]">Time-Tested, Beer-Lover Approved</h2>
-              <p className="text-[#4A4F55] mt-[10px]">
+              <h2 className="text-[20px] font-[Leviathan-HTF-Black]">
+                Time-Tested, Beer-Lover Approved
+              </h2>
+              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-[Gotham-Book]">
                 Becoming experts on beer doesn’t happen overnight. We’ve been in
                 business since 1927 and we’re owned by 30 Ontario-based brewers.
                 The Beer Store employs 7,000 hard-working Ontarians with
                 well-paying full and part-time jobs.
               </p>
-              <p className="text-[#4A4F55] mt-[10px] ">
+              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-[Gotham-Book] ">
                 There’s no other team of beer experts who live and love all
                 things beer as much as we do. We love beer as much as you — so
                 you know we’ll always be dedicated to bringing you your
@@ -283,13 +310,15 @@ const AboutUs = () => {
                 more than 800 beer brands, in over 440 retail stores, from 200
                 brewers around the world.
               </p>
-              <h2 className="text-[24px] mt-[20px]">Facts and Figures</h2>
-              <p className="text-[#4A4F55] mt-[10px] ">
+              <h2 className="text-[24px] font-[Leviathan-HTF-Black] mt-[20px]">
+                Facts and Figures
+              </h2>
+              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-[Gotham-Book]">
                 The Beer Store was established in 1927, which means we’ve been
                 around longer than the Internet. And television. And a lot of
                 other things (probably even you!).
               </p>
-              <p className="text-[#4A4F55] mt-[10px] ">
+              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-[Gotham-Book]">
                 Here’s something for the number crunchers to chew on: We operate
                 over 440 retail stores, serve just under 18,000 licensed
                 customers, 671 government-owned LCBO retail locations, 327
@@ -299,7 +328,7 @@ const AboutUs = () => {
               <div className="flex mt-[20px]">
                 <Button
                   asChild
-                  className="h-[30px] text-[14px] py-[3px] px-[7px] rounded-[5px] uppercase"
+                  className="h-[30px] font-[Gotham-Book] text-[14px] py-[3px] px-[7px] rounded-[5px] uppercase"
                 >
                   <Link href="/">
                     Media Contact <ChevronRight width={20} height={26} />
@@ -307,13 +336,13 @@ const AboutUs = () => {
                 </Button>
               </div>
             </div>
-            <div className="flex gap-[30px]">
+            <div className="flex flex-col md:flex-row gap-[30px]">
               {cardListdeatil.map((card) => (
                 <div className="basis-2/4" key={`${card.title}`}>
                   <Card className="h-full rounded-[5px] overflow-hidden flex flex-col border-none shadow-none">
                     <CardHeader>
                       {card.title && (
-                        <CardTitle className="text-[24px]  mb-[15px]">
+                        <CardTitle className="text-[24px] font-[Gotham-Bold]  mb-[15px]">
                           {card.title}
                         </CardTitle>
                       )}
@@ -327,7 +356,7 @@ const AboutUs = () => {
                     </CardHeader>
                     <CardContent className="flex flex-col pt-[20px] pb-[40px] flex-grow ">
                       {card.description && (
-                        <CardDescription className="text-[#4a4f55] text-[14px]  mb-[30px]">
+                        <CardDescription className="text-[#4a4f55] text-[14px] font-[Gotham-Book]  mb-[30px]">
                           {card.description}
                         </CardDescription>
                       )}
@@ -350,11 +379,11 @@ const AboutUs = () => {
               ))}
             </div>
             <Separator className="bg-[#e2e2e2] opacity-50 h-px" />
-            <div className="flex gap-[30px]">
+            <div className="flex flex-col md:flex-row gap-[30px]">
               {newsList.map((news) => (
                 <Card
                   key={`${news.title}`}
-                  className="basis-1/3 rounded-[6px] min-h-[170px]"
+                  className="rounded-[6px] min-h-[170px] basis-1/2"
                 >
                   <div className="flex h-full">
                     <div className="basis-1/2 h-full">
@@ -367,14 +396,18 @@ const AboutUs = () => {
                       />
                     </div>
                     <div className="flex flex-col justify-between items-stretch basis-1/2 p-[10px]">
-                      <h3 className="text-[13px]"> {news.title}</h3>
-                      <p className="text-[14px] text-[#4A4F55]">
+                      <h3 className="text-[13px] font-[Gotham-Bold]">
+                        {" "}
+                        {news.title}
+                      </h3>
+                      <p className="text-[14px] font-[Gotham-Book] text-[#4A4F55]">
                         {news.description}
                       </p>
                     </div>
                   </div>
                 </Card>
               ))}
+              {/* <Slider {...beerStoreSliderSettings}></Slider> */}
             </div>
           </div>
         }
