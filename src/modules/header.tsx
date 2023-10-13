@@ -21,7 +21,7 @@ const Header = () => {
       <header className="flex flex-1 flex-col max-w-[1920px] mx-auto w-full">
         <nav className="flex justify-between py-[20px]  px-5 flex-row  flex-1 items-center">
           <div className="basis-1/4 hidden md:block">
-            <a href="" className="inline-flex">
+            <a href="/" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
                 alt=""
