@@ -190,22 +190,22 @@ const dummy = [
 
 export function Navigation() {
   return (
-    <div className="px-[5px]">
+    <div className="">
       <div className="hidden md:block">
-        <div className="flex flex-wrap lg:justify-between w-full">
-          <NavigationMenu className=" lg:w-3/4">
+        <div className="flex flex-wrap justify-between w-full py-[5px]">
+          <NavigationMenu className="basis-3/5 lg:basis-3/4">
             <NavigationMenuList>
               {dummy?.map(({ mainHead, href, content }, IDX) => (
                 <NavigationMenuItem key={mainHead} className="relative">
                   {[1, 4].includes(IDX) ? (
                     <NavigationMenuLink
-                      href="/"
-                      className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px] md:text-[14px] text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5"
+                      href={href ? href : ""}
+                      className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px] md:text-[10px]  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5"
                     >
-                      <Link href={href && href}>{mainHead}</Link>
+                      {mainHead}
                     </NavigationMenuLink>
                   ) : (
-                    <NavigationMenuTrigger className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px]  md:text-[14px] text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5">
+                    <NavigationMenuTrigger className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px]  md:text-[10px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5">
                       <Link href={href && href}>{mainHead}</Link>
                     </NavigationMenuTrigger>
                   )}
@@ -237,13 +237,13 @@ export function Navigation() {
                                   : ""
                               }`}
                             >
-                              <NavigationMenuLink href="" asChild>
-                                <a
+                              <NavigationMenuLink asChild>
+                                <Link
                                   className="font-[Gotham-Book] p-0  2xl:text-[14px] xl:text-[14px] py-[3px]  md:text-[10px] text-[#4a4f55] hover:text-[#d06f1a]"
-                                  href={href}
+                                  href={href && href}
                                 >
-                                  <Link href={href && href}>{link}</Link>
-                                </a>
+                                  {link}
+                                </Link>
                               </NavigationMenuLink>
                             </li>
                           ))}
@@ -255,21 +255,22 @@ export function Navigation() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <div className="p-0 search lg:w-1/4">
+          <div className="flex basis-1/4 lg:basis-1/4 h-auto">
             <Input
-              className="p-0 w-full"
+              className="bg-white  sm:h-[40px] lg:h-[50px] rounded-[50px] py-[8px] pl-[14px] lg:pl-[28px] pr-[5px]"
               placeholder="Search 1,000+ brand of beer "
               endIcon={
                 <Button
                   variant={"ghost"}
                   size={"icon"}
-                  className="p-0 relative right-[55px]"
+                  className="p-0 relative justify-end"
                 >
                   <Image
                     src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/search-button.svg"
                     alt="password"
                     width={40}
                     height={40}
+                    className={"w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]"}
                   />
                 </Button>
               }
@@ -277,20 +278,19 @@ export function Navigation() {
           </div>
         </div>
       </div>
-      <div className="block md:hidden h-[60px]">
+      <div className="block md:hidden h-auto">
         <div className=" flex justify-between items-center py-[10px]">
-          <div>
             <Button variant={"ghost"} className="p-0 h-[20px]">
               <Image src={Hamburger} alt="" width={40} height={40} />
             </Button>
-          </div>
-          <div>
+          <div className="flex">
             <a href="" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
-                alt=""
-                width={200}
-                height={30}
+                alt="test"
+                width="0"
+                height="0"
+                style={{ width: "100%", height: "30px" }}
               />
             </a>
           </div>

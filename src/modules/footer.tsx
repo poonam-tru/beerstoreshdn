@@ -158,7 +158,7 @@ const Footer = () => {
                     src="https://tbsecoms.wpengine.com/wp-content/uploads/2022/08/app-store-small.svg"
                     width={90}
                     height={35}
-                    // style={{ height: "35px", width: "105px" }}
+                    style={{ height: "35px", width: "105px" }}
                   />
                 </a>
                 <a href="#">
@@ -167,7 +167,7 @@ const Footer = () => {
                     src="https://tbsecomd.wpengine.com/wp-content/uploads/2022/08/google-store-small.svg"
                     width={105}
                     height={35}
-                    // style={{ height: "35px", width: "105px" }}
+                    style={{ height: "35px", width: "105px" }}
                   />
                 </a>
               </div>
@@ -181,18 +181,24 @@ const Footer = () => {
             src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/logo-arrive-alive-logo.png"
             width="85"
             height="44"
+            style={{ height: "44px", width: "85px" }}
+            unoptimized
           />
           <Image
             alt="alive"
             src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/logo-best-bar-none.20140514.png"
             width="85"
             height="44"
+            style={{ height: "44px", width: "85px" }}
+            unoptimized
           />
           <Image
             alt="alive"
             src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/logo-essential-accessibility.png"
             width="85"
             height="44"
+            style={{ height: "44px", width: "85px" }}
+            unoptimized
           />
         </div>
       </div>
