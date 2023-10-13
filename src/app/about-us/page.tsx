@@ -233,7 +233,7 @@ const AboutUs = () => {
                         {item.listItems.map((item) => (
                           <a
                             href="#"
-                            className="flex text-[#4A4F55] hover:text-[#D06F1A] hover:bg-[#f4f4f4]   px-[5px] py-[3px]  text-[12px] font-[Gotham-Bold]"
+                            className="flex text-[#4A4F55] hover:text-[#D06F1A] hover:bg-[#f4f4f4]   px-[5px] py-[3px]  text-[12px] font-[Gotham-Book]"
                             key={`key_${item}`}
                           >
                             {item}
@@ -277,7 +277,7 @@ const AboutUs = () => {
                         <div className="flex self-end mt-auto">
                           <Button
                             asChild
-                            className="h-[30px] text-[10px]font-[Gotham-Bold] py-[3px] px-[7px] rounded-[5px] uppercase"
+                            className="h-auto leading-normal text-[10px] font-[Gotham-Bold] py-[3px] px-[7px] rounded-[5px] uppercase"
                           >
                             <Link href="/">
                               {card.buttonText}{" "}
@@ -364,7 +364,7 @@ const AboutUs = () => {
                         <div className="flex self-end mt-auto">
                           <Button
                             asChild
-                            className="h-[30px] text-[10px] py-[3px] px-[7px] rounded-[5px] uppercase"
+                            className="h-auto leading-normal text-[10px] font-[Gotham-Bold] py-[3px] px-[7px] rounded-[5px] uppercase"
                           >
                             <Link href="/">
                               {card.buttonText}{" "}
