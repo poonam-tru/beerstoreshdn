@@ -335,34 +335,34 @@ const readMoreDetail = [
   },
 ];
 const Home = () => {
-  function equalheight(selector: any) {
-    const elements = document.querySelectorAll(selector);
-    let maxHeight = 0;
+  // function equalheight(selector: any) {
+  //   const elements = document.querySelectorAll(selector);
+  //   let maxHeight = 0;
 
-    elements.forEach((element) => {
-      const elementHeight = element.offsetHeight;
-      if (elementHeight > maxHeight) {
-        maxHeight = elementHeight;
-      }
-    });
+  //   elements.forEach((element) => {
+  //     const elementHeight = element.offsetHeight;
+  //     if (elementHeight > maxHeight) {
+  //       maxHeight = elementHeight;
+  //     }
+  //   });
 
-    elements.forEach((element) => {
-      element.style.height = maxHeight + "px";
-    });
-  }
+  //   elements.forEach((element) => {
+  //     element.style.height = maxHeight + "px";
+  //   });
+  // }
 
-  React.useEffect(() => {
-    window.addEventListener("load", function () {
-      equalheight(".equal-h");
-    });
+  // React.useEffect(() => {
+  //   window.addEventListener("load", function () {
+  //     equalheight(".equal-h");
+  //   });
 
-    window.addEventListener("resize", function () {
-      // Delay the execution of equalheight('.blog-title') by 200 milliseconds
-      setTimeout(function () {
-        equalheight(".equal-h");
-      }, 200);
-    });
-  });
+  //   window.addEventListener("resize", function () {
+  //     // Delay the execution of equalheight('.blog-title') by 200 milliseconds
+  //     setTimeout(function () {
+  //       equalheight(".equal-h");
+  //     }, 200);
+  //   });
+  // });
 
   return (
     <>
@@ -460,7 +460,7 @@ const Home = () => {
         <div className="container recipe ps-[80px]  pe-[80px]">
           <Slider {...BeerRecpieSlidersettings} className="gap-5">
             {beerStoreCardDetail.map((item, idx) => (
-              <div key={`${item.title}`} className="ps-[15px] pe-[15px]">
+              <div key={`${item.title}`} className="recipe-card ps-[15px] pe-[15px]">
                 <InfoCard
                   title={"What is amber ale?"}
                   image={{
