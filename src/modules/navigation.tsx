@@ -224,8 +224,10 @@ export function Navigation() {
                           </div>
                         )}
                         <ul
-                          className={`flex flex-col h-full md:w-[100px] lg:w-[120px] xl:w-[150px] 2xl:w-[180px] border-e-[1px] border-[#ddd] ${
-                            [2, 3].includes(IDX) ? "" : "py-[10px]"
+                          className={`flex flex-col h-full  2xl:w-[180px] border-e-[1px] border-[#ddd] ${
+                            [2, 3].includes(IDX)
+                              ? " w-[240px]"
+                              : "py-[10px] md:w-[100px] lg:w-[120px] xl:w-[150px]"
                           }`}
                         >
                           {list?.map(({ link, href }) => (
@@ -239,7 +241,7 @@ export function Navigation() {
                             >
                               <NavigationMenuLink asChild>
                                 <Link
-                                  className="font-[Gotham-Book] p-0  2xl:text-[14px] xl:text-[14px] py-[3px]  md:text-[10px] text-[#4a4f55] hover:text-[#d06f1a]"
+                                  className="font-[Gotham-Book] p-0 text-[14px] py-[3px]  md:text-[10px] text-[#4a4f55] hover:text-[#d06f1a]"
                                   href={href && href}
                                 >
                                   {link}
