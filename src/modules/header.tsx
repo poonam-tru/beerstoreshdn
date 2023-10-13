@@ -50,7 +50,7 @@ const Header = () => {
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white py-[25px] px-[30px] relative rounded-[5px] mt-[25px] w-[300px] left-[38px]">
+                <DropdownMenuContent className="bg-white py-[25px] px-[30px] relative rounded-[5px] mt-[25px] w-[300px] left-[-38px]">
                   <DropdownMenuLabel className="text-base text-[16px] font-Gotham-Medium">
                     Login to Your Account.
                   </DropdownMenuLabel>
@@ -135,12 +135,12 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="flex p-[15px] border-t-[2px] border-[#ddd] gap-2">
-                    <Button className="text-[12px] font-Gotham-Bold h-[36px] rounded-[5px]">
+                    <Button variant={"default"} className="text-[12px] font-Gotham-Bold h-[36px] rounded-[5px]">
                       Direction
                     </Button>
                     <Button
                       className="text-[12px] font-Gotham-Bold h-[36px] rounded-[5px]"
-                      variant={"outline"}
+                      variant={"secondary"}
                     >
                       Create store
                     </Button>

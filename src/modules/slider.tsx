@@ -82,7 +82,7 @@ function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[4%] top-[calc(50%-30px)] z-10"}
+      className={"absolute left-[4%] top-[calc(50%-30px)] z-[9]"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -336,7 +336,8 @@ export default function slider() {
               alt=""
               width={600}
               height={300}
-              style={{ width: "100%", height: "500px" }}
+              objectFit="cover"
+              style={{ width: "100%", height: "500px",objectFit:'cover' }}
             />
           </div>
         </div>

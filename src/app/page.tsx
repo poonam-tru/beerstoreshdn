@@ -424,7 +424,7 @@ const Home = () => {
                       <Separator className="bg-gray-500 opacity-50 h-px my-2" />
                       <div className="flex font-Gotham-Medium">
                         <span className="text-[##4a4f57]">Price:</span>
-                        <span className="text-[#c00] font-14px lg:12px xl:font-14px leading-[18px] font-medium mx-1">
+                        <span className="text-[#c00] font-14px lg:12px xl:font-14px leading-[18px] font-[Gotham-Medium] font-semibold mx-1">
                           {`$${product.price}`}
                         </span>
                         <span className="line-through text-[##4a4f57]">
@@ -460,7 +460,10 @@ const Home = () => {
         <div className="container recipe ps-[80px]  pe-[80px]">
           <Slider {...BeerRecpieSlidersettings} className="gap-5">
             {beerStoreCardDetail.map((item, idx) => (
-              <div key={`${item.title}`} className="recipe-card ps-[15px] pe-[15px]">
+              <div
+                key={`${item.title}`}
+                className="recipe-card ps-[15px] pe-[15px]"
+              >
                 <InfoCard
                   title={"What is amber ale?"}
                   image={{
@@ -474,9 +477,10 @@ const Home = () => {
                   // } rounded-[5px] overflow-hidden`
                   className={`equal-h ${
                     idx === 0
-                      ? "xl:flex-row xl:[&>*]:w-1/2  xl:[&>*:first-child]:h-full [&>*:first-child]:h-[50%] [&>*:first-child]:overflow-hidden object-cover"
-                      : "flex-col [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
-                  } flex rounded-[5px] overflow-hidden`}
+                      ? "xl:flex-row xl:[&>*]:w-1/2   xl:[&>*:first-child]:h-full  [&>*:first-child]:overflow-hidden object-cover"
+                      : "flex-col  [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
+                  } flex rounded-[5px] [&>*:first-child]:h-[180px]
+             overflow-hidden`}
                   buttonText={"Learn More"}
                   badgeText={"ARTICLE"}
                   description={
@@ -527,8 +531,8 @@ const Home = () => {
                       <Separator className="bg-gray-500 opacity-50 h-px my-2" />
                       <div className="flex">
                         <span className="text-[##4a4f57]">Price:</span>
-                        <span className="text-[#c00] font-medium mr-2">
-                          {product.price}
+                        <span className="text-[#c00] font-14px lg:12px  leading-[18px] font-[Gotham-Medium] font-semibold mx-1">
+                          {`$${product.price}`}
                         </span>
                         <span className="line-through text-[##4a4f57]">
                           {product.discountedPrice}

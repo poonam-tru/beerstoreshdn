@@ -210,7 +210,7 @@ export function Navigation() {
                     </NavigationMenuTrigger>
                   )}
 
-                  <NavigationMenuContent className="flex flex-row  top-[60px] border-[1px] border-solid border-[#ddd] bg-[#f4f4f4] z-30 ">
+                  <NavigationMenuContent className="flex flex-row  top-[60px] border-[1px] border-solid border-[#ddd] bg-[#f4f4f4] z-[9]">
                     {content?.map(({ subhead, list }) => (
                       <div
                         className="flex flex-col bg-white"
@@ -257,7 +257,7 @@ export function Navigation() {
           </NavigationMenu>
           <div className="flex basis-1/4 lg:basis-1/4 h-auto">
             <Input
-              className="bg-white  sm:h-[40px] lg:h-[50px] rounded-[50px] py-[8px] pl-[14px] lg:pl-[28px] pr-[5px]"
+              className="bg-white  sm:h-[40px] lg:h-[50px] text-[10px] font-[Gotham-Book] rounded-[50px] py-[8px] pl-[14px] lg:pl-[28px] pr-[5px]"
               placeholder="Search 1,000+ brand of beer "
               endIcon={
                 <Button
@@ -280,9 +280,9 @@ export function Navigation() {
       </div>
       <div className="block md:hidden h-auto">
         <div className=" flex justify-between items-center py-[10px]">
-            <Button variant={"ghost"} className="p-0 h-[20px]">
-              <Image src={Hamburger} alt="" width={40} height={40} />
-            </Button>
+          <Button variant={"ghost"} className="p-0 h-[20px]">
+            <Image src={Hamburger} alt="" width={40} height={40} />
+          </Button>
           <div className="flex">
             <a href="" className="inline-flex">
               <Image

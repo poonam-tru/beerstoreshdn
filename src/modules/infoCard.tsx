@@ -67,9 +67,13 @@ const InfoCard = ({
       </CardHeader>
 
       <CardContent className="py-4 px-2 info-content">
-        {title && <CardTitle className="mb-4 info-title">{title}</CardTitle>}
+        {title && (
+          <CardTitle className="mb-4 text-[20px] font-[Gotham-Bold] info-title">
+            {title}
+          </CardTitle>
+        )}
         {description && (
-          <CardDescription className="mb-4 info-description">
+          <CardDescription className="mb-4 text-[13px] font-[Gotham-Book] info-description">
             {description}
           </CardDescription>
         )}
@@ -87,9 +91,9 @@ const InfoCard = ({
           {buttonText && (
             <Button
               asChild={asLink}
-              className={
+              className={`${
                 asLink ? "tbs-link-text p-0 h-auto" : "w-full rounded-[100px]"
-              }
+              } text-[11px] font-[Gotham-Bold]`}
               onClick={onClickButton}
               variant={asLink ? "link" : "default"}
             >
