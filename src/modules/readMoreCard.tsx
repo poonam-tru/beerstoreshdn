@@ -49,7 +49,7 @@ const ReadMoreCard = ({
     >
       <CardContent className="py-4 px-2 readmore-content basis-3/5">
         {title && (
-          <CardTitle className="mb-4 font-[Gotham-Bold] readmore-title uppercase text-white text-[28px]">
+          <CardTitle className="mb-4 font-sans font-bold readmore-title uppercase text-white text-[28px]">
             {title}
           </CardTitle>
         )}
@@ -61,7 +61,7 @@ const ReadMoreCard = ({
         {buttonText && (
           <Button
             asChild={asLink}
-            className="w-auto text-[16px] rounded-full  h-auto leading-[20px] font-[Gotham-Bold]"
+            className="w-auto text-[16px] rounded-full  h-auto leading-[20px] font-sans font-bold"
             onClick={onClickButton}
             variant="secondary"
           >
