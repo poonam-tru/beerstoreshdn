@@ -31,7 +31,7 @@ const BannerHeader = ({
               objectFit: "cover",
               objectPosition: "center",
             }}
-          />
+          /> 
         </div>
       )}
       <div className="flex flex-col absolute left-0 h-full right-0 justify-center items-center p-[15px]">
