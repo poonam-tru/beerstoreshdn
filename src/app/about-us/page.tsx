@@ -227,7 +227,7 @@ const AboutUs = () => {
                     value={item.title}
                     key={`aboutus_item${item.title}`}
                   >
-                    <AccordionTrigger className="text-left py-[25px] hover:no-underline text-[14px] font-[Gotham-Bold]">
+                    <AccordionTrigger className="text-left py-[25px] hover:no-underline text-[14px] font-sans  font-bold">
                       {item.title}
                       <Plus className="h-4 w-4 shrink-0 transition-transform duration-500 group-data-[state=open]:hidden" />
                       <Minus className="h-4 w-4 shrink-0 transition-transform duration-500 group-data-[state=closed]:hidden" />
@@ -237,7 +237,7 @@ const AboutUs = () => {
                         {item.listItems.map((item) => (
                           <a
                             href="#"
-                            className="flex text-[#4A4F55] hover:text-[#D06F1A] hover:bg-[#f4f4f4]   px-[5px] py-[3px]  text-[12px] font-[Gotham-Book]"
+                            className="flex text-[#4A4F55] hover:text-[#D06F1A] hover:bg-[#f4f4f4]   px-[5px] py-[3px]  text-[12px] font-sans  font-normal"
                             key={`key_${item}`}
                           >
                             {item}
@@ -268,12 +268,12 @@ const AboutUs = () => {
                     </CardHeader>
                     <CardContent className="flex flex-col p-[30px] flex-grow ">
                       {card.title && (
-                        <CardTitle className="text-[20px] font-[Gotham-Bold] mb-[15px]">
+                        <CardTitle className="text-[20px] font-sans  font-bold mb-[15px]">
                           {card.title}
                         </CardTitle>
                       )}
                       {card.description && (
-                        <CardDescription className="text-[#4a4f55] text-[14px] font-[Gotham-Book] mb-[30px]">
+                        <CardDescription className="text-[#4a4f55] text-[14px] font-sans  font-normal mb-[30px]">
                           {card.description}
                         </CardDescription>
                       )}
@@ -281,7 +281,7 @@ const AboutUs = () => {
                         <div className="flex self-end mt-auto">
                           <Button
                             asChild
-                            className="h-auto leading-normal text-[10px] font-[Gotham-Bold] py-[3px] px-[7px] rounded-[5px] uppercase"
+                            className="h-auto leading-normal text-[10px] font-sans  font-bold py-[3px] px-[7px] rounded-[5px] uppercase"
                           >
                             <Link href="/">
                               {card.buttonText}{" "}
@@ -296,16 +296,16 @@ const AboutUs = () => {
               ))}
             </div>
             <div className="flex flex-col bg-[#f4f4f4] border-[#e2e2e2] border-solid border rounded-[2px] p-[40px]">
-              <h2 className="text-[20px] font-[Leviathan-HTF-Black]">
+              <h2 className="text-[20px] font-mono  font-Bold">
                 Time-Tested, Beer-Lover Approved
               </h2>
-              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-[Gotham-Book]">
+              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-sans  font-normal">
                 Becoming experts on beer doesn’t happen overnight. We’ve been in
                 business since 1927 and we’re owned by 30 Ontario-based brewers.
                 The Beer Store employs 7,000 hard-working Ontarians with
                 well-paying full and part-time jobs.
               </p>
-              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-[Gotham-Book] ">
+              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-sans  font-normal ">
                 There’s no other team of beer experts who live and love all
                 things beer as much as we do. We love beer as much as you — so
                 you know we’ll always be dedicated to bringing you your
@@ -314,15 +314,15 @@ const AboutUs = () => {
                 more than 800 beer brands, in over 440 retail stores, from 200
                 brewers around the world.
               </p>
-              <h2 className="text-[24px] font-[Leviathan-HTF-Black] mt-[20px]">
+              <h2 className="text-[24px] font-mono  font-Bold mt-[20px]">
                 Facts and Figures
               </h2>
-              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-[Gotham-Book]">
+              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-sans  font-normal">
                 The Beer Store was established in 1927, which means we’ve been
                 around longer than the Internet. And television. And a lot of
                 other things (probably even you!).
               </p>
-              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-[Gotham-Book]">
+              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-sans  font-normal">
                 Here’s something for the number crunchers to chew on: We operate
                 over 440 retail stores, serve just under 18,000 licensed
                 customers, 671 government-owned LCBO retail locations, 327
@@ -332,7 +332,7 @@ const AboutUs = () => {
               <div className="flex mt-[20px]">
                 <Button
                   asChild
-                  className="h-[30px] font-[Gotham-Book] text-[14px] py-[3px] px-[7px] rounded-[5px] uppercase"
+                  className="h-[30px] font-sans  font-normal text-[14px] py-[3px] px-[7px] rounded-[5px] uppercase"
                 >
                   <Link href="/">
                     Media Contact <ChevronRight width={20} height={26} />
@@ -346,7 +346,7 @@ const AboutUs = () => {
                   <Card className="h-full rounded-[5px] overflow-hidden flex flex-col border-none shadow-none">
                     <CardHeader>
                       {card.title && (
-                        <CardTitle className="text-[24px] font-[Gotham-Bold]  mb-[15px]">
+                        <CardTitle className="text-[24px] font-sans  font-bold  mb-[15px]">
                           {card.title}
                         </CardTitle>
                       )}
@@ -360,7 +360,7 @@ const AboutUs = () => {
                     </CardHeader>
                     <CardContent className="flex flex-col pt-[20px] pb-[40px] flex-grow ">
                       {card.description && (
-                        <CardDescription className="text-[#4a4f55] text-[14px] font-[Gotham-Book]  mb-[30px]">
+                        <CardDescription className="text-[#4a4f55] text-[14px] font-sans  font-normal  mb-[30px]">
                           {card.description}
                         </CardDescription>
                       )}
@@ -368,7 +368,7 @@ const AboutUs = () => {
                         <div className="flex self-end mt-auto">
                           <Button
                             asChild
-                            className="h-auto leading-normal text-[10px] font-[Gotham-Bold] py-[3px] px-[7px] rounded-[5px] uppercase"
+                            className="h-auto leading-normal text-[10px] font-sans  font-bold py-[3px] px-[7px] rounded-[5px] uppercase"
                           >
                             <Link href="/">
                               {card.buttonText}{" "}
@@ -402,11 +402,11 @@ const AboutUs = () => {
                         />
                       </div>
                       <div className="flex flex-col justify-between items-stretch basis-1/2 p-[10px]">
-                        <h3 className="text-[13px] font-[Gotham-Bold]">
+                        <h3 className="text-[13px] font-sans  font-bold">
                           {" "}
                           {news.title}
                         </h3>
-                        <p className="text-[14px] font-[Gotham-Book] text-[#4A4F55]">
+                        <p className="text-[14px] font-sans  font-normal text-[#4A4F55]">
                           {news.description}
                         </p>
                       </div>

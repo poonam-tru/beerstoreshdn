@@ -95,7 +95,7 @@ const Footer = () => {
             </div>
           ))}
           <div className="flex flex-col">
-            <h2 className="text-white uppercase font-semibold mb-6  md:text-[14px]  text-[18px] font-[Gotham-Bold]">
+            <h2 className="text-white uppercase  mb-6  md:text-[14px]  text-[18px] font-sans font-bold">
               FOLLOW US
             </h2>
             <div>
@@ -148,7 +148,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="mt-6">
-              <h2 className="text-white uppercase font-semibold  md:text-[14px]  mb-3 text-[18px] font-[Gotham-Bold]">
+              <h2 className="text-white uppercase   md:text-[14px]  mb-3 text-[18px] font-sans font-bold">
                 DOWNLOAD OUR APP
               </h2>
               <div className="flex flex-col lg:flex-row gap-[15px]">

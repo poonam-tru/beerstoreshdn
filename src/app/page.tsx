@@ -390,8 +390,8 @@ const Home = () => {
       </section>
       <section className="bg-[#F4F4F4]  py-[70px]  on-sale-section">
         <div className="flex flex-col text-center mb-[35px]">
-          <h2 className="text-[16px] font-[Gotham-Book]">{`SEE WHAT'S`}</h2>
-          <h1 className="text-[30px] font-[Leviathan-HTF-Black]">On Sale</h1>
+          <h2 className="text-[16px] font-sans  font-normal">{`SEE WHAT'S`}</h2>
+          <h1 className="text-[30px] font-mono font-bold">On Sale</h1>
         </div>
         <div className="container newbeers ps-[80px]  pe-[80px]">
           <Slider {...settings}>
@@ -422,9 +422,9 @@ const Home = () => {
                         <p className="text-[#4a4f55]">{`6 X Bottle 341 ml`}</p>
                       </div>
                       <Separator className="bg-gray-500 opacity-50 h-px my-2" />
-                      <div className="flex font-Gotham-Medium">
+                      <div className="flex ">
                         <span className="text-[##4a4f57]">Price:</span>
-                        <span className="text-[#c00] font-14px lg:12px xl:font-14px leading-[18px] font-[Gotham-Medium] font-semibold mx-1">
+                        <span className="text-[#c00] font-14px lg:12px xl:font-14px leading-[18px] font-sans  font-medium  mx-1">
                           {`$${product.price}`}
                         </span>
                         <span className="line-through text-[##4a4f57]">
@@ -441,7 +441,7 @@ const Home = () => {
         <div className="w-full text-center  mt-[40px]">
           <Button
             variant={"secondary"}
-            className="rounded-full  text-[16px] font-[Gotham-Bold] max-h-[50px]"
+            className="rounded-full  text-[16px] font-sans  font-bold max-h-[50px]"
           >
             EXPLORE ALL SAVNGS
           </Button>
@@ -449,11 +449,11 @@ const Home = () => {
       </section>
       <section className="bg-white  py-[70px]">
         <div className="flex flex-col text-center mb-[35px]">
-          <p className="uppercase text-[16px] font-[Gotham-Book]">
+          <p className="uppercase text-[16px] font-sans  font-normal">
             {" "}
             Inspiration for{" "}
           </p>
-          <h2 className=" text-[30px] font-[Leviathan-HTF-Black]">
+          <h2 className=" text-[30px] font-mono font-bold">
             Beer Recipes &amp; Food Pairings
           </h2>
         </div>
@@ -494,11 +494,11 @@ const Home = () => {
       </section>
       <section className="bg-[#f4f4f4]  py-[70px]">
         <div className="flex flex-col text-center mb-[35px]">
-          <p className="uppercase  text-[16px]  font-[Gotham-Book]">
+          <p className="uppercase  text-[16px]  font-sans  font-normal">
             {" "}
             Discover{" "}
           </p>
-          <h2 className=" text-[30px] font-[Leviathan-HTF-Black]">New Beers</h2>
+          <h2 className=" text-[30px] font-mono font-bold">New Beers</h2>
         </div>
         <div className="container newbeers ps-[80px]  pe-[80px]">
           <Slider {...settingsNewBeer}>
@@ -531,7 +531,7 @@ const Home = () => {
                       <Separator className="bg-gray-500 opacity-50 h-px my-2" />
                       <div className="flex">
                         <span className="text-[##4a4f57]">Price:</span>
-                        <span className="text-[#c00] font-14px lg:12px  leading-[18px] font-[Gotham-Medium] font-semibold mx-1">
+                        <span className="text-[#c00] font-14px lg:12px  leading-[18px] font-sans  font-medium  mx-1">
                           {`$${product.price}`}
                         </span>
                         <span className="line-through text-[##4a4f57]">
@@ -554,13 +554,11 @@ const Home = () => {
 
       <section className="bg-white  py-[70px]">
         <div className="flex flex-col text-center mb-[35px]">
-          <p className="uppercase  text-[16px] font-[Gotham-Bold]">
+          <p className="uppercase  text-[16px] font-sans  font-bold">
             {" "}
             More From{" "}
           </p>
-          <h2 className=" text-[30px] font-[Leviathan-HTF-Black]">
-            The Beer Store
-          </h2>
+          <h2 className=" text-[30px] font-mono font-bold">The Beer Store</h2>
         </div>
         <div className="container moreFrom ps-[80px]  pe-[80px]">
           <Slider {...beerStoreSliderSettings}>
