@@ -19,7 +19,7 @@ body {
 .tbs-link-text {
   color: hsl(var(--link-primary));
 }
-@font-face {
+/* @font-face {
   font-family: "Leviathan-HTF-Black-Italic";
   src: url("../fonts/Leviathan-HTF-Black-Italic.otf");
 }
@@ -38,7 +38,7 @@ body {
 @font-face {
   font-family: "Gotham-Book";
   src: url("../fonts/Gotham-Book.otf");
-}
+} */
 @media screen and (min-width: 1280px) {
   .recipe .slick-track {
     display: flex !important;

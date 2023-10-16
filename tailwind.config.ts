@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-primary)'],
+        mono: ['var(--font-secondary)'],
+      },
       fontSize: {
         "28px": "28px",
         "48px": "48px",
@@ -33,7 +37,6 @@ module.exports = {
       spacing: {
         "500": "500px",
       },
-
       backgroundImage: {
         "banner-bg-1":
           "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/JulyHiringCampaign-DesktopBG.jpg')",
