@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${gotham.variable} ${leviathan.variable}`}>
         <Header />
-        {children}
+          {children}
         <Footer />
       </body>
     </html>
