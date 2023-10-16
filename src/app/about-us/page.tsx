@@ -334,7 +334,7 @@ const AboutUs = () => {
                   asChild
                   className="h-[30px] font-sans  font-normal text-[14px] py-[3px] px-[7px] rounded-[5px] uppercase"
                 >
-                  <Link href="/">
+                  <Link href="/" className=" font-sans font-bold" >
                     Media Contact <ChevronRight width={20} height={26} />
                   </Link>
                 </Button>

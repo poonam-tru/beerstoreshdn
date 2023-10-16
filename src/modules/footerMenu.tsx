@@ -34,7 +34,7 @@ const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="">
       <div className="flex items-center justify-between p-0">
         {!mediaScreen && (
-          <h4 className="text-sm text-white font-semibold uppercase text-[14px]  lg:text-[18px] mb-[15px] ">
+          <h4 className="text-sm text-white font-bold uppercase text-[14px] font-sans  lg:text-[18px] mb-[15px] ">
             {title}
           </h4>
         )}
