@@ -29,11 +29,14 @@ function SampleNextArrow(props: any) {
     </div>
   );
 }
+
 function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[-10%]   md:left-[-4%] top-[calc(50%-24px)] z-10"}
+      className={
+        "absolute left-[-10%]   md:left-[-4%] top-[calc(50%-24px)] z-10"
+      }
       style={{ ...style }}
       onClick={onClick}
     >
@@ -332,34 +335,34 @@ const readMoreDetail = [
   },
 ];
 const Home = () => {
-  function equalheight(selector: any) {
-    const elements = document.querySelectorAll(selector);
-    let maxHeight = 0;
+  // function equalheight(selector: any) {
+  //   const elements = document.querySelectorAll(selector);
+  //   let maxHeight = 0;
 
-    elements.forEach((element) => {
-      const elementHeight = element.offsetHeight;
-      if (elementHeight > maxHeight) {
-        maxHeight = elementHeight;
-      }
-    });
+  //   elements.forEach((element) => {
+  //     const elementHeight = element.offsetHeight;
+  //     if (elementHeight > maxHeight) {
+  //       maxHeight = elementHeight;
+  //     }
+  //   });
 
-    elements.forEach((element) => {
-      element.style.height = maxHeight + "px";
-    });
-  }
+  //   elements.forEach((element) => {
+  //     element.style.height = maxHeight + "px";
+  //   });
+  // }
 
-  React.useEffect(() => {
-    window.addEventListener("load", function () {
-      equalheight(".equal-h");
-    });
+  // React.useEffect(() => {
+  //   window.addEventListener("load", function () {
+  //     equalheight(".equal-h");
+  //   });
 
-    window.addEventListener("resize", function () {
-      // Delay the execution of equalheight('.blog-title') by 200 milliseconds
-      setTimeout(function () {
-        equalheight(".equal-h");
-      }, 200);
-    });
-  });
+  //   window.addEventListener("resize", function () {
+  //     // Delay the execution of equalheight('.blog-title') by 200 milliseconds
+  //     setTimeout(function () {
+  //       equalheight(".equal-h");
+  //     }, 200);
+  //   });
+  // });
 
   return (
     <>
@@ -367,10 +370,10 @@ const Home = () => {
 
       <section className="bg-white py-[70px]">
         <div className="container ">
-          <div className="flex justify-center flex-col lg:flex-row mx-[75px] gap-6">
+          <div className="flex justify-center flex-col lg:flex-row mx-[75px] gap-6 overflow-hidden">
             {readMoreDetail.map((item) => (
               <ReadMoreCard
-                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')] bg-no-repeat bg-cover `}
+                className={`bg-[url('https://tbsecomd.wpengine.com/wp-content/uploads/2023/08/cycle_10_tile1_mob.jpg')] bg-no-repeat bg-cover md:flex-row flex-col-reverse `}
                 key={`Infocard${item.url}`}
                 title={"some day pickup or delivery"}
                 image={{
@@ -395,7 +398,7 @@ const Home = () => {
             {productCardInfo.map((product) => {
               return (
                 <ProductCard
-                  className="ms-[20px] me-[20px] bg-white"
+                  className="ms-[20px] me-[20px] bg-white "
                   key={`${product.title}`}
                   title={product.title}
                   image={{
@@ -419,10 +422,10 @@ const Home = () => {
                         <p className="text-[#4a4f55]">{`6 X Bottle 341 ml`}</p>
                       </div>
                       <Separator className="bg-gray-500 opacity-50 h-px my-2" />
-                      <div className="flex">
+                      <div className="flex font-Gotham-Medium">
                         <span className="text-[##4a4f57]">Price:</span>
-                        <span className="text-[#c00] font-medium mr-2">
-                          {product.price}
+                        <span className="text-[#c00] font-14px lg:12px xl:font-14px leading-[18px] font-[Gotham-Medium] font-semibold mx-1">
+                          {`$${product.price}`}
                         </span>
                         <span className="line-through text-[##4a4f57]">
                           {product.discountedPrice}
@@ -436,7 +439,10 @@ const Home = () => {
           </Slider>
         </div>
         <div className="w-full text-center  mt-[40px]">
-          <Button className="rounded-full text-[16px] font-[Gotham-Bold] max-h-[50px]">
+          <Button
+            variant={"secondary"}
+            className="rounded-full  text-[16px] font-[Gotham-Bold] max-h-[50px]"
+          >
             EXPLORE ALL SAVNGS
           </Button>
         </div>
@@ -454,7 +460,10 @@ const Home = () => {
         <div className="container recipe ps-[80px]  pe-[80px]">
           <Slider {...BeerRecpieSlidersettings} className="gap-5">
             {beerStoreCardDetail.map((item, idx) => (
-              <div key={`${item.title}`} className="ps-[15px] pe-[15px]">
+              <div
+                key={`${item.title}`}
+                className="recipe-card ps-[15px] pe-[15px]"
+              >
                 <InfoCard
                   title={"What is amber ale?"}
                   image={{
@@ -468,12 +477,15 @@ const Home = () => {
                   // } rounded-[5px] overflow-hidden`
                   className={`equal-h ${
                     idx === 0
-                      ? "xl:flex-row xl:[&>*]:w-1/2  xl:[&>*:first-child]:h-full [&>*:first-child]:h-[50%] [&>*:first-child]:overflow-hidden object-cover"
-                      : "flex-col [&>*:first-child]:h-[180px] [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
-                  } flex rounded-[5px] overflow-hidden`}
+                      ? "xl:flex-row xl:[&>*]:w-1/2   xl:[&>*:first-child]:h-full  [&>*:first-child]:overflow-hidden object-cover"
+                      : "flex-col  [&>*:first-child]:overflow-hidden [&>*:last-child]:pb-[15px]"
+                  } flex rounded-[5px] [&>*:first-child]:h-[180px]
+             overflow-hidden`}
                   buttonText={"Learn More"}
                   badgeText={"ARTICLE"}
-                  description={"testing"}
+                  description={
+                    "Ever wondered whether beer really tastes better from a bottle, or if ... "
+                  }
                 />
               </div>
             ))}
@@ -519,8 +531,8 @@ const Home = () => {
                       <Separator className="bg-gray-500 opacity-50 h-px my-2" />
                       <div className="flex">
                         <span className="text-[##4a4f57]">Price:</span>
-                        <span className="text-[#c00] font-medium mr-2">
-                          {product.price}
+                        <span className="text-[#c00] font-14px lg:12px  leading-[18px] font-[Gotham-Medium] font-semibold mx-1">
+                          {`$${product.price}`}
                         </span>
                         <span className="line-through text-[##4a4f57]">
                           {product.discountedPrice}
@@ -533,7 +545,7 @@ const Home = () => {
             })}
           </Slider>
           <div className="w-full text-center  mt-[40px]">
-            <Button className="rounded-full bg-black text-#f4f4f4 h-[50px]">
+            <Button variant={"secondary"} className="rounded-full  h-[50px]">
               EXPLORE NEW BEERS
             </Button>
           </div>

@@ -38,7 +38,7 @@ const ProductCard = ({
   return (
     <Card
       className={cn(
-        "flex-col border border-solid rounded-[10px] relative",
+        "flex-col border border-solid rounded-[10px] relative shadow-none overflow-hidden",
         className
       )}
     >
@@ -77,7 +77,10 @@ const ProductCard = ({
       </CardContent>
       <CardFooter className="flex mt-[10px] ps-[20px] pe-[20px] pb-[20px] product-footer">
         {buttonText && (
-          <Button className="w-full text-[14px] font-[Gotham-Medium] rounded-[100px]" onClick={onClickButton}>
+          <Button
+            className="w-full text-[14px] font-[Gotham-Medium] rounded-[100px]"
+            onClick={onClickButton}
+          >
             {buttonText}
           </Button>
         )}

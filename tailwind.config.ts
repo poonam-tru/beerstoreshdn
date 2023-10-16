@@ -53,8 +53,7 @@ module.exports = {
           "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/Hiring.png')",
       },
       colors: {
-        "banner-color-6": "#f3f0e1",
-        "#f4f4f4": "#f4f4f4",
+        
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -105,8 +104,8 @@ module.exports = {
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-down": "accordion-down 0.5s ease-out",
+        "accordion-up": "accordion-up 0.5s ease-out",
       },
     },
   },

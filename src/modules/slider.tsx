@@ -11,12 +11,7 @@ const dumyData = [
   {
     url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
   },
-  {
-    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
-  },
-  {
-    url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
-  },
+
   // {
   //   url: "https://cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1",
   // },
@@ -47,21 +42,21 @@ const dumyData = [
 ];
 const bgImage = {
   banner1:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/JulyHiringCampaign-DesktopBG.jpg')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/JulyHiringCampaign-DesktopBG.jpg",
   banner2:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner1-mob.jpg')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner1-mob.jpg",
   banner3:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner2-mob.jpg')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/cycle_10_banner2-mob.jpg",
   banner4:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/discovery-cylce-8-desktop.png')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/discovery-cylce-8-desktop.png",
   banner5:
-    "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/stay-bg.png')",
+    "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/stay-bg.png",
   bannerfe2:
-    "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png')",
+    "https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png",
   bannerfe4:
-    "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/brand-banner-more-value.png')",
+    "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/brand-banner-more-value.png",
   bannerfe6:
-    "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/Hiring.png')",
+    "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/Hiring.png",
 };
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -87,7 +82,7 @@ function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={"absolute left-[4%] top-[calc(50%-30px)] z-10"}
+      className={"absolute left-[4%] top-[calc(50%-30px)] z-[9]"}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -127,25 +122,19 @@ export default function slider() {
       },
     ],
   };
-  const insideSettings = {
+  const inSettings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1300,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],
@@ -154,92 +143,152 @@ export default function slider() {
   return (
     <Slider className="h-500" {...settings}>
       {/* slider1 */}
-      <div
-        className={`bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-1`}
-      >
-        <div className="flex h-full container mx-auto my-0 ">
-          <div className="flex flex-col items-end text-left justify-center ps-[10%] pe-[5%]">
-            <div className="text-white ">
-              <h1 className=" xl:text-70px md:text-[40px] font-[Leviathan-HTF-Black-Italic]">
-                Holiday Hour
-              </h1>
-              <text className="xl:text-24px leading-[38px] lg:text-[24px] p-[10px] font-[Gotham-Bold]">
-                All stores will be closed on October 9<sup>th</sup> for the
-                Thanksgiving Holiday
-              </text>
-              <div className="mt-[20px]">
-                <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold] rounded-s-full rounded-e-full text-black bg-[#f4b233] h-[50px]">
-                  Learn More
-                </Button>
+      <div className="bg-center relative bg-fixed h-500">
+        <div className="h-full relative  flex items-center lg:flex-row flex-col md:items-center">
+          <div className="flex h-full mx-auto my-0  absolute ps-[5%] lg:ps-[10%]">
+            <div className="flex flex-col items-end text-left justify-center ps-[10%] pe-[5%]">
+              <div className="text-white ">
+                <h1 className=" xl:text-70px md:text-[40px] font-[Leviathan-HTF-Black-Italic]">
+                  Holiday Hour
+                </h1>
+                <p className="xl:text-24px leading-[38px] lg:text-[24px] p-[10px] font-[Gotham-Bold]">
+                  All stores will be closed on October 9<sup>th</sup> for the
+                  Thanksgiving Holiday
+                </p>
+                <div className="mt-[20px]">
+                  <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold] rounded-s-full rounded-e-full h-[50px]">
+                    Learn More
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
+          <Image
+            src={bgImage.banner1}
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px" }}
+          />
         </div>
       </div>
       {/* slider2 */}
-      <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-2">
-        <div className="h-full flex container items-center mx-auto my-0 px-[15px] lg`:flex-row flex-col md:items-center justify-center">
-          <div className="md:w-1/2 flex flex-col justify-center text-center relative md:left-[100px]">
-            <text className="xl:text-82px sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
-              <span className="block"> ULTRA</span>
-              GREAT DEALS
-            </text>
-            <div className="mt-[20px]">
-              <Button className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full bg-black text-white font-[Gotham-Bold] h-[50px]">
-                BROWSE TODAY
-              </Button>
+      <div className="bg-center relative bg-fixed h-500">
+        <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
+          <div className="h-full flex  mx-auto my-0  flex-col sm:flex-row   md:items-center justify-end md:justify-center   absolute top-0 bottom-0 right-0 left-0 container">
+            <div className="basics-1/2 h-ful flex flex-col justify-center text-center  md:left-[100px]">
+              <p className="xl:text-82px text-white text-[30px] sm:text-[45px] sm:leading-[45px] xl:leading-[82px] font-[Leviathan-HTF-Black]">
+                <span className="block xl:text-78px text-white text-[25px] sm:text-[38px] sm:leading-[38px] xl:leading-[78px]">
+                  {" "}
+                  FALL INTO
+                </span>
+                SAVINGS
+              </p>
+              <div className="mt-[20px]">
+                <Button
+                  variant={"secondary"}
+                  className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full font-[Gotham-Bold] h-[50px]"
+                >
+                  BROWSE TODAY
+                </Button>
+              </div>
+            </div>
+            <div className="basics-1/2 h-full flex  items-end overflow-hidden ">
+              <Image
+                src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/molson-candian.png"
+                alt=""
+                width={600}
+                height={300}
+                style={{ width: "100%", height: "auto" }}
+              />
             </div>
           </div>
-
-          <div className="sm:w-1/2 w-1/2 h-1/2 md:h-full bg-banner-fe-2 bg-center bg-fixed bg-no-repeat bg-cover z-10"></div>
+          <Image
+            src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/bg-11.jpg"
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px" }}
+          />
         </div>
       </div>
       {/* slider 3 */}
-      <div className="bg-center h-500 bg-fixed bg-no-repeat bg-cover bg-banner-bg-3">
-        <div className="container flex flex-col justify-center items-center  mx-auto my-0 px-[15px] h-full">
-          <div>
-            <text className="xl:text-48px sm:text-[28px]  font-[Leviathan-HTF-Black]">
+      <div className="bg-center relative bg-fixed h-500">
+        <div className="absloute top-0 mx-auto">
+          <div className="flex justify-center items-center flex-col mx-auto  px-[15px] h-full w-full absolute top-0">
+            <p className="xl:text-48px sm:text-[28px]  font-[Leviathan-HTF-Black]">
               DISCOVERY CENTER
-            </text>
-          </div>
-          <div className="flex flex-wrap justify-center max-w-4xl	">
-            {dumyData.map((itm, idx) => (
-              <div key={`images${idx}`} className="mx-2.5 my-2.5">
-                <Image src={itm.url} width="160" height="145" alt="image" />
-              </div>
-            ))}
-          </div>
-          <div>
+            </p>
+
+            <div className="flex flex-wrap justify-center  max-w-4xl	">
+              {dumyData.map((itm, idx) => (
+                <div key={`images${idx}`} className="m-[10px]">
+                  <Image src={itm.url} width="160" height="145" alt="image" />
+                </div>
+              ))}
+            </div>
+
             <div className="mt-[20px]">
-              <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-black text-white h-[50px]">
+              <Button
+                variant={"secondary"}
+                className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full h-[50px]"
+              >
                 SHOP
               </Button>
             </div>
           </div>
+          <Image
+            src={bgImage.banner3}
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px" }}
+          />
         </div>
       </div>
-      {/* sllider 4 */}
-      <div className="bg-center bg-fixed bg-no-repeat bg-cover h-500 bg-banner-bg-4">
-        <div className="h-full flex items-center justify-center container mx-auto my-0 md:flex-row flex-col md:items-center md:justify-center">
-          <div className="md:w-1/2  flex flex-col  justify-center text-center relative md:left-[60px]">
-            <text className="xl:text-82px xl:leading-[82px] sm:text-[40px] sm:leading-[40px]   font-[Leviathan-HTF-Black]">
-              <span className="block"> More value</span>
-              <span className="block"> More Convenience</span>
-            </text>
-            <div className="mt-[35px] ">
-              <Button className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold]   rounded-e-full rounded-s-full bg-black text-white h-[50px]">
-                SHOP NOW
-              </Button>
+
+      <div className="bg-center relative bg-fixed h-500">
+        <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
+          <div className="flex flex-col md:flex-row justify-center md:justify-end gap-2  absolute top-0  bottom-0 w-full container">
+            <div className="md:w-1/2 flex flex-col justify-center text-center  md:left-[100px]">
+              <p className="xl:text-72px  sm:text-[45px] sm:leading-[45px] xl:leading-[72px] font-[Leviathan-HTF-Black]">
+                <span className="block"> MORE VALUE</span>
+                MORE CONVENIENCE
+              </p>
+              <div className="mt-[20px]">
+                <Button
+                  variant={"secondary"}
+                  className="px-[40px] py-[11px] text-[14px] rounded-e-full rounded-s-full font-[Gotham-Bold] h-[50px]"
+                >
+                  SHOP NOW
+                </Button>
+              </div>
+            </div>
+            <div className="md:w-1/2 flex relative md:items-end justify-center ">
+              <div className="w-[50%] md:w-full">
+                <Image
+                  src={bgImage.bannerfe4}
+                  alt=""
+                  width={600}
+                  height={300}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
             </div>
           </div>
-
-          <div className="sm:w-1/2 justify-center h-1/2 sm:h-full bg-contain bg-banner-fe-4 bg-center md:bg-bottom bg-fixed bg-no-repeat  z-10"></div>
+          <Image
+            src={bgImage.banner4}
+            alt=""
+            width={600}
+            height={300}
+            style={{ width: "100%", height: "500px" }}
+          />
         </div>
       </div>
       {/* bNNER 5 */}
       <div className="bg-revert bg-fixed h-500 bg-no-repeat bg-cover bg-banner-bg-5">
         <div className=" flex flex-col justify-center  h-full items-center container mx-auto my-0 px-[15px] text-center ">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl relative">
             <Image
               src={
                 "https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/stay-text.png"
@@ -247,10 +296,14 @@ export default function slider() {
               width={950}
               height={500}
               alt="image"
+              style={{ width: "100%", height: "auto" }}
               className="bg-cover"
             />
-            <div className="text-end me-12">
-              <Button className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold] rounded-e-full rounded-s-full  bg-black text-white h-[50px]">
+            <div className="text-end me-12 absolute bottom-0 right-0">
+              <Button
+                variant={"secondary"}
+                className="px-[40px] py-[11px]  text-[14px] font-[Gotham-Bold] rounded-e-full rounded-s-full  h-[50px]"
+              >
                 SHOP NOW
               </Button>
             </div>
@@ -259,25 +312,34 @@ export default function slider() {
       </div>
       {/* banner 6 */}
       <div className="bg-center bg-fixed h-500 bg-no-repeat bg-cover bg-black">
-        <div className="h-full flex  mx-auto my-0   md:items-center justify-center flex-col md:flex-row ps-[10%]">
+        <div className="h-full flex  mx-auto my-0   md:items-center justify-center flex-col md:flex-row ps-[5%] md:ps-[10%]">
           <div className="md:w-1/2 sm:w-full flex flex-col justify-center text-start  ">
-            <text className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] sm:text-[25px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
+            <p className="2xl:text-73px 2xl:leading-[84px]  xl:text-[62px] xl:leading-[72px] lg:text-[34px] sm:leading-[45px] text-white font-[Leviathan-HTF-Black]">
               <span className="block text-white"> WE LOVE BEER</span>
               DO YOU?
-            </text>
-            <text className="md:text-28px text-[14px] text-white font-[Gotham-Bold]">
+            </p>
+            <p className="md:text-24px lg:text-[28px] text-[18px] text-white font-[Gotham-Bold]">
               If you share our passion for all things beer and align with our
               core values of being a socially and environmentally responsible
               organization, Apply Today!
-            </text>
+            </p>
             <div className="py-[20px]">
-              <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]  rounded-e-full rounded-s-full text-black bg-[#f4b233] h-[50px]">
+              <Button className="px-[40px] py-[11px] text-[14px] font-[Gotham-Bold]  rounded-e-full rounded-s-full h-[50px]">
                 BROWSE TODAY
               </Button>
             </div>
           </div>
 
-          <div className="md:w-1/2 sm:w-full h-full bg-banner-fe-6 bg-center bg-no-repeat bg-cover z-10"></div>
+          <div className="md:w-1/2 overflow-hidden">
+            <Image
+              src={bgImage.bannerfe6}
+              alt=""
+              width={600}
+              height={300}
+              objectFit="cover"
+              style={{ width: "100%", height: "500px",objectFit:'cover' }}
+            />
+          </div>
         </div>
       </div>
     </Slider>
