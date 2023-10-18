@@ -90,7 +90,7 @@ const articleList = [
     category: "Articles",
   },
 ];
-const AboutUs = () => {
+const Articles = () => {
   return (
     <>
       <BannerHeader
@@ -134,7 +134,7 @@ const AboutUs = () => {
           </div>
         }
         content={
-          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[40px] px-[15px] md:pl-[40px]">
+          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[40px] pl-[15px] md:pl-[40px]">
             {articleList.map((article) => (
               <div
                 className="basis-full sm:basis-2/4 xl:basis-1/3"
@@ -195,4 +195,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Articles;
