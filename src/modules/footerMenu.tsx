@@ -56,9 +56,9 @@ const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
       <CollapsibleContent className="">
         <ul>
           {menuList?.map((item) => (
-            <li key={`key${item.title}`} className="flex py-[8px]">
+            <li key={`key${item.title}`} className="flex py-[8px] ">
               <a
-                className="leading-tight font-sans font-normal text-white  md:text-[12px] sm:text-[12px] xl:text-[14px]"
+                className="leading-tight font-sans font-normal text-white  hover:text-[#d06f1a]  md:text-[12px] sm:text-[12px] xl:text-[14px]"
                 href={item.url}
               >
                 {item.title}

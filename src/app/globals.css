@@ -13,27 +13,40 @@
     --link-primary: 28, 77.8%, 45.9%;
     --text-paragraph: #4a4f55;
   }
-  body,
-  p {
-    @apply font-sans text-[14px] text-[#000] leading-[1.42857143];
-  }
-  h2 {
-    @apply font-mono font-bold text-[28px] mb-[25px] tracking-[0.38px] leading-[1.1];
-  }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-}
-.tbs-link-text {
-  color: hsl(var(--link-primary));
 }
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+.tbs-link-text {
+  color: hsl(var(--link-primary));
+}
 
+
+@layer components {
+  body,
+  p{
+    @apply font-sans text-[14px] text-[#000] leading-[1.42857143];
+  }
+  h2{
+    @apply font-mono font-bold text-[28px] mb-[25px] tracking-[0.38px] leading-[1.1];
+  }
+  .dot-list li{
+    @apply text-[#B95804] mb-[15px] relative text-[#4A4F55] pl-[25px] leading-[20px];
+  }
+  .dot-list li{
+    @apply before:content-[''] before:absolute before:bg-[#f4b233] before:w-[10px] before:h-[10px] before:rounded-[50%]
+     before:top-[5px] before:left-[0px] /*before:w-[10px] before:h-[10px] before:rounded-[50%] before:bg-[#f4b233] */
+  }
+  .dot-list a{
+    @apply text-[#B95804] block;
+  }
+}
 /* @font-face {
   font-family: "Leviathan-HTF-Black-Italic";
   src: url("../fonts/Leviathan-HTF-Black-Italic.otf");
