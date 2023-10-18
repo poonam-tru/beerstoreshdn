@@ -18,15 +18,15 @@ import Link from "next/link";
 const Header = () => {
   return (
     <div className="bg-black mx-auto">
-      <header className="flex flex-1 flex-col max-w-[1920px] mx-auto w-full">
+      <header className="flex flex-1 flex-col w-full">
         <nav className="flex justify-between py-[20px]  px-5 flex-row  flex-1 items-center">
-          <div className="basis-1/4 hidden md:block">
+          <div className="basis-1/4 hidden md:flex">
             <a href="/" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
                 alt=""
-                width={200}
-                height={30}
+                width={226}
+                height={40}
               />
             </a>
           </div>
@@ -43,8 +43,8 @@ const Header = () => {
                       className="mr-2.5"
                       src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/user_login.svg"
                       alt=""
-                      width={20}
-                      height={20}
+                      width={26}
+                      height={26}
                     />
                     <p>Login</p>
                     <ChevronDown className="h-4 w-4 ml-2" />

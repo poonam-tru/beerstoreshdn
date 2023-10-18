@@ -11,14 +11,29 @@
     --secondary: 0, 0%, 0%, 1;
     --secondary-foreground: 0, 100%, 100%, 1;
     --link-primary: 28, 77.8%, 45.9%;
+    --text-paragraph: #4a4f55;
+  }
+  body,
+  p {
+    @apply font-sans text-[14px] text-[#000] leading-[1.42857143];
+  }
+  h2 {
+    @apply font-mono font-bold text-[28px] mb-[25px] tracking-[0.38px] leading-[1.1];
   }
 }
+
 body {
   color: rgb(var(--foreground-rgb));
 }
 .tbs-link-text {
   color: hsl(var(--link-primary));
 }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 /* @font-face {
   font-family: "Leviathan-HTF-Black-Italic";
   src: url("../fonts/Leviathan-HTF-Black-Italic.otf");
@@ -147,4 +162,9 @@ body {
 .newbeers .product-footer button {
   height: 40px;
   font-size: 14px;
+}
+
+.privacy-description {
+  color: var(--text-paragraph);
+  margin-bottom: 25px;
 }
