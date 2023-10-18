@@ -9,9 +9,7 @@ export const HeadingAndDesc: React.FC<HeadingsProps> = ({ title, desc }) => {
   return <>
     {
         title ? 
-        <h2
-            className="font-mono font-bold text-[28px]"
-        >
+        <h2>
             {title}
         </h2> : null}
     {desc ? desc : null}
