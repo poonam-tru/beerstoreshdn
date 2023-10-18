@@ -219,7 +219,7 @@ const AboutUs = () => {
       <ContainerLayout
         bordered
         sidebarContent={
-          <div className="py-[40px] px-[15px] lg:pr-[35px] ">
+          <div className="py-[40px] pr-[15px] lg:pr-[30px] ">
             <Accordion type="single" collapsible className="w-full">
               <>
                 {aboutUsList.map((item) => (
@@ -252,7 +252,7 @@ const AboutUs = () => {
           </div>
         }
         content={
-          <div className="flex flex-col py-[60px] px-[15px]  md:pl-[60px] lg:pl-[100px] gap-[30px]">
+          <div className="flex flex-col py-[60px] px-[15px]  md:pl-[60px] lg:pl-[80px]">
             <div className="flex flex-col md:flex-row gap-[30px]">
               {cardList.map((card) => (
                 <div className="basis-2/4" key={`${card.title}`}>
@@ -268,7 +268,7 @@ const AboutUs = () => {
                     </CardHeader>
                     <CardContent className="flex flex-col p-[30px] flex-grow ">
                       {card.title && (
-                        <CardTitle className="text-[20px] font-sans  font-bold mb-[15px]">
+                        <CardTitle className="text-[20px] font-sans  font-bold mb-[15px] leading-[1.1]">
                           {card.title}
                         </CardTitle>
                       )}
@@ -278,7 +278,7 @@ const AboutUs = () => {
                         </CardDescription>
                       )}
                       {card.buttonText && (
-                        <div className="flex self-end mt-auto">
+                        <div className="flex md:self-end mt-auto">
                           <Button
                             asChild
                             className="h-auto leading-normal text-[10px] font-sans  font-bold py-[3px] px-[7px] rounded-[5px] uppercase"
@@ -295,17 +295,17 @@ const AboutUs = () => {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col bg-[#f4f4f4] border-[#e2e2e2] border-solid border rounded-[2px] p-[40px]">
-              <h2 className="text-[20px] font-mono  font-Bold">
+            <div className="flex flex-col bg-[#f4f4f4] border-[#e2e2e2] border-solid border rounded-[2px] p-[40px] mt-[40px] md:mt-[50px]">
+              <h2 className="text-[24px] f md:text-[28px] font-mono tracking-[0.38px] font-Bold mb-2">
                 Time-Tested, Beer-Lover Approved
               </h2>
-              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-sans  font-normal">
+              <p className="text-[#4A4F55] ">
                 Becoming experts on beer doesn’t happen overnight. We’ve been in
                 business since 1927 and we’re owned by 30 Ontario-based brewers.
                 The Beer Store employs 7,000 hard-working Ontarians with
                 well-paying full and part-time jobs.
               </p>
-              <p className="text-[#4A4F55] mt-[10px] text-[14px] font-sans  font-normal ">
+              <p className="text-[#4A4F55] mt-2.5">
                 There’s no other team of beer experts who live and love all
                 things beer as much as we do. We love beer as much as you — so
                 you know we’ll always be dedicated to bringing you your
@@ -314,7 +314,7 @@ const AboutUs = () => {
                 more than 800 beer brands, in over 440 retail stores, from 200
                 brewers around the world.
               </p>
-              <h2 className="text-[24px] font-mono  font-Bold mt-[20px]">
+              <h2 className="text-[20px] md:text-[24px] font-sans font-bold mt-[20px] mb-0">
                 Facts and Figures
               </h2>
               <p className="text-[#4A4F55] mt-[10px] text-[14px] font-sans  font-normal">
@@ -329,24 +329,24 @@ const AboutUs = () => {
                 retail partners and LCO convenience stores, and 446 grocery
                 stores selling beer/wine/cider.
               </p>
-              <div className="flex mt-[20px]">
+              <div className="flex mt-[25px]">
                 <Button
                   asChild
-                  className="h-[30px] font-sans  font-normal text-[14px] py-[3px] px-[7px] rounded-[5px] uppercase"
+                  className="h-[35px] font-sans font-bold text-[14px] py-[3px] px-[7px] rounded-[5px] uppercase"
                 >
-                  <Link href="/" className=" font-sans font-bold" >
+                  <Link href="/">
                     Media Contact <ChevronRight width={20} height={26} />
                   </Link>
                 </Button>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-[30px]">
+            <div className="flex flex-col md:flex-row gap-[30px] mt-[40px] md:mt-[60px]">
               {cardListdeatil.map((card) => (
                 <div className="basis-2/4" key={`${card.title}`}>
                   <Card className="h-full rounded-[5px] overflow-hidden flex flex-col border-none shadow-none">
                     <CardHeader>
                       {card.title && (
-                        <CardTitle className="text-[24px] font-sans  font-bold  mb-[15px]">
+                        <CardTitle className="text-[24px] font-sans  font-bold  mb-[25px] leading-[1.1]">
                           {card.title}
                         </CardTitle>
                       )}
@@ -382,36 +382,33 @@ const AboutUs = () => {
                 </div>
               ))}
             </div>
-            <Separator className="bg-[#e2e2e2] opacity-50 h-px" />
+            <Separator className="bg-[#e2e2e2] opacity-50 h-px mb-[60px]" />
+            <h2 className="text-[20px] md:text-[22px] lg:text-[30px]">In the News</h2>
             <div className="block md:flex-row gap-[30px] slider-news-list">
               <Slider {...beerStoreSliderSettings}>
                 {newsList.map((news) => (
-                  <div   key={`${news.title}`} className="px-[15px]">
-                  <Card
-                  
-                    className="rounded-[6px] min-h-[170px] basis-1/2 flex"
-                  >
-                    <div className="flex h-[inherit]">
-                      <div className="basis-1/2 h-full">
-                        <Image
-                          src={news.image}
-                          width={200}
-                          height={200}
-                          alt={news.image}
-                          className="w-full rounded-[5px] h-full object-cover"
-                        />
+                  <div key={`${news.title}`} className="px-[15px]">
+                    <Card className="rounded-[6px] min-h-[170px] basis-1/2 flex">
+                      <div className="flex h-[inherit]">
+                        <div className="basis-32 h-full">
+                          <Image
+                            src={news.image}
+                            width={200}
+                            height={200}
+                            alt={news.image}
+                            className="w-full rounded-[5px] h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex flex-col justify-between items-stretch basis-1/2 p-[10px]">
+                          <h3 className="text-[14px] font-sans font-bold tracking-[0.14px]">
+                            {news.title}
+                          </h3>
+                          <p className="text-[14px] font-sans  font-normal text-[#4A4F55]">
+                            {news.description}
+                          </p>
+                        </div>
                       </div>
-                      <div className="flex flex-col justify-between items-stretch basis-1/2 p-[10px]">
-                        <h3 className="text-[13px] font-sans  font-bold">
-                          {" "}
-                          {news.title}
-                        </h3>
-                        <p className="text-[14px] font-sans  font-normal text-[#4A4F55]">
-                          {news.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
+                    </Card>
                   </div>
                 ))}
               </Slider>

@@ -12,7 +12,7 @@ module.exports = {
       center: true,
       padding: "15px",
       screens: {
-        "2xl": "1650px",
+        "2xl": "1710px",
       },
     },
     extend: {
@@ -117,7 +117,8 @@ module.exports = {
       'mdtab': "991px",
       'lg': "1024px",
       'xl': "1280px",
-      '2xl': "1536px",
+      'xxl': "1440px",
+      '2xl': "1680px",
     },
   },
   plugins: [require("tailwindcss-animate")],

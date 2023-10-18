@@ -17,7 +17,7 @@ const ContainerLayout = ({
 }: containerLayout) => {
   const border = bordered ? "md:border-r md:border-solid md:border-[#d6d6d6]" : "";
   return (
-    <div className={cn("container px-[10px] lg:px-[45px]", className)}>
+    <div className={cn("container px-[15px] lg:px-[45px]", className)}>
       <div className="flex flex-col-reverse md:flex-row">
         <div className={`basis-1/4 ${border}`}>{sidebarContent}</div>
         <div className="basis-3/4 min-h-0 min-w-0">{content}</div>

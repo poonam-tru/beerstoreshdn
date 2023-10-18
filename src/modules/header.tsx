@@ -46,7 +46,7 @@ const Header = () => {
                       width={26}
                       height={26}
                     />
-                    <p>Login</p>
+                    Login
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -119,7 +119,7 @@ const Header = () => {
                       width={16}
                       height={24}
                     />
-                    <p>HEARST-11862km</p>
+                    HEARST-11862km
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>

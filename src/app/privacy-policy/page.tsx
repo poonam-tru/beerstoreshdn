@@ -1,13 +1,19 @@
+import BannerHeader from "@/modules/bannerHeader";
 import Link from "next/link";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="container">
+      <>
+    <BannerHeader
+    title="Privacy Policy"
+    backgroundImage="https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
+  />
+    <div className="container md:px-[45px] ">
       <div className="flex flex-col py-[60px]">
         <p className="privacy-description">The Beer Store</p>
         <p className="privacy-description">Privacy &amp; Policy</p>
         <p className="privacy-description">Updated: September 5, 2023</p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Welcome
         </h3>
         <p className="privacy-description">
@@ -32,7 +38,7 @@ const PrivacyPolicy = () => {
           may include, for example, your name, address, fax number, age and
           gender.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Information Automatically Collected
         </h3>
         <p className="privacy-description">
@@ -46,14 +52,14 @@ const PrivacyPolicy = () => {
           Cookies if your web browser permits, but certain features on the Site
           may not function if you do not accept Cookies.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Personal Information Collected when You Visit and Interact with Us
         </h3>
         <p className="privacy-description">
           TBS collects personal information when your visit our Sites, our
           retail locations, or communicate with us.
         </p>
-        <ul className="dot-list">
+        <ul className="dot-list pb-2.5">
           <li className="font-normal mb-5">
             Customer Service. TBS collects personal information from you if you
             contact TBS with a consumer complaint or request. The information
@@ -105,7 +111,7 @@ const PrivacyPolicy = () => {
             also contact you for future news and events, unless you opt-out.
           </li>
         </ul>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Why We Collect Personal Information
         </h3>
         <p className="privacy-description">
@@ -114,7 +120,7 @@ const PrivacyPolicy = () => {
           information to enable us to respond to your request. The personal
           information may be used to:
         </p>
-        <ul>
+        <ul className="dot-list pb-2.5">
           <li className="font-normal mb-5">contact and correspond with you</li>
           <li className="font-normal mb-5">create your online account</li>
           <li className="font-normal mb-5">confirm your identity</li>
@@ -157,7 +163,7 @@ const PrivacyPolicy = () => {
           Personal information may also be used for other purposes, subject to
           obtaining your prior consent.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Consent to Use Personal Information
         </h3>
         <p className="privacy-description">
@@ -166,7 +172,7 @@ const PrivacyPolicy = () => {
           and disclosure of your personal information in accordance with this
           Policy and applicable laws.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Opting-Out of Marketing Emails
         </h3>
         <p className="privacy-description">
@@ -175,7 +181,7 @@ const PrivacyPolicy = () => {
           within our email. You may also contact us at The Beer Store at 280
           Sovereign Road, London, Ontario, N6M 1B3, Tel: 1-888-948-2337.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Minors
         </h3>
         <p className="privacy-description">
@@ -188,7 +194,7 @@ const PrivacyPolicy = () => {
           minor, please contact TBS at the contact information found at the end
           of the Policy.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Third Parties and Sharing Personal Information
         </h3>
         <p className="privacy-description">
@@ -205,7 +211,7 @@ const PrivacyPolicy = () => {
           personal information to third parties for legal or regulatory purposes
           or as otherwise required or permitted by law.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           TBS Website and Mobile App
         </h3>
         <p className="privacy-description">
@@ -240,7 +246,7 @@ const PrivacyPolicy = () => {
           some functionality of the App may require the transmission of certain
           information provided by the User, which includes:
         </p>
-        <ul className="dot-list">
+        <ul className="dot-list pb-2.5">
           <li className="font-normal mb-5">Username and password</li>
           <li className="font-normal mb-5">E-mail address</li>
           <li className="font-normal mb-5">Billing address</li>
@@ -282,7 +288,7 @@ const PrivacyPolicy = () => {
           App when prompted or through the App settings on your device; and/or
           (ii) set the permissions in your mobile device to allow communication
           of this information. Additional information regarding adjusting
-          location services on iOS devices may be found at
+          location services on iOS devices may be found at{" "}
           <Link
             target={"_blank"}
             className="tbs-link-text underline"
@@ -314,7 +320,7 @@ const PrivacyPolicy = () => {
           any time, by turning on location services on your device and in the
           App.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Security Safeguards and Retention
         </h3>
         <p className="privacy-description">
@@ -330,7 +336,7 @@ const PrivacyPolicy = () => {
           required for the purposes described above, subject to any applicable
           legal, auditing or account obligations TBS is required to meet.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Keeping Information Accurate
         </h3>
         <p className="privacy-description">
@@ -346,7 +352,7 @@ const PrivacyPolicy = () => {
           information, or if you have any inquiries, please contact our Chief
           Privacy Officer as listed in the Contact Information section below.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Right to Deletion
         </h3>
         <p className="privacy-description">
@@ -360,7 +366,7 @@ const PrivacyPolicy = () => {
           outstanding credit or an unresolved claim or dispute; and/or for
           reasons stated in this Policy where permissible under applicable law.
         </p>
-        <h3 className="font-sans font-bold text-[24px] text-black mb-[25px]">
+        <h3 className="font-sans font-bold  text-[20px] md:text-[24px] text-black mb-[25px]">
           Contact Information
         </h3>
         <p className="privacy-description">
@@ -383,6 +389,7 @@ const PrivacyPolicy = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 export default PrivacyPolicy;

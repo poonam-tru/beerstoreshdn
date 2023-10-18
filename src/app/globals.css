@@ -27,46 +27,25 @@ ul {
   color: hsl(var(--link-primary));
 }
 
-
 @layer components {
   body,
-  p{
+  p {
     @apply font-sans text-[14px] text-[#000] leading-[1.42857143];
   }
-  h2{
+  h2 {
     @apply font-mono font-bold text-[28px] mb-[25px] tracking-[0.38px] leading-[1.1];
   }
-  .dot-list li{
+  .dot-list li {
     @apply text-[#B95804] mb-[15px] relative text-[#4A4F55] pl-[25px] leading-[20px];
   }
-  .dot-list li{
+  .dot-list li {
     @apply before:content-[''] before:absolute before:bg-[#f4b233] before:w-[10px] before:h-[10px] before:rounded-[50%]
-     before:top-[5px] before:left-[0px] /*before:w-[10px] before:h-[10px] before:rounded-[50%] before:bg-[#f4b233] */
+     before:top-[5px] before:left-[0px] /*before:w-[10px] before:h-[10px] before:rounded-[50%] before:bg-[#f4b233] */;
   }
-  .dot-list a{
+  .dot-list a {
     @apply text-[#B95804] block;
   }
 }
-/* @font-face {
-  font-family: "Leviathan-HTF-Black-Italic";
-  src: url("../fonts/Leviathan-HTF-Black-Italic.otf");
-}
-@font-face {
-  font-family: "Leviathan-HTF-Black";
-  src: url("../fonts/Leviathan-HTF-Black.otf");
-}
-@font-face {
-  font-family: "Gotham-Bold";
-  src: url("../fonts/Gotham-Bold.otf");
-}
-@font-face {
-  font-family: "Gotham-Medium";
-  src: url("../fonts/Gotham-Medium.otf");
-}
-@font-face {
-  font-family: "Gotham-Book";
-  src: url("../fonts/Gotham-Book.otf");
-} */
 @media screen and (min-width: 1280px) {
   .recipe .slick-track {
     display: flex !important;
@@ -93,6 +72,25 @@ ul {
   .recipe .slick-track > div:not(:first-child) {
     flex-basis: 33.33% !important;
   }
+}
+.slick-slider .slick-dots {
+  bottom: -55px;
+}
+.slick-slider .slick-dots li button {
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+.slick-slider .slick-dots li button:before {
+  background-color: #e2e2e2;
+  border-radius: 50%;
+  font-size: unset;
+  width: 15px;
+  height: 15px;
+}
+.slick-slider .slick-dots li.slick-active button:before {
+  background-color: hsl(var(--primary));
 }
 .slider-news-list .slick-list {
   margin-left: -15px;
