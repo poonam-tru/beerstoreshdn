@@ -1,6 +1,10 @@
 "use client";
 import BannerHeader from "@/modules/bannerHeader";
-import ContainerLayout from "@/modules/containerLayout";
+import {
+  ContainerLayout,
+  SidebarLayout,
+  ContentLayout,
+} from "@/modules/containerLayout";
 import {
   Accordion,
   AccordionContent,
@@ -216,9 +220,8 @@ const AboutUs = () => {
         title="About Us"
         backgroundImage="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
       />
-      <ContainerLayout
-        bordered
-        sidebarContent={
+      <ContainerLayout>
+        <SidebarLayout bordered>
           <div className="py-[40px] pr-[15px] lg:pr-[30px] ">
             <Accordion type="single" collapsible className="w-full">
               <>
@@ -250,8 +253,8 @@ const AboutUs = () => {
               </>
             </Accordion>
           </div>
-        }
-        content={
+        </SidebarLayout>
+        <ContentLayout>
           <div className="flex flex-col py-[60px] px-[15px]  md:pl-[60px] lg:pl-[80px]">
             <div className="flex flex-col md:flex-row gap-[30px]">
               {cardList.map((card) => (
@@ -383,7 +386,9 @@ const AboutUs = () => {
               ))}
             </div>
             <Separator className="bg-[#e2e2e2] opacity-50 h-px mb-[60px]" />
-            <h2 className="text-[20px] md:text-[22px] lg:text-[30px]">In the News</h2>
+            <h2 className="text-[20px] md:text-[22px] lg:text-[30px]">
+              In the News
+            </h2>
             <div className="block md:flex-row gap-[30px] slider-news-list">
               <Slider {...beerStoreSliderSettings}>
                 {newsList.map((news) => (
@@ -414,8 +419,8 @@ const AboutUs = () => {
               </Slider>
             </div>
           </div>
-        }
-      />
+        </ContentLayout>
+      </ContainerLayout>
     </>
   );
 };

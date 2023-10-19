@@ -288,7 +288,7 @@ export function Navigation() {
             <Image src={Hamburger} alt="" width={40} height={40} />
           </Button>
           <div className="flex">
-            <a href="" className="inline-flex">
+            <Link href="" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
                 alt="test"
@@ -296,7 +296,7 @@ export function Navigation() {
                 height="0"
                 style={{ width: "100%", height: "30px" }}
               />
-            </a>
+            </Link>
           </div>
           <div>
             <a>

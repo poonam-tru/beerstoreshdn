@@ -21,14 +21,14 @@ const Header = () => {
       <header className="flex flex-1 flex-col w-full">
         <nav className="flex justify-between py-[20px]  px-5 flex-row  flex-1 items-center">
           <div className="basis-1/4 hidden md:flex">
-            <a href="/" className="inline-flex">
+            <Link href="/" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
                 alt=""
                 width={226}
                 height={40}
               />
-            </a>
+            </Link>
           </div>
           <div className="basis-3/4">
             <div className="flex md:justify-end items-center relative">

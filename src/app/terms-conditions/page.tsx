@@ -389,10 +389,10 @@ const TermsConditions = () => {
             further described above and to its future updates and upgrades. You
             can withdraw your consent at any time by uninstalling the App. To
             request removal or disabling of this App, please contact The Beer
-            Store at 280 Sovereign Road, London, Ontario, N6M 1B3, Tel:{" "}
-            <a className="tbs-link-text" href="tel:1-888-948-2337">
+            Store at 280 Sovereign Road, London, Ontario, N6M 1B3, Tel:
+            <Link className="tbs-link-text" href="tel:1-888-948-2337">
               1-888-948-2337
-            </a>
+            </Link>
             .
           </p>
           <p className="privacy-description">
