@@ -10,7 +10,7 @@ import {
 import FooterMenu from "./footerMenu";
 
 const Footer = () => {
-  const dummyData = [
+  const footerMenuNav = [
     {
       title: "INFORMATION",
       data: [
@@ -89,7 +89,7 @@ const Footer = () => {
               />
             </a>
           </div>
-          {dummyData.map(({ title, data }) => (
+          {footerMenuNav.map(({ title, data }) => (
             <div className="flex flex-col" key={`key${title}`}>
               <FooterMenu title={title} menuList={data as any} />
             </div>
