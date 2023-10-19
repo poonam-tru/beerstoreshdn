@@ -1,8 +1,9 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { gotham, leviathan } from '@/utils/fonts'
-import  Header  from '@/modules/header'
-import Footer from '@/modules/footer'
+import "./globals.css";
+import "./common.css";
+import type { Metadata } from "next";
+import { gotham, leviathan } from "@/utils/fonts";
+import Header from "@/modules/header";
+import Footer from "@/modules/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${gotham.variable} ${leviathan.variable}`}>
         <Header />
-          {children}
+        {children}
         <Footer />
       </body>
     </html>

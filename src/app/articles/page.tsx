@@ -9,7 +9,11 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import BannerHeader from "@/modules/bannerHeader";
-import ContainerLayout from "@/modules/containerLayout";
+import {
+  ContainerLayout,
+  SidebarLayout,
+  ContentLayout,
+} from "@/modules/containerLayout";
 import { ChevronRight, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -109,21 +113,20 @@ const Articles = () => {
           </Button>
         </div>
       </BannerHeader>
-      <ContainerLayout
-        bordered={false}
-        sidebarContent={
-          <div className="flex flex-col py-[40px] pr-[15px]">
-            <h2 className="text-[24px]">Sort by</h2>
+      <ContainerLayout>
+        <SidebarLayout bordered={false}>
+          <div className="flex flex-col py-[60px] pr-[30px]">
+            <h2 className="text-[24px] font-sans mb-2.5">Sort by</h2>
             {sidebarList.map((item) => (
               <div className="flex flex-col" key={`${item.title}`}>
-                <h3 className="text-[16px] py-[25px]   font-sans  font-bold">
+                <h3 className="text-[16px] pt-[25px] font-sans font-bold">
                   {item.title}
                 </h3>
-                <ul>
+                <ul className="mt-2.5">
                   {item?.list.map((item, idx) => (
                     <li
                       key={`${idx}`}
-                      className="cursor-pointer  font-sans  font-normal py-[15px] text-[#4A4F55] text-[14px] border-b border-solid border-[#d6d6d6] hover:text-[#B95804]"
+                      className="cursor-pointer font-sans  font-normal py-[15px] text-[#4A4F55] text-[14px] border-b border-solid border-[#d6d6d6] hover:text-[#B95804]"
                     >
                       {item}
                     </li>
@@ -132,9 +135,9 @@ const Articles = () => {
               </div>
             ))}
           </div>
-        }
-        content={
-          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[40px] pl-[15px] md:pl-[40px]">
+        </SidebarLayout>
+        <ContentLayout>
+          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[60px] md:pl-[15px] md:pl-[40px]">
             {articleList.map((article) => (
               <div
                 className="basis-full sm:basis-2/4 xl:basis-1/3"
@@ -142,7 +145,7 @@ const Articles = () => {
               >
                 <Card
                   className={
-                    " flex h-full flex-col border border-solid rounded-[10px] relative overflow-hidden"
+                    " flex h-full cursor-pointer group flex-col border border-solid rounded-[10px] relative overflow-hidden"
                   }
                 >
                   <CardHeader>
@@ -150,14 +153,15 @@ const Articles = () => {
                       <Image
                         src={article.image}
                         alt={article.title}
-                        width={500}
-                        height={300}
-                        className="w-full h-auto"
+                        width={370}
+                        height={207}
+                        style={{ height: "auto", width: "100%" }}
+                        className="w-full h-auto md:h-[207px] md:object-cover md:object-center "
                       />
                     )}
                   </CardHeader>
 
-                  <CardContent className="flex flex-col p-[20px] h-full">
+                  <CardContent className="flex flex-col p-[20px] h-full group-hover:bg-[#f2ece0]">
                     {article.title && (
                       <CardTitle className="mb-4 text-[15px]  font-sans  font-bold md:text-[18px]">
                         {article.title}
@@ -169,14 +173,14 @@ const Articles = () => {
                       </CardDescription>
                     )}
                     {article.category && (
-                      <Badge className=" bg-white rounded-[3px] text-[11px]   font-sans  font-bold uppercase text-black hover:bg-White px-2 py-1 leading-4 justify-center absolute left-4 top-4">
+                      <Badge className=" bg-white rounded-[5px] text-[11px] leading-none font-sans  font-bold uppercase text-black hover:bg-White px-2 py-1 justify-center absolute left-4 top-4">
                         {article.category}
                       </Badge>
                     )}
                     <CardFooter className="flex self-start mt-auto">
                       <Button
                         asChild
-                        className="h-[35px] text-[14px]    font-sans  font-bold py-[3px] px-[7px] pr-0 rounded-[5px]"
+                        className="h-[35px] text-[14px] justify-between min-w-[125px] font-sans  font-bold py-[3px] px-[7px] pr-0 rounded-[5px]"
                       >
                         <Link href="/">
                           Learn More
@@ -189,8 +193,8 @@ const Articles = () => {
               </div>
             ))}
           </div>
-        }
-      />
+        </ContentLayout>
+      </ContainerLayout>
     </>
   );
 };

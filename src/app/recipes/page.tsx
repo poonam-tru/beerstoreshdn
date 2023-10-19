@@ -9,7 +9,11 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import BannerHeader from "@/modules/bannerHeader";
-import ContainerLayout from "@/modules/containerLayout";
+import {
+  ContainerLayout,
+  SidebarLayout,
+  ContentLayout,
+} from "@/modules/containerLayout";
 import { ChevronRight, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -100,17 +104,16 @@ const Recipes = () => {
           </Button>
         </div>
       </BannerHeader>
-      <ContainerLayout
-        bordered={false}
-        sidebarContent={
-          <div className="flex flex-col py-[40px] pr-[15px]">
-            <h2 className="text-[24px] font-sans font-bold">Sort by</h2>
+      <ContainerLayout>
+        <SidebarLayout bordered={false}>
+          <div className="flex flex-col py-[60px] pr-[15px]">
+            <h2 className="text-[24px] font-sans mb-2.5 font-bold">Sort by</h2>
             {sidebarList.map((item) => (
               <div className="flex flex-col" key={`${item.title}`}>
-                <h3 className="text-[16px] py-[25px]   font-sans  font-bold">
+                <h3 className="text-[16px] pt-[25px]   font-sans  font-bold">
                   {item.title}
                 </h3>
-                <ul>
+                <ul className="mt-[10px]">
                   {item?.list.map((item, idx) => (
                     <li
                       key={`${idx}`}
@@ -123,9 +126,9 @@ const Recipes = () => {
               </div>
             ))}
           </div>
-        }
-        content={
-          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[40px]  md:pl-[40px]">
+        </SidebarLayout>
+        <ContentLayout>
+          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[60px]  md:pl-[40px]">
             {recipesList.map((recipe) => (
               <div
                 className="basis-full sm:basis-2/4 xl:basis-1/3"
@@ -137,25 +140,25 @@ const Recipes = () => {
                   }
                 >
                   <Link href={"/"} className="">
-                  <CardHeader>
-                    {recipe?.image && (
-                      <Image
-                        src={recipe.image}
-                        alt={recipe.title}
-                        width={500}
-                        height={300}
-                        className="w-full h-auto"
-                      />
-                    )}
-                  </CardHeader>
+                    <CardHeader>
+                      {recipe?.image && (
+                        <Image
+                          src={recipe.image}
+                          alt={recipe.title}
+                          width={370}
+                          height={256}
+                          className="w-full h-auto md:h-[258px] md:object-cover md:object-center "
+                        />
+                      )}
+                    </CardHeader>
 
-                  <CardContent className="flex flex-col p-[20px]">
-                    {recipe.title && (
-                      <CardTitle className="mb-4 text-[15px]  font-sans  font-bold md:text-[18px]">
-                        {recipe.title}
-                      </CardTitle>
-                    )}
-                  </CardContent>
+                    <CardContent className="flex flex-col p-[20px]">
+                      {recipe.title && (
+                        <CardTitle className="mb-4 text-[15px]  font-sans  font-bold md:text-[18px]">
+                          {recipe.title}
+                        </CardTitle>
+                      )}
+                    </CardContent>
                   </Link>
                   <CardFooter className="flex  mt-auto border-t border-solid border-[#d6d6d6]">
                     <div className="basis-1/2 flex flex-row  p-2.5 items-start border-r border-solid border-[#d6d6d6]">
@@ -195,8 +198,8 @@ const Recipes = () => {
               </div>
             ))}
           </div>
-        }
-      />
+        </ContentLayout>
+      </ContainerLayout>
     </>
   );
 };

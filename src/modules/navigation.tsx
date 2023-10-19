@@ -49,7 +49,7 @@ const components: { title: string; href: string; description: string }[] = [
     description: "Are",
   },
 ];
-const dummy = [
+const headerManuNav = [
   {
     mainHead: "SHOP OUR BEER",
     href: "",
@@ -195,7 +195,7 @@ export function Navigation() {
         <div className="flex flex-wrap lg:flex-row flex-col justify-between w-full py-[5px]">
           <NavigationMenu className="basis-3/5 lg:basis-3/4">
             <NavigationMenuList>
-              {dummy?.map(({ mainHead, href, content }, IDX) => (
+              {headerManuNav?.map(({ mainHead, href, content }, IDX) => (
                 <NavigationMenuItem key={mainHead} className="relative">
                   {[1, 4].includes(IDX) ? (
                     <NavigationMenuLink
@@ -288,7 +288,7 @@ export function Navigation() {
             <Image src={Hamburger} alt="" width={40} height={40} />
           </Button>
           <div className="flex">
-            <a href="" className="inline-flex">
+            <Link href="" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
                 alt="test"
@@ -296,7 +296,7 @@ export function Navigation() {
                 height="0"
                 style={{ width: "100%", height: "30px" }}
               />
-            </a>
+            </Link>
           </div>
           <div>
             <a>

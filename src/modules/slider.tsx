@@ -151,7 +151,7 @@ export default function slider() {
                 <h1 className=" xl:text-70px md:text-[40px] font-mono font-bold">
                   Holiday Hour
                 </h1>
-                <p className="xl:text-24px leading-[38px] lg:text-[24px] p-[10px] font-sans font-bold">
+                <p className="xl:text-24px leading-[38px] text-white lg:text-[24px] p-[10px] font-sans font-bold">
                   All stores will be closed on October 9<sup>th</sup> for the
                   Thanksgiving Holiday
                 </p>
@@ -216,7 +216,7 @@ export default function slider() {
       <div className="bg-center relative bg-fixed h-500">
         <div className="absloute top-0 mx-auto">
           <div className="flex justify-center items-center flex-col mx-auto  px-[15px] h-full w-full absolute top-0">
-            <p className="xl:text-48px sm:text-[28px]  font-mono font-bold">
+            <p className="xl:text-48px text-white sm:text-[28px]  font-mono font-bold">
               DISCOVERY CENTER
             </p>
 
@@ -251,7 +251,7 @@ export default function slider() {
         <div className="h-full relative  flex items-center mx-auto lg:flex-row flex-col md:items-center justify-center">
           <div className="flex flex-col md:flex-row justify-center md:justify-end gap-2  absolute top-0  bottom-0 w-full container">
             <div className="md:w-1/2 flex flex-col justify-center text-center  md:left-[100px]">
-              <p className="xl:text-72px  sm:text-[45px] sm:leading-[45px] xl:leading-[72px] font-mono font-bold">
+              <p className="xl:text-72px  sm:text-[45px] text-white sm:leading-[45px] xl:leading-[72px] font-mono font-bold">
                 <span className="block"> MORE VALUE</span>
                 MORE CONVENIENCE
               </p>
@@ -337,7 +337,7 @@ export default function slider() {
               width={600}
               height={300}
               objectFit="cover"
-              style={{ width: "100%", height: "500px",objectFit:'cover' }}
+              style={{ width: "100%", height: "500px", objectFit: "cover" }}
             />
           </div>
         </div>
