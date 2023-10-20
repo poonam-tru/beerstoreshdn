@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HeadingAndDesc } from "@/modules/headingdesc";
 import BannerHeader from "@/modules/bannerHeader";
 import { ContainerLayout, SidebarLayout, ContentLayout } from "@/modules/containerLayout";
 import { Separator } from "@/components/ui/separator";
@@ -19,12 +18,8 @@ const ContactUS = () => {
         <ContainerLayout>
           {" "}
           <div className="py-[70px]">
-            <HeadingAndDesc
-              title="Contact Us"
-              desc={
-                <p>{`We’re interested in what you have to say – about our products, our stores, our website. Tell us the good stuff and the not-so-good stuff (we can take it…your feedback only makes us better.) You can contact us using any of these options:`}</p>
-              }
-            />
+            <h2>Contact Us</h2>
+            <p>{`We’re interested in what you have to say – about our products, our stores, our website. Tell us the good stuff and the not-so-good stuff (we can take it…your feedback only makes us better.) You can contact us using any of these options:`}</p>
             <Separator className="my-[50px] bg-[#d6d6d6]" />
             <p>
               Customer Contact Centre{" "}

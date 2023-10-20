@@ -40,7 +40,7 @@ ul {
   }
   .dot-list li {
     @apply before:content-[''] before:absolute before:bg-[#f4b233] before:w-[10px] before:h-[10px] before:rounded-[50%]
-     before:top-[5px] before:left-[0px] /*before:w-[10px] before:h-[10px] before:rounded-[50%] before:bg-[#f4b233] */;
+     before:top-[5px] before:left-[0px] ;
   }
   .dot-list a {
     @apply text-[#B95804] block;

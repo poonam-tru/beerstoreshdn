@@ -1,7 +1,7 @@
 import Image from 'next/image' 
 import Link from 'next/link'
 import BannerHeader from "@/modules/bannerHeader"
-import ContainerLayout from "@/modules/containerLayout"
+import { ContainerLayout, SidebarLayout, ContentLayout } from "@/modules/containerLayout";
 import { Button } from "@/components/ui/button";
 
 const OperationsReport = () => {
@@ -12,11 +12,11 @@ const OperationsReport = () => {
         backgroundImage="https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
       />
 
-      <ContainerLayout 
-        sidebarContent={
-         <>text left</>
-        } 
-        content={
+      <ContainerLayout>
+        <SidebarLayout>
+          Left Sidebar
+        </SidebarLayout>
+        <ContentLayout>
             <div className="py-[70px]">
                 <div className="flex flex-col-reverse md:flex-row">
                     <div className="basis-4/6">
@@ -55,8 +55,8 @@ const OperationsReport = () => {
                 </div>
                 
             </div>
-        }
-      />
+        </ContentLayout>
+      </ContainerLayout>
     </>
   )
 }
