@@ -19,11 +19,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Plus, Minus, ChevronDown, ChevronRight } from "lucide-react";
+import { Plus, Minus, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Separator } from "@radix-ui/react-dropdown-menu";
+import { Separator } from "@/components/ui/separator";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
