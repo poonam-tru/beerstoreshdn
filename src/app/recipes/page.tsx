@@ -1,27 +1,13 @@
-"use client";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import BannerHeader from "@/modules/bannerHeader";
 import {
   ContainerLayout,
   SidebarLayout,
   ContentLayout,
 } from "@/modules/containerLayout";
-import { ChevronRight, Search } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
+import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import useMaxElementHeight from "@/shared/useMaxElementHeight";
-import { Separator } from "@/components/ui/separator";
+
 import RecipeCard from "@/modules/recipeCard";
 const sidebarList = [
   {
@@ -89,10 +75,6 @@ const recipesList = [
   },
 ];
 const Recipes = () => {
-  const elementSelector = ".eq-height";
-  const { maxElementHeight } = useMaxElementHeight(elementSelector);
-  const maximumheight = maxElementHeight > 0 ? `${maxElementHeight}px` : "auto";
-  console.log("height", maxElementHeight);
   return (
     <>
       <BannerHeader
