@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 
 interface categorySidebarProps {
   list: any;
@@ -7,6 +7,7 @@ interface categorySidebarProps {
 ///Api - functionality
 
 const CategorySidebar = ({ list }: categorySidebarProps) => {
+  const [selectedItem, setSelectedItem] = useState(null);
   return (
     <>
       {list &&
@@ -20,6 +21,7 @@ const CategorySidebar = ({ list }: categorySidebarProps) => {
               {item.list.map((item: any, idx: any) => (
                 <li
                   key={idx}
+                  data-active={item === selectedItem}
                   className="cursor-pointer font-sans font-normal py-[15px] text-[#4A4F55] text-[14px] border-b border-solid border-[#d6d6d6] hover:text-[#B95804]"
                   onClick={() => console.log("api")}
                 >

@@ -81,7 +81,7 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-cols-1 gap-2 md:grid-cols-5 pt-10">
           <div>
-            <Link href="">
+            <Link href="/">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/TBS_Logo.svg"
                 alt=""
