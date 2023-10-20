@@ -22,6 +22,9 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    serverActions: true,
+  },
 };
 //cdn.brandfolder.io/DRTYD0A2/as/qbehsd-6pftv4-6mx8ot/2388.png?position=1
 https: module.exports = nextConfig;

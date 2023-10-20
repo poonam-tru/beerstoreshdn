@@ -10,6 +10,7 @@ import { Search } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import ArticleCard from "@/modules/articleCard";
+import CategorySidebar from "@/modules/categorySidebar";
 
 const sidebarList = [
   {
@@ -108,23 +109,7 @@ const Articles = () => {
         <SidebarLayout bordered={false}>
           <div className="flex flex-col py-[60px] pr-[30px]">
             <h2 className="text-[24px] font-sans mb-2.5">Sort by</h2>
-            {sidebarList.map((item) => (
-              <div className="flex flex-col" key={`${item.title}`}>
-                <h3 className="text-[16px] pt-[25px] font-sans font-bold">
-                  {item.title}
-                </h3>
-                <ul className="mt-2.5">
-                  {item?.list.map((item, idx) => (
-                    <li
-                      key={`${idx}`}
-                      className="cursor-pointer font-sans  font-normal py-[15px] text-[#4A4F55] text-[14px] border-b border-solid border-[#d6d6d6] hover:text-[#B95804]"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <CategorySidebar list={sidebarList} />
           </div>
         </SidebarLayout>
         <ContentLayout>
