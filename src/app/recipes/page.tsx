@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,7 +20,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-
+import useMaxElementHeight from "@/shared/useMaxElementHeight";
+import { Separator } from "@/components/ui/separator";
 const sidebarList = [
   {
     title: "By Category",
@@ -86,6 +88,10 @@ const recipesList = [
   },
 ];
 const Recipes = () => {
+  const elementSelector = ".eq-height";
+  const { maxElementHeight } = useMaxElementHeight(elementSelector);
+  const maximumheight = maxElementHeight > 0 ? `${maxElementHeight}px` : "auto";
+  console.log("height", maxElementHeight);
   return (
     <>
       <BannerHeader
@@ -160,8 +166,11 @@ const Recipes = () => {
                       )}
                     </CardContent>
                   </Link>
-                  <CardFooter className="flex  mt-auto border-t border-solid border-[#d6d6d6]">
-                    <div className="basis-1/2 flex flex-row  p-2.5 items-start border-r border-solid border-[#d6d6d6]">
+                  <CardFooter
+                    className="flex  mt-auto border-t items-center border-solid border-[#d6d6d6]"
+                    style={{ height: `${maximumheight}` }}
+                  >
+                    <div className="basis-1/2 flex flex-row  p-2.5 items-start">
                       <Image
                         src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/11/time.svg"
                         alt="time"
@@ -178,7 +187,11 @@ const Recipes = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="basis-1/2 flex flex-row p-2.5 items-start">
+                    <Separator
+                      orientation="vertical"
+                      className=" bg-[#d6d6d6] h-full "
+                    />
+                    <div className="basis-1/2 flex flex-row p-2.5 items-start eq-height">
                       <Image
                         src="https://tbsecomd.wpengine.com/wp-content/uploads/2019/11/serves.svg"
                         alt="time"

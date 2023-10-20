@@ -1,24 +1,15 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+
 import BannerHeader from "@/modules/bannerHeader";
 import {
   ContainerLayout,
   SidebarLayout,
   ContentLayout,
 } from "@/modules/containerLayout";
-import { ChevronRight, Search } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
+import { Search } from "lucide-react";
+
 import { Input } from "@/components/ui/input";
+import ArticleCard from "@/modules/articleCard";
 
 const sidebarList = [
   {
@@ -137,59 +128,19 @@ const Articles = () => {
           </div>
         </SidebarLayout>
         <ContentLayout>
-          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[60px] md:pl-[15px] md:pl-[40px]">
+          <div className="grid  grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-[30px] py-[60px] pl-[15px] md:pl-[40px]">
             {articleList.map((article) => (
               <div
                 className="basis-full sm:basis-2/4 xl:basis-1/3"
                 key={`${article.title}`}
               >
-                <Card
-                  className={
-                    " flex h-full cursor-pointer group flex-col border border-solid rounded-[10px] relative overflow-hidden"
-                  }
-                >
-                  <CardHeader>
-                    {article?.image && (
-                      <Image
-                        src={article.image}
-                        alt={article.title}
-                        width={370}
-                        height={207}
-                        style={{ height: "auto", width: "100%" }}
-                        className="w-full h-auto md:h-[207px] md:object-cover md:object-center "
-                      />
-                    )}
-                  </CardHeader>
-
-                  <CardContent className="flex flex-col p-[20px] h-full group-hover:bg-[#f2ece0]">
-                    {article.title && (
-                      <CardTitle className="mb-4 text-[15px]  font-sans  font-bold md:text-[18px]">
-                        {article.title}
-                      </CardTitle>
-                    )}
-                    {article.description && (
-                      <CardDescription className="mb-4   text-[14px] font-sans  font-normal">
-                        {article.description}
-                      </CardDescription>
-                    )}
-                    {article.category && (
-                      <Badge className=" bg-white rounded-[5px] text-[11px] leading-none font-sans  font-bold uppercase text-black hover:bg-White px-2 py-1 justify-center absolute left-4 top-4">
-                        {article.category}
-                      </Badge>
-                    )}
-                    <CardFooter className="flex self-start mt-auto">
-                      <Button
-                        asChild
-                        className="h-[35px] text-[14px] justify-between min-w-[125px] font-sans  font-bold py-[3px] px-[7px] pr-0 rounded-[5px]"
-                      >
-                        <Link href="/">
-                          Learn More
-                          <ChevronRight width={15} height={31} />
-                        </Link>
-                      </Button>
-                    </CardFooter>
-                  </CardContent>
-                </Card>
+                <ArticleCard
+                  title={article.title}
+                  description={article.description}
+                  buttonText="Learn More"
+                  url={"/"}
+                  image={article.image}
+                />
               </div>
             ))}
           </div>
