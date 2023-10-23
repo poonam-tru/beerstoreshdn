@@ -129,7 +129,7 @@ const Header = () => {
                   </DropdownMenuLabel>
                   <div className="flex p-[15px]">
                     <Link
-                      href=""
+                      href="/"
                       className="text-[14px] font-sans font-normal "
                     >
                       <span className="flex">HEARST-11862km</span>

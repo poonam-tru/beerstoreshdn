@@ -128,5 +128,6 @@
   color: var(--text-paragraph);
   margin-bottom: 25px;
 }
-
-
+[data-active='true']{
+  color: hsl(var(--link-primary)) ;
+}
