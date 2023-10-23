@@ -1,11 +1,21 @@
+'use client'
+import { SetStateAction, useState } from 'react'
 import Image from "next/image";
 import Link from "next/link";
 import BannerHeader from "@/modules/bannerHeader";
 import { ContainerLayout, SidebarLayout, ContentLayout } from "@/modules/containerLayout";
 import { Separator } from "@/components/ui/separator";
 import { AddressTile } from "@/modules/contact/addresstile";
+import Pagination from "@/modules/Pagination";
 
 const ContactUS = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 50; // Replace with your actual total number of pages
+
+  const handlePageChange = (page: SetStateAction<number>) => {
+    setCurrentPage(page);
+    // You can also make an API call or perform other actions when the page changes
+  };
   return (
     <>
       <BannerHeader
@@ -91,6 +101,11 @@ const ContactUS = () => {
                 }}
               />
             </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
           </div>
         </ContainerLayout>
       </ContainerLayout>
