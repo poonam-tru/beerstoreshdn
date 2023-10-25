@@ -1,34 +1,21 @@
 "use client";
-import { useRef } from "react";
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import Image from "next/image";
-import { Plus, ChevronRight, ChevronLeft, ChevronDown } from "lucide-react";
+import { ChevronRight, ChevronLeft, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Hamburger from "../image/hamburger.png";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "@/lib/mediaChange";
 import { Separator } from "@/components/ui/separator";
-import { NavigationMenuSub } from "@radix-ui/react-navigation-menu";
-import { Item } from "@radix-ui/react-dropdown-menu";
 
-const dummy = [
+const navbardata = [
   {
     mainHead: "SHOP OUR BEER",
     href: "",
@@ -184,7 +171,7 @@ const dummy = [
 export function Navigation() {
   const mediaScreen = useMediaQuery("(max-width:767.98px)");
   const [sideMenu, setSidemenu] = useState("visible");
-  const [cardOpened, setCardOpened] = useState(dummy);
+  const [cardOpened, setCardOpened] = useState(navbardata);
   const [opened, setOpened] = useState(false);
   const [logoChange, setLogoChange] = useState(false);
   useEffect(() => {
