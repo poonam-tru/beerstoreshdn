@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 interface containerLayoutProps {
   children: React.ReactNode;
   className?: string | undefined;
-  bordered?: boolean;
 }
 interface sidebarLayoutProps {
   children: React.ReactNode;
@@ -17,7 +16,10 @@ interface contentLayoutProps {
   className?: string | undefined;
 }
 
-export const ContainerLayout = ({ children, className }: containerLayoutProps) => {
+export const ContainerLayout = ({
+  children,
+  className,
+}: containerLayoutProps) => {
   return (
     <div className={cn("container px-[15px] lg:px-[45px]", className)}>
       <div className="flex flex-col-reverse md:flex-row">{children}</div>

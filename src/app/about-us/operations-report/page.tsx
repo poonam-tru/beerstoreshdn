@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import BannerHeader from "@/modules/bannerHeader"
 import { ContainerLayout, SidebarLayout, ContentLayout } from "@/modules/containerLayout";
-import { Button } from "@/components/ui/button";
+import SidebarList from '@/modules/sidebarList';
 
 const OperationsReport = () => {
   return (
@@ -13,11 +13,11 @@ const OperationsReport = () => {
       />
 
       <ContainerLayout>
-        <SidebarLayout>
-          Left Sidebar
+        <SidebarLayout bordered>
+          <SidebarList />
         </SidebarLayout>
         <ContentLayout>
-            <div className="py-[70px]">
+            <div className="flex flex-col py-[60px] px-[15px]  md:pl-[60px] lg:pl-[80px]">
                 <div className="flex flex-col-reverse md:flex-row">
                     <div className="basis-4/6">
                     <h2>Operations Report</h2>
