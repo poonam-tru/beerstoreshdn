@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+import { useRef } from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
@@ -12,50 +12,31 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import Image from "next/image";
+import { Plus, ChevronRight, ChevronLeft, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Hamburger from "../image/hamburger.png";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "@/lib/mediaChange";
+import { Separator } from "@/components/ui/separator";
+import { NavigationMenuSub } from "@radix-ui/react-navigation-menu";
+import { Item } from "@radix-ui/react-dropdown-menu";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "#",
-    description: "modal",
-  },
-  {
-    title: "Hover Card",
-    href: "3",
-    description: "sighted",
-  },
-  {
-    title: "Progress",
-    href: "#",
-    description: "typically",
-  },
-  {
-    title: "Scroll-area",
-    href: "#",
-    description: "Visually",
-  },
-  {
-    title: "Tabs",
-    href: "#",
-    description: "Sections",
-  },
-  {
-    title: "Tooltip",
-    href: "#",
-    description: "Are",
-  },
-];
 const dummy = [
   {
     mainHead: "SHOP OUR BEER",
     href: "",
+    open: false,
     content: [
       {
         subhead: "Discover",
+        open: false,
         list: [
           { link: "On Sale Now", href: "" },
           { link: "Whats New", href: "" },
@@ -65,6 +46,7 @@ const dummy = [
       },
       {
         subhead: "Beer Category",
+        open: false,
         list: [
           { link: "Import", href: "" },
           { link: "International", href: "" },
@@ -80,6 +62,7 @@ const dummy = [
       },
       {
         subhead: "Beer Types",
+        open: false,
         list: [
           { link: "Ale", href: "" },
           { link: "Lager", href: "" },
@@ -89,6 +72,7 @@ const dummy = [
       },
       {
         subhead: "Beer Styles",
+        open: false,
         list: [
           { link: "Amber", href: "" },
           { link: "Blonde", href: "" },
@@ -107,6 +91,7 @@ const dummy = [
       },
       {
         subhead: "Beer Format",
+        open: false,
         list: [
           { link: "Single", href: "" },
           { link: "Can", href: "" },
@@ -120,6 +105,7 @@ const dummy = [
       },
       {
         subhead: "Beer Flavour",
+        open: false,
         list: [
           { link: "Fruit", href: "" },
           { link: "Honey", href: "" },
@@ -128,6 +114,7 @@ const dummy = [
       },
       {
         subhead: "Health Category",
+        open: false,
         list: [
           { link: "Gluten Free", href: "" },
           { link: "Light Low", href: "" },
@@ -140,14 +127,17 @@ const dummy = [
   {
     mainHead: "STORE LOCATOR",
     href: "",
+    open: false,
     // content: [],
   },
   {
     mainHead: "FOR BEER LOVERS",
     href: "",
+    open: false,
     content: [
       {
         subhead: "",
+        open: false,
         list: [
           { link: "For Beer Lovers ", href: "" },
           { link: "Articles", href: "/articles" },
@@ -162,9 +152,11 @@ const dummy = [
   {
     mainHead: "ABOUT US",
     href: "/about-us",
+    open: false,
     content: [
       {
         subhead: "",
+        open: false,
         list: [
           { link: "Online Ordering Information", href: "" },
           { link: "Business Services", href: "" },
@@ -184,107 +176,100 @@ const dummy = [
   {
     mainHead: "CONTACT",
     href: "/about-us/contact-us",
+    open: false,
     // content: [],
   },
 ];
 
 export function Navigation() {
-  return (
-    <div className="">
-      <div className="hidden md:block">
-        <div className="flex flex-wrap justify-between w-full py-[5px]">
-          <NavigationMenu className="basis-3/5 lg:basis-3/4">
-            <NavigationMenuList>
-              {dummy?.map(({ mainHead, href, content }, IDX) => (
-                <NavigationMenuItem key={mainHead} className="relative">
-                  {[1, 4].includes(IDX) ? (
-                    <NavigationMenuLink
-                      href={href ? href : ""}
-                      className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px] md:text-[10px]  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5"
-                    >
-                      {mainHead}
-                    </NavigationMenuLink>
-                  ) : (
-                    <NavigationMenuTrigger className="font-[Gotham-Medium] 2xl:text-[20px] xl:text-[14px] lg:text-[12px]  md:text-[10px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase text-base md:mr-2 2xl:mr-5">
-                      <Link href={href && href}>{mainHead}</Link>
-                    </NavigationMenuTrigger>
-                  )}
+  const mediaScreen = useMediaQuery("(max-width:767.98px)");
+  const [sideMenu, setSidemenu] = useState("visible");
+  const [cardOpened, setCardOpened] = useState(dummy);
+  const [opened, setOpened] = useState(false);
+  const [logoChange, setLogoChange] = useState(false);
+  useEffect(() => {
+    if (!mediaScreen) {
+      setSidemenu("invisible");
+      const newdata = cardOpened.map((itm, idx) => {
+        itm.open = false;
+        itm?.content?.map((item) => (item.open = false));
+        return itm;
+      });
+      setCardOpened(newdata);
+      console.info(newdata, "newdata");
+    }
+  }, [mediaScreen]);
+  const sideMenuLevOne =
+    sideMenu === "visible"
+      ? " fixed top-0 bg-black w-full h-full z-50 left-0   peer-focus:left-0 ease-out delay-600 duration-700  "
+      : " fixed top-0 bg-black w-full h-full -left-full z-50  peer-focus:left-0 ease-out delay-600 duration-700  ";
 
-                  <NavigationMenuContent className="flex flex-row  top-[60px] border-[1px] border-solid border-[#ddd] bg-[#f4f4f4] z-[9]">
-                    {content?.map(({ subhead, list }) => (
-                      <div
-                        className="flex flex-col bg-white"
-                        key={`di${subhead}`}
-                      >
-                        {subhead && (
-                          <div className="flex flex-col gap-3 p-3 md:w-[100px] lg:w-[120px] xl:w-[150px] 2xl:w-[180px] border-b-[1px]">
-                            <h2 className="font-[Gotham-Medium] text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
-                              {subhead}
-                            </h2>
-                          </div>
-                        )}
-                        <ul
-                          className={`flex flex-col h-full  2xl:w-[180px] border-e-[1px] border-[#ddd] ${
-                            [2, 3].includes(IDX)
-                              ? " w-[240px]"
-                              : "py-[10px] md:w-[100px] lg:w-[120px] xl:w-[150px]"
-                          }`}
-                        >
-                          {list?.map(({ link, href }) => (
-                            <li
-                              key={`list${link}`}
-                              className={`flex px-3${
-                                [2, 3].includes(IDX)
-                                  ? " border-b-[1px] border-solid border-[#ddd] py-[10px] px-[15px]"
-                                  : ""
-                              }`}
-                            >
-                              <NavigationMenuLink asChild>
-                                <Link
-                                  className="font-[Gotham-Book] p-0 text-[14px] py-[3px]  md:text-[10px] text-[#4a4f55] hover:text-[#d06f1a]"
-                                  href={href && href}
-                                >
-                                  {link}
-                                </Link>
-                              </NavigationMenuLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <div className="flex basis-1/4 lg:basis-1/4 h-auto">
-            <Input
-              className="bg-white  sm:h-[40px] lg:h-[50px] text-[10px] font-[Gotham-Book] rounded-[50px] py-[8px] pl-[14px] lg:pl-[28px] pr-[5px]"
-              placeholder="Search 1,000+ brand of beer "
-              endIcon={
-                <Button
-                  variant={"ghost"}
-                  size={"icon"}
-                  className="p-0 relative justify-end"
-                >
-                  <Image
-                    src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/search-button.svg"
-                    alt="password"
-                    width={40}
-                    height={40}
-                    className={"w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]"}
-                  />
-                </Button>
-              }
-            />
-          </div>
-        </div>
-      </div>
+  const cardOpen = (index: any) => {
+    const newdata = cardOpened.map((itm, idx) => {
+      if (index === idx) {
+        itm.open = !itm.open;
+      }
+      return itm;
+    });
+    setCardOpened(newdata);
+    setLogoChange(true);
+
+    console.info(newdata, "newdata");
+  };
+  const resetData = () => {
+    console.info("first");
+    const reset = cardOpened.map((itm) => {
+      itm.open = false;
+      return itm;
+    });
+    setCardOpened(reset);
+    setLogoChange(false);
+
+    console.info(reset, "reset");
+  };
+  const resetSubmenuData = () => {
+    setOpened(false);
+    console.info("first");
+    const reset = cardOpened.map((itm) => {
+      if (itm.open === true) {
+        itm?.content?.map((item) => (item.open = false));
+      }
+      // itm.open = false;
+      return itm;
+    });
+    setCardOpened(reset);
+
+    console.info(reset, "reset");
+  };
+
+  console.info(opened, "opened");
+  const subMenuHandler = (indx: any) => {
+    setOpened(true);
+    console.info(logoChange, "logoChanged");
+    const subMenuReset = cardOpened?.map((itm) => {
+      itm?.content?.filter((items, idx) => {
+        if (idx == indx) {
+          items.open = !items?.open;
+        }
+        return items;
+      });
+      return itm;
+    });
+    console.info(subMenuReset, "submenureset");
+    setCardOpened(subMenuReset);
+  };
+  return (
+    <div>
       <div className="block md:hidden h-auto">
         <div className=" flex justify-between items-center py-[10px]">
-          <Button variant={"ghost"} className="p-0 h-[20px]">
+          <Button
+            onClick={() => setSidemenu("visible")}
+            variant={"ghost"}
+            className="p-0 h-[20px]"
+          >
             <Image src={Hamburger} alt="" width={40} height={40} />
           </Button>
+
           <div className="flex">
             <a href="" className="inline-flex">
               <Image
@@ -292,7 +277,7 @@ export function Navigation() {
                 alt="test"
                 width="0"
                 height="0"
-                style={{ width: "100%", height: "30px" }}
+                style={{ width: "130px", height: "21px" }}
               />
             </a>
           </div>
@@ -309,6 +294,570 @@ export function Navigation() {
           </div>
         </div>
       </div>
+
+      <div
+        className={`md:visible ${sideMenu} ${
+          mediaScreen && sideMenuLevOne
+        } flex flex-col`}
+      >
+        {mediaScreen && (
+          <div className="px-[30px] py-[14px]">
+            {logoChange ? (
+              <ChevronLeft
+                id="cross"
+                color="#d06f1a"
+                className="h-[30px] w-[25px]"
+                onClick={!opened ? resetData : resetSubmenuData}
+              />
+            ) : (
+              <a href="" className="inline-flex">
+                <Image
+                  src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
+                  alt="test"
+                  width="0"
+                  height="0"
+                  style={{ width: "130px", height: "21px" }}
+                />
+              </a>
+            )}
+            <Image
+              src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/close-white.svg"
+              height={13}
+              width={13}
+              alt={""}
+              onClick={() => {
+                setSidemenu("invisible");
+                resetData();
+                resetSubmenuData();
+              }}
+              className="right-[30px] top-[18px] absolute h-[13px] w-[13px] "
+            />
+          </div>
+        )}
+        {mediaScreen && (
+          <Separator
+            orientation="horizontal"
+            className="bg-white  h-px opacity-50"
+          />
+        )}
+        <div>
+          <div className="flex  justify-between flex-col-reverse md:flex-col lg:flex-row w-full  md:py-[5px] py-[25px] md:px-0 ">
+            <div className="md:basis-3/5 lg:basis-3/4 items-baseline md:flex md:items-center justify-start py-[25px] md:py-0 max-w-full max-md:[&>*:first-child]:w-full">
+              <ul className="flex flex-col md:flex-row justify-start md:py-[20px]    items-baseline w-full max-md:px-[30px]">
+                {cardOpened.map(({ mainHead, href, content, open }, indx) => (
+                  <li className="relative py-[20px] items-center max-md:w-full flex   md:py-0 border-b-[1px] md:border-none border-solid border-[#d4d4d4]">
+                    {content ? (
+                      <div className="relative w-full">
+                        {!mediaScreen && (
+                          <HoverCard>
+                            <HoverCardTrigger
+                              href="/"
+                              className="font-[Gotham-Medium] cursor-pointer w-full flex items-center hover:underline  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]   mr-[10px] 2xl:mr-5"
+                            >
+                              {mainHead}
+                              <ChevronDown
+                                color="white"
+                                height={15}
+                                width={20}
+                                className="float-right ml-1"
+                                onClick={() => mediaScreen && cardOpen(indx)}
+                              />
+                            </HoverCardTrigger>
+                            <div className="[&>*:first-child]:md:!top-[30px] [&>*:first-child]:z-[9] [&>*:first-child]:md:!absolute [&>*:first-child]:md:!left-[30px]">
+                              <HoverCardContent
+                                className={`  flex flex-row   bg-black md:bg-white`}
+                              >
+                                <ul
+                                  className={`flex flex-col md:flex-row items-baseline  md:items-stretch  justify-start h-full w-full `}
+                                >
+                                  {content?.map(({ subhead, list }, idx) => (
+                                    <li
+                                      className={`flex flex-col w-full bg:black md:bg-[#fff] border-b-[1px]  border-solid border-[#d4d4d4] ${
+                                        indx == 0 &&
+                                        "2xl:w-[210px] xl:w-[175px] lg:w-[130px] md:w-[100px]"
+                                      } `}
+                                    >
+                                      {subhead && (
+                                        <div className="flex flex-col gap-3 p-3  border-b-[1px] border-solid border-[#ddd] ">
+                                          <h3 className="font-[Gotham-Medium] text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                            {subhead}
+                                          </h3>
+                                        </div>
+                                      )}
+                                      {list && (
+                                        <ul
+                                          className={`flex flex-col h-full border-collapse border-[1px] border-solid border-[#e5e7eb] ${
+                                            indx == 0 ? "py-[10px] " : "w-250px"
+                                          }`}
+                                        >
+                                          {list.map(({ link, href }) => (
+                                            <li
+                                              key={`list${link}`}
+                                              className={`flex  w-full  ${
+                                                indx == 0
+                                                  ? "px-[20px]  py-[5px] "
+                                                  : "border-b-[1px] border-solid border-[#e5e7eb] px-[25px] py-[10px]"
+                                              }   hover:text-[#d06f1a]
+                                       `}
+                                            >
+                                              <Link
+                                                className="font-[Gotham-Book]  text-[14px]   md:text-[10px] text-[#4A4F55]"
+                                                href={href && href}
+                                              >
+                                                {link}
+                                              </Link>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </HoverCardContent>
+                            </div>
+                          </HoverCard>
+                        )}
+                        {mediaScreen && (
+                          <HoverCard open={open}>
+                            <HoverCardTrigger className="font-[Gotham-Medium] max-md:w-full max-md:flex max-md:justify-between items-center  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]    2xl:mr-5">
+                              {mainHead}
+                              <ChevronRight
+                                color="#d06f1a"
+                                height={20}
+                                width={15}
+                                className="float-right h-[20px] w-[15px]"
+                                onClick={() => mediaScreen && cardOpen(indx)}
+                              />
+                            </HoverCardTrigger>
+                            <div className="[&>*:first-child]:w-full  [&>*:first-child]:!translate-y-[122px] [&>*:first-child]:h-full">
+                              <HoverCardContent
+                                className={`HoverCardContent  border-none px-[30px] flex flex-row  top-[160px] md:top-[64px]  bg-black md:bg-white z-[9] h-full`}
+                              >
+                                <div className="w-full">
+                                  <ul
+                                    className={`flex flex-col md:flex-row items-baseline  md:items-stretch  justify-start h-full w-full `}
+                                  >
+                                    {content?.map(
+                                      ({ subhead, list, open }, indx) => (
+                                        <li className="flex flex-col w-full bg:black md:bg-[#fff] border-b-[1px] border-solid border-[#d4d4d4]">
+                                          <HoverCard open={open}>
+                                            <div className="[&>*:first-child]:w-full [&>*:first-child]:!translate-y-0  [&>*:first-child]:h-full">
+                                              <HoverCardContent
+                                                className={`HoverCardContent border-none px-[30px] flex flex-row  top-[160px] md:top-[64px]  bg-black md:bg-white z-[9] h-full`}
+                                              >
+                                                <ul
+                                                  className={`flex flex-col h-full   border-[#ddd] w-full`}
+                                                >
+                                                  {list.map(
+                                                    ({ link, href }) => (
+                                                      <li
+                                                        key={`list${link}`}
+                                                        className={`flex  w-full border-t-[1px] border-solid border-[#ddd] py-[20px] hover:text-[#d06f1a]
+                                   `}
+                                                      >
+                                                        <Link
+                                                          className="font-[Gotham-Book] p-0 text-[14px]  md:text-[10px] text-[#fff]"
+                                                          href={href && href}
+                                                        >
+                                                          {link}
+                                                        </Link>
+                                                      </li>
+                                                    )
+                                                  )}
+                                                </ul>
+                                              </HoverCardContent>
+                                            </div>
+                                            {subhead ? (
+                                              <HoverCardTrigger
+                                                onPointerEnter={(event) =>
+                                                  mediaScreen &&
+                                                  event.preventDefault()
+                                                }
+                                                onPointerLeave={(event) =>
+                                                  mediaScreen &&
+                                                  event.preventDefault()
+                                                }
+                                                onClick={() =>
+                                                  subMenuHandler(indx)
+                                                }
+                                              >
+                                                <div className="flex flex-row gap-3 items-center py-[20px]  border-b-[1px] border-solid border-[#ddd] ">
+                                                  <h3 className="font-[Gotham-Medium] text-[#fff] text-[14px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                                    {subhead}
+                                                  </h3>
+                                                  <ChevronRight
+                                                    color="#d06f1a"
+                                                    height={24}
+                                                    width={12}
+                                                    className="h-[20px] w-[15px]"
+                                                  />
+                                                </div>
+                                              </HoverCardTrigger>
+                                            ) : (
+                                              <ul
+                                                className={`flex flex-col h-full  `}
+                                              >
+                                                {list.map(({ link, href }) => (
+                                                  <li
+                                                    key={`list${link}`}
+                                                    className={`flex  w-full border-t-[1px] border-solid border-[#ddd] py-[20px] hover:text-[#d06f1a]
+                                   `}
+                                                  >
+                                                    <Link
+                                                      className="font-[Gotham-Book] p-0 text-[14px] py-[5px]  md:text-[10px] text-[#fff]"
+                                                      href={href && href}
+                                                    >
+                                                      {link}
+                                                    </Link>
+                                                  </li>
+                                                ))}
+                                              </ul>
+                                            )}
+                                          </HoverCard>
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+                                </div>
+                              </HoverCardContent>
+                            </div>
+                          </HoverCard>
+                        )}
+                      </div>
+                    ) : (
+                      <Link
+                        href="#"
+                        className="pr-[26px] font-[Gotham-Medium] 2xl:text-[20px] hover:underline text-left xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px] h-[20px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0  uppercase  mr-[10px] 2xl:mr-5"
+                      >
+                        {mainHead}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex md:basis-1/4 lg:basis-1/4 h-auto items-center  md:justify-end px-[30px] md:px-0">
+              <div className="lg:max-w-[500px] md:max-w-[265px] lg:w-full w-full md:mb-[10px] lg:mb-0 ">
+                <Input
+                  className="bg-white text-[#4A4F55]  h-[40px] 2xl:h-[50px] xl:h-[40px] text-[10px] lg:text-[14px] font-[Gotham-Book] rounded-[50px] py-[8px]  pl-[14px] lg:pl-[28px] pr-[5px]"
+                  placeholder="Search 1,000+ brand of beer..."
+                  endIcon={
+                    <Button
+                      variant={"ghost"}
+                      size={"icon"}
+                      className="p-0 relative justify-end"
+                    >
+                      <Image
+                        src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/search-button.svg"
+                        alt="password"
+                        width={40}
+                        height={40}
+                        className={
+                          "w-[30px] h-[30px] 2xl:w-[40px] 2xl:h-[40px]"
+                        }
+                      />
+                    </Button>
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    /* <div
+        className={`md:visible ${sideMenu} ${
+          mediaScreen && sideMenuLevOne
+        } flex flex-col`}
+      >
+        {mediaScreen && (
+          <div className="px-[30px] py-[14px]">
+            {stopProp ? (
+              <ChevronLeft
+                id="cross"
+                color="#d06f1a"
+                className="h-[30px] w-[25px]"
+                onClick={(e) => {
+                  setStopProp(false);
+                  const cross = document.getElementById("cross").id;
+                  console.info(cross, "cross");
+                }}
+              />
+            ) : (
+              <a href="" className="inline-flex">
+                <Image
+                  src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
+                  alt="test"
+                  width="0"
+                  height="0"
+                  style={{ width: "130px", height: "21px" }}
+                />
+              </a>
+            )}
+
+            <Image
+              src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/close-white.svg"
+              height={13}
+              width={13}
+              alt={""}
+              onClick={() => setSidemenu("invisible")}
+              className="right-[30px] top-[18px] absolute h-[13px] w-[13px] "
+            />
+          </div>
+        )}
+        {mediaScreen && (
+          <Separator
+            orientation="horizontal"
+            className="bg-white  h-px opacity-50"
+          />
+        )}
+        <div className="flex  justify-between flex-col-reverse md:flex-col lg:flex-row w-full  md:py-[5px] py-[25px] md:px-0 ">
+          <NavigationMenu
+            // ref={navmenuRef}
+            delayDuration={500}
+            skipDelayDuration={500}
+            className="md:basis-3/5 lg:basis-3/4 items-baseline md:items-center justify-start py-[25px] md:py-0 max-w-full max-md:[&>*:first-child]:w-full"
+          >
+            <NavigationMenuList className="flex-col md:flex-row justify-start  md:justify-center  items-baseline w-full max-md:px-[30px]">
+              {dummy?.map(({ mainHead, href, content }, IDX) => (
+                <NavigationMenuItem
+                  key={mainHead}
+                  className="relative py-[20px] max-md:w-full    md:py-0 border-b-[1px] md:border-none border-solid border-[#d4d4d4]"
+                >
+                  {[1, 4].includes(IDX) ? (
+                    <NavigationMenuLink
+                      href={href ? href : ""}
+                      className="font-[Gotham-Medium] 2xl:text-[20px] flex xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px] h-[20px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0  uppercase  mr-[10px] 2xl:mr-5"
+                    >
+                      {mainHead}
+                    </NavigationMenuLink>
+                  ) : (
+                    <NavigationMenuTrigger
+                      onClick={() => {
+                        setSubSideMenuClose(true);
+                        setStopProp(true);
+                      }}
+                      onPointerMove={(event) =>
+                        mediaScreen && event.preventDefault()
+                      }
+                      onPointerLeave={(event) =>
+                        mediaScreen && event.preventDefault()
+                      }
+                      className="font-[Gotham-Medium] max-md:w-full max-md:flex max-md:justify-between     text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase   mr-[10px] 2xl:mr-5"
+                    >
+                      <Link
+                        href={mediaScreen ? (href ? href : "") : ""}
+                        className="2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]"
+                      >
+                        {mainHead}
+                      </Link>
+                    </NavigationMenuTrigger>
+                  )}
+
+                  <NavigationMenuContent
+                    onInteractOutside={onOutside}
+                    id="triggerLevOne"
+                    onPointerEnter={(event) =>
+                      mediaScreen && event.preventDefault()
+                    }
+                    onPointerLeave={(event) =>
+                      mediaScreen && event.preventDefault()
+                    }
+                    className={`${
+                      mediaScreen && "NavigationMenuContent"
+                    }  flex flex-row  top-[160px] md:top-[64px]  bg-black md:bg-white z-[9]`}
+                  >
+                    {mainHead === "SHOP OUR BEER" ? (
+                      <NavigationMenuSub className="w-full ">
+                        <NavigationMenuList
+                          className={`flex-col md:flex-row items-baseline  md:items-stretch  justify-start h-full `}
+                        >
+                          {mediaScreen && (
+                            <li className=" py-[19px]  text-[14px]  border-y-[1px]  border-solid border-[#d4d4d4] w-full">
+                              <h2 className="font-[Gotham-Medium] text-white   text-[14px] leading-[20px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                All Bears
+                              </h2>
+                            </li>
+                          )}
+                          {content?.map(({ subhead, list }) => (
+                            <NavigationMenuItem
+                              key={`di${subhead}`}
+                              className="flex w-full bg:black md:bg-[#fff] border-b-[1px] border-solid border-[#d4d4d4]"
+                            >
+                              {!mediaScreen && (
+                                <div className="flex flex-col h-full md:w-[105px] lg:w-[140px] xl:w-[180px] 2xl:w-[210px] ">
+                                  <div className="flex flex-col gap-3 p-3  border-b-[1px] border-solid border-[#ddd] ">
+                                    <h3 className="font-[Gotham-Medium] text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                      {subhead}
+                                    </h3>
+                                  </div>
+                                  <ul
+                                    className={`flex flex-col h-full py-[10px] border-e-[1px] border-[#ddd] `}
+                                  >
+                                    {list?.map(({ link, href }) => (
+                                      <li
+                                        key={`list${link}`}
+                                        className={`flex   px-[15px]  hover:text-[#d06f1a]                                      
+                                          `}
+                                      >
+                                        <NavigationMenuLink asChild>
+                                          <Link
+                                            className="font-[Gotham-Book] p-0 text-[14px] py-[5px]  md:text-[10px] text-[#4A4F55]"
+                                            href={href && href}
+                                          >
+                                            {link}
+                                          </Link>
+                                        </NavigationMenuLink>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                              {mediaScreen && (
+                                <NavigationMenuTrigger
+                                  onPointerMove={(event) =>
+                                    event.preventDefault()
+                                  }
+                                  onPointerLeave={(event) =>
+                                    event.preventDefault()
+                                  }
+                                  className="p-0 text-white  w-full flex justify-between "
+                                >
+                                  <div className="flex flex-col  md:w-[100px] lg:w-[120px] xl:w-[150px] 2xl:w-[180px] ">
+                                    <h2 className="font-[Gotham-Medium] text-white   text-[14px] leading-[20px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                      {subhead}
+                                    </h2>
+                                  </div>
+                                </NavigationMenuTrigger>
+                              )}
+
+                              <NavigationMenuContent
+                                onPointerEnter={(event) =>
+                                  event.preventDefault()
+                                }
+                                onPointerLeave={(event) =>
+                                  event.preventDefault()
+                                }
+                                className="NavigationMenuContent flex flex-row  top-[160px] md:top-[64px]  bg-black md:bg-white z-[9] "
+                              >
+                                <div className={`flex flex-col w-full`}>
+                                  <ul
+                                    className={`flex flex-col h-full  2xl:w-[180px]  w-full border-[#ddd]`}
+                                  >
+                                    {list?.map(({ link, href }) => (
+                                      <li
+                                        key={`list${link}`}
+                                        className={`flex  w-full border-t-[1px] border-solid border-[#ddd] py-[20px] hover:text-[#d06f1a]
+                                             `}
+                                      >
+                                        <NavigationMenuLink asChild>
+                                          <Link
+                                            className="font-[Gotham-Book] p-0 text-[14px] py-[3px]  md:text-[10px] text-white "
+                                            href={href && href}
+                                          >
+                                            {link}
+                                          </Link>
+                                        </NavigationMenuLink>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </NavigationMenuContent>
+                            </NavigationMenuItem>
+                          ))}
+                        </NavigationMenuList>
+                      </NavigationMenuSub>
+                    ) : (
+                      <div className="w-full">
+                        {content?.map(({ subhead, list }) => (
+                          <ul
+                            key={`${list}`}
+                            className={`flex flex-col h-full w-full md:w-[240px]  md:border-e-[1px]  border-[#ddd] md:bg-white overflow-y-auto `}
+                          >
+                            {list?.map(({ link, href }) => (
+                              <li
+                                key={`list${link}`}
+                                className={
+                                  "flex py-[20px] md:py-[10px] md:px-[15px] border-b "
+                                }
+                              >
+                                <NavigationMenuLink asChild>
+                                  <Link
+                                    className="font-[Gotham-Book]  p-0  text-[14px]  md:py-[3px]  md:text-[10px] text-white md:text-black hover:text-[#d06f1a]"
+                                    href={href && href}
+                                  >
+                                    {link}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                            ))}
+                          </ul>
+                        ))}
+                      </div>
+                    )}
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+          <div className="flex md:basis-1/4 lg:basis-1/4 h-auto items-center  md:justify-end px-[30px]">
+            <div className="md:max-w-[500px] lg:w-full w-full ">
+              <Input
+                className="bg-white  h-[40px] lg:h-[50px] text-[10px] lg:text-[14px] font-[Gotham-Book] rounded-[50px] py-[8px]  pl-[14px] lg:pl-[28px] pr-[5px]"
+                placeholder="Search 1,000+ brand of beer"
+                endIcon={
+                  <Button
+                    variant={"ghost"}
+                    size={"icon"}
+                    className="p-0 relative justify-end"
+                  >
+                    <Image
+                      src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/search-button.svg"
+                      alt="password"
+                      width={40}
+                      height={40}
+                      className={"w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]"}
+                    />
+                  </Button>
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="block md:hidden h-auto">
+        <div className=" flex justify-between items-center py-[10px]">
+          <Button
+            onClick={() => setSidemenu("visible")}
+            variant={"ghost"}
+            className="p-0 h-[20px]"
+          >
+            <Image src={Hamburger} alt="" width={40} height={40} />
+          </Button>
+
+          <div className="flex">
+            <a href="" className="inline-flex">
+              <Image
+                src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
+                alt="test"
+                width="0"
+                height="0"
+                style={{ width: "130px", height: "21px" }}
+              />
+            </a>
+          </div>
+          <div>
+            <a>
+              <Image
+                className="mr-2.5"
+                src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/user_login.svg"
+                alt=""
+                width={20}
+                height={20}
+              />
+            </a>
+          </div>
+        </div>
+      </div> */
   );
 }
