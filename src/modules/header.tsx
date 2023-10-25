@@ -14,6 +14,7 @@ import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Navigation } from "./navigation";
 import Link from "next/link";
+import TopLlink from "./topheaderlink";
 
 const Header = () => {
   return (
@@ -31,7 +32,8 @@ const Header = () => {
             </a>
           </div>
           <div className="basis-3/4">
-            <div className="flex md:justify-end items-center relative">
+            <TopLlink />
+            {/* <div className="flex md:justify-end items-center relative">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -150,7 +152,7 @@ const Header = () => {
                   <div className="indicator w-[20px] h-[20px] absolute bg-white top-[-9px] z-[1024] rotate-45 right-[10px] translate-x-[-10px] "></div>
                 </DropdownMenuContent>
               </DropdownMenu>
-            </div>
+            </div> */}
           </div>
         </nav>
         <Separator className=" h-px bg-white opacity-50" />
