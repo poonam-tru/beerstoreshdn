@@ -1,6 +1,7 @@
 'use client';
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 interface PaginationProps {
   currentPage: number;
@@ -10,8 +11,8 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange, displayRange = 10 }) => {
+  const router = useRouter();
   const [displayedPages, setDisplayedPages] = useState<number[]>([]);
-
   useEffect(() => {
     updateDisplayedPages();
   }, [currentPage, totalPages, displayRange]);
@@ -33,6 +34,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
 
   const handlePageChange = (page: number) => {
     onPageChange(page);
+    router.push(`page?page-${page}`);
     updateDisplayedPages();
   };
 
