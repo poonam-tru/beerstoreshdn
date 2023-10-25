@@ -352,7 +352,7 @@ export function Navigation() {
                           <HoverCard>
                             <HoverCardTrigger
                               href="/"
-                              className="font-[Gotham-Medium] cursor-pointer w-full flex items-center hover:underline  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]   mr-[10px] 2xl:mr-5"
+                              className="font-mono font-medium cursor-pointer w-full flex items-center hover:underline  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]   mr-[10px] 2xl:mr-5"
                             >
                               {mainHead}
                               <ChevronDown
@@ -379,7 +379,7 @@ export function Navigation() {
                                     >
                                       {subhead && (
                                         <div className="flex flex-col gap-3 p-3  border-b-[1px] border-solid border-[#ddd] ">
-                                          <h3 className="font-[Gotham-Medium] text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                          <h3 className="font-mono font-medium text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
                                             {subhead}
                                           </h3>
                                         </div>
@@ -401,7 +401,7 @@ export function Navigation() {
                                        `}
                                             >
                                               <Link
-                                                className="font-[Gotham-Book]  text-[14px]   md:text-[10px] text-[#4A4F55]"
+                                                className="font-mono font-normal  text-[14px]   md:text-[10px] text-[#4A4F55]"
                                                 href={href && href}
                                               >
                                                 {link}
@@ -419,7 +419,7 @@ export function Navigation() {
                         )}
                         {mediaScreen && (
                           <HoverCard open={open}>
-                            <HoverCardTrigger className="font-[Gotham-Medium] max-md:w-full max-md:flex max-md:justify-between items-center  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]    2xl:mr-5">
+                            <HoverCardTrigger className="font-mono font-medium max-md:w-full max-md:flex max-md:justify-between items-center  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]    2xl:mr-5">
                               {mainHead}
                               <ChevronRight
                                 color="#d06f1a"
@@ -456,7 +456,7 @@ export function Navigation() {
                                    `}
                                                       >
                                                         <Link
-                                                          className="font-[Gotham-Book] p-0 text-[14px]  md:text-[10px] text-[#fff]"
+                                                          className="font-mono font-normal p-0 text-[14px]  md:text-[10px] text-[#fff]"
                                                           href={href && href}
                                                         >
                                                           {link}
@@ -482,7 +482,7 @@ export function Navigation() {
                                                 }
                                               >
                                                 <div className="flex flex-row gap-3 items-center py-[20px]  border-b-[1px] border-solid border-[#ddd] ">
-                                                  <h3 className="font-[Gotham-Medium] text-[#fff] text-[14px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                                  <h3 className="font-mono font-medium text-[#fff] text-[14px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
                                                     {subhead}
                                                   </h3>
                                                   <ChevronRight
@@ -504,7 +504,7 @@ export function Navigation() {
                                    `}
                                                   >
                                                     <Link
-                                                      className="font-[Gotham-Book] p-0 text-[14px] py-[5px]  md:text-[10px] text-[#fff]"
+                                                      className="font-mono font-normal p-0 text-[14px] py-[5px]  md:text-[10px] text-[#fff]"
                                                       href={href && href}
                                                     >
                                                       {link}
@@ -527,7 +527,7 @@ export function Navigation() {
                     ) : (
                       <Link
                         href="#"
-                        className="pr-[26px] font-[Gotham-Medium] 2xl:text-[20px] hover:underline text-left xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px] h-[20px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0  uppercase  mr-[10px] 2xl:mr-5"
+                        className="pr-[26px] font-mono font-medium 2xl:text-[20px] hover:underline text-left xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px] h-[20px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0  uppercase  mr-[10px] 2xl:mr-5"
                       >
                         {mainHead}
                       </Link>
@@ -539,7 +539,7 @@ export function Navigation() {
             <div className="flex md:basis-1/4 lg:basis-1/4 h-auto items-center  md:justify-end px-[30px] md:px-0">
               <div className="lg:max-w-[500px] md:max-w-[265px] lg:w-full w-full md:mb-[10px] lg:mb-0 ">
                 <Input
-                  className="bg-white text-[#4A4F55]  h-[40px] 2xl:h-[50px] xl:h-[40px] text-[10px] lg:text-[14px] font-[Gotham-Book] rounded-[50px] py-[8px]  pl-[14px] lg:pl-[28px] pr-[5px]"
+                  className="bg-white text-[#4A4F55]  h-[40px] 2xl:h-[50px] xl:h-[40px] text-[10px] lg:text-[14px] font-mono font-normal rounded-[50px] py-[8px]  pl-[14px] lg:pl-[28px] pr-[5px]"
                   placeholder="Search 1,000+ brand of beer..."
                   endIcon={
                     <Button
@@ -565,299 +565,5 @@ export function Navigation() {
         </div>
       </div>
     </div>
-    /* <div
-        className={`md:visible ${sideMenu} ${
-          mediaScreen && sideMenuLevOne
-        } flex flex-col`}
-      >
-        {mediaScreen && (
-          <div className="px-[30px] py-[14px]">
-            {stopProp ? (
-              <ChevronLeft
-                id="cross"
-                color="#d06f1a"
-                className="h-[30px] w-[25px]"
-                onClick={(e) => {
-                  setStopProp(false);
-                  const cross = document.getElementById("cross").id;
-                  console.info(cross, "cross");
-                }}
-              />
-            ) : (
-              <a href="" className="inline-flex">
-                <Image
-                  src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
-                  alt="test"
-                  width="0"
-                  height="0"
-                  style={{ width: "130px", height: "21px" }}
-                />
-              </a>
-            )}
-
-            <Image
-              src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/close-white.svg"
-              height={13}
-              width={13}
-              alt={""}
-              onClick={() => setSidemenu("invisible")}
-              className="right-[30px] top-[18px] absolute h-[13px] w-[13px] "
-            />
-          </div>
-        )}
-        {mediaScreen && (
-          <Separator
-            orientation="horizontal"
-            className="bg-white  h-px opacity-50"
-          />
-        )}
-        <div className="flex  justify-between flex-col-reverse md:flex-col lg:flex-row w-full  md:py-[5px] py-[25px] md:px-0 ">
-          <NavigationMenu
-            // ref={navmenuRef}
-            delayDuration={500}
-            skipDelayDuration={500}
-            className="md:basis-3/5 lg:basis-3/4 items-baseline md:items-center justify-start py-[25px] md:py-0 max-w-full max-md:[&>*:first-child]:w-full"
-          >
-            <NavigationMenuList className="flex-col md:flex-row justify-start  md:justify-center  items-baseline w-full max-md:px-[30px]">
-              {dummy?.map(({ mainHead, href, content }, IDX) => (
-                <NavigationMenuItem
-                  key={mainHead}
-                  className="relative py-[20px] max-md:w-full    md:py-0 border-b-[1px] md:border-none border-solid border-[#d4d4d4]"
-                >
-                  {[1, 4].includes(IDX) ? (
-                    <NavigationMenuLink
-                      href={href ? href : ""}
-                      className="font-[Gotham-Medium] 2xl:text-[20px] flex xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px] h-[20px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0  uppercase  mr-[10px] 2xl:mr-5"
-                    >
-                      {mainHead}
-                    </NavigationMenuLink>
-                  ) : (
-                    <NavigationMenuTrigger
-                      onClick={() => {
-                        setSubSideMenuClose(true);
-                        setStopProp(true);
-                      }}
-                      onPointerMove={(event) =>
-                        mediaScreen && event.preventDefault()
-                      }
-                      onPointerLeave={(event) =>
-                        mediaScreen && event.preventDefault()
-                      }
-                      className="font-[Gotham-Medium] max-md:w-full max-md:flex max-md:justify-between     text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase   mr-[10px] 2xl:mr-5"
-                    >
-                      <Link
-                        href={mediaScreen ? (href ? href : "") : ""}
-                        className="2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]"
-                      >
-                        {mainHead}
-                      </Link>
-                    </NavigationMenuTrigger>
-                  )}
-
-                  <NavigationMenuContent
-                    onInteractOutside={onOutside}
-                    id="triggerLevOne"
-                    onPointerEnter={(event) =>
-                      mediaScreen && event.preventDefault()
-                    }
-                    onPointerLeave={(event) =>
-                      mediaScreen && event.preventDefault()
-                    }
-                    className={`${
-                      mediaScreen && "NavigationMenuContent"
-                    }  flex flex-row  top-[160px] md:top-[64px]  bg-black md:bg-white z-[9]`}
-                  >
-                    {mainHead === "SHOP OUR BEER" ? (
-                      <NavigationMenuSub className="w-full ">
-                        <NavigationMenuList
-                          className={`flex-col md:flex-row items-baseline  md:items-stretch  justify-start h-full `}
-                        >
-                          {mediaScreen && (
-                            <li className=" py-[19px]  text-[14px]  border-y-[1px]  border-solid border-[#d4d4d4] w-full">
-                              <h2 className="font-[Gotham-Medium] text-white   text-[14px] leading-[20px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
-                                All Bears
-                              </h2>
-                            </li>
-                          )}
-                          {content?.map(({ subhead, list }) => (
-                            <NavigationMenuItem
-                              key={`di${subhead}`}
-                              className="flex w-full bg:black md:bg-[#fff] border-b-[1px] border-solid border-[#d4d4d4]"
-                            >
-                              {!mediaScreen && (
-                                <div className="flex flex-col h-full md:w-[105px] lg:w-[140px] xl:w-[180px] 2xl:w-[210px] ">
-                                  <div className="flex flex-col gap-3 p-3  border-b-[1px] border-solid border-[#ddd] ">
-                                    <h3 className="font-[Gotham-Medium] text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
-                                      {subhead}
-                                    </h3>
-                                  </div>
-                                  <ul
-                                    className={`flex flex-col h-full py-[10px] border-e-[1px] border-[#ddd] `}
-                                  >
-                                    {list?.map(({ link, href }) => (
-                                      <li
-                                        key={`list${link}`}
-                                        className={`flex   px-[15px]  hover:text-[#d06f1a]                                      
-                                          `}
-                                      >
-                                        <NavigationMenuLink asChild>
-                                          <Link
-                                            className="font-[Gotham-Book] p-0 text-[14px] py-[5px]  md:text-[10px] text-[#4A4F55]"
-                                            href={href && href}
-                                          >
-                                            {link}
-                                          </Link>
-                                        </NavigationMenuLink>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )}
-                              {mediaScreen && (
-                                <NavigationMenuTrigger
-                                  onPointerMove={(event) =>
-                                    event.preventDefault()
-                                  }
-                                  onPointerLeave={(event) =>
-                                    event.preventDefault()
-                                  }
-                                  className="p-0 text-white  w-full flex justify-between "
-                                >
-                                  <div className="flex flex-col  md:w-[100px] lg:w-[120px] xl:w-[150px] 2xl:w-[180px] ">
-                                    <h2 className="font-[Gotham-Medium] text-white   text-[14px] leading-[20px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
-                                      {subhead}
-                                    </h2>
-                                  </div>
-                                </NavigationMenuTrigger>
-                              )}
-
-                              <NavigationMenuContent
-                                onPointerEnter={(event) =>
-                                  event.preventDefault()
-                                }
-                                onPointerLeave={(event) =>
-                                  event.preventDefault()
-                                }
-                                className="NavigationMenuContent flex flex-row  top-[160px] md:top-[64px]  bg-black md:bg-white z-[9] "
-                              >
-                                <div className={`flex flex-col w-full`}>
-                                  <ul
-                                    className={`flex flex-col h-full  2xl:w-[180px]  w-full border-[#ddd]`}
-                                  >
-                                    {list?.map(({ link, href }) => (
-                                      <li
-                                        key={`list${link}`}
-                                        className={`flex  w-full border-t-[1px] border-solid border-[#ddd] py-[20px] hover:text-[#d06f1a]
-                                             `}
-                                      >
-                                        <NavigationMenuLink asChild>
-                                          <Link
-                                            className="font-[Gotham-Book] p-0 text-[14px] py-[3px]  md:text-[10px] text-white "
-                                            href={href && href}
-                                          >
-                                            {link}
-                                          </Link>
-                                        </NavigationMenuLink>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              </NavigationMenuContent>
-                            </NavigationMenuItem>
-                          ))}
-                        </NavigationMenuList>
-                      </NavigationMenuSub>
-                    ) : (
-                      <div className="w-full">
-                        {content?.map(({ subhead, list }) => (
-                          <ul
-                            key={`${list}`}
-                            className={`flex flex-col h-full w-full md:w-[240px]  md:border-e-[1px]  border-[#ddd] md:bg-white overflow-y-auto `}
-                          >
-                            {list?.map(({ link, href }) => (
-                              <li
-                                key={`list${link}`}
-                                className={
-                                  "flex py-[20px] md:py-[10px] md:px-[15px] border-b "
-                                }
-                              >
-                                <NavigationMenuLink asChild>
-                                  <Link
-                                    className="font-[Gotham-Book]  p-0  text-[14px]  md:py-[3px]  md:text-[10px] text-white md:text-black hover:text-[#d06f1a]"
-                                    href={href && href}
-                                  >
-                                    {link}
-                                  </Link>
-                                </NavigationMenuLink>
-                              </li>
-                            ))}
-                          </ul>
-                        ))}
-                      </div>
-                    )}
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <div className="flex md:basis-1/4 lg:basis-1/4 h-auto items-center  md:justify-end px-[30px]">
-            <div className="md:max-w-[500px] lg:w-full w-full ">
-              <Input
-                className="bg-white  h-[40px] lg:h-[50px] text-[10px] lg:text-[14px] font-[Gotham-Book] rounded-[50px] py-[8px]  pl-[14px] lg:pl-[28px] pr-[5px]"
-                placeholder="Search 1,000+ brand of beer"
-                endIcon={
-                  <Button
-                    variant={"ghost"}
-                    size={"icon"}
-                    className="p-0 relative justify-end"
-                  >
-                    <Image
-                      src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/search-button.svg"
-                      alt="password"
-                      width={40}
-                      height={40}
-                      className={"w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]"}
-                    />
-                  </Button>
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="block md:hidden h-auto">
-        <div className=" flex justify-between items-center py-[10px]">
-          <Button
-            onClick={() => setSidemenu("visible")}
-            variant={"ghost"}
-            className="p-0 h-[20px]"
-          >
-            <Image src={Hamburger} alt="" width={40} height={40} />
-          </Button>
-
-          <div className="flex">
-            <a href="" className="inline-flex">
-              <Image
-                src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
-                alt="test"
-                width="0"
-                height="0"
-                style={{ width: "130px", height: "21px" }}
-              />
-            </a>
-          </div>
-          <div>
-            <a>
-              <Image
-                className="mr-2.5"
-                src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/user_login.svg"
-                alt=""
-                width={20}
-                height={20}
-              />
-            </a>
-          </div>
-        </div>
-      </div> */
   );
 }
