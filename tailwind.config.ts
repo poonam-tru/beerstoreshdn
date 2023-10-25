@@ -12,10 +12,14 @@ module.exports = {
       center: true,
       padding: "15px",
       screens: {
-        "2xl": "1650px",
+        "2xl": "1710px",
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-primary)"],
+        mono: ["var(--font-secondary)"],
+      },
       fontSize: {
         "28px": "28px",
         "48px": "48px",
@@ -33,7 +37,6 @@ module.exports = {
       spacing: {
         "500": "500px",
       },
-
       backgroundImage: {
         "banner-bg-1":
           "url('https://tbsecomd.wpengine.com/wp-content/uploads/2019/03/JulyHiringCampaign-DesktopBG.jpg')",
@@ -53,7 +56,6 @@ module.exports = {
           "url('https://tbsecoms.wpengine.com/wp-content/uploads/2019/03/Hiring.png')",
       },
       colors: {
-        
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -107,6 +109,16 @@ module.exports = {
         "accordion-down": "accordion-down 0.5s ease-out",
         "accordion-up": "accordion-up 0.5s ease-out",
       },
+    },
+    screens: {
+      'xs':"480px",
+      'sm': "640px",
+      'md': "768px",
+      'mdtab': "991px",
+      'lg': "1024px",
+      'xl': "1280px",
+      'xxl': "1440px",
+      '2xl': "1680px",
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,0 +1,133 @@
+@media screen and (min-width: 1280px) {
+  .recipe .slick-track {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  .recipe .slick-slide {
+    height: inherit !important;
+  }
+  .recipe .slick-slide > div {
+    height: 100% !important;
+  }
+  .recipe .slick-slide > div .recipe-card {
+    height: 100% !important;
+  }
+  .recipe .slick-slide > div .recipe-card .equal-h {
+    height: 100% !important;
+  }
+  .recipe .slick-slide > div .recipe-card .equal-h .info-header img {
+    height: 100% !important;
+  }
+  .recipe .slick-track > div:first-child {
+    flex-basis: 66.66% !important;
+  }
+  .recipe .slick-track > div:not(:first-child) {
+    flex-basis: 33.33% !important;
+  }
+}
+.slick-slider .slick-dots {
+  bottom: -55px;
+}
+.slick-slider .slick-dots li button {
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+.slick-slider .slick-dots li button:before {
+  background-color: #e2e2e2;
+  border-radius: 50%;
+  font-size: unset;
+  width: 15px;
+  height: 15px;
+}
+.slick-slider .slick-dots li.slick-active button:before {
+  background-color: hsl(var(--primary));
+}
+.slider-news-list .slick-list {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.recipe .slick-track .slick-slide {
+  margin-top: 30px;
+}
+.recipe .info-content h3 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+.recipe .info-description {
+  font-size: 13px;
+  font-family: "Gotham-Book";
+}
+.recipe .info-content p {
+  margin: 0;
+}
+.recipe .info-footer {
+  padding: 0;
+  margin-top: 15px;
+}
+.recipe .info-footer button {
+  width: 125px;
+  height: 36px;
+  font-size: 11px;
+  padding: 10px 15px;
+}
+.recipe .info-header img {
+  height: 100%;
+  object-fit: cover;
+}
+.recipe .info-badge {
+  font-size: 11px;
+  padding: 5px 8px;
+  line-height: 18px;
+  height: 20px;
+  top: 10px;
+  left: 14px;
+}
+.moreFrom .info-header {
+  height: 267px;
+}
+.moreFrom .info-header img {
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 100% !important;
+}
+.moreFrom .info-content {
+  padding: 0;
+  border: none;
+  padding-top: 30px;
+}
+.moreFrom .info-content h3 {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 25px;
+  height: 88px;
+  overflow: hidden;
+}
+.moreFrom .info-content p {
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+.moreFrom .info-footer {
+  padding: 0;
+}
+.moreFrom .info-footer a {
+  padding: 0;
+  font-size: 14px;
+  height: auto;
+  text-decoration: underline;
+}
+.newbeers .product-footer button {
+  height: 40px;
+  font-size: 14px;
+}
+
+.privacy-description {
+  color: var(--text-paragraph);
+  margin-bottom: 25px;
+}
+[data-active='true']{
+  color: hsl(var(--link-primary)) ;
+}

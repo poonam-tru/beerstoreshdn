@@ -19,25 +19,25 @@ import TopLlink from "./topheaderlink";
 const Header = () => {
   return (
     <div className="bg-black mx-auto">
-      <header className="flex flex-1 flex-col max-w-[1920px] mx-auto w-full">
+      <header className="flex flex-1 flex-col w-full">
         <nav className="flex justify-between py-[20px]  px-5 flex-row  flex-1 items-center">
-          <div className="basis-1/4 hidden md:block">
-            <a href="/" className="inline-flex">
+          <div className="basis-1/4 hidden md:flex">
+            <Link href="/" className="inline-flex">
               <Image
                 src="https://tbsecomd.wpengine.com/wp-content/uploads/2020/02/Logo-new.svg"
                 alt=""
-                width={200}
-                height={30}
+                width={226}
+                height={40}
               />
-            </a>
+            </Link>
           </div>
           <div className="basis-3/4">
             <TopLlink />
             {/* <div className="flex md:justify-end items-center relative">
               <DropdownMenu>
-                <DropdownMenuTrigger asChild>
+                <DropdownMenuTrigger asChild className="hidden md:block">
                   <Button
-                    className="text-white w-auto h-auto bg-transparent text-[14px] font-Gotham-Book hidden md:block md:flex"
+                    className="text-white w-auto h-auto bg-transparent text-[14px] font-sans font-normal  md:flex"
                     size={"icon"}
                     variant="link"
                   >
@@ -45,15 +45,15 @@ const Header = () => {
                       className="mr-2.5"
                       src="https://tbsecomd.wpengine.com/wp-content/themes/Beer-Store/images/user_login.svg"
                       alt=""
-                      width={20}
-                      height={20}
+                      width={26}
+                      height={26}
                     />
-                    <p>Login</p>
+                    Login
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-white py-[25px] px-[30px] relative rounded-[5px] mt-[25px] w-[300px] left-[38px]">
-                  <DropdownMenuLabel className="text-base text-[16px] font-Gotham-Medium">
+                  <DropdownMenuLabel className="text-base text-[16px] font-sans font-medium">
                     Login to Your Account.
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
@@ -84,18 +84,18 @@ const Header = () => {
                   <div className="flex justify-end my-2">
                     <Button
                       variant={"link"}
-                      className="p-0 text-right h-auto text-[#555] text-[12px] font-Gotham-Medium"
+                      className="p-0 text-right h-auto text-[#555] text-[12px] font-sans font-medium"
                     >
                       Forgot Password?
                     </Button>
                   </div>
                   <div className="flex flex-col">
-                    <Button className="p-0 text-[14px] font-Gothm-Bold rounded-[4px]">
+                    <Button className="p-0 text-[14px] font-sans font-bold rounded-[4px]">
                       Login
                     </Button>
                     <Button
                       variant={"secondary"}
-                      className="p-0 mt-3 text-[12px] font-Gothm-Medium rounded-[4px]"
+                      className="p-0 mt-3 text-[12px] font-sans font-medium rounded-[4px]"
                     >
                       Create Account
                     </Button>
@@ -110,7 +110,7 @@ const Header = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    className="text-white w-auto h-auto  bg-transparent text-[14px] font-Gothm-Book"
+                    className="text-white w-auto h-auto  bg-transparent text-[14px] font-sans font-normal"
                     size={"icon"}
                     variant={"link"}
                   >
@@ -121,27 +121,33 @@ const Header = () => {
                       width={16}
                       height={24}
                     />
-                    <p>HEARST-11862km</p>
+                    HEARST-11862km
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-white relative rounded-[5px] mt-[25px] w-[300px] right-[22px] p-0">
-                  <DropdownMenuLabel className="text-base text-[18px] font-Gotham-Medium p-[15px] border-b-[2px] border-[#ddd]">
+                  <DropdownMenuLabel className="text-base text-[18px] font-sans font-medium p-[15px] border-b-[2px] border-[#ddd]">
                     Current Store
                   </DropdownMenuLabel>
                   <div className="flex p-[15px]">
-                    <Link href="" className="text-[14px] font-Gotham-Book ">
+                    <Link
+                      href="/"
+                      className="text-[14px] font-sans font-normal "
+                    >
                       <span className="flex">HEARST-11862km</span>
                       <span className="flex">1106 Front St., P0L 1N0</span>
                       <span className="flex">Click here for Holiday Hours</span>
                     </Link>
                   </div>
                   <div className="flex p-[15px] border-t-[2px] border-[#ddd] gap-2">
-                    <Button variant={"default"} className="text-[12px] font-Gotham-Bold h-[36px] rounded-[5px]">
+                    <Button
+                      variant={"default"}
+                      className="text-[12px] font-sans font-bold h-[36px] rounded-[5px]"
+                    >
                       Direction
                     </Button>
                     <Button
-                      className="text-[12px] font-Gotham-Bold h-[36px] rounded-[5px]"
+                      className="text-[12px] font-sans font-bold h-[36px] rounded-[5px]"
                       variant={"secondary"}
                     >
                       Create store

@@ -26,20 +26,24 @@ const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
   React.useEffect(() => {
     if (mediaScreen) {
       setIsOpen(false);
-    }else{
-        setIsOpen(true)
+    } else {
+      setIsOpen(true);
     }
   }, [mediaScreen]);
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="">
       <div className="flex items-center justify-between p-0">
         {!mediaScreen && (
-          <h4 className="text-sm text-white font-semibold uppercase text-[14px]  lg:text-[18px] mb-[15px] ">{title}</h4>
+          <h4 className="text-sm text-white font-bold uppercase text-[14px] font-sans  lg:text-[18px] mb-[15px] ">
+            {title}
+          </h4>
         )}
         {mediaScreen && (
           <CollapsibleTrigger asChild>
             <div className="flex flex-1 justify-between py-[16px] border-b border-solid border-[#ddd] ">
-              <h4 className="  text-white font-semibold uppercase xl:text-[18px] md:text-[14px] text:[14px] font-[Gotham-Bold]">{title}</h4>
+              <h4 className="  text-white  uppercase xl:text-[18px] md:text-[14px] text:[14px] font-sans font-bold">
+                {title}
+              </h4>
               {isOpen ? (
                 <ChevronDown className="h-4 w-4 text-white" />
               ) : (
@@ -52,8 +56,11 @@ const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
       <CollapsibleContent className="">
         <ul>
           {menuList?.map((item) => (
-            <li key={`key${item.title}`} className="flex py-[8px]">
-              <a className="leading-tight font-[Gotham-Book] text-white font-light md:text-[12px] sm:text-[12px] xl:text-[14px]" href={item.url}>
+            <li key={`key${item.title}`} className="flex py-[8px] ">
+              <a
+                className="leading-tight font-sans font-normal text-white  hover:text-[#d06f1a]  md:text-[12px] sm:text-[12px] xl:text-[14px]"
+                href={item.url}
+              >
                 {item.title}
               </a>
             </li>

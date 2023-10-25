@@ -1,10 +1,9 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import  Header  from '@/modules/header'
-import Footer from '@/modules/footer'
-
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+import "./common.css";
+import type { Metadata } from "next";
+import { gotham, leviathan } from "@/utils/fonts";
+import Header from "@/modules/header";
+import Footer from "@/modules/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${gotham.variable} ${leviathan.variable}`}>
         <Header />
         {children}
         <Footer />
