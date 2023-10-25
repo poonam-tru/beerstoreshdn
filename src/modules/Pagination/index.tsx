@@ -34,7 +34,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
 
   const handlePageChange = (page: number) => {
     onPageChange(page);
-    router.push(`page?page-${page}`);
+    router.push(`?page=${page}`);
     updateDisplayedPages();
   };
 
