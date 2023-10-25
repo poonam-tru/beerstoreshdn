@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import BannerHeader from "@/modules/bannerHeader"
 import { ContainerLayout, SidebarLayout, ContentLayout } from "@/modules/containerLayout"
+import SidebarList from '@/modules/sidebarList'
 
 const FormerEmployees = () => {
   return (
@@ -10,7 +11,7 @@ const FormerEmployees = () => {
         backgroundImage="https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
       />
       <ContainerLayout>
-        <SidebarLayout>Sidebar Left</SidebarLayout>
+        <SidebarLayout><SidebarList /></SidebarLayout>
         <ContainerLayout>
             <div className="py-[70px]">
                 <h2>Former Employees</h2>
