@@ -10,7 +10,7 @@ interface AddressTileProp{
 
 export const AddressTile: React.FC<AddressTileProp> = ({ icon, iconAlt, title, content }) => {
   return (
-    <div className="border-solid border-[1px] border-[#d6d6d6] rounded-[5px] p-[25px] flex flex-wrap justify-start w-1/3">
+    <div className="border-solid border-[1px] w-full border-[#d6d6d6] rounded-[5px] p-[25px] flex flex-wrap justify-start w-1/3">
         <div className="w-35 pr-[18px]">
             <Image 
                 src={icon}

@@ -1,0 +1,25 @@
+{
+    "mainTitle":"Contact US",
+    "description":"We’re interested in what you have to say – about our products, our stores, our website. Tell us the good stuff and the not-so-good stuff (we can take it…your feedback only makes us better.) You can contact us using any of these options:",
+    "contactinfo": "<p>Customer Contact Centre <a href=\"tel:+18889482337\">1-888-948-2337</a> or <a href=\"mailto:customerservice@thebeerstore.ca\">customerservice@thebeerstore.ca</a></p>",
+    "hourofoperation":"Hours of Operation:",
+    "hourofoperationdesc": "<p>Monday to Friday 8am – 8pm EST</p> <p>Saturday to Sunday 9am – 5pm EST</p> <p>Statutory Holidays – CLOSED</p>",
+    "contactlistheading":"<p class=\"text-[#4A4F55] mb-[30px]\">You can contact us using any of these options:</p>",
+    "contactcards": [
+        {
+            "cardTitle": "By Mail",
+            "cardIcon": "https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/mail.svg",
+            "cardText": "280 Sovereign Road London, Ontario N6M 1B3 Attn: Customer Service"
+        },
+        {
+            "cardTitle": "Corporate Office",
+            "cardIcon": "https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/corporate.svg",
+            "cardText": "<p>12258 Coleraine Drive Bolton, Ontario, L7E 3A9</p><p>T: (905) 361-1005</p><p>F: (905) 361-4289</p>"
+        },
+        {
+            "cardTitle": "Media Contact",
+            "cardIcon": "https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/media-contact.svg",
+            "cardText": "<a href=\"#\">Email Media Inquiries</a>"
+        }
+    ]    
+}
