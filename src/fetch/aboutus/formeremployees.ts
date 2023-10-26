@@ -1,6 +1,6 @@
-export const getContactData = async()=> {
+export const getFormerEmployeesData = async()=> {
     try {
-        const response = await fetch(`${process.env.LocalAPI}/about/contact.json`);
+        const response = await fetch(`${process.env.LocalAPI}/about/formeremployees.json`);
         return response.json();
     } catch (error:any) {
         // You can log the error or handle it in some way
