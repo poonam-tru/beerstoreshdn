@@ -1,25 +1,16 @@
 import Image from "next/image";
-import BannerHeader from "@/modules/bannerHeader";
-import { ContainerLayout, SidebarLayout } from "@/modules/containerLayout";
-import { Separator } from "@/components/ui/separator";
-import { AddressTile } from "@/modules/contact/addresstile";
-import SidebarList from "@/modules/sidebarList";
 import parse from 'html-react-parser';
 
-export const getUsers = async()=> {
-  try {
-      const response = await fetch('http://localhost:3000/api/contact/contact.json');
-      return response.json();
-  } catch (error:any) {
-      // You can log the error or handle it in some way
-      console.error('Error fetching data:', error.message);
-      throw error; // Re-throw the error to let the calling code handle it
-  }
-};   
+import BannerHeader from "@/modules/bannerHeader";
+import SidebarList from "@/modules/sidebarList";
+import { Separator } from "@/components/ui/separator";
+import { ContainerLayout, SidebarLayout } from "@/modules/containerLayout";
+import { AddressTile } from "@/modules/contact/addresstile";
+
+import { getContactData } from "@/fetch/aboutus/contact";
 
 const ContactUS = async () => {
-  const data = await getUsers();
-  console.log(data);
+  const data = await getContactData();
   return (
     <>
       <BannerHeader

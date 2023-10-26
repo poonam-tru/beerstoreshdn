@@ -1,13 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
-import BannerHeader from "@/modules/bannerHeader"
-import { ContainerLayout, ContentLayout, SidebarLayout } from "@/modules/containerLayout"
+import parse from 'html-react-parser';
+
 import { Button } from "@/components/ui/button"
+import { ContainerLayout, ContentLayout, SidebarLayout } from "@/modules/containerLayout"
+
+import BannerHeader from "@/modules/bannerHeader"
 import SidebarList from "@/modules/sidebarList"
 
 import { accessbilityData } from "@/fetch/aboutus/accessbility" 
-
-import parse from 'html-react-parser';
 
 const Accessibility = async () => {
   const data = await accessbilityData();
@@ -28,7 +29,9 @@ const Accessibility = async () => {
             <div className="flex flex-col-reverse md:flex-row">
               <div className="basis-4/6">
                 <h2>{data?.mainTitle}</h2>
-                {parse(data?.description)}
+                <div className="[&>p]:mb-[25px]">
+                  {parse(data?.description)}
+                </div>
 
                 <ul className="dot-list">
                   {data?.linkList.map((item:any) =>(
