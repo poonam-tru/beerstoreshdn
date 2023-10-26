@@ -1,90 +1,62 @@
-'use client'
-import { SetStateAction, useState } from 'react'
 import Image from "next/image";
-import Link from "next/link";
 import BannerHeader from "@/modules/bannerHeader";
-import { ContainerLayout, SidebarLayout, ContentLayout } from "@/modules/containerLayout";
+import { ContainerLayout, SidebarLayout } from "@/modules/containerLayout";
 import { Separator } from "@/components/ui/separator";
 import { AddressTile } from "@/modules/contact/addresstile";
-import Pagination from "@/modules/Pagination";
+import SidebarList from "@/modules/sidebarList";
+import parse from 'html-react-parser';
 
-const ContactUS = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 50; // Replace with your actual total number of pages
+export const getUsers = async()=> {
+  try {
+      const response = await fetch('http://localhost:3000/api/contact/contact.json');
+      return response.json();
+  } catch (error:any) {
+      // You can log the error or handle it in some way
+      console.error('Error fetching data:', error.message);
+      throw error; // Re-throw the error to let the calling code handle it
+  }
+};   
 
-  const handlePageChange = (page: SetStateAction<number>) => {
-    setCurrentPage(page);
-    // You can also make an API call or perform other actions when the page changes
-  };
+const ContactUS = async () => {
+  const data = await getUsers();
+  console.log(data);
   return (
     <>
       <BannerHeader
-        title="Contact Us"
+        title={data?.mainTitle}
         backgroundImage="https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/contact-desktop.jpg"
       />
 
       <ContainerLayout>
-        <SidebarLayout>test</SidebarLayout>
+        <SidebarLayout>
+          <SidebarList />
+        </SidebarLayout>
         <ContainerLayout>
           {" "}
           <div className="py-[70px]">
-            <h2>Contact Us</h2>
-            <p>{`We’re interested in what you have to say – about our products, our stores, our website. Tell us the good stuff and the not-so-good stuff (we can take it…your feedback only makes us better.) You can contact us using any of these options:`}</p>
+            <h2>{data?.mainTitle}</h2>
+            <p>{data?.description}</p>
             <Separator className="my-[50px] bg-[#d6d6d6]" />
-            <p>
-              Customer Contact Centre{" "}
-              <Link href="tel:+18889482337" className="text-[#B95804]">
-                1-888-948-2337
-              </Link>{" "}
-              or{" "}
-              <Link
-                href="mailto:customerservice@thebeerstore.ca"
-                className="text-[#B95804]"
-              >
-                {" "}
-                customerservice@thebeerstore.ca
-              </Link>
-            </p>
-            <h2 className="mt-[30px]">Hours of Operation:</h2>
-            <p>{`Monday to Friday 8am – 8pm EST`}</p>
-            <p>{`Saturday to Sunday 9am – 5pm EST`}</p>
-            <p>{`Statutory Holidays – CLOSED`}</p>
+
+            {parse(data?.contactinfo)}
+            <h2 className="mt-[30px]">{data?.hourofoperation}</h2>
+            {parse(data?.hourofoperationdesc)}
             <Separator className="my-[50px] bg-[#d6d6d6]" />
-            <p className="text-[#4A4F55] mb-[30px]">
-              You can contact us using any of these options:
-            </p>
-            <div className="flex flex-wrap">
-              <AddressTile
-                icon={`https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/mail.svg`}
-                iconAlt={`By Mail Icon`}
-                title={`By Mail`}
-                content={
-                  <p>
-                    280 Sovereign Road London, Ontario N6M 1B3 Attn: Customer
-                    Service
-                  </p>
-                }
-              />
-              <AddressTile
-                icon={`https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/corporate.svg`}
-                iconAlt={`Corporate Office`}
-                title={`Corporate Office`}
-                content={
-                  <>
-                    <p className="mb-[10px]">
-                      12258 Coleraine Drive Bolton, Ontario, L7E 3A9
-                    </p>
-                    <p>T: (905) 361-1005</p>
-                    <p>F: (905) 361-4289</p>
-                  </>
-                }
-              />
-              <AddressTile
-                icon={`https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/media-contact.svg`}
-                iconAlt={`Media Contact`}
-                title={`Media Contact`}
-                content={<Link href="mailto:">Email Media Inquiries</Link>}
-              />
+
+            {parse(data?.contactlistheading)}
+            <div className="grid grid-cols-3 gap-6">
+
+              {
+                data?.contactcards?.map((item:any) => (
+                  <AddressTile
+                    key={item?.cardTitle}
+                    icon={item?.cardIcon}
+                    iconAlt={`By Mail Icon`}
+                    title={item?.cardTitle}
+                    content={parse(item?.cardText)}
+                  />
+                ))
+              }
             </div>
             <Separator className="my-[60px] bg-[#d6d6d6]" />
             <div>
@@ -101,11 +73,6 @@ const ContactUS = () => {
                 }}
               />
             </div>
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
           </div>
         </ContainerLayout>
       </ContainerLayout>
