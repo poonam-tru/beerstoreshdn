@@ -248,7 +248,7 @@ export function Navigation() {
   return (
     <div>
       <div className="block md:hidden h-auto">
-        <div className=" flex justify-between items-center py-[10px]">
+        <div className=" flex justify-between items-center py-[20px] md:py-[10px]">
           <Button
             onClick={() => setSidemenu("visible")}
             variant={"ghost"}
@@ -339,7 +339,7 @@ export function Navigation() {
                           <HoverCard>
                             <HoverCardTrigger
                               href="/"
-                              className="font-mono font-medium cursor-pointer w-full flex items-center hover:underline  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]   mr-[10px] 2xl:mr-5"
+                              className="font-sans font-medium cursor-pointer w-full flex items-center hover:underline  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]   mr-[10px] 2xl:mr-5"
                             >
                               {mainHead}
                               <ChevronDown
@@ -366,7 +366,7 @@ export function Navigation() {
                                     >
                                       {subhead && (
                                         <div className="flex flex-col gap-3 p-3  border-b-[1px] border-solid border-[#ddd] ">
-                                          <h3 className="font-mono font-medium text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                          <h3 className="font-sans font-medium text-[#d06f1a] 2xl:text-[15px]   md:text-[10px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
                                             {subhead}
                                           </h3>
                                         </div>
@@ -388,7 +388,7 @@ export function Navigation() {
                                        `}
                                             >
                                               <Link
-                                                className="font-mono font-normal  text-[14px]   md:text-[10px] text-[#4A4F55]"
+                                                className="font-sans font-normal  text-[14px]   md:text-[10px] text-[#4A4F55]"
                                                 href={href && href}
                                               >
                                                 {link}
@@ -406,7 +406,7 @@ export function Navigation() {
                         )}
                         {mediaScreen && (
                           <HoverCard open={open}>
-                            <HoverCardTrigger className="font-mono font-medium max-md:w-full max-md:flex max-md:justify-between items-center  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]    2xl:mr-5">
+                            <HoverCardTrigger className="font-sans font-medium max-md:w-full max-md:flex max-md:justify-between items-center  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]    2xl:mr-5">
                               {mainHead}
                               <ChevronRight
                                 color="#d06f1a"
@@ -418,7 +418,7 @@ export function Navigation() {
                             </HoverCardTrigger>
                             <div className="[&>*:first-child]:w-full  [&>*:first-child]:!translate-y-[122px] [&>*:first-child]:h-full">
                               <HoverCardContent
-                                className={`HoverCardContent  border-none px-[30px] flex flex-row  top-[160px] md:top-[64px]  bg-black md:bg-white z-[9] h-full`}
+                                className={`HoverCardContent  border-none px-[30px] flex flex-row    bg-black md:bg-white z-[9] h-full`}
                               >
                                 <div className="w-full">
                                   <ul
@@ -430,7 +430,7 @@ export function Navigation() {
                                           <HoverCard open={open}>
                                             <div className="[&>*:first-child]:w-full [&>*:first-child]:!translate-y-0  [&>*:first-child]:h-full">
                                               <HoverCardContent
-                                                className={`HoverCardContent border-none px-[30px] flex flex-row  top-[160px] md:top-[64px]  bg-black md:bg-white z-[9] h-full`}
+                                                className={`HoverCardContent border-none px-[30px] flex flex-row md:top-[64px]  bg-black md:bg-white z-[9] h-full`}
                                               >
                                                 <ul
                                                   className={`flex flex-col h-full   border-[#ddd] w-full`}
@@ -443,7 +443,7 @@ export function Navigation() {
                                    `}
                                                       >
                                                         <Link
-                                                          className="font-mono font-normal p-0 text-[14px]  md:text-[10px] text-[#fff]"
+                                                          className="font-sans font-normal p-0 text-[14px]  md:text-[10px] text-[#fff]"
                                                           href={href && href}
                                                         >
                                                           {link}
@@ -469,7 +469,7 @@ export function Navigation() {
                                                 }
                                               >
                                                 <div className="flex flex-row gap-3 items-center py-[20px]  border-b-[1px] border-solid border-[#ddd] ">
-                                                  <h3 className="font-mono font-medium text-[#fff] text-[14px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
+                                                  <h3 className="font-sans font-medium text-[#fff] text-[14px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
                                                     {subhead}
                                                   </h3>
                                                   <ChevronRight
@@ -491,7 +491,7 @@ export function Navigation() {
                                    `}
                                                   >
                                                     <Link
-                                                      className="font-mono font-normal p-0 text-[14px] py-[5px]  md:text-[10px] text-[#fff]"
+                                                      className="font-sans font-normal p-0 text-[14px] py-[5px]  md:text-[10px] text-[#fff]"
                                                       href={href && href}
                                                     >
                                                       {link}
@@ -514,7 +514,7 @@ export function Navigation() {
                     ) : (
                       <Link
                         href="#"
-                        className="pr-[26px] font-mono font-medium 2xl:text-[20px] hover:underline text-left xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px] h-[20px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0  uppercase  mr-[10px] 2xl:mr-5"
+                        className="pr-[26px] font-sans font-medium 2xl:text-[20px] hover:underline text-left xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px] h-[20px]   text-white focus:bg-transparent hover:text-white focus:text-white p-0  uppercase  mr-[10px] 2xl:mr-5"
                       >
                         {mainHead}
                       </Link>
@@ -526,7 +526,7 @@ export function Navigation() {
             <div className="flex md:basis-1/4 lg:basis-1/4 h-auto items-center  md:justify-end px-[30px] md:px-0">
               <div className="lg:max-w-[500px] md:max-w-[265px] lg:w-full w-full md:mb-[10px] lg:mb-0 ">
                 <Input
-                  className="bg-white text-[#4A4F55]  h-[40px] 2xl:h-[50px] xl:h-[40px] text-[10px] lg:text-[14px] font-mono font-normal rounded-[50px] py-[8px]  pl-[14px] lg:pl-[28px] pr-[5px]"
+                  className="bg-white text-[#4A4F55]  h-[40px] 2xl:h-[50px] xl:h-[40px] text-[10px] lg:text-[14px] font-sans font-normal rounded-[50px] py-[8px]  pl-[14px] lg:pl-[28px] pr-[5px]"
                   placeholder="Search 1,000+ brand of beer..."
                   endIcon={
                     <Button

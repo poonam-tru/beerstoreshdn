@@ -1,3 +1,4 @@
+"use client";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,14 +13,16 @@ import { ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import { useState } from "react";
 
 const TopLlink = () => {
+  const [isopen, setIsopen] = useState(false);
   return (
     <div className="flex md:justify-end items-center relative">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
-            className="text-white w-auto h-auto bg-transparent text-[14px] font-mono font-normal hidden md:block md:flex"
+            className="text-white w-auto h-auto bg-transparent text-[14px] font-sans font-normal hidden md:block md:flex"
             size={"icon"}
             variant="link"
           >
@@ -35,7 +38,7 @@ const TopLlink = () => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-white py-[25px] px-[30px] relative rounded-[5px] mt-[25px] w-[300px] left-[38px]">
-          <DropdownMenuLabel className="text-base text-[16px] font-mono font-medium">
+          <DropdownMenuLabel className="text-base text-[16px] font-sans font-medium">
             Login to Your Account.
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
@@ -66,7 +69,7 @@ const TopLlink = () => {
           <div className="flex justify-end my-2">
             <Button
               variant={"link"}
-              className="p-0 text-right h-auto text-[#555] text-[12px] font-mono font-medium"
+              className="p-0 text-right h-auto text-[#555] text-[12px] font-sans font-medium"
             >
               Forgot Password?
             </Button>
@@ -89,8 +92,8 @@ const TopLlink = () => {
         orientation="vertical"
         className="mx-3 sm:mx-7 bg-white h-6 hidden md:block"
       />
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+      <DropdownMenu open={isopen}>
+        <DropdownMenuTrigger onClick={() => setIsopen(true)} asChild>
           <Button
             className="text-white w-auto h-auto  bg-transparent text-[14px] font-Gothm-Book"
             size={"icon"}
@@ -107,12 +110,13 @@ const TopLlink = () => {
             <ChevronDown className="h-4 w-4 ml-2" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="bg-white relative rounded-[5px] mt-[25px] w-[300px] right-[22px] p-0">
-          <DropdownMenuLabel className="text-base text-[18px] font-mono font-medium p-[15px] border-b-[2px] border-[#ddd]">
+
+        <DropdownMenuContent className="bg-white relative rounded-[5px] mt-[25px] w-[300px] md:right-[22px] max-md:left-[50%] max-md:translate-y-[50%]  p-0">
+          <DropdownMenuLabel className="text-base text-[18px] font-sans font-medium p-[15px] border-b-[2px] border-[#ddd]">
             Current Store
           </DropdownMenuLabel>
           <div className="flex p-[15px]">
-            <Link href="" className="text-[14px] font-mono font-normalk ">
+            <Link href="" className="text-[14px] font-sans font-normalk ">
               <span className="flex">HEARST-11862km</span>
               <span className="flex">1106 Front St., P0L 1N0</span>
               <span className="flex">Click here for Holiday Hours</span>
@@ -121,20 +125,27 @@ const TopLlink = () => {
           <div className="flex p-[15px] border-t-[2px] border-[#ddd] gap-2">
             <Button
               variant={"default"}
-              className="text-[12px] font-mono  font-bold h-[36px] rounded-[5px]"
+              className="text-[12px] font-sans  font-bold h-[36px] rounded-[5px]"
             >
               Direction
             </Button>
             <Button
-              className="text-[12px] font-mono  font-bold h-[36px] rounded-[5px]"
+              className="text-[12px] font-sans  font-bold h-[36px] rounded-[5px]"
               variant={"secondary"}
             >
               Create store
             </Button>
           </div>
           <DropdownMenuSeparator />
-
-          <div className="indicator w-[20px] h-[20px] absolute bg-white top-[-9px] z-[1024] rotate-45 right-[10px] translate-x-[-10px] "></div>
+          <Image
+            src="https://tbsecoms.wpengine.com/wp-content/themes/Beer-Store/images/close.svg"
+            height={13}
+            width={13}
+            alt={""}
+            onClick={() => setIsopen(false)}
+            className="right-[30px] top-[18px] absolute h-[13px] w-[13px] "
+          />
+          <div className="indicator hidden md:block w-[20px] h-[20px] absolute bg-white top-[-9px] z-[1024] rotate-45 right-[10px] translate-x-[-10px] "></div>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
