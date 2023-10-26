@@ -25,7 +25,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const AccordionItemData = [
+const AccordionItemData = [ 
   {
     value: "item-1",
     title: "2023 Contests and Promotions",
@@ -115,7 +115,6 @@ const ContestsPromotions = (value: number) => {
         title="Accessibility"
         backgroundImage="https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
       />
-
       <ContainerLayout>
         <SidebarLayout>test</SidebarLayout>
         <ContentLayout>
@@ -134,7 +133,6 @@ const ContestsPromotions = (value: number) => {
                       <AccordionTrigger onClick={() => handleClickWithOffset(index * 52 + 52)} className="p-[25px] bg-[#f5f5f5] text-[#404040] text-[18px] hover:no-underline"> {items.title} </AccordionTrigger>
                       <AccordionContent>
 
-
                         <div className="grid grid-cols-5 gap-5 py-[30px]">
                           {items?.data?.map((item: any, itemIndex: any) => (
                             <div key={itemIndex}>
@@ -147,9 +145,9 @@ const ContestsPromotions = (value: number) => {
                                     <DialogTitle className=" border-b border-indigo-600 border-[#dddddd] font-sans px-[30px] py-[20px] m-0 ">{item?.imagepopupContent?.headertitle}</DialogTitle>
                                     <DialogDescription className="p-[30px] m-0 text-[#4A4F55]">
                                       <ul className="dot-list flex flex-wrap">
-                                      {item?.imagepopupContent?.winnerlist.map((winner:any)=> (
-                                            <li className="w-1/2">{winner}</li>
-                                      ))}
+                                        {item?.imagepopupContent?.winnerlist.map((winner:any)=> (
+                                              <li className="w-1/2">{winner}</li>
+                                        ))}
                                         </ul>
                                       <div className="mt-[30px] text-[#B95804] font-mideum"><Link href="#">Rules and Regulations</Link></div>
                                     </DialogDescription>
@@ -159,11 +157,7 @@ const ContestsPromotions = (value: number) => {
                                </div>                   
                           ))} 
                         </div>
-
-
-
-
-                        <div className="py-[30px]">
+                         <div className="py-[30px]">
                           {items?.data?.map((item: any, itemIndex: any) => {
                             return(
                               <>
@@ -185,93 +179,17 @@ const ContestsPromotions = (value: number) => {
                                                             </ul>
                                                             </div>
                                                         </>
-                                                      )
-                                                      })}
+                                                      )})}
                                                       <div className="text-[#B95804] font-mideum"><Link href="#">Rules and Regulations</Link></div>
                                                   </div>
                                                 </AccordionContent>
-                                          
                                           </AccordionItem>
                                       </Accordion>
                                   </div>                   
-                                
                               </>
                             )})}
                         </div>
-
-
-
-
-
-
-
-
-
-
-                        
-
-
-
-
-
-                        {/* <div className="p-[30px]">
-                                  <Accordion type="single" collapsible className="w-full">
-                                    {items?.data?.map((items, index) => (
-                                      <AccordionItem value={items.value}>
-                                        <AccordionTrigger onClick={() => handleClickWithOffset(index * 52 + 52)} className="py-[20px] px-[12px] bg-[#ddd] text-[#000] text-[14px] hover:no-underline"> {items.title} </AccordionTrigger>
-                                        Content
-                                        {items?.data?.Content.map((item: any, itemIndex: any) => (
-                                        <AccordionContent>
-                                          <div className="py-[30px]">
-                                          {item?.Content?.headertitle}
-                                          </div>
-                                        </AccordionContent>
-
-                                        ))} 
-                                      </AccordionItem>
-                                    ))}
-                                  </Accordion>
-                                  </div> */}
-
-                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      </AccordionContent>
+                        </AccordionContent>
                     </AccordionItem>
                   ))}
                 </Accordion>
