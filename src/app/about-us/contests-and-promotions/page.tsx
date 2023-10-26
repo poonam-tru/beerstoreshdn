@@ -134,7 +134,7 @@ const ContestsPromotions = (value: number) => {
                       <AccordionTrigger onClick={() => handleClickWithOffset(index * 52 + 52)} className="p-[25px] bg-[#f5f5f5] text-[#404040] text-[18px] hover:no-underline"> {items.title} </AccordionTrigger>
                       <AccordionContent>
 
-                        
+
                         <div className="grid grid-cols-5 gap-5 py-[30px]">
                           {items?.data?.map((item: any, itemIndex: any) => (
                             <div key={itemIndex}>
@@ -157,7 +157,7 @@ const ContestsPromotions = (value: number) => {
                                 </DialogContent>
                               </Dialog>
                                </div>                   
-                          ))}
+                          ))} 
                         </div>
 
 
