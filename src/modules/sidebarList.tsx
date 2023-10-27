@@ -112,8 +112,8 @@ const SidebarList = () => {
             <AccordionItem value={item.title} key={`aboutus_item${item.title}`}>
               <AccordionTrigger className="text-left py-[25px] hover:no-underline text-[14px] font-sans w-full font-bold flex">
                 {item.title}
-                <Plus className="h-4 w-4 shrink-0 transition-transform duration-500 group-data-[state=open]:hidden" />
-                <Minus className="h-4 w-4 shrink-0 transition-transform duration-500 group-data-[state=closed]:hidden" />
+                <Plus className="h-4 w-4 shrink-0 font-bold transition-transform duration-500 group-data-[state=open]:hidden" />
+                <Minus className="h-4 w-4 shrink-0 font-bold transition-transform duration-500 group-data-[state=closed]:hidden" />
               </AccordionTrigger>
               <AccordionContent>
                 <>

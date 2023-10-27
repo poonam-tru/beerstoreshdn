@@ -18,7 +18,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 import AccordianTriggerCustom from "./accordianTrigger";
 
 export const ContestAndPromotionsContainer = (props:any) => {
@@ -29,14 +28,13 @@ const {accordiandata} = props;
                 <Accordion type="single" collapsible className="w-full">
                   {accordiandata?.AccordionItemData?.map((items:any, index:any) => (
                     <AccordionItem value={items?.value} key={index}>  
-                      <AccordianTriggerCustom index={index} title={items?.title} className="p-[25px] bg-[#f5f5f5] text-[#404040] text-[18px] hover:no-underline focus:bg-[#000] focus:text-[#fff]"/>
+                      <AccordianTriggerCustom index={index} title={items?.title} className="p-[25px] bg-[#f5f5f5] text-[#404040] text-[18px] font-bold hover:no-underline"/>
                       <AccordionContent>
-                       {!items?.accordion && <div className="grid grid-cols-5 gap-4 py-[30px]">
+                       {!items?.accordion && <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-4 py-[30px]">
                           {items?.data?.map((item: any, itemIndex: any) => (
-                            <div key={itemIndex} className="min-w-[215px] p-[0]">
-                              <Dialog>
+                              <Dialog key={itemIndex}>
                                 <DialogTrigger>
-                                  <Image src={item?.image} alt={`Image ${itemIndex}`} width={230} height={215} />
+                                  <Image src={item?.image} alt={`Image ${itemIndex}`} width={230} height={230 } style={{ height: '100%', width: '100%' }} className="p-[0] m-[0]"/>
                                 </DialogTrigger>
                                 <DialogContent  className="bg-[#fff] text-[18px] p-[0] max-w-[680px] sm:rounded-[5px] border-0">
                                   <DialogHeader>
@@ -52,20 +50,18 @@ const {accordiandata} = props;
                                   </DialogHeader>
                                 </DialogContent>
                               </Dialog>
-                               </div>                   
                           ))} 
                         </div>}
                         {items?.accordion && <div className="py-[30px] px-[30px]">
-                          {items?.data?.map((item: any, itemIndex: any) => {
-                            return(
                               <>
-                               <div key={itemIndex}>
+                               <div>
                                   <Accordion type="single" collapsible className="w-full pb-[20px]">
-                                  <AccordionItem value={item?.value}>
+                                    {items?.data?.map((item: any, itemIndex: any) => { return(<>
+                                      <AccordionItem value={item?.value}>
                                           {/* <AccordionTrigger onClick={() => handleClickWithOffset(index * 52 + 52)} className="py-[20px] px-[12px] bg-[#ddd] text-[#000] text-[14px] hover:no-underline"> {item.title} </AccordionTrigger> */}
-                                          <AccordianTriggerCustom index={index} title={items?.title} className="py-[20px] px-[12px] bg-[#ddd] text-[#000] text-[14px] hover:no-underline focus:bg-[#000] focus:text-[#fff]" />
+                                          <AccordianTriggerCustom index={index} title={items?.title} className="py-[20px] px-[12px] bg-[#ddd] text-[#000] text-[14px] hover:no-underline font-bold mb-[20px] group-data-[state=open]:bg-[#000]" />
                                               <AccordionContent>
-                                                <div className="pt-[30px] px-[20px] pb-[10px]">
+                                                <div className="pt-[10px] px-[20px] pb-[10px]">
                                                   {item?.content?.map((accData:any, accDataIndex:any) => { 
                                                     return(
                                                         <>
@@ -83,10 +79,10 @@ const {accordiandata} = props;
                                                   </div>
                                                 </AccordionContent>
                                           </AccordionItem>
+                                    </>)})}
                                       </Accordion>
                                   </div>                   
                               </>
-                            )})}
                         </div>}
                       </AccordionContent>
                     </AccordionItem>
