@@ -1,0 +1,21 @@
+[
+    {
+      "title": "By Category",
+      "list": [
+        "Beertails",
+        "Cozy Recipes",
+        "Plant-Forward Recipes",
+        "Summer Weekend Recipes",
+        "Winter Warm-up Recipes"
+      ]
+    },
+    {
+      "title": "By Season",
+      "list": ["Fall", "Spring", "Summer", "Winter"]
+    },
+    {
+      "title": "By Occasions",
+      "list": ["Holiday Baking", "Thanksgiving"]
+    }
+  ]
+  
