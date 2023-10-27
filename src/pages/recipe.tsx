@@ -76,6 +76,7 @@ const recipesList = [
       "https://tbsecomd.wpengine.com/wp-content/uploads/2022/02/ChimichurriBurgers_ArchivePhoto.jpg",
   },
 ];
+
 const Recipe = () => {
   return (
     <>
