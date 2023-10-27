@@ -3,13 +3,7 @@ import Image from "next/image"
 import parse from 'html-react-parser';
 
 import { Button } from "@/components/ui/button"
-
-import BannerHeader from "@/modules/bannerHeader"
-import SidebarList from "@/modules/sidebarList"
-
 import { accessbilityData } from "@/fetch/aboutus/accessbility" 
-import Breadcrumb from "@/modules/breadcrumb";
-
 import { MainTemplate } from "@/template";
 
 const Accessibility = async () => {
