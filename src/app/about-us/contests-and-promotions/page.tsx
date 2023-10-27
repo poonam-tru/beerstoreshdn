@@ -18,7 +18,7 @@ const ContestsPromotions = async (value: number) => {
           <SidebarList />
         </SidebarLayout>
         <ContentLayout>
-          <div className="py-[70px] xl:pl-[100px] lg:pl-[80px] md:pl-[60px] sm:pl-[15px] px-[10px] ">
+          <div className="flex flex-col py-[60px] px-[15px] md:pr-0 md:pl-[60px] lg:pl-[80px]">
             <div>
               <h2>Contests & Promotions</h2>
               <p className="text-[#4A4F55] mb-[25px]">

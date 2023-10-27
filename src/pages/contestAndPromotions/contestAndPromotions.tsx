@@ -52,7 +52,7 @@ const {accordiandata} = props;
                               </Dialog>
                           ))} 
                         </div>}
-                        {items?.accordion && <div className="py-[30px] px-[30px]">
+                        {items?.accordion && <div className="py-[30px] px-[30px] ">
                               <>
                                <div>
                                   <Accordion type="single" collapsible className="w-full pb-[20px]">
