@@ -14,7 +14,7 @@ const Breadcrumb: React.FC<breadcrumbProps> = ({
   className,
 }: breadcrumbProps) => {
   return (
-    <div className={cn("flex py-[25px]", className)}>
+    <div className={cn("flex py-[23px]", className)}>
       {list.length > 0 &&
         list.map((item, idx) => (
           <div
@@ -22,12 +22,12 @@ const Breadcrumb: React.FC<breadcrumbProps> = ({
             className="inline-flex items-center breadcrumb-listitem"
           >
             {idx === list.length - 1 ? (
-              <span className="text-[16px] font-sans font-bold">
+              <span className="text-[18px] font-sans font-bold">
                 {item.title}
               </span>
             ) : (
               <>
-                <Link href={item.url} className="text-[16px] font-sans">
+                <Link href={item.url} className="text-[18px] font-sans leading-[normal]">
                   {item.title}
                 </Link>
                 <Image
@@ -35,7 +35,7 @@ const Breadcrumb: React.FC<breadcrumbProps> = ({
                   alt="separator"
                   width="6"
                   height="10"
-                  className="mx-2.5"
+                  className="mx-[13.5px]"
                 />
               </>
             )}
