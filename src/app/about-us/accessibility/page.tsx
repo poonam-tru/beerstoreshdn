@@ -10,7 +10,7 @@ import SidebarList from "@/modules/sidebarList"
 import { accessbilityData } from "@/fetch/aboutus/accessbility" 
 import Breadcrumb from "@/modules/breadcrumb";
 
-import { SidebarTemplate } from "@/template";
+import { MainTemplate } from "@/template";
 
 const Accessibility = async () => {
   const data = await accessbilityData();
@@ -21,7 +21,7 @@ const Accessibility = async () => {
   ];
 
   return (
-    <SidebarTemplate
+    <MainTemplate
       bannerTitle={data?.mainTitle}
       breadcrumbList={breadcrumb}
       bannerBg={`https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg`}
@@ -62,7 +62,7 @@ const Accessibility = async () => {
             </div>
           </div>
         </div>
-    </SidebarTemplate>
+    </MainTemplate>
   );
 };
 

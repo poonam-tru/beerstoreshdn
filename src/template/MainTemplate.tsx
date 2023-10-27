@@ -6,14 +6,14 @@ import SidebarList from "@/modules/sidebarList"
 
 import Breadcrumb from "@/modules/breadcrumb";
 
-interface SiderbarTemplateProps{
+interface MainTemplateProps{
     bannerTitle?: string | any,
     bannerBg?: string | any,
     breadcrumbList?: [] | any,
     children?: React.ReactNode
 }
 
-export const SidebarTemplate: React.FC<SiderbarTemplateProps> = async ({ bannerTitle, bannerBg, breadcrumbList, children }) => {
+export const MainTemplate: React.FC<MainTemplateProps> = async ({ bannerTitle, bannerBg, breadcrumbList, children }) => {
   return (
     <>
       <BannerHeader

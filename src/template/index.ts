@@ -1,1 +1,1 @@
-export { SidebarTemplate } from './sidebarTemplate';
+export { MainTemplate } from './MainTemplate';
