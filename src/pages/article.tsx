@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import ArticleCard from "@/modules/articleCard";
 import CategorySidebar from "@/modules/categorySidebar";
 import FilterTag from "@/modules/filterTag";
+import Breadcrumb from "@/modules/breadcrumb";
 
 const sidebarList = [
   {
@@ -87,6 +88,17 @@ const articleList = [
     category: "Articles",
   },
 ];
+
+const breadcrumbList = [
+  {
+    title: "Home",
+    url: "/",
+  },
+  {
+    title: "Articles",
+    url: "/articles",
+  },
+];
 const Article = () => {
   return (
     <>
@@ -106,6 +118,9 @@ const Article = () => {
           </Button>
         </div>
       </BannerHeader>
+      <ContainerLayout>
+        <Breadcrumb list={breadcrumbList} />
+      </ContainerLayout>
       <ContainerLayout>
         <SidebarLayout bordered={false}>
           <div className="flex flex-col py-[60px] pr-[30px]">
