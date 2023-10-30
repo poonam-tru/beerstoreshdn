@@ -1,0 +1,111 @@
+{
+    "mainTitle":"Careers at the Beer Store",
+    "careersCards":[
+        {
+            "cardImage": "https://tbsecoms.wpengine.com/wp-content/uploads/2023/06/Career-Retail.jpg",
+            "cardTitle": "Retail Customer Service Representative Opportunities"
+        },
+        {
+            "cardImage": "https://tbsecoms.wpengine.com/wp-content/uploads/2023/06/Career-Corporate.jpg",
+            "cardTitle": "Corporate Office, Customer Contact Centre, Draught Services, and Logistics Opportunities"
+        },
+        {
+            "cardImage": "https://tbsecoms.wpengine.com/wp-content/uploads/2023/06/BeerStore0780.jpg",
+            "cardTitle": "Warehouse / Distribution Centre Opportunities"
+        }
+    ],
+    "backgroudImage":"https://tbsecoms.wpengine.com/wp-content/uploads/2023/06/great-team-img.jpg",
+    "teamTitle":"A Great Company Needs a Great Team",
+    "detail":[
+        {
+            "title":"Our Core Values",
+            "descrition":"Our Core Values guide us in all our decision making and help positively impact both the work environment for our team members and the communities that we serve. Click below to learn more about each of our core values.",
+            "image":"",
+            "list":[
+                {
+                    "title":"Diversity, Equity, Inclusion, Belonging",
+                    "url":""
+                },
+                {
+                    "title":"Environmental Leadership",
+                    "url":""
+                },
+                {
+                    "title":"Healthy Leadership",
+                    "url":""
+                },
+                {
+                    "title":"Health & Safety",
+                    "url":""
+                },
+                {
+                    "title":"Honesty, Integrity & Respect",
+                    "url":""
+                },
+                {
+                    "title":"Social Responsibility",
+                    "url":""
+                }
+
+            ],
+            "content":""
+        },
+        {
+            "title":"Our Divisions",
+            "descrition":"We have exciting job opportunities across Ontario in our Retail Stores, Distribution Centres, Corporate Office, Draught Services, and Customer Contact Centre. Click below to learn more about our divisions.            ",
+            "image":"",
+            "list":[
+                {
+                    "title":"Corporate Office",
+                    "url":""
+                },
+                {
+                    "title":"Customer Contact Centre",
+                    "url":""
+                },
+                {
+                    "title":"Draught Services",
+                    "url":""
+                },
+                {
+                    "title":"Logistics",
+                    "url":""
+                },
+                {
+                    "title":"Retail",
+                    "url":""
+                }
+            ],
+            "content":""
+        },
+        {
+            "title":"Why You’ll Love Working With Us",
+            "descrition":"We have exciting job opportunities across Ontario in our Retail Stores, Distribution Centres, Corporate Office, Draught Services, and Customer Contact Centre. Click below to learn more about our divisions.            ",
+            "image":"https://tbsecoms.wpengine.com/wp-content/uploads/2022/05/working-with-us-first.jpg",
+            "list":[
+                {
+                    "title":"Corporate Office",
+                    "url":""
+                },
+                {
+                    "title":"Customer Contact Centre",
+                    "url":""
+                },
+                {
+                    "title":"Draught Services",
+                    "url":""
+                },
+                {
+                    "title":"Logistics",
+                    "url":""
+                },
+                {
+                    "title":"Retail",
+                    "url":""
+                }
+            ],
+            "content":"<h2>Why You’ll Love Working With Us</h2><h3>Our team members are heard, respected, valued, and belong.<br></h3><p>We are committed to providing a respectful and empowering workplace that values our greatest resource, our people. Diversity, Equity, Inclusion &amp; Belonging are essential components of our culture that empower us to meet the needs of our employees, customers and communities. We welcome applicants from all backgrounds including racialized persons / persons of colour, women, Indigenous / Aboriginal People of North America, persons with disabilities, 2SLGBTQIA+ persons, and any other characteristic. We’re an equal opportunity employer and provide employment accommodation in accordance with provincial legislation. If contacted for an employment opportunity or testing, please advise Human Resources if you require accommodation at any stage of the recruitment process.</p><h2></h2><h3>We prioritize the heath, safety, and wellness of our team members.</h3><p>We believe that our employees are our most valuable asset, and that healthy employees and a safe workplace are foundational to organizational success and sustainability. The Beer Store encourages and facilitates various programs, policies, and processes to support employees in achieving improved overall health and ownership for their physical, mental, and emotional well-being. In addition, we offer two free best-in-class Employee &amp; Family Assistance Programs for employees and their immediate family members.</p><h3>You’ll enjoy a flexible environment with opportunities for learning &amp; growth.<br></h3><p>We believe that any opportunity we can provide to help you further your career growth and development is an investment in not only your individual success, but our overall success as a business. Whether you’re looking for a part-time job to pave your way through school, or a fulfilling career to establish long lasting roots, there are plenty of opportunities to grow your career and try something new. The Beer Store offers a variety of internal learning and career development programs to help you expand your knowledge, develop new skills, and achieve your career goals.</p><h3>You’ll be recognized and rewarded for your hard work and years of service.<br></h3><p>Beer Store team members can look forward to competitive pay and a range of comprehensive benefits and total rewards, pending their specific role, status, and function within the organization. Some examples include Extended Health &amp; Dental Plans, a Defined Contribution Pension Plan, paid vacation time off and annual float day, Maternity Leave Top-Up Program, and much more! In addition to our total rewards package, we believe it’s extremely important to recognize and reward our team members for their years of service and contributions to the organization. We offer a variety of recognition programs such as our Milestone Service Awards for 3-45 years of service, quarterly Peer Recognition Program, Health &amp; Safety Awards, Safe Driver Awards Program, Retirement Awards and more!</p><h3>We’re known for our friendly, genuine, and fun culture.<br></h3><p>Although we employ over 6,500 team members across Ontario, we make it our business to demonstrate a genuine interest in our people. Our culture and work environment is often described as friendly, genuine and fun! Beer Store team members can look forward to a variety of fundraising initiatives to give back to our local communities, or employee events to bring people together such as summer barbeques, sports tournaments, beer tastings, and holiday events.</p>"
+        }
+    ]
+
+}
