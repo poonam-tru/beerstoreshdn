@@ -1,3 +1,4 @@
+'use client'
 import * as React from "react";
 import {
   Card,
@@ -12,6 +13,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import useMaxElementHeight from "@/shared/useMaxElementHeight";
 
 interface infoCardProps {
   title: string;
@@ -25,6 +27,7 @@ interface infoCardProps {
   };
   buttonText?: string;
   badgeText?: string;
+  buttonIcon?:JSX.Element
   onClickButton?: () => void;
   className?: string | undefined;
   asLink?: boolean;
@@ -39,14 +42,18 @@ const InfoCard = ({
   buttonText,
   onClickButton,
   badgeText,
+  buttonIcon,
   className,
   asLink,
   buttonLink,
 }: infoCardProps) => {
+  const elementSelector = ".eq-height";
+  const { maxElementHeight } = useMaxElementHeight(elementSelector);
+  const maximumheight = maxElementHeight > 0 ? `${maxElementHeight}px` : "auto";
   return (
     <Card
       className={cn(
-        " flex flex-col border border-solid rounded-[10px] relative",
+        " flex flex-col border border-solid rounded-[10px] relative overflow-hidden",
         className
       )}
     >
@@ -68,7 +75,10 @@ const InfoCard = ({
 
       <CardContent className="py-4 px-2 info-content">
         {title && (
-          <CardTitle className="mb-4 text-[20px] font-sans font-bold info-title">
+          <CardTitle
+            className="mb-4 text-[20px] font-sans font-bold info-title eq-height"
+            style={{ height: `${maximumheight}` }}
+          >
             {title}
           </CardTitle>
         )}
@@ -87,7 +97,7 @@ const InfoCard = ({
         )}
 
         {content}
-        <CardFooter className="flex p-3 info-footer">
+        <CardFooter className="flex p-0 info-footer">
           {buttonText && (
             <Button
               asChild={asLink}
@@ -104,6 +114,7 @@ const InfoCard = ({
               ) : (
                 buttonText
               )}
+              {buttonIcon}
             </Button>
           )}
         </CardFooter>
