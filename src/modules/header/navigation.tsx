@@ -182,6 +182,7 @@ export function Navigation() {
         return itm;
       });
       setCardOpened(newdata);
+      setLogoChange(false);
       console.info(newdata, "newdata");
     }
   }, [mediaScreen]);
@@ -313,8 +314,8 @@ export function Navigation() {
               alt={""}
               onClick={() => {
                 setSidemenu("invisible");
-                resetData();
                 resetSubmenuData();
+                resetData();
               }}
               className="right-[30px] top-[18px] absolute h-[13px] w-[13px] "
             />

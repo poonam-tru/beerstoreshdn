@@ -7,7 +7,8 @@ import Link from "next/link";
 import Location from "./location";
 import Login from "./login";
 import Logo from "./logo";
-const Header = () => {
+import { navigationData } from "../../fetch/header/navigation";
+const Header = async () => {
   return (
     <div className="bg-black mx-auto">
       <header className="flex flex-1 flex-col w-full">
