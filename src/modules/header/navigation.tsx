@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-
 import {
   HoverCard,
   HoverCardContent,
@@ -10,11 +9,11 @@ import Image from "next/image";
 import { ChevronRight, ChevronLeft, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Hamburger from "../image/hamburger.png";
+import Hamburger from "../../image/hamburger.png";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "@/lib/mediaChange";
 import { Separator } from "@/components/ui/separator";
-
+import Search from "./search";
 const navbardata = [
   {
     mainHead: "SHOP OUR BEER",
@@ -332,7 +331,10 @@ export function Navigation() {
             <div className="md:basis-3/5 lg:basis-3/4 items-baseline md:flex md:items-center justify-start py-[25px] md:py-0 max-w-full max-md:[&>*:first-child]:w-full">
               <ul className="flex flex-col md:flex-row justify-start md:py-[20px]    items-baseline w-full max-md:px-[30px]">
                 {cardOpened.map(({ mainHead, href, content, open }, indx) => (
-                  <li className="relative py-[20px] items-center max-md:w-full flex   md:py-0 border-b-[1px] md:border-none border-solid border-[#d4d4d4]">
+                  <li
+                    className="relative py-[20px] items-center max-md:w-full flex   md:py-0 border-b-[1px] md:border-none border-solid border-[#d4d4d4]"
+                    key={`nevigation${mainHead}`}
+                  >
                     {content ? (
                       <div className="relative w-full">
                         {!mediaScreen && (
@@ -363,6 +365,7 @@ export function Navigation() {
                                         indx == 0 &&
                                         "2xl:w-[210px] xl:w-[175px] lg:w-[130px] md:w-[100px]"
                                       } `}
+                                      key={`nevigation${subhead}`}
                                     >
                                       {subhead && (
                                         <div className="flex flex-col gap-3 p-3  border-b-[1px] border-solid border-[#ddd] ">
@@ -426,7 +429,10 @@ export function Navigation() {
                                   >
                                     {content?.map(
                                       ({ subhead, list, open }, indx) => (
-                                        <li className="flex flex-col w-full bg:black md:bg-[#fff] border-b-[1px] border-solid border-[#d4d4d4]">
+                                        <li
+                                          className="flex flex-col w-full bg:black md:bg-[#fff] border-b-[1px] border-solid border-[#d4d4d4]"
+                                          key={`nevigation${subhead}`}
+                                        >
                                           <HoverCard open={open}>
                                             <div className="[&>*:first-child]:w-full [&>*:first-child]:!translate-y-0  [&>*:first-child]:h-full">
                                               <HoverCardContent
@@ -524,7 +530,8 @@ export function Navigation() {
               </ul>
             </div>
             <div className="flex md:basis-1/4 lg:basis-1/4 h-auto items-center  md:justify-end px-[30px] md:px-0">
-              <div className="lg:max-w-[500px] md:max-w-[265px] lg:w-full w-full md:mb-[10px] lg:mb-0 ">
+              <Search />
+              {/* <div className="lg:max-w-[500px] md:max-w-[265px] lg:w-full w-full md:mb-[10px] lg:mb-0 ">
                 <Input
                   className="bg-white text-[#4A4F55]  h-[40px] 2xl:h-[50px] xl:h-[40px] text-[10px] lg:text-[14px] font-sans font-normal rounded-[50px] py-[8px]  pl-[14px] lg:pl-[28px] pr-[5px]"
                   placeholder="Search 1,000+ brand of beer..."
@@ -546,7 +553,7 @@ export function Navigation() {
                     </Button>
                   }
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
