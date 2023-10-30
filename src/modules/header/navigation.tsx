@@ -333,7 +333,7 @@ export function Navigation() {
               <ul className="flex flex-col md:flex-row justify-start md:py-[20px]    items-baseline w-full max-md:px-[30px]">
                 {cardOpened.map(({ mainHead, href, content, open }, indx) => (
                   <li
-                    className="relative py-[20px] items-center max-md:w-full flex   md:py-0 border-b-[1px] md:border-none border-solid border-[#d4d4d4]"
+                    className="relative py-[20px] items-center max-md:w-full flex   md:py-0 border-b-[1px] md:border-none border-solid border-[#ffffff40]"
                     key={`nevigation${mainHead}`}
                   >
                     {content ? (
@@ -410,14 +410,16 @@ export function Navigation() {
                         )}
                         {mediaScreen && (
                           <HoverCard open={open}>
-                            <HoverCardTrigger className="font-sans font-medium max-md:w-full max-md:flex max-md:justify-between items-center  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]    2xl:mr-5">
+                            <HoverCardTrigger
+                              onClick={() => mediaScreen && cardOpen(indx)}
+                              className="font-sans font-medium max-md:w-full max-md:flex max-md:justify-between items-center  text-white focus:bg-transparent hover:text-white focus:text-white p-0 h-auto uppercase 2xl:text-[20px] xl:text-[18px] lg:text-[14px] md:[10px] text-[14px] leading-[20px]    2xl:mr-5"
+                            >
                               {mainHead}
                               <ChevronRight
                                 color="#d06f1a"
                                 height={20}
                                 width={15}
                                 className="float-right h-[20px] w-[15px]"
-                                onClick={() => mediaScreen && cardOpen(indx)}
                               />
                             </HoverCardTrigger>
                             <div className="[&>*:first-child]:w-full  [&>*:first-child]:!translate-y-[122px] [&>*:first-child]:h-full">
@@ -431,7 +433,7 @@ export function Navigation() {
                                     {content?.map(
                                       ({ subhead, list, open }, indx) => (
                                         <li
-                                          className="flex flex-col w-full bg:black md:bg-[#fff] border-b-[1px] border-solid border-[#d4d4d4]"
+                                          className="flex flex-col w-full bg:black md:bg-[#fff]"
                                           key={`nevigation${subhead}`}
                                         >
                                           <HoverCard open={open}>
@@ -446,7 +448,7 @@ export function Navigation() {
                                                     ({ link, href }) => (
                                                       <li
                                                         key={`list${link}`}
-                                                        className={`flex  w-full border-t-[1px] border-solid border-[#ddd] py-[20px] hover:text-[#d06f1a]
+                                                        className={`flex  w-full  border-t-[1px]  border-solid border-[#ffffff40] py-[20px] hover:text-[#d06f1a]
                                    `}
                                                       >
                                                         <Link
@@ -475,7 +477,7 @@ export function Navigation() {
                                                   subMenuHandler(indx)
                                                 }
                                               >
-                                                <div className="flex flex-row gap-3 items-center py-[20px]  border-b-[1px] border-solid border-[#ddd] ">
+                                                <div className="flex flex-row gap-3 items-center py-[20px]  border-b-[1px] border-solid border-[#ffffff40]">
                                                   <h3 className="font-sans font-medium text-[#fff] text-[14px] flex h-full w-full select-none flex-col justify-end rounded-md  no-underline outline-none focus:shadow-md">
                                                     {subhead}
                                                   </h3>
@@ -494,7 +496,7 @@ export function Navigation() {
                                                 {list.map(({ link, href }) => (
                                                   <li
                                                     key={`list${link}`}
-                                                    className={`flex  w-full border-t-[1px] border-solid border-[#ddd] py-[20px] hover:text-[#d06f1a]
+                                                    className={`flex  w-full  border-t-[1px] border-solid border-[#ffffff40] py-[20px] hover:text-[#d06f1a]
                                    `}
                                                   >
                                                     <Link
