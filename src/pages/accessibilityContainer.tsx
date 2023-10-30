@@ -2,11 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BannerHeader from "@/modules/bannerHeader";
-import {
-  ContainerLayout,
-  ContentLayout,
-  SidebarLayout,
-} from "@/modules/containerLayout";
+import { ContainerLayout, ContentLayout, SidebarLayout } from "@/modules/containerLayout";
 import { Button } from "@/components/ui/button";
 import SidebarList from "@/modules/sidebarList";
 
