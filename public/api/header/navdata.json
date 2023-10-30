@@ -1,0 +1,154 @@
+{
+  "NavigationData": [
+    {
+      " mainHead": "SHOP OUR BEER",
+      "href": "",
+      "open": false,
+      "content": [
+        {
+          "subhead": "Discover",
+          "open": false,
+          "list": [
+            { "link": "On Sale Now", "href": "/" },
+            { "link": "Whats New", "href": "/" },
+            { "link": "Seasonal", "href": "/" },
+            { "link": "Mixed Pack", "href": "/" }
+          ]
+        },
+        {
+          "subhead": "Beer Category",
+          "open": false,
+          "list": [
+            { "link": "Import", "href": "/" },
+            { "link": "International", "href": "/" },
+            { "link": "Ontario", "href": "/" },
+            { "link": "Craft", "href": "/" },
+            { "link": "Premium", "href": "/" },
+            { "link": "Value", "href": "/" },
+            { "link": "Domestic", "href": "/" },
+            { "link": "Specialty", "href": "/" },
+            { "link": "Non Beer", "href": "/" },
+            { "link": "Flavoured", "href": "/" }
+          ]
+        },
+        {
+          "subhead": "Beer Types",
+          "open": false,
+          "list": [
+            { "link": "Ale", "href": "/" },
+            { "link": "Lager", "href": "/" },
+            { "link": "Malt", "href": "/" },
+            { "link": "Stout", "href": "/" }
+          ]
+        },
+        {
+          "subhead": "Beer Styles",
+          "open": false,
+          "list": [
+            { "link": "Amber", "href": "/" },
+            { "link": "Blonde", "href": "/" },
+            { "link": "Brown", "href": "/" },
+            { "link": "Cream", "href": "/" },
+            { "link": "Dark", "href": "/" },
+            { "link": "Golden", "href": "/" },
+            { "link": "India Pale Ale", "href": "/" },
+            { "link": "Pale", "href": "/" },
+            { "link": "Pilsner", "href": "/" },
+            { "link": "Porter", "href": "/" },
+            { "link": "Red", "href": "/" },
+            { "link": "Strong", "href": "/" },
+            { "link": "Wheat", "href": "/" }
+          ]
+        },
+        {
+          "subhead": "Beer Format",
+          "open": false,
+          "list": [
+            { "link": "Single", "href": "/" },
+            { "link": "Can", "href": "/" },
+            { "link": "Bottles", "href": "/" },
+            { "link": "6 Packs", "href": "/" },
+            { "link": "12 Pack", "href": "/" },
+            { "link": "12 Pack", "href": "/" },
+            { "link": "30 Pack", "href": "/" },
+            { "link": "Kegs", "href": "/" }
+          ]
+        },
+        {
+          "subhead": "Beer Flavour",
+          "open": false,
+          "list": [
+            { "link": "Fruit", "href": "/" },
+            { "link": "Honey", "href": "/" },
+            { "link": "Lime", "href": "/" }
+          ]
+        },
+        {
+          "subhead": "Health Category",
+          "open": false,
+          "list": [
+            { "link": "Gluten Free", "href": "/" },
+            { "link": "Light Low", "href": "/" },
+            { "link": "Calorie", "href": "/" },
+            { "link": "Low Carb", "href": "/" }
+          ]
+        }
+      ]
+    },
+    {
+      " mainHead": "STORE LOCATOR",
+      "href": "",
+      "open": false
+     
+    },
+    {
+      " mainHead": "FOR BEER LOVERS",
+      "href": "",
+      "open": false,
+      "content": [
+        {
+          "subhead": "",
+          "open": false,
+          "list": [
+            { "link": "For Beer Lovers ", "href": "/" },
+            { "link": "Articles", "href": "/articles" },
+            { "link": "Beer 101", "href": "/" },
+            { "link": "Recipes", "href": "/" },
+            { "link": "Beer & Food Pairings", "href": "/" },
+            { "link": "Party Planning", "href": "/" }
+          ]
+        }
+      ]
+    },
+    {
+      " mainHead": "ABOUT US",
+      "href": "/about-us",
+      "open": false,
+      "content": [
+        {
+          "subhead": "",
+          "open": false,
+          "list": [
+            { "link": "Online Ordering Information", "href": "/" },
+            { "link": "Business Services", "href": "/" },
+            { "link": " Ownership & Governance", "href": "/" },
+            { "link": "Environmental Leadership", "href": "/" },
+            { "link": "Social Responsibility", "href": "/" },
+            { "link": "Community Involvement", "href": "/" },
+            { "link": "Careers", "href": "/" },
+            { "link": "Gift Cards", "href": "/" },
+            { "link": "TBS Dispute Resolution", "href": "/" },
+            { "link": "Contact Us", "href": "/about-us/contact-us" },
+            { "link": "Manuals and Forms", "href": "/" }
+          ]
+        }
+      ]
+    },
+    {
+      " mainHead": "CONTACT",
+      "href": "/about-us/contact-us",
+      "open": false
+     
+    }
+  ]
+}

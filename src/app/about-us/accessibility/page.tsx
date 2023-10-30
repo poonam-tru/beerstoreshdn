@@ -1,17 +1,21 @@
-import Link from "next/link"
-import Image from "next/image"
-import BannerHeader from "@/modules/bannerHeader"
-import { ContainerLayout, ContentLayout, SidebarLayout } from "@/modules/containerLayout"
-import { Button } from "@/components/ui/button"
-import SidebarList from "@/modules/sidebarList"
+import Link from "next/link";
+import Image from "next/image";
+import BannerHeader from "@/modules/bannerHeader";
+import {
+  ContainerLayout,
+  ContentLayout,
+  SidebarLayout,
+} from "@/modules/containerLayout";
+import { Button } from "@/components/ui/button";
+import SidebarList from "@/modules/sidebarList";
 
-import { accessbilityData } from "@/fetch/aboutus/accessbility" 
+import { accessbilityData } from "@/fetch/aboutus/accessbility";
 
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 const Accessibility = async () => {
   const data = await accessbilityData();
-
+  console.info(data, "data");
   return (
     <>
       <BannerHeader
@@ -31,7 +35,7 @@ const Accessibility = async () => {
                 {parse(data?.description)}
 
                 <ul className="dot-list">
-                  {data?.linkList.map((item:any) =>(
+                  {data?.linkList.map((item: any) => (
                     <li key={item?.linkTitle}>
                       <Link href={item?.linkUrl}>{item?.linkTitle}</Link>
                       {item?.description}
