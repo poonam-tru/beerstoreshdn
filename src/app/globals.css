@@ -40,91 +40,116 @@ ul {
   }
   .dot-list li {
     @apply before:content-[''] before:absolute before:bg-[#f4b233] before:w-[10px] before:h-[10px] before:rounded-[50%]
-     before:top-[5px] before:left-[0px] ;
+     before:top-[5px] before:left-[0px];
   }
   .dot-list a {
     @apply text-[#B95804] block;
   }
 
+  /* Pagination.css */
+  .pagination-container {
+    @apply flex mt-[20px];
+  }
+  .slider-news-list .slick-list {
+    margin-left: -15px;
+    margin-right: -15px;
 
-/* Pagination.css */
-.pagination-container {
-  @apply flex mt-[20px]
-}
-.slider-news-list .slick-list {
-  margin-left: -15px;
-  margin-right: -15px;
+    .pagination-button {
+      @apply text-center bg-[#fff] text-[#000] font-sans text-[14px] w-[30px] h-[30px] inline-block leading-[28px] border-solid border-[#d6d6d6] border-[1px];
+    }
+    .pagination-button:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .pagination-button:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.pagination-button {
-  @apply text-center bg-[#fff] text-[#000] font-sans text-[14px] w-[30px] h-[30px] inline-block leading-[28px] border-solid border-[#d6d6d6] border-[1px];
-}
-.pagination-button:first-child {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pagination-button:last-child {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .pagination-button-active {
+      @apply bg-[#f4b233] text-[#000] border-[#f4b233];
+    }
+  }
+  /* styles.css */
+  .HoverCardContent {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+    right: 0;
+    animation-duration: 700ms;
 
-.pagination-button-active{
-  @apply bg-[#f4b233] text-[#000] border-[#f4b233]
-}
+    animation-timing-function: ease;
+  }
 
-}
-/* styles.css */
-.HoverCardContent {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 25px;
-  right: 0;
-  animation-duration: 700ms;
-
-  animation-timing-function: ease;
-}
-
-.HoverCardContent[data-state="open"] {
-  animation-name: enterFromLeft;
-}
-.HoverCardContent[data-state="closed"] {
-  animation-name: exitToLeft;
-}
-/* .navigationClosed {
+  .HoverCardContent[data-state="open"] {
+    animation-name: enterFromLeft;
+  }
+  .HoverCardContent[data-state="closed"] {
+    animation-name: exitToLeft;
+  }
+  /* .navigationClosed {
   animation-name: exitToLeft;
   left: -100%;
 } */
 
-@keyframes enterFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(200px);
+  @keyframes enterFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+
+  @keyframes exitToLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+  }
+}
+.CollapsibleContent {
+  overflow: hidden;
+}
+.CollapsibleContent[data-state="open"] {
+  animation: slideDown 500ms ease-out;
+}
+.CollapsibleContent[data-state="closed"] {
+  animation: slideUp 500ms ease-out;
+}
+@keyframes slideDown {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--radix-collapsible-content-height);
   }
 }
 
-@keyframes exitToLeft {
+@keyframes slideUp {
   0% {
-    opacity: 1;
-    transform: translateX(0);
+    height: var(--radix-collapsible-content-height);
   }
   100% {
-    opacity: 0;
-    transform: translateX(200px);
+    height: 0;
   }
-}}
+}
