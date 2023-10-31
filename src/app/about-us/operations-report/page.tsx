@@ -55,6 +55,4 @@ const OperationsReport = async () => {
     </>
   )
 }
-
-
 export default OperationsReport
