@@ -8,7 +8,7 @@ import Location from "./location";
 import Login from "./login";
 import Logo from "./logo";
 import { navigationData } from "../../fetch/header/navigation";
-const Header = async () => {
+const Header = () => {
   return (
     <div className="bg-black mx-auto">
       <header className="flex flex-1 flex-col w-full">
@@ -28,7 +28,7 @@ const Header = async () => {
           </div>
         </nav>
         <Separator className=" h-px bg-white opacity-50" />
-        <div className="px-5">
+        <div className="px-5 ">
           <Navigation />
         </div>
       </header>

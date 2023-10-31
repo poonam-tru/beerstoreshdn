@@ -44,11 +44,7 @@ const FooterMenu = ({ title, menuList, children }: FooterMenuProps) => {
               <h4 className="  text-white  uppercase xl:text-[18px] md:text-[14px] text:[14px] font-sans font-bold">
                 {title}
               </h4>
-              {isOpen ? (
-                <ChevronDown color="#eaab31" className="h-3 w-3 text-white" />
-              ) : (
-                <ChevronRight color="#eaab31" className="h-3 w-3 text-white" />
-              )}
+              <ChevronRight color="#eaab31" className="h-3 w-3 text-white" />
             </div>
           </CollapsibleTrigger>
         )}

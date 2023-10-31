@@ -100,10 +100,9 @@ ul {
   .HoverCardContent[data-state="closed"] {
     animation-name: exitToLeft;
   }
-  /* .navigationClosed {
-  animation-name: exitToLeft;
-  left: -100%;
-} */
+  .navigationClosed {
+  animation-name: enterFromLeft;
+}
 
   @keyframes enterFromLeft {
     from {

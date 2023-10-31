@@ -292,8 +292,8 @@ export function Navigation() {
             {logoChange ? (
               <ChevronLeft
                 id="cross"
-                color="#d06f1a"
-                className="h-[30px] w-[25px]"
+                color="#f4b233"
+                className="h-[26px] w-[26px]"
                 onClick={!opened ? resetData : resetSubmenuData}
               />
             ) : (
@@ -416,7 +416,7 @@ export function Navigation() {
                             >
                               {mainHead}
                               <ChevronRight
-                                color="#d06f1a"
+                                color="#f4b233"
                                 height={20}
                                 width={15}
                                 className="float-right h-[20px] w-[15px]"
@@ -482,7 +482,7 @@ export function Navigation() {
                                                     {subhead}
                                                   </h3>
                                                   <ChevronRight
-                                                    color="#d06f1a"
+                                                    color="#f4b233"
                                                     height={24}
                                                     width={12}
                                                     className="h-[20px] w-[15px]"
