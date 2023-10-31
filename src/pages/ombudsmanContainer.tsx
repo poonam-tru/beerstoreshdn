@@ -1,40 +1,23 @@
 import Image from "next/image";
-import Link from "next/link";
-import BannerHeader from "@/modules/bannerHeader";
 import parse from 'html-react-parser';
-
-import {
-  ContainerLayout,
-  SidebarLayout,
-  ContentLayout,
-} from "@/modules/containerLayout";
-import SidebarList from "@/modules/sidebarList";
-
+import { MainTemplate } from "@/template";
 import { ombudsmanData } from "@/fetch/aboutus/ombudsman" 
 
-
-
-
 const OmbudsmanConatiner = async () => {
-
   const data = await ombudsmanData();
+  const breadcrumb = [
+    { title: 'Home', url: '#' },
+    { title: 'Ombudsman', url: '#' }
+  ];
 
   return (
     <>
-      <BannerHeader
-        title="Ombudsman"
-        backgroundImage="https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
-      />
-      <ContainerLayout>
-        <SidebarLayout bordered>
-          <SidebarList />
-        </SidebarLayout>
-        <ContentLayout>
-          <div className="flex flex-col py-[60px] px-[15px] md:pr-0 md:pl-[60px] lg:pl-[80px]">
+      <MainTemplate bannerTitle={'Ombudsman'} breadcrumbList={breadcrumb} bannerBg={`https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg`} >
+          <div className="flex flex-col py-[30px] md:py-[60px] px-[10px] md-[15px] md:pr-0 md:pl-[40px] lg:pl-[60px] 2xl:pl-[100px]">
             <div className="flex flex-col-reverse md:flex-row gap-[30px]">
-              <div className="basis-4/6 px-[15px]">
+              <div className="basis-4/6">
                 <h2>{data?.mainTitle}</h2>
-                <div className="[&>p]:mb-[25px] [&>h3]:mb-[25px] [&>h3]:text-[24px] [&>h3]:font-bold [&>p]:text-[#000] [&>a]:text-[#B95804] [&>p>a]:text-[#B95804]">
+                <div className="[&>p]:mb-[25px] [&>h3]:mb-[25px] [&>h3]:text-[18px] md:[&>h3]:text-[20px] lg:[&>h3]:text-[24px]  [&>h3]:font-bold [&>p]:text-[#000] [&>a]:text-[#B95804] [&>p>a]:text-[#B95804]">
                   {parse(data?.description)}
                 </div>
               </div>
@@ -56,8 +39,7 @@ const OmbudsmanConatiner = async () => {
               </div>
             </div>
           </div>
-        </ContentLayout>
-      </ContainerLayout>
+        </MainTemplate>
     </>
   );
 };
