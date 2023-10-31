@@ -1,5 +1,5 @@
-import "./globals.css";
-import "./common.css";
+import "@/app/styles/globals.css";
+import "@/app/styles/common.css";
 import type { Metadata } from "next";
 import { gotham, leviathan } from "@/utils/fonts";
 import Header from "@/modules/header";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children, 
 }: {
   children: React.ReactNode;
 }) {
