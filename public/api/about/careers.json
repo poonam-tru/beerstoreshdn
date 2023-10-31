@@ -19,9 +19,9 @@
     "detail":[
         {
             "title":"Our Core Values",
-            "descrition":"Our Core Values guide us in all our decision making and help positively impact both the work environment for our team members and the communities that we serve. Click below to learn more about each of our core values.",
+            "description":"Our Core Values guide us in all our decision making and help positively impact both the work environment for our team members and the communities that we serve. Click below to learn more about each of our core values.",
             "image":"",
-            "list":[
+            "links":[
                 {
                     "title":"Diversity, Equity, Inclusion, Belonging",
                     "url":""
@@ -52,9 +52,9 @@
         },
         {
             "title":"Our Divisions",
-            "descrition":"We have exciting job opportunities across Ontario in our Retail Stores, Distribution Centres, Corporate Office, Draught Services, and Customer Contact Centre. Click below to learn more about our divisions.            ",
+            "description":"We have exciting job opportunities across Ontario in our Retail Stores, Distribution Centres, Corporate Office, Draught Services, and Customer Contact Centre. Click below to learn more about our divisions.            ",
             "image":"",
-            "list":[
+            "links":[
                 {
                     "title":"Corporate Office",
                     "url":""
@@ -80,9 +80,9 @@
         },
         {
             "title":"Why You’ll Love Working With Us",
-            "descrition":"We have exciting job opportunities across Ontario in our Retail Stores, Distribution Centres, Corporate Office, Draught Services, and Customer Contact Centre. Click below to learn more about our divisions.            ",
+            "description":"We have exciting job opportunities across Ontario in our Retail Stores, Distribution Centres, Corporate Office, Draught Services, and Customer Contact Centre. Click below to learn more about our divisions.            ",
             "image":"https://tbsecoms.wpengine.com/wp-content/uploads/2022/05/working-with-us-first.jpg",
-            "list":[
+            "links":[
                 {
                     "title":"Corporate Office",
                     "url":""

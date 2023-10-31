@@ -3,6 +3,7 @@ import { MainTemplate } from "@/template";
 import { careerData } from "@/fetch/aboutus/careers";
 import InfoCard from "@/modules/infoCard";
 import InterestCard from "@/modules/career/interestcard";
+import { ContentList } from "@/modules/career/contentlist";
 
 const Career = async () => {
   const data = await careerData();
@@ -12,7 +13,7 @@ const Career = async () => {
     { title: "careers", url: "/careers" },
   ];
 
-  const { careersCards, backgroudImage, teamTitle } = data;
+  const { careersCards, backgroudImage, teamTitle, detail} = data;
   return (
     <MainTemplate
       bannerTitle={data?.mainTitle}
@@ -37,6 +38,7 @@ const Career = async () => {
             </div>
           </div>
         </div>
+        <ContentList contentDetail={detail}/>
       </div>
     </MainTemplate>
   );
