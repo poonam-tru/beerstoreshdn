@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
 import {
   Dialog,
   DialogContent,
@@ -15,12 +14,15 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
 } from "@/components/ui/accordion";
 import AccordianTriggerCustom from "./accordianTrigger";
 
-export const ContestAndPromotionsContainer = (props:any) => { 
-const {accordiandata} = props;
+interface ContestAndPromotionsContainerProps {
+  accordiandata: any;
+}
+
+export const ContestAndPromotionsContainer: React.FC<ContestAndPromotionsContainerProps> = (props) => {
+  const {accordiandata} = props;
 
 
   return (
@@ -36,16 +38,16 @@ const {accordiandata} = props;
                                 <DialogTrigger>
                                   <Image src={item?.image} alt={`Image ${itemIndex}`} width={230} height={230 } style={{ height: '100%', width: '100%' }} className="p-[0] m-[0]"/>
                                 </DialogTrigger>
-                                <DialogContent  className="bg-[#fff] text-[18px] p-[0] max-w-[680px] sm:rounded-[5px] border-0">
+                                <DialogContent  className="bg-[#fff] text-[18px] p-[0] max-w-[680px] rounded-[5px] border-0  w-[90%]">
                                   <DialogHeader>
-                                    <DialogTitle className=" border-b border-indigo-600 border-[#dddddd] font-sans px-[30px] py-[20px] m-0 ">{item?.imagepopupContent?.headertitle}</DialogTitle>
+                                    <DialogTitle className="text-left border-b border-indigo-600 border-[#dddddd] font-sans px-[30px] py-[20px] m-0 ">{item?.imagepopupContent?.headertitle}</DialogTitle>
                                     <DialogDescription className="p-[30px] m-0 text-[#4A4F55]">
                                       <ul className="dot-list grid md:grid-cols-2">
                                         {item?.imagepopupContent?.winnerlist.map((winner:any, winnerIndex:any)=> (
-                                              <li className="last:pb-0" key={winnerIndex}>{winner}</li>
+                                              <li className="last:pb-0 text-left" key={winnerIndex}>{winner}</li>
                                         ))}
                                         </ul>
-                                      <div className="mt-[30px] text-[#B95804] font-mideum"><Link href="#">Rules and Regulations</Link></div>
+                                      <div className="mt-[] sm:mt-[30px] text-[#B95804] font-mideum text-left"><Link href="#">Rules and Regulations</Link></div>
                                     </DialogDescription>
                                   </DialogHeader>
                                 </DialogContent>
@@ -58,7 +60,6 @@ const {accordiandata} = props;
                                   <Accordion type="single" collapsible className="w-full">
                                     {items?.data?.map((item: any, itemIndex: any) => { return(<>
                                       <AccordionItem value={item?.value}>
-                                          {/* <AccordionTrigger onClick={() => handleClickWithOffset(index * 52 + 52)} className="py-[20px] px-[12px] bg-[#ddd] text-[#000] text-[14px] hover:no-underline"> {item.title} </AccordionTrigger> */}
                                           <AccordianTriggerCustom index={index} title={items?.title} className="py-[20px] px-[12px] bg-[#ddd] text-[#000] text-[14px] hover:no-underline font-bold group-data-[state=open]:bg-[#000] mb-[20px] [&>svg]:width-[150px]" />
                                               <AccordionContent>
                                                 <div className="pt-[10px] md:pt-[30px] px-[20px] pb-[10px]">
