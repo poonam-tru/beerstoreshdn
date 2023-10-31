@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-=======
-import { getFormerEmployeesData } from '@/fetch/aboutus/formeremployees'
-import { MainTemplate } from "@/template";
->>>>>>> feature/beerstoreshdcn-04-n
 import parse from 'html-react-parser';
 import { MainTemplate } from '@/template';
 import { getFormerEmployeesData } from '@/fetch/aboutus/formeremployees'
 
 const FormerEmployees = async() => {
   const data = await getFormerEmployeesData();
-<<<<<<< HEAD
-=======
-
->>>>>>> feature/beerstoreshdcn-04-n
   const breadcrumb = [
     { title: 'Home', url: '#' },
     { title: 'About Us', url: '#' },
