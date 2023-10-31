@@ -1,17 +1,18 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import parse from 'html-react-parser';
 
-interface conetentListProp {
+interface contentListProp {
   contentDetail: [];
 }
 
-export const ContentList: React.FC<conetentListProp> = ({ contentDetail }) => {
+const ContentList: React.FC<contentListProp> = ({ contentDetail }) => {
   return (
-    <div className="flex pb-[60px] flex-col">
+    <div className="flex flex-col">
       {contentDetail.map((item: any) => {
         return (
-          <div key={`career_${item.title}`}>
+          <div key={`career_${item.title}`} className="[&>h3]:text-[24px] [&>h3]:font-sans [&>h3]:font-bold [&>h3]:mb-[25px] [&>p]:font-sans [&>p]:font-normal [&>p]:mb-[25px] ">
             <h2>{item.title}</h2>
             <p className="mb-[25px]">{item.description}</p>
             {item.links && item.links.length > 0 && (
@@ -30,9 +31,12 @@ export const ContentList: React.FC<conetentListProp> = ({ contentDetail }) => {
                 })}
               </ul>
             )}
+            {parse(item?.content)}
           </div>
         );
       })}
     </div>
   );
 };
+
+export default ContentList;

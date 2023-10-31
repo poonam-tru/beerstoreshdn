@@ -7,11 +7,11 @@ interface InterestProps{
 }
 const InterestCard = ({contentDetail}:InterestProps) =>{
     return(
-        <div className="flex gap-[30px] flex-row">
+        <div className="flex gap-[30px] flex-wrap flex-row">
         {contentDetail.length > 0 &&
           contentDetail.map((item: any, _idx: any) => (
             <div
-              className="basis-full md:basis-1/2"
+              className="basis-full lg:basis-1/3"
               key={`career_card${_idx}`}
             >
               <InfoCard

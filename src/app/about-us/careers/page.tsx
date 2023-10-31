@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { MainTemplate } from "@/template";
 import { careerData } from "@/fetch/aboutus/careers";
-import InfoCard from "@/modules/infoCard";
 import InterestCard from "@/modules/career/interestcard";
-import { ContentList } from "@/modules/career/contentlist";
+import ContentList from "@/modules/career/contentlist";
 
 const Career = async () => {
   const data = await careerData();
