@@ -107,6 +107,7 @@ const InfoCard = ({
               onClick={onClickButton}
               variant={asLink ? "link" : "default"}
             >
+              <>
               {asLink ? (
                 <Link href={`${buttonLink}`} className={"p-0"}>
                   {buttonText}
@@ -115,6 +116,7 @@ const InfoCard = ({
                 buttonText
               )}
               {buttonIcon}
+              </>
             </Button>
           )}
         </CardFooter>
