@@ -1,5 +1,5 @@
 "use client";
-import BannerSlider from "../modules/slider";
+import BannerSlider from "../../../modules/slider";
 import ProductCard from "@/modules/productCard";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import Image from "next/image";

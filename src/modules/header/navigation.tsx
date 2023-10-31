@@ -169,7 +169,7 @@ const navbardata = [
 
 export function Navigation() {
   const mediaScreen = useMediaQuery("(max-width:767.98px)");
-  const [sideMenu, setSidemenu] = useState("visible");
+  const [sideMenu, setSidemenu] = useState("invisible");
   const [cardOpened, setCardOpened] = useState(navbardata);
   const [opened, setOpened] = useState(false);
   const [logoChange, setLogoChange] = useState(false);
@@ -187,8 +187,8 @@ export function Navigation() {
   }, [mediaScreen]);
   const sideMenuLevOne =
     sideMenu === "visible"
-      ? " fixed top-0 bg-black w-full h-full z-50 left-0   peer-focus:left-0 ease-out delay-600 duration-700  "
-      : " fixed top-0 bg-black w-full h-full -left-full z-50  peer-focus:left-0 ease-out delay-600 duration-700  ";
+      ? " fixed top-0 bg-black w-full !h-full z-50 left-0   peer-focus:left-0 ease-out delay-600 duration-700  "
+      : " fixed top-0 bg-black w-full !h-full -left-full z-50  peer-focus:left-0 ease-out delay-600 duration-700  ";
 
   const cardOpen = (index: any) => {
     const newdata = cardOpened.map((itm, idx) => {
@@ -273,10 +273,10 @@ export function Navigation() {
       <div
         className={`md:visible ${sideMenu} ${
           mediaScreen && sideMenuLevOne
-        } flex flex-col`}
+        } h-0 md:h-auto flex flex-col`}
       >
         {mediaScreen && (
-          <div className="px-[30px] py-[14px]">
+          <div className="px-[30px] py-[13px]">
             {logoChange ? (
               <ChevronLeft
                 id="cross"
