@@ -1,0 +1,39 @@
+{
+    "mainTitle": "Operations Report",
+    "description": "<p>Want to know what kind of year we had at The Beer Store? You can learn all about it here in our annual Operational Report.</p><h3>You’ll find:</h3>",
+    "image": "https://tbsecoms.wpengine.com/wp-content/uploads/2023/06/OpsReport2022_FINAL-1-scaled.jpg",
+    "lists": [
+        { 
+            "text": "The year in beer sales",
+            "link": "#"
+         },
+         { 
+            "text": "Our continued commitment to Environmental Leadership",
+            "link": "#"
+         },
+         { 
+            "text": "Our ongoing monitoring of responsible sales and service",
+            "link": "#"
+         },
+         { 
+            "text": "Marketing & Digital Strategy update",
+            "link": "#"
+         },
+         { 
+            "text": "Health & Safety update",
+            "link": "#"
+         },
+         { 
+             "text": "Beer tax contributions",
+             "link": "#"
+         },
+         { 
+            "text": "Financial statements",
+            "link": "#"
+        },
+         { 
+            "text": "Download the full report (PDF)",
+            "link": "#"
+        }
+    ]
+}

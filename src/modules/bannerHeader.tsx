@@ -1,7 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { relative } from "path";
 
 interface bannerHeader {
   title: string;
@@ -17,14 +16,14 @@ const BannerHeader = ({
   className,
 }: bannerHeader) => {
   return (
-    <div className={cn("flex flex-row min-h-[340px] relative", className)}>
+    <div className={cn("flex flex-row min-h-[385px] relative", className)}>
       {backgroundImage && (
         <div className="flex flex-row flex-1">
           <Image
             alt={title}
             src={backgroundImage}
             width={500}
-            height={300}
+            height={385}
             style={{
               width: "100%",
               height: "auto",
@@ -34,7 +33,7 @@ const BannerHeader = ({
           /> 
         </div>
       )}
-      <div className="flex flex-col absolute left-0 h-full right-0 justify-center items-center p-[15px]">
+      <div className="bg-black bg-opacity-30 flex flex-col absolute left-0 h-full right-0 justify-center items-center p-[15px]">
         {title && (
           <h1 className="text-[28px] font-mono sm:text-[38px] md:text-[48px]  text-white">
             {title}
