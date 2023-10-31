@@ -15,7 +15,7 @@
   }
 }
 
-*{
+* {
   -webkit-font-smoothing: antialiased;
 }
 
@@ -105,28 +105,28 @@ ul {
     animation-name: exitToLeft;
   }
   .navigationClosed {
-  animation-name: enterFromLeft;
-}
+    animation-name: enterFromLeft;
+  }
 
   @keyframes enterFromLeft {
     from {
-      opacity: 0;
-      transform: translateX(200px);
+      transition: ease-in 0.45s;
+      transform: translateX(100%);
     }
     to {
-      opacity: 1;
+      transition: ease-in 0.45s;
       transform: translateX(0);
     }
   }
 
   @keyframes exitToLeft {
     0% {
-      opacity: 1;
+      transition: ease-out 0.45s;
       transform: translateX(0);
     }
     100% {
-      opacity: 0;
-      transform: translateX(200px);
+      transition: ease-out 0.45s;
+      transform: translateX(100%);
     }
   }
 }
