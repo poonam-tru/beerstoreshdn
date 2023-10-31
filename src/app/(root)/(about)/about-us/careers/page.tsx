@@ -19,7 +19,7 @@ const Career = async () => {
       breadcrumbList={breadcrumb}
       bannerBg={`https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg`}
     >
-      <div className="flex flex-col py-[60px] px-[15px] lg:pl-[100px]">
+      <div className="flex flex-col py-[60px] px-[15px] lg:pr-0 lg:pl-[100px]">
         <InterestCard contentDetail={careersCards} />
         <div className="flex py-[60px]">
           <div className="basis-full relative">
