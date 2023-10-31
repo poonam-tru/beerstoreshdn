@@ -22,12 +22,12 @@ const Breadcrumb: React.FC<breadcrumbProps> = ({
             className="inline-flex items-center breadcrumb-listitem"
           >
             {idx === list.length - 1 ? (
-              <span className="text-[18px] font-sans font-bold">
+              <span className="max-[479px]:text-[12px] text-[16px] xl:text-[18px] font-sans font-bold">
                 {item.title}
               </span>
             ) : (
               <>
-                <Link href={item.url} className="text-[18px] font-sans leading-[normal]">
+                <Link href={item.url} className="max-[479px]:text-[12px] text-[16px] xl:text-[18px] font-sans leading-[normal]">
                   {item.title}
                 </Link>
                 <Image
@@ -35,7 +35,7 @@ const Breadcrumb: React.FC<breadcrumbProps> = ({
                   alt="separator"
                   width="6"
                   height="10"
-                  className="mx-[13.5px]"
+                  className="max-[479px]:mx-[2px] mx-[5px] sm:mx-[13.5px]"
                 />
               </>
             )}

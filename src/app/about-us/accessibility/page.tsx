@@ -1,15 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import parse from 'html-react-parser';
-
 import { Button } from "@/components/ui/button"
-
-import BannerHeader from "@/modules/bannerHeader"
-import SidebarList from "@/modules/sidebarList"
-
 import { accessbilityData } from "@/fetch/aboutus/accessbility" 
-import Breadcrumb from "@/modules/breadcrumb";
-
 import { MainTemplate } from "@/template";
 
 const Accessibility = async () => {
@@ -26,10 +19,10 @@ const Accessibility = async () => {
       breadcrumbList={breadcrumb}
       bannerBg={`https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg`}
     >
-        <div className="flex flex-col py-[60px] px-[15px] lg:pl-[100px]">
-          <div className="flex flex-col-reverse md:flex-row">
+        <div className="flex flex-col py-[30px] md:py-[60px] px-[10px] md-[15px] md:pr-0 md:pl-[60px] lg:pl-[80px] 2xl:pl-[100px]">
+          <div className="flex flex-col-reverse md:flex-row gap-[30px] ">
             <div className="basis-4/6">
-              <h2>{data?.mainTitle}</h2>
+              <h2 >{data?.mainTitle}</h2>
               <div className="[&>p]:mb-[25px]">
                 {parse(data?.description)}
               </div>

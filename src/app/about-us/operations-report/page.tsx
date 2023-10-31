@@ -1,33 +1,28 @@
 import Image from 'next/image' 
-import Link from 'next/link'
-import BannerHeader from "@/modules/bannerHeader"
-import { ContainerLayout, SidebarLayout, ContentLayout } from "@/modules/containerLayout";
-import SidebarList from '@/modules/sidebarList';
-
 import parse from 'html-react-parser';
-
 import { getOperationReportData } from "@/fetch/aboutus/operationReport";
+import { MainTemplate } from "@/template";
 
 const OperationsReport = async () => {
   const data = await getOperationReportData();
+  const breadcrumb = [
+    { title: 'Home', url: '#' },
+    { title: 'About Us', url: '#' },
+    { title: 'Operations Report', url: '#' }
+  ];
 
   return (
     <>
-      <BannerHeader
-        title={data?.mainTitle}
-        backgroundImage="https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg"
-      />
-
-      <ContainerLayout>
-        <SidebarLayout bordered>
-          <SidebarList />
-        </SidebarLayout>
-        <ContentLayout>
-            <div className="flex flex-col py-[60px] px-[15px] md:pl-[60px] lg:pl-[80px]">
-                <div className="flex flex-col-reverse md:flex-row">
+     <MainTemplate
+      bannerTitle={data?.mainTitle}
+      breadcrumbList={breadcrumb}
+      bannerBg={`https://tbsecoms.wpengine.com/wp-content/uploads/2020/02/about-desk.jpg`}
+    >
+            <div className="flex flex-col py-[30px] md:py-[60px] px-[10px] md-[15px] md:pr-0 md:pl-[40px] lg:pl-[60px] 2xl:pl-[100px]">
+                <div className="flex flex-col-reverse md:flex-row gap-[30px]">
                     <div className="basis-4/6">
                     <h2>{data?.mainTitle}</h2>
-                      <div className="[&>p]:text-[#4A4F55] [&>p]:mb-[25px] [&>h3]:text-[24px] [&>h3]:font-bold [&>h3]:font-sans [&>h3]:mb-[25px] [&>h3]:leading-[1.1] [&>h3]:tracking-[0.16px]">
+                      <div className="[&>p]:text-[#4A4F55] [&>p]:mb-[25px] [&>h3]:text-[18px] md:[&>h3]:text-[20px] lg:[&>h3]:text-[24px] [&>h3]:font-bold [&>h3]:font-sans [&>h3]:mb-[25px] [&>h3]:leading-[1.1] [&>h3]:tracking-[0.16px]">
                         {parse(data?.description)}
                           <ul className="dot-list">
                             {
@@ -57,8 +52,7 @@ const OperationsReport = async () => {
                 </div>
                 
             </div>
-        </ContentLayout>
-      </ContainerLayout>
+        </MainTemplate>
     </>
   )
 }
