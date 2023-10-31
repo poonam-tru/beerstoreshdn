@@ -183,7 +183,6 @@ export function Navigation() {
       });
       setCardOpened(newdata);
       setLogoChange(false);
-      console.info(newdata, "newdata");
     }
   }, [mediaScreen]);
   const sideMenuLevOne =
@@ -200,23 +199,17 @@ export function Navigation() {
     });
     setCardOpened(newdata);
     setLogoChange(true);
-
-    console.info(newdata, "newdata");
   };
   const resetData = () => {
-    console.info("first");
     const reset = cardOpened.map((itm) => {
       itm.open = false;
       return itm;
     });
     setCardOpened(reset);
     setLogoChange(false);
-
-    console.info(reset, "reset");
   };
   const resetSubmenuData = () => {
     setOpened(false);
-    console.info("first");
     const reset = cardOpened.map((itm) => {
       if (itm.open === true) {
         itm?.content?.map((item) => (item.open = false));
@@ -225,14 +218,10 @@ export function Navigation() {
       return itm;
     });
     setCardOpened(reset);
-
-    console.info(reset, "reset");
   };
 
-  console.info(opened, "opened");
   const subMenuHandler = (indx: any) => {
     setOpened(true);
-    console.info(logoChange, "logoChanged");
     const subMenuReset = cardOpened?.map((itm) => {
       itm?.content?.filter((items, idx) => {
         if (idx == indx) {
@@ -242,7 +231,6 @@ export function Navigation() {
       });
       return itm;
     });
-    console.info(subMenuReset, "submenureset");
     setCardOpened(subMenuReset);
   };
   return (
