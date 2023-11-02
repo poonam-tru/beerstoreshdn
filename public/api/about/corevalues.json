@@ -1,0 +1,56 @@
+{
+    "mainTitle":"Our Core Values",
+    "content":"Our Core Values guide us in all our decision making and help positively impact both the work environment for our team members and the communities that we serve ",
+    "detail":[
+        {
+            "image":{
+                "url":"https://tbsecoms.wpengine.com/wp-content/uploads/2022/05/DEIBLogo_BW-NEW.svg",
+                "width":"95",
+                "height":"95"
+            },
+            "title":"Diversity, Equity, Inclusion & Belonging",
+            "description":"Our commitment to Diversity, Equity, Inclusion and Belonging is clear and unwavering: we strive to foster a respectful and empowering workplace that values our greatest asset, our people. These components are essential to expand and leverage the diverse talents, experiences, and perspectives of our team members to deliver exceptional service for our customers and community."
+        },
+        {
+            "image":{
+                "url":"https://tbsecoms.wpengine.com/wp-content/uploads/2022/05/CoreValue_Environment.svg",
+                "width":"95",
+                "height":"95"
+            },
+            "title":"Environmental Leadership",
+            "description":"<p>We operate one of the most environmentally responsible package recovery systems in the world. We are global leaders in reducing waste and one of the few retailers in North America that take back all the empty containers and packaging we sell. All collected materials are either reused or recycled; nothing sold or returned to our stores is sent directly to landfill or incineration. Spread the word…we were green before green was cool! To learn more about environmental Leadership, <a href='/about-us/environmental-leadership/'>click here! </a></p>"
+          
+        },
+        {
+            "image":{
+                "url":"https://tbsecoms.wpengine.com/wp-content/uploads/2022/05/EyebrowB_HealthSafety_Logo_BW-UPDATED.svg",
+                "width":"95",
+                "height":"95"
+            },
+            "title":"Health & Safety",
+            "description":"Health & Safety is a fundamental guiding principle within our operations. Our goal is to achieve an injury and accident-free workplace that is healthy and safe for our employees, visitors, and customers. We believe Health & Safety goes beyond simply avoiding injury, it must be an integral part of our workplace culture and daily processes. As a business, we strictly follow all legislative requirements and provide our worksites with the required equipment, training, and procedures to foster a safe working environment. Everyone in the workplace must take responsibility and play an active role in Health & Safety at work."
+           
+        },
+        {
+            "image":{
+                "url":"https://tbsecoms.wpengine.com/wp-content/uploads/2022/05/CoreValue_HonestyIntegrityRespect.svg",
+                "width":"95",
+                "height":"95"
+            },
+            "title":"Honesty, Integrity & Respect",
+            "description":"We strive to create a culture that fosters honest, reliable, trustworthy employees who exercise personal accountability and demonstrate genuine concern and respect for others. We value everyone and treat people with dignity and professionalism and build trust through responsible actions and honest relationships."
+           
+        },
+        {
+            "image":{
+                "url":"https://tbsecoms.wpengine.com/wp-content/uploads/2022/05/CoreValue_SocialResponsibility.svg",
+                "width":"95",
+                "height":"95"
+            },
+            "title":"Social Responsibility",
+            "description":"<p>Social Responsibility is a cornerstone of our business. We keep our communities safe through our WE ID Program by ensuring alcohol is not sold to people who are underage or intoxicated. We proudly partner with Arrive Alive DRIVE SOBER®, which encourages drivers to plan ahead and drink responsibly. Social Responsibility also means giving back to our communities. We believe that if you’re going to be part of the community, you should also give back to it. We partner with a number of charitable organizations throughout the year to help raise awareness and much needed funds. To learn more about Social Responsibility, <a href='/about-us/social-responsibility/'>click here!</a>, and to learn more about Community Involvement, <a href='/about-us/community-involvement/'>click here! </a></p>"
+           
+        }
+    ]
+
+}
